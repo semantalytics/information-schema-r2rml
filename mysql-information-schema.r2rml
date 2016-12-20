@@ -1,0 +1,327 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<#CollationsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.CHARACTER_SETS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterSetName;
+            rr:objectMap [
+                rr:column "CHARACTER_SET_NAME";
+            ];
+         ];
+.
+
+<#CharacterSetsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.CHARACTER_SETS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterSetName;
+            rr:objectMap [
+                rr:column "CHARACTER_SET_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:defaultCollageName;
+            rr:objectMap [
+                rr:column "DEFAULT_COLLATE_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:description;
+            rr:objectMap [
+                rr:column "DESCRIPTION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:maximumLength;
+            rr:objectMap [
+                rr:column "MAXLEN";
+            ];
+         ];
+.
+
+<#ColumnsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.TABLES"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "TABLE_CATALOG";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "TABLE_SCHEMA";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "TABLE_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "COLUMN_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "ORDINAL_POSITION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "COLUMN_DEFAULT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "IS_NULLABLE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "DATA_TYPE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "CHARACTER_MAXIMUM_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterOctet;
+            rr:objectMap [
+                rr:column "CHARACTER_OCTET_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:numericPrecision;
+            rr:objectMap [
+                rr:column "NUMERIC_PRECISION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:numericScale;
+            rr:objectMap [
+                rr:column "NUMERIC_SCALE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:datetimePrecision;
+            rr:objectMap [
+                rr:column "DATETIME_PRECISION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterSetaName;
+            rr:objectMap [
+                rr:column "CHARACTER_SET_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:collationName;
+            rr:objectMap [
+                rr:column "COLLATION_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnType;
+            rr:objectMap [
+                rr:column "COLUMN_TYPE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnKey;
+            rr:objectMap [
+                rr:column "COLUMN_KEY";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:extra;
+            rr:objectMap [
+                rr:column "EXTRA";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:privileges;
+            rr:objectMap [
+                rr:column "PRIVILEGES";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnComment;
+            rr:objectMap [
+                rr:column "COLUMN_COMMENT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:generationExpression;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+         ];
+.
+
+<#TablesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.TABLES"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Table;
+            rr:template rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableCatalog;
+            rr:objectMap [
+                rr:column "TABLE_CATALOG";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableSchema;
+            rr:objectMap [
+                rr:column "TABLE_SCHEMA";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableName;
+            rr:objectMap [
+                rr:column "TABLE_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableType;
+            rr:objectMap [
+                rr:column "TABLE_TYPE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableEngine;
+            rr:objectMap [
+                rr:column "TABLE_ENGINE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableVersion;
+            rr:objectMap [
+                rr:column "TABLE_VERSION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:rowFormat;
+            rr:objectMap [
+                rr:column "ROW_FORMAT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:checksum;
+            rr:objectMap [
+                rr:column "CHECKSUM";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:createOptions;
+            rr:objectMap [
+                rr:column "CREATE_OPTIONS";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableComment;
+            rr:objectMap [
+                rr:column "TABLE_COMMENT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableCollation;
+            rr:objectMap [
+                rr:column "TABLE_COLLATION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:checkTime;
+            rr:objectMap [
+                rr:column "CHECK_TIME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:updateTime;
+            rr:objectMap [
+                rr:column "UPDATE_TIME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:createTime;
+            rr:objectMap [
+                rr:column "CREATE_TIME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:autoIncrement;
+            rr:objectMap [
+                rr:column "AUTO_INCREMENT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:dateFree;
+            rr:objectMap [
+                rr:column "DATA_FREE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:indexLength;
+            rr:objectMap [
+                rr:column "INDEX_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:maxDataLength;
+            rr:objectMap [
+                rr:column "MAX_DATA_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:dataLength;
+            rr:objectMap [
+                rr:column "DATA_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:averageRowLength;
+            rr:objectMap [
+                rr:column "AVG_ROW_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableRows;
+            rr:objectMap [
+                rr:column "TABLE_ROWS";
+            ];
+         ];
+.
