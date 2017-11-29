@@ -1,21 +1,9 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 
-<#CollationsMap>
-         rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA.CHARACTER_SETS"
-         ];
-         rr:subjectMap [
-            rr:class mysql:Column;
-            rr:termType rr:BlankNode;
+# https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
 
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:characterSetName;
-            rr:objectMap [
-                rr:column "CHARACTER_SET_NAME";
-            ];
-         ];
-.
+# 25.1 The INFORMATION_SCHEMA CHARACTER_SETS Table
+# https://dev.mysql.com/doc/refman/8.0/en/character-sets-table.html
 
 <#CharacterSetsMap>
          rr:logicalTable [
@@ -51,6 +39,131 @@
             ];
          ];
 .
+
+# 25.2 The INFORMATION_SCHEMA COLLATIONS Table
+# https://dev.mysql.com/doc/refman/8.0/en/collations-table.html
+
+<#CollationsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.COLLATIONS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "COLLATION_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "CHARACTER_SET_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "ID";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "IS_DEFAULT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "IS_COMPILED";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "SORTLEN";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "PAD_ATTRIBUTE";
+            ];
+         ];
+.
+
+# 25.3 The INFORMATION_SCHEMA COLLATION_CHARACTER_SET_APPLICABILITY Table
+# https://dev.mysql.com/doc/refman/8.0/en/collation-character-set-applicability-table.html
+
+# 25.4 The INFORMATION_SCHEMA COLUMNS Table
+
+
+# 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
+
+
+# 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
+
+
+# 25.7 The INFORMATION_SCHEMA ENGINES Table
+
+
+# 25.8 The INFORMATION_SCHEMA EVENTS Table
+
+
+# 25.9 The INFORMATION_SCHEMA FILES Table
+
+
+# 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
+
+
+# 25.11 The INFORMATION_SCHEMA OPTIMIZER_TRACE Table
+
+
+# 25.12 The INFORMATION_SCHEMA PARAMETERS Table
+
+
+# 25.13 The INFORMATION_SCHEMA PARTITIONS Table
+
+
+# 25.14 The INFORMATION_SCHEMA PLUGINS Table
+
+
+# 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
+
+
+# 25.16 The INFORMATION_SCHEMA PROFILING Table
+
+
+# 25.17 The INFORMATION_SCHEMA REFERENTIAL_CONSTRAINTS Table
+
+
+# 25.18 The INFORMATION_SCHEMA RESOURCE_GROUPS Table
+
+
+# 25.19 The INFORMATION_SCHEMA ROUTINES Table
+
+
+# 25.20 The INFORMATION_SCHEMA SCHEMATA Table
+
+
+# 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
+
+
+# 25.22 The INFORMATION_SCHEMA STATISTICS Table
+
+
+# 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
+
+
+# 25.24 The INFORMATION_SCHEMA ST_SPATIAL_REFERENCE_SYSTEMS Table
+
+
+# 25.25 The INFORMATION_SCHEMA TABLES Table
+# https://dev.mysql.com/doc/refman/8.0/en/tables-table.html
 
 <#ColumnsMap>
          rr:logicalTable [
@@ -325,3 +438,13 @@
             ];
          ];
 .
+
+# 25.26 The INFORMATION_SCHEMA TABLESPACES Table
+# 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
+# 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
+# 25.29 The INFORMATION_SCHEMA TRIGGERS Table
+# 25.30 The INFORMATION_SCHEMA USER_PRIVILEGES Table
+# 25.31 The INFORMATION_SCHEMA VIEWS Table
+# 25.32 InnoDB INFORMATION_SCHEMA Tables     
+# 25.33 Connection-Control INFORMATION_SCHEMA Tables     
+# 25.34 Extensions to SHOW Statements
