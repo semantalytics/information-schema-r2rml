@@ -1,1 +1,42 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
 
+[]
+         rr:logicalTable [
+            rr:tablename "sqlite_master"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate sqlite:type;
+            rr:objectMap [
+                rr:column "type";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate sqlite:name;
+            rr:objectMap [
+                rr:column "name";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate sqlite:tbl_name;
+            rr:objectMap [
+                rr:column "tbl_name";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate sqlite:rootpage;
+            rr:objectMap [
+                rr:column "rootpage";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate sqlite:sql;
+            rr:objectMap [
+                rr:column "sql";
+            ];
+         ];
+.
