@@ -124,7 +124,8 @@
 
 # 25.4 The INFORMATION_SCHEMA COLUMNS Table
 # https://dev.mysql.com/doc/refman/8.0/en/columns-table.html
-#
+
+
 <#ColumnsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.COLUMNS"
@@ -263,69 +264,358 @@
 .
 
 # 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
+# https://dev.mysql.com/doc/refman/8.0/en/column-privileges-table.html
+
+<#ColumnPrivilegesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.COLUMN_PRIVILEGES"
+         ];
+         rr:subjectMap [
+            rr:class mysql:columnPrivileges;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+         ];
+.
 
 
 # 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
+# https://dev.mysql.com/doc/refman/8.0/en/column-statistics-table.html
+
+<#columnStatisticsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.7 The INFORMATION_SCHEMA ENGINES Table
+# https://dev.mysql.com/doc/refman/8.0/en/engines-table.html
+
+<#enginesMaps>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.8 The INFORMATION_SCHEMA EVENTS Table
+# https://dev.mysql.com/doc/refman/8.0/en/events-table.html
+
+<#eventsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.9 The INFORMATION_SCHEMA FILES Table
+# https://dev.mysql.com/doc/refman/8.0/en/files-table.html
 
+<#filesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 # 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
+# https://dev.mysql.com/doc/refman/8.0/en/key-column-usage-table.html
+
+<#keyColumnUsageMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.11 The INFORMATION_SCHEMA OPTIMIZER_TRACE Table
+# https://dev.mysql.com/doc/refman/8.0/en/optimizer-trace-table.html
+
+<#>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.12 The INFORMATION_SCHEMA PARAMETERS Table
+# https://dev.mysql.com/doc/refman/8.0/en/parameters-table.html
+
+<#parametersMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.13 The INFORMATION_SCHEMA PARTITIONS Table
+# https://dev.mysql.com/doc/refman/8.0/en/partitions-table.html
+
+<#partitionsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.14 The INFORMATION_SCHEMA PLUGINS Table
+# https://dev.mysql.com/doc/refman/8.0/en/plugins-table.html
+
+<#pluginsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
+# https://dev.mysql.com/doc/refman/8.0/en/processlist-table.html
+
+<#processlistMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.16 The INFORMATION_SCHEMA PROFILING Table
+# https://dev.mysql.com/doc/refman/8.0/en/profiling-table.html
+
+<#profilingMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.17 The INFORMATION_SCHEMA REFERENTIAL_CONSTRAINTS Table
+# https://dev.mysql.com/doc/refman/8.0/en/referential-constraints-table.html
+
+<#referentialConstraintsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.18 The INFORMATION_SCHEMA RESOURCE_GROUPS Table
+# https://dev.mysql.com/doc/refman/8.0/en/resource-groups-table.html
 
+<#resourceGroupsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+         ];
+.
 
 # 25.19 The INFORMATION_SCHEMA ROUTINES Table
+# https://dev.mysql.com/doc/refman/8.0/en/routines-table.html
+
+<#routinesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.20 The INFORMATION_SCHEMA SCHEMATA Table
+# https://dev.mysql.com/doc/refman/8.0/en/schemata-table.html
+
+<#schemataMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
+# https://dev.mysql.com/doc/refman/8.0/en/schema-privileges-table.html
+
+<#schemaPrivilegesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.22 The INFORMATION_SCHEMA STATISTICS Table
+# https://dev.mysql.com/doc/refman/8.0/en/statistics-table.html
+
+<#statisticsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+
+         ];
+.
 
 
 # 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
+# https://dev.mysql.com/doc/refman/8.0/en/st-geometry-columns-table.html
+
+<#stGeometryComumnsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+.
 
 
 # 25.24 The INFORMATION_SCHEMA ST_SPATIAL_REFERENCE_SYSTEMS Table
+# https://dev.mysql.com/doc/refman/8.0/en/st-spatial-reference-systems-table.html
+
+<#stSpatialReferenceSystemsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+.
 
 
 # 25.25 The INFORMATION_SCHEMA TABLES Table
 # https://dev.mysql.com/doc/refman/8.0/en/tables-table.html
 
-<#ColumnsMap>
+<#tablesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TABLES"
          ];
@@ -600,11 +890,148 @@
 .
 
 # 25.26 The INFORMATION_SCHEMA TABLESPACES Table
+# https://dev.mysql.com/doc/refman/8.0/en/tablespaces-table.html
+
+<#tableSpacesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.TABLE_SPACES"
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+.
+
 # 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
+# https://dev.mysql.com/doc/refman/8.0/en/table-constraints-table.html
+
+<#tableConstraintsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.TABLE_CONSTRAINTS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+
+         ];
+.
+
 # 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
+# https://dev.mysql.com/doc/refman/8.0/en/table-privileges-table.html
+
+<#tablePrivelegesMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.TABLE_PRIVILEGES"
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+
+         ];
+.
+
 # 25.29 The INFORMATION_SCHEMA TRIGGERS Table
+# https://dev.mysql.com/doc/refman/8.0/en/triggers-table.html
+
+<#triggersMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.TRIGGERS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+
+         ];
+.
+
 # 25.30 The INFORMATION_SCHEMA USER_PRIVILEGES Table
+# https://dev.mysql.com/doc/refman/8.0/en/user-privileges-table.html
+
+<#userPrivileges>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.USER_PRIVILEGES"
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+
+         ];
+.
+
 # 25.31 The INFORMATION_SCHEMA VIEWS Table
+# https://dev.mysql.com/doc/refman/8.0/en/views-table.html
+
+<#viewsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.VIEWS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+	 rr:objectMap [
+            rr:column "";
+	 ];
+	 rr:objectMap [
+            rr:column "";
+	 ];
+	 rr:objectMap [
+            rr:column "";
+	 ];
+	 rr:objectMap [
+            rr:column "";
+	 ];
+	 rr:objectMap [
+            rr:column "";
+	 ];
+	 rr:objectMap [
+            rr:column "";
+	 ];
+.
+
 # 25.32 InnoDB INFORMATION_SCHEMA Tables     
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-i_s-tables.html
+
+# 25.32.1 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE Table
+# 25.32.2 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE_LRU Table
+# 25.32.3 The INFORMATION_SCHEMA INNODB_BUFFER_POOL_STATS Table
+# 25.32.4 The INFORMATION_SCHEMA INNODB_CACHED_INDEXES Table
+# 25.32.5 The INFORMATION_SCHEMA INNODB_CMP and INNODB_CMP_RESET Tables
+# 25.32.6 The INFORMATION_SCHEMA INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
+# 25.32.7 The INFORMATION_SCHEMA INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
+# 25.32.8 The INFORMATION_SCHEMA INNODB_FT_BEING_DELETED Table
+# 25.32.9 The INFORMATION_SCHEMA INNODB_FT_CONFIG Table
+# 25.32.10 The INFORMATION_SCHEMA INNODB_FT_DEFAULT_STOPWORD Table
+# 25.32.11 The INFORMATION_SCHEMA INNODB_FT_DELETED Table
+# 25.32.12 The INFORMATION_SCHEMA INNODB_FT_INDEX_CACHE Table
+# 25.32.13 The INFORMATION_SCHEMA INNODB_FT_INDEX_TABLE Table
+# 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
+# 25.32.15 The INFORMATION_SCHEMA INNODB_LOCK_WAITS Table
+# 25.32.16 The INFORMATION_SCHEMA INNODB_METRICS Table
+# 25.32.17 The INFORMATION_SCHEMA INNODB_COLUMNS Table
+# 25.32.18 The INFORMATION_SCHEMA INNODB_DATAFILES Table
+# 25.32.19 The INFORMATION_SCHEMA INNODB_FIELDS Table
+# 25.32.20 The INFORMATION_SCHEMA INNODB_FOREIGN Table
+# 25.32.21 The INFORMATION_SCHEMA INNODB_FOREIGN_COLS Table
+# 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
+# 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
+# 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
+# 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
+# 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
+# 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
+# 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
+# 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
+
+
 # 25.33 Connection-Control INFORMATION_SCHEMA Tables     
-# 25.34 Extensions to SHOW Statements
+# https://dev.mysql.com/doc/refman/8.0/en/connection-control-i_s-tables.html
+<#connectionControlMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+
+         ];
+.
