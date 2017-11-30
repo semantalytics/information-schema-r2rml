@@ -266,6 +266,14 @@
 # 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
 # https://dev.mysql.com/doc/refman/8.0/en/column-privileges-table.html
 
+GRANTEE
+TABLE_CATALOG
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+COLUMN_NAME	 	 
+PRIVILEGE_TYPE	 	 
+IS_GRANTABLE
+
 <#ColumnPrivilegesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.COLUMN_PRIVILEGES"
@@ -281,6 +289,11 @@
 
 # 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
 # https://dev.mysql.com/doc/refman/8.0/en/column-statistics-table.html
+
+    SCHEMA_NAME
+    TABLE_NAME
+    COLUMN_NAME
+    HISTOGRAM
 
 <#columnStatisticsMap>
          rr:logicalTable [
@@ -298,6 +311,13 @@
 
 # 25.7 The INFORMATION_SCHEMA ENGINES Table
 # https://dev.mysql.com/doc/refman/8.0/en/engines-table.html
+
+ENGINE	Engine	MySQL extension
+SUPPORT	Support	MySQL extension
+COMMENT	Comment	MySQL extension
+TRANSACTIONS	Transactions	MySQL extension
+XA	XA	MySQL extension
+SAVEPOINTS	Savepoints	MySQL extension
 
 <#enginesMaps>
          rr:logicalTable [
@@ -317,6 +337,31 @@
 # 25.8 The INFORMATION_SCHEMA EVENTS Table
 # https://dev.mysql.com/doc/refman/8.0/en/events-table.html
 
+EVENT_CATALOG	 	def, MySQL extension
+EVENT_SCHEMA	Db	MySQL extension
+EVENT_NAME	Name	MySQL extension
+DEFINER	Definer	MySQL extension
+TIME_ZONE	Time zone	MySQL extension
+EVENT_BODY	 	MySQL extension
+EVENT_DEFINITION	 	MySQL extension
+EVENT_TYPE	Type	MySQL extension
+EXECUTE_AT	Execute at	MySQL extension
+INTERVAL_VALUE	Interval value	MySQL extension
+INTERVAL_FIELD	Interval field	MySQL extension
+SQL_MODE	 	MySQL extension
+STARTS	Starts	MySQL extension
+ENDS	Ends	MySQL extension
+STATUS	Status	MySQL extension
+ON_COMPLETION	 	MySQL extension
+CREATED	 	MySQL extension
+LAST_ALTERED	 	MySQL extension
+LAST_EXECUTED	 	MySQL extension
+EVENT_COMMENT	 	MySQL extension
+ORIGINATOR	Originator	MySQL extension
+CHARACTER_SET_CLIENT	character_set_client	MySQL extension
+COLLATION_CONNECTION	collation_connection	MySQL extension
+DATABASE_COLLATION	Database Collation	MySQL extension
+
 <#eventsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -335,6 +380,45 @@
 # 25.9 The INFORMATION_SCHEMA FILES Table
 # https://dev.mysql.com/doc/refman/8.0/en/files-table.html
 
+FILE_ID	 	MySQL extension
+FILE_NAME	 	MySQL extension
+FILE_TYPE	 	MySQL extension
+TABLESPACE_NAME	 	MySQL extension
+TABLE_CATALOG	 	MySQL extension
+TABLE_SCHEMA	 	MySQL extension
+TABLE_NAME	 	MySQL extension
+LOGFILE_GROUP_NAME	 	MySQL extension
+LOGFILE_GROUP_NUMBER	 	MySQL extension
+ENGINE	 	MySQL extension
+FULLTEXT_KEYS	 	MySQL extension
+DELETED_ROWS	 	MySQL extension
+UPDATE_COUNT	 	MySQL extension
+FREE_EXTENTS	 	MySQL extension
+TOTAL_EXTENTS	 	MySQL extension
+EXTENT_SIZE	 	MySQL extension
+INITIAL_SIZE	 	MySQL extension
+MAXIMUM_SIZE	 	MySQL extension
+AUTOEXTEND_SIZE	 	MySQL extension
+CREATION_TIME	 	MySQL extension
+LAST_UPDATE_TIME	 	MySQL extension
+LAST_ACCESS_TIME	 	MySQL extension
+RECOVER_TIME	 	MySQL extension
+TRANSACTION_COUNTER	 	MySQL extension
+VERSION	 	MySQL extension
+ROW_FORMAT	 	MySQL extension
+TABLE_ROWS	 	MySQL extension
+AVG_ROW_LENGTH	 	MySQL extension
+DATA_LENGTH	 	MySQL extension
+MAX_DATA_LENGTH	 	MySQL extension
+INDEX_LENGTH	 	MySQL extension
+DATA_FREE	 	MySQL extension
+CREATE_TIME	 	MySQL extension
+UPDATE_TIME	 	MySQL extension
+CHECK_TIME	 	MySQL extension
+CHECKSUM	 	MySQL extension
+STATUS	 	MySQL extension
+EXTRA	 	MySQL extension
+
 <#filesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -351,6 +435,21 @@
 
 # 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
 # https://dev.mysql.com/doc/refman/8.0/en/key-column-usage-table.html
+
+
+
+CONSTRAINT_CATALOG
+CONSTRAINT_SCHEMA	 	 
+CONSTRAINT_NAME	 	 
+TABLE_CATALOG
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+COLUMN_NAME	 	 
+ORDINAL_POSITION	 	 
+POSITION_IN_UNIQUE_CONSTRAINT	 	 
+REFERENCED_TABLE_SCHEMA	 	 
+REFERENCED_TABLE_NAME	 	 
+REFERENCED_COLUMN_NAME
 
 <#keyColumnUsageMap>
          rr:logicalTable [
@@ -370,6 +469,8 @@
 # 25.11 The INFORMATION_SCHEMA OPTIMIZER_TRACE Table
 # https://dev.mysql.com/doc/refman/8.0/en/optimizer-trace-table.html
 
+
+
 <#>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -387,6 +488,23 @@
 
 # 25.12 The INFORMATION_SCHEMA PARAMETERS Table
 # https://dev.mysql.com/doc/refman/8.0/en/parameters-table.html
+
+SPECIFIC_CATALOG	def
+SPECIFIC_SCHEMA	routine database
+SPECIFIC_NAME	routine name
+ORDINAL_POSITION	1, 2, 3, ... for parameters, 0 for function RETURNS clause
+PARAMETER_MODE	IN, OUT, INOUT (NULL for RETURNS)
+PARAMETER_NAME	parameter name (NULL for RETURNS)
+DATA_TYPE	same as for COLUMNS table
+CHARACTER_MAXIMUM_LENGTH	same as for COLUMNS table
+CHARACTER_OCTET_LENGTH	same as for COLUMNS table
+NUMERIC_PRECISION	same as for COLUMNS table
+NUMERIC_SCALE	same as for COLUMNS table
+DATETIME_PRECISION	same as for COLUMNS table
+CHARACTER_SET_NAME	same as for COLUMNS table
+COLLATION_NAME	same as for COLUMNS table
+DTD_IDENTIFIER	same as for COLUMNS table
+ROUTINE_TYPE	same as for ROUTINES table
 
 <#parametersMap>
          rr:logicalTable [
@@ -406,6 +524,33 @@
 # 25.13 The INFORMATION_SCHEMA PARTITIONS Table
 # https://dev.mysql.com/doc/refman/8.0/en/partitions-table.html
 
+TABLE_CATALOG	 	MySQL extension
+TABLE_SCHEMA	 	MySQL extension
+TABLE_NAME	 	MySQL extension
+PARTITION_NAME	 	MySQL extension
+SUBPARTITION_NAME	 	MySQL extension
+PARTITION_ORDINAL_POSITION	 	MySQL extension
+SUBPARTITION_ORDINAL_POSITION	 	MySQL extension
+PARTITION_METHOD	 	MySQL extension
+SUBPARTITION_METHOD	 	MySQL extension
+PARTITION_EXPRESSION	 	MySQL extension
+SUBPARTITION_EXPRESSION	 	MySQL extension
+PARTITION_DESCRIPTION	 	MySQL extension
+TABLE_ROWS	 	MySQL extension
+AVG_ROW_LENGTH	 	MySQL extension
+DATA_LENGTH	 	MySQL extension
+MAX_DATA_LENGTH	 	MySQL extension
+INDEX_LENGTH	 	MySQL extension
+DATA_FREE	 	MySQL extension
+CREATE_TIME	 	MySQL extension
+UPDATE_TIME	 	MySQL extension
+CHECK_TIME	 	MySQL extension
+CHECKSUM	 	MySQL extension
+PARTITION_COMMENT	 	MySQL extension
+NODEGROUP	 	MySQL extension
+TABLESPACE_NAME	 	MySQL extension
+
+
 <#partitionsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -423,6 +568,18 @@
 
 # 25.14 The INFORMATION_SCHEMA PLUGINS Table
 # https://dev.mysql.com/doc/refman/8.0/en/plugins-table.html
+
+PLUGIN_NAME	Name	MySQL extension
+PLUGIN_VERSION	 	MySQL extension
+PLUGIN_STATUS	Status	MySQL extension
+PLUGIN_TYPE	Type	MySQL extension
+PLUGIN_TYPE_VERSION	 	MySQL extension
+PLUGIN_LIBRARY	Library	MySQL extension
+PLUGIN_LIBRARY_VERSION	 	MySQL extension
+PLUGIN_AUTHOR	 	MySQL extension
+PLUGIN_DESCRIPTION	 	MySQL extension
+PLUGIN_LICENSE	License	MySQL extension
+LOAD_OPTION	 	MySQL extension
 
 <#pluginsMap>
          rr:logicalTable [
@@ -442,6 +599,15 @@
 # 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
 # https://dev.mysql.com/doc/refman/8.0/en/processlist-table.html
 
+ID	Id	MySQL extension
+USER	User	MySQL extension
+HOST	Host	MySQL extension
+DB	db	MySQL extension
+COMMAND	Command	MySQL extension
+TIME	Time	MySQL extension
+STATE	State	MySQL extension
+INFO	Info	MySQL extension
+
 <#processlistMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -460,18 +626,124 @@
 # 25.16 The INFORMATION_SCHEMA PROFILING Table
 # https://dev.mysql.com/doc/refman/8.0/en/profiling-table.html
 
+
+
 <#profilingMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.PROFILING"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Profiling;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:queryId;	    
+                rr:objectMap [
+                    rr:column "QUERY_ID";
+                ];
             ];
-
-         ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:seq;	    
+                rr:objectMap [
+                    rr:column "SEQ";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:state;    
+                rr:objectMap [
+                    rr:column "STATE";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:duration;   
+                rr:objectMap [
+                    rr:column "DURATION";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:cpuUser; 
+                rr:objectMap [
+                    rr:column "CPU_USER";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:cpuSystem;	    
+                rr:objectMap [
+                    rr:column "CPU_SYSTEM";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:contextVoluntary;	    
+                rr:objectMap [
+                    rr:column "CONTEXT_VOLUNTARY";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:contextInvoluntary;	    
+                rr:objectMap [
+                    rr:column "CONTEXT_INVOLUNTARY";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:blockOpsIn;	    
+                rr:objectMap [
+                    rr:column "BLOCK_OPS_IN";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:blockOpsOut;	    
+                rr:objectMap [
+                    rr:column "BLOCK_OPS_OUT";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:messagesSent;	    
+                rr:objectMap [
+                    rr:column "MESSAGES_SENT";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:messagesReceived;	    
+                rr:objectMap [
+                    rr:column "MESSAGES_RECEIVED";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:pageFaultsMajor;	    
+                rr:objectMap [
+                    rr:column "PAGE_FAULTS_MAJOR";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:pageFaultsMinor;	    
+                rr:objectMap [
+                    rr:column "PAGE_FAULTS_MINOR";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:swaps;	    
+                rr:objectMap [
+                    rr:column "SWAPS";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:sourceFunction;	    
+                rr:objectMap [
+                    rr:column "SOURCE_FUNCTION";
+                ];
+            ];
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:sourceFile;	    
+                rr:objectMap [
+                    rr:column "SOURCE_FILE";
+                ];
+            ];	    
+	    rr:predicateObjectMap [
+	        rr:predicate mysql:sourceLine;	    
+                rr:objectMap [
+                    rr:column "SOURCE_LINE";
+                ];
+            ];
+];
 .
 
 
@@ -480,21 +752,94 @@
 
 <#referentialConstraintsMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS"
          ];
          rr:subjectMap [
             rr:class mysql:;
             rr:termType rr:BlankNode;
+         rr:predicateObjectMap [
+	    rr:predicate mysql:constraintCatalog;
             rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
+                rr:column "CONSTRAINT_CATALOG";
             ];
-
+         rr:predicateObjectMap [
+	    rr:predicate mysql:constraintSchema;
+            rr:objectMap [
+                rr:column "CONSTRAINT_SCHEMA";
+            ];
+         rr:predicateObjectMap [
+	    rr:predicate mysql:constraintSchema;
+            rr:objectMap [
+                rr:column "CONSTRAINT_SCHEMA";
+            ];
+         rr:predicateObjectMap [
+	    rr:predicate mysql:constraintName;
+            rr:objectMap [
+                rr:column "CONSTRAINT_NAME";
+            ];
+         rr:predicateObjectMap [
+	    rr:predicate mysql:uniqueConstraintCatalog;
+            rr:objectMap [
+                rr:column "UNIQUE_CONSTRAINT_CATALOG";
+            ];
+         rr:predicateObjectMap [
+	    rr:predicate mysql:uniqueConstraintSchema;
+            rr:objectMap [
+                rr:column "UNIQUE_CONSTRAINT_SCHEMA";
+            ];
+         rr:predicateObjectMap [
+	    rr:predicate mysql:uniqueConstraintName;
+            rr:objectMap [
+                rr:column "UNIQUE_CONSTRAINT_NAME";
+            ];
+         rr:predicateObjectMap [
+	    rr:predicate mysql:matchOption;
+            rr:objectMap [
+                rr:column "MATCH_OPTION";
+            ];	 	 
+         rr:predicateObjectMap [
+	    rr:predicate mysql:updateRule;
+            rr:objectMap [
+                rr:column "UPDATE_RULE";
+            ];	 	 
+         rr:predicateObjectMap [
+	    rr:predicate mysql:deleteRule;
+            rr:objectMap [
+                rr:column "DELETE_RULE";
+            ];	 	
+         rr:predicateObjectMap [
+	    rr:predicate mysql:tableName;
+            rr:objectMap [
+                rr:column "TABLE_NAME";
+            ];	 		 	 
+         rr:predicateObjectMap [
+	    rr:predicate mysql:referencedTableName;
+            rr:objectMap [
+                rr:column "REFERENCED_TABLE_NAME";
+            ];	 		 	 
          ];
 .
 
-
 # 25.18 The INFORMATION_SCHEMA RESOURCE_GROUPS Table
 # https://dev.mysql.com/doc/refman/8.0/en/resource-groups-table.html
+
+ RESOURCE_GROUP_NAME
+
+The name of the resource group.
+
+RESOURCE_GROUP_TYPE
+
+The resource group type, either SYSTEM or USER.
+
+RESOURCE_GROUP_ENABLED
+
+Whether the resource group is enabled (1) or disabled (0);
+
+VCPU_IDS
+
+The CPU affinity; that is, the set of virtual CPUs that the resource group can use. The value is a list of comma-separated CPU numbers or ranges.
+
+THREAD_PRIORITY 
 
 <#resourceGroupsMap>
          rr:logicalTable [
@@ -512,6 +857,38 @@
 
 # 25.19 The INFORMATION_SCHEMA ROUTINES Table
 # https://dev.mysql.com/doc/refman/8.0/en/routines-table.html
+
+SPECIFIC_NAME	 
+ROUTINE_CATALOG	def
+ROUTINE_SCHEMA	 
+ROUTINE_NAME	 
+ROUTINE_TYPE	{PROCEDURE|FUNCTION}
+DATA_TYPE	same as for COLUMNS table
+CHARACTER_MAXIMUM_LENGTH	same as for COLUMNS table
+CHARACTER_OCTET_LENGTH	same as for COLUMNS table
+NUMERIC_PRECISION	same as for COLUMNS table
+NUMERIC_SCALE	same as for COLUMNS table
+DATETIME_PRECISION	same as for COLUMNS table
+CHARACTER_SET_NAME	same as for COLUMNS table
+COLLATION_NAME	same as for COLUMNS table
+DTD_IDENTIFIER	data type descriptor
+ROUTINE_BODY	SQL
+ROUTINE_DEFINITION	 
+EXTERNAL_NAME	NULL
+EXTERNAL_LANGUAGE	NULL
+PARAMETER_STYLE	SQL
+IS_DETERMINISTIC	 
+SQL_DATA_ACCESS	 
+SQL_PATH	NULL
+SECURITY_TYPE	 
+CREATED	 
+LAST_ALTERED	 
+SQL_MODE	MySQL extension
+ROUTINE_COMMENT	MySQL extension
+DEFINER	MySQL extension
+CHARACTER_SET_CLIENT	MySQL extension
+COLLATION_CONNECTION	MySQL extension
+DATABASE_COLLATION	MySQL extension
 
 <#routinesMap>
          rr:logicalTable [
@@ -531,6 +908,12 @@
 # 25.20 The INFORMATION_SCHEMA SCHEMATA Table
 # https://dev.mysql.com/doc/refman/8.0/en/schemata-table.html
 
+CATALOG_NAME	 	def
+SCHEMA_NAME	Database	 
+DEFAULT_CHARACTER_SET_NAME	 	 
+DEFAULT_COLLATION_NAME	 	 
+SQL_PATH	 	NULL
+
 <#schemataMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -548,6 +931,12 @@
 
 # 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
 # https://dev.mysql.com/doc/refman/8.0/en/schema-privileges-table.html
+
+GRANTEE	 	'user_name'@'host_name' value, MySQL extension
+TABLE_CATALOG	 	def, MySQL extension
+TABLE_SCHEMA	 	MySQL extension
+PRIVILEGE_TYPE	 	MySQL extension
+IS_GRANTABLE	 	MySQL extension
 
 <#schemaPrivilegesMap>
          rr:logicalTable [
@@ -567,6 +956,24 @@
 # 25.22 The INFORMATION_SCHEMA STATISTICS Table
 # https://dev.mysql.com/doc/refman/8.0/en/statistics-table.html
 
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	= Database
+TABLE_NAME	Table	 
+NON_UNIQUE	Non_unique	 
+INDEX_SCHEMA	 	= Database
+INDEX_NAME	Key_name	 
+SEQ_IN_INDEX	Seq_in_index	 
+COLUMN_NAME	Column_name	 
+COLLATION	Collation	 
+CARDINALITY	Cardinality	 
+SUB_PART	Sub_part	MySQL extension
+PACKED	Packed	MySQL extension
+NULLABLE	Null	MySQL extension
+INDEX_TYPE	Index_type	MySQL extension
+COMMENT	Comment	MySQL extension
+INDEX_COMMENT	Index_comment	MySQL extension
+IS_VISIBLE	Visible	MySQL extension
+
 <#statisticsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -585,6 +992,32 @@
 # 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
 # https://dev.mysql.com/doc/refman/8.0/en/st-geometry-columns-table.html
 
+ TABLE_CATALOG
+
+The COLUMNS.TABLE_CATALOG value.
+
+TABLE_SCHEMA
+
+The COLUMNS.TABLE_SCHEMA value.
+
+TABLE_NAME
+
+The COLUMNS.TABLE_NAME value.
+
+COLUMN_NAME
+
+The COLUMNS.TABLE_COLUMN_NAME value.
+
+SRS_NAME
+
+The spatial reference system (SRS) name.
+
+SRS_ID
+
+The spatial reference system ID (SRID).
+
+GEOMETRY_TYPE_NAME 
+
 <#stGeometryComumnsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -600,6 +1033,30 @@
 # 25.24 The INFORMATION_SCHEMA ST_SPATIAL_REFERENCE_SYSTEMS Table
 # https://dev.mysql.com/doc/refman/8.0/en/st-spatial-reference-systems-table.html
 
+ SRS_NAME
+
+The spatial reference system name. This value is unique.
+
+SRS_ID
+
+The spatial reference system numeric ID. This value is unique.
+
+SRS_ID values represent the same kind of values passed as the SRID argument to spatial functions.
+
+ORGANIZATION
+
+The name of the organization that defined the coordinate system on which the spatial reference system is based.
+
+ORGANIZATION_COORDSYS_ID
+
+The numeric ID given to the spatial reference system by the organization that defined it.
+
+DEFINITION
+
+The spatial reference system definition, as a WKT value.
+
+DESCRIPTION 
+
 <#stSpatialReferenceSystemsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -614,6 +1071,8 @@
 
 # 25.25 The INFORMATION_SCHEMA TABLES Table
 # https://dev.mysql.com/doc/refman/8.0/en/tables-table.html
+
+
 
 <#tablesMap>
          rr:logicalTable [
@@ -892,6 +1351,16 @@
 # 25.26 The INFORMATION_SCHEMA TABLESPACES Table
 # https://dev.mysql.com/doc/refman/8.0/en/tablespaces-table.html
 
+TABLESPACE_NAME	 	MySQL extension
+ENGINE	 	MySQL extension
+TABLESPACE_TYPE	 	MySQL extension
+LOGFILE_GROUP_NAME	 	MySQL extension
+EXTENT_SIZE	 	MySQL extension
+AUTOEXTEND_SIZE	 	MySQL extension
+MAXIMUM_SIZE	 	MySQL extension
+NODEGROUP_ID	 	MySQL extension
+TABLESPACE_COMMENT	 	MySQL extension
+
 <#tableSpacesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TABLE_SPACES"
@@ -906,6 +1375,13 @@
 # 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
 # https://dev.mysql.com/doc/refman/8.0/en/table-constraints-table.html
 
+CONSTRAINT_CATALOG	 	def
+CONSTRAINT_SCHEMA	 	 
+CONSTRAINT_NAME	 	 
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+CONSTRAINT_TYPE	 	 
+
 <#tableConstraintsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TABLE_CONSTRAINTS"
@@ -918,6 +1394,13 @@
 
 # 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
 # https://dev.mysql.com/doc/refman/8.0/en/table-privileges-table.html
+
+GRANTEE	 	'user_name'@'host_name' value
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+PRIVILEGE_TYPE	 	 
+IS_GRANTABLE	 
 
 <#tablePrivelegesMap>
          rr:logicalTable [
@@ -932,6 +1415,29 @@
 # 25.29 The INFORMATION_SCHEMA TRIGGERS Table
 # https://dev.mysql.com/doc/refman/8.0/en/triggers-table.html
 
+TRIGGER_CATALOG	 	def
+TRIGGER_SCHEMA	 	 
+TRIGGER_NAME	Trigger	 
+EVENT_MANIPULATION	Event	 
+EVENT_OBJECT_CATALOG	 	def
+EVENT_OBJECT_SCHEMA	 	 
+EVENT_OBJECT_TABLE	Table	 
+ACTION_ORDER	 	 
+ACTION_CONDITION	 	NULL
+ACTION_STATEMENT	Statement	 
+ACTION_ORIENTATION	 	ROW
+ACTION_TIMING	Timing	 
+ACTION_REFERENCE_OLD_TABLE	 	NULL
+ACTION_REFERENCE_NEW_TABLE	 	NULL
+ACTION_REFERENCE_OLD_ROW	 	OLD
+ACTION_REFERENCE_NEW_ROW	 	NEW
+CREATED	Created	 
+SQL_MODE	sql_mode	MySQL extension
+DEFINER	Definer	MySQL extension
+CHARACTER_SET_CLIENT	character_set_client	MySQL extension
+COLLATION_CONNECTION	collation_connection	MySQL extension
+DATABASE_COLLATION	Database Collation	MySQL extension
+
 <#triggersMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TRIGGERS"
@@ -945,6 +1451,11 @@
 # 25.30 The INFORMATION_SCHEMA USER_PRIVILEGES Table
 # https://dev.mysql.com/doc/refman/8.0/en/user-privileges-table.html
 
+GRANTEE	 	'user_name'@'host_name' value, MySQL extension
+TABLE_CATALOG	 	def, MySQL extension
+PRIVILEGE_TYPE	 	MySQL extension
+IS_GRANTABLE	 	MySQL extension
+
 <#userPrivileges>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.USER_PRIVILEGES"
@@ -957,6 +1468,17 @@
 
 # 25.31 The INFORMATION_SCHEMA VIEWS Table
 # https://dev.mysql.com/doc/refman/8.0/en/views-table.html
+
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+VIEW_DEFINITION	 	 
+CHECK_OPTION	 	 
+IS_UPDATABLE	 	 
+DEFINER	 	 
+SECURITY_TYPE	 	 
+CHARACTER_SET_CLIENT	 	MySQL extension
+COLLATION_CONNECTION	 	MySQL extension
 
 <#viewsMap>
          rr:logicalTable [
