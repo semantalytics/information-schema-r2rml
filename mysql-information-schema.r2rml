@@ -98,9 +98,169 @@
 
 # 25.3 The INFORMATION_SCHEMA COLLATION_CHARACTER_SET_APPLICABILITY Table
 # https://dev.mysql.com/doc/refman/8.0/en/collation-character-set-applicability-table.html
+#
+<#CollationCharacterSetApplicabilityMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.COLLATIONS_CHARACTER_SET_APPLICABILITY"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:collationName;
+            rr:objectMap [
+                rr:column "COLLATION_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterSetName;
+            rr:objectMap [
+                rr:column "CHARACTER_SET_NAME";
+            ];
+         ];
+.
 
 # 25.4 The INFORMATION_SCHEMA COLUMNS Table
+# https://dev.mysql.com/doc/refman/8.0/en/columns-table.html
+#
+<#ColumnsMap>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA.COLUMNS"
+         ];
+         rr:subjectMap [
+            rr:class mysql:Column;
+            rr:termType rr:BlankNode;
 
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableCatalog;
+            rr:objectMap [
+                rr:column "TABLE_CATALOG";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableSchema;
+            rr:objectMap [
+                rr:column "TABLE_SCHEMA";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:tableName;
+            rr:objectMap [
+                rr:column "TABLE_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnName;
+            rr:objectMap [
+                rr:column "COLUMN_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:ordinalPosition;
+            rr:objectMap [
+                rr:column "ORDINAL_POSITION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnDefault;
+            rr:objectMap [
+                rr:column "COLUMN_DEFAULT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:isNullable;
+            rr:objectMap [
+                rr:column "IS_NULLABLE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:dataType;
+            rr:objectMap [
+                rr:column "DATA_TYPE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterMaximumLength;
+            rr:objectMap [
+                rr:column "CHARACTER_MAXIMUM_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterOctetLength;
+            rr:objectMap [
+                rr:column "CHARACTER_OCTET_LENGTH";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:numericPrecision;
+            rr:objectMap [
+                rr:column "NUMERIC_PRECISION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:datetimePrecision;
+            rr:objectMap [
+                rr:column "DATETIME_PRECISION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:characterSetName;
+            rr:objectMap [
+                rr:column "CHARACTER_SET_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:collationName;
+            rr:objectMap [
+                rr:column "COLLATION_NAME";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnType;
+            rr:objectMap [
+                rr:column "COLUMN_TYPE";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnKey;
+            rr:objectMap [
+                rr:column "COLUMN_KEY";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:extra;
+            rr:objectMap [
+                rr:column "EXTRA";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:privileges;
+            rr:objectMap [
+                rr:column "PRIVILEGES";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:columnComment;
+            rr:objectMap [
+                rr:column "COLUMN_COMMENT";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:generationExpression;
+            rr:objectMap [
+                rr:column "GENERATION_EXPRESSION";
+            ];
+         ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:srsId;
+            rr:objectMap [
+                rr:column "SRS_ID";
+            ];
+         ];
+.
 
 # 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
 
