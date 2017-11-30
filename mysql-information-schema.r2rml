@@ -968,22 +968,34 @@
 
          ];
 	 rr:objectMap [
-            rr:column "";
+            rr:column "TABLE_CATALOG";
 	 ];
 	 rr:objectMap [
-            rr:column "";
+            rr:column "TABLE_SCHEMA";
 	 ];
 	 rr:objectMap [
-            rr:column "";
+            rr:column "TABLE_NAME";
 	 ];
 	 rr:objectMap [
-            rr:column "";
+            rr:column "VIEW_DEFINITION";
 	 ];
 	 rr:objectMap [
-            rr:column "";
+            rr:column "CHECK_OPTION";
 	 ];
 	 rr:objectMap [
-            rr:column "";
+            rr:column "IS_UPDATABLE";
+	 ];
+	 rr:objectMap [
+            rr:column "DEFINER";
+	 ];
+	 rr:objectMap [
+            rr:column "SECURITY_TYPE";
+	 ];
+	 rr:objectMap [
+            rr:column "CHARACTER_SET_CLIENT";
+	 ];
+	 rr:objectMap [
+            rr:column "COLLATION_CONNECTION";
 	 ];
 .
 
