@@ -10,7 +10,7 @@
             rr:tablename "INFORMATION_SCHEMA.CHARACTER_SETS"
          ];
          rr:subjectMap [
-            rr:class mysql:Column;
+            rr:class mysql:CharacterSet;
             rr:termType rr:BlankNode;
 
          ];
@@ -48,48 +48,48 @@
             rr:tablename "INFORMATION_SCHEMA.COLLATIONS"
          ];
          rr:subjectMap [
-            rr:class mysql:Column;
+            rr:class mysql:Collation;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationName;
             rr:objectMap [
                 rr:column "COLLATION_NAME";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetName;
             rr:objectMap [
                 rr:column "CHARACTER_SET_NAME";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:id;
             rr:objectMap [
                 rr:column "ID";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isDefault;
             rr:objectMap [
                 rr:column "IS_DEFAULT";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isCompiled;
             rr:objectMap [
                 rr:column "IS_COMPILED";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sortLen;
             rr:objectMap [
                 rr:column "SORTLEN";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:padAttribute;
             rr:objectMap [
                 rr:column "PAD_ATTRIBUTE";
             ];
@@ -104,7 +104,7 @@
             rr:tablename "INFORMATION_SCHEMA.COLLATIONS_CHARACTER_SET_APPLICABILITY"
          ];
          rr:subjectMap [
-            rr:class mysql:Column;
+            rr:class mysql:CollationCharacterSetApplicability;
             rr:termType rr:BlankNode;
 
          ];
@@ -270,10 +270,8 @@
             rr:tablename "INFORMATION_SCHEMA.COLUMN_PRIVILEGES"
          ];
          rr:subjectMap [
-            rr:class mysql:columnPrivileges;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
+            rr:class mysql:ColumnPrivileges;
+            rr:termType rr:BlankNode;
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:garantee;
@@ -319,41 +317,40 @@
          ];
 .
 
-
 # 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
 # https://dev.mysql.com/doc/refman/8.0/en/column-statistics-table.html
 
 <#columnStatisticsMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.COLUMN_STATISTICS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:generationExpression;
             rr:objectMap [
                 rr:column "GENERATION_EXPRESSION";
             ];
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:schemaName;
 		 rr:objectMap [
 		    rr:column "SCHEMA_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:columnName;
 		 rr:objectMap [
 		    rr:column "COLUMN_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:histogram;
 		 rr:objectMap [
 		    rr:column "HISTOGRAM";
 		 ];
@@ -365,48 +362,44 @@
 
 <#enginesMaps>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.ENGINES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Engine;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:engine;
 		 rr:objectMap [
 		    rr:column "ENGINE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:support;
 		 rr:objectMap [
 		    rr:column "SUPPORT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comment;
 		 rr:objectMap [
 		    rr:column "COMMENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:transactions;
 		 rr:objectMap [
 		    rr:column "TRANSACTIONS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:xa;
 		 rr:objectMap [
 		    rr:column "XA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:savepoints;
 		 rr:objectMap [
 		    rr:column "SAVEPOINTS";
 		 ];
@@ -416,159 +409,154 @@
 # 25.8 The INFORMATION_SCHEMA EVENTS Table
 # https://dev.mysql.com/doc/refman/8.0/en/events-table.html
 
-
 <#eventsMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.EVENTS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Event;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventCatalog;
 		 rr:objectMap [
 		    rr:column "EVENT_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventSchema;
 		 rr:objectMap [
 		    rr:column "EVENT_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventName;
 		 rr:objectMap [
 		    rr:column "EVENT_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:definer;
 		 rr:objectMap [
 		    rr:column "DIFINER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:timeZone;
 		 rr:objectMap [
 		    rr:column "TIME_ZONE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventBody;
 		 rr:objectMap [
 		    rr:column "EVENT_BODY";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventDefinition;
 		 rr:objectMap [
 		    rr:column "EVENT_DEFINITION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventType;
 		 rr:objectMap [
 		    rr:column "EVENT_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:executeAt;
 		 rr:objectMap [
 		    rr:column "EXECUTE_AT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:internalValue;
 		 rr:objectMap [
 		    rr:column "INTERVAL_VALUE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:intervalField;
 		 rr:objectMap [
 		    rr:column "INTERVAL_FIELD";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlMode;
 		 rr:objectMap [
 		    rr:column "SQL_MODE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:starts;
 		 rr:objectMap [
 		    rr:column "STARTS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:ends;
 		 rr:objectMap [
 		    rr:column "ENDS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:status;
 		 rr:objectMap [
 		    rr:column "STATUS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:onCompletion;
 		 rr:objectMap [
 		    rr:column "ON_COMPLETION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:created;
 		 rr:objectMap [
 		    rr:column "CREATED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:lastAltered;
 		 rr:objectMap [
 		    rr:column "LAST_ALTERED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:lastExecuted;
 		 rr:objectMap [
 		    rr:column "LAST_EXECUTED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventComment;
 		 rr:objectMap [
 		    rr:column "EVENT_COMMENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:originator;
 		 rr:objectMap [
 		    rr:column "ORIGINATOR";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetClient;
 		 rr:objectMap [
 		    rr:column "CHARACTER_SET_CLIENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationConnection;
 		 rr:objectMap [
 		    rr:column "COLLATION_CONNECTION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:databaseCollation;
 		 rr:objectMap [
 		    rr:column "DATABASE_COLLATION";
 		 ];
@@ -578,237 +566,232 @@
 # 25.9 The INFORMATION_SCHEMA FILES Table
 # https://dev.mysql.com/doc/refman/8.0/en/files-table.html
 
-
 <#filesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:File;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:fileId;
 		 rr:objectMap [
 		    rr:column "FILE_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:fileName;
 		 rr:objectMap [
 		    rr:column "FILE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:fileType;
 		 rr:objectMap [
 		    rr:column "FILE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tablespaceName;
 		 rr:objectMap [
 		    rr:column "TABLESPACE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:logfileGroupName;
 		 rr:objectMap [
 		    rr:column "LOGFILE_GROUP_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:logfileGroupNumber;
 		 rr:objectMap [
 		    rr:column "LOGFILE_GROUP_NUMBER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:engine;
 		 rr:objectMap [
 		    rr:column "ENGINE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:fulltextKeys;
 		 rr:objectMap [
 		    rr:column "FULLTEXT_KEYS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:deletedRows;
 		 rr:objectMap [
 		    rr:column "DELETED_ROWS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:updateCount;
 		 rr:objectMap [
 		    rr:column "UPDATE_COUNT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:freeExtents;
 		 rr:objectMap [
 		    rr:column "FREE_EXTENTS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:totalExtents;
 		 rr:objectMap [
 		    rr:column "TOTAL_EXTENTS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:extentSize;
 		 rr:objectMap [
 		    rr:column "EXTENT_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:minimumSize;
 		 rr:objectMap [
 		    rr:column "MINIMUM_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:autoextendSize;
 		 rr:objectMap [
 		    rr:column "AUTOEXTEND_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:creationTime;
 		 rr:objectMap [
 		    rr:column "CREATION_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:lastUpdateTime;
 		 rr:objectMap [
 		    rr:column "LAST_UPDATE_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:lastAccessTime;
 		 rr:objectMap [
 		    rr:column "LAST_ACCESS_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:recoverTime;
 		 rr:objectMap [
 		    rr:column "RECOVER_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:transactionCounter;
 		 rr:objectMap [
 		    rr:column "TRANSACTION_COUNTER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:version;
 		 rr:objectMap [
 		    rr:column "VERSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:rowFormat;
 		 rr:objectMap [
 		    rr:column "ROW_FORMAT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableRows;
 		 rr:objectMap [
 		    rr:column "TABLE_ROWS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:avgRowLength;
 		 rr:objectMap [
 		    rr:column "AVG_ROW_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataLength;
 		 rr:objectMap [
 		    rr:column "DATA_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:maxDataLength;
 		 rr:objectMap [
 		    rr:column "MAX_DATA_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexLength;
 		 rr:objectMap [
 		    rr:column "INDEX_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataFree;
 		 rr:objectMap [
 		    rr:column "DATA_FREE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:createTime;
 		 rr:objectMap [
 		    rr:column "CREATE_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:updateTime;
 		 rr:objectMap [
 		    rr:column "UPDATE_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:checkTime;
 		 rr:objectMap [
 		    rr:column "CHECK_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:checksum;
 		 rr:objectMap [
 		    rr:column "CHECKSUM";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:status;
 		 rr:objectMap [
 		    rr:column "STATUS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:extra;
 		 rr:objectMap [
 		    rr:column "EXTRA";
 		 ];
@@ -818,109 +801,98 @@
 # 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
 # https://dev.mysql.com/doc/refman/8.0/en/key-column-usage-table.html
 
-
-
 <#keyColumnUsageMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.KEY_COLUMN_USAGE"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:KeyColumnUsage;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintCatalog;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintSchema;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintName;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:columnName;
 		 rr:objectMap [
 		    rr:column "COLUMN_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:ordinalPosition;
 		 rr:objectMap [
 		    rr:column "ORDINAL_POSITION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:positionInUniqueConstraint;
 		 rr:objectMap [
 		    rr:column "POSITION_IN_UNIQUE_CONSTRAINT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:referencedTableSchema;
 		 rr:objectMap [
 		    rr:column "REFERENCED_TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:referencedTaleName;
 		 rr:objectMap [
 		    rr:column "REFERENCED_TALE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:referencedColumnName;
 		 rr:objectMap [
 		    rr:column "REFERENCED_COLUMN_NAME";
 		 ];
          ];
 .
 
-
 # 25.11 The INFORMATION_SCHEMA OPTIMIZER_TRACE Table
 # https://dev.mysql.com/doc/refman/8.0/en/optimizer-trace-table.html
 
-<#>
+<#optimizerTraceMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.OPTIMIZER_TRACE"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:OptimizerTrace;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
@@ -941,7 +913,6 @@
 		 ];
          ];
 .
-
 
 # 25.12 The INFORMATION_SCHEMA PARAMETERS Table
 # https://dev.mysql.com/doc/refman/8.0/en/parameters-table.html
@@ -951,263 +922,252 @@
             rr:tablename "INFORMATION_SCHEMA.PARAMETERS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Parameter;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificCatalog;
 		 rr:objectMap [
 		    rr:column "SPECIFIC_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificSchema;
 		 rr:objectMap [
 		    rr:column "SPECIFIC_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificName;
 		 rr:objectMap [
 		    rr:column "SPECIFIC_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:ordinalPosition;
 		 rr:objectMap [
 		    rr:column "ORDINAL_POSITION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:parameterMode;
 		 rr:objectMap [
 		    rr:column "PARAMETER_MODE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:parameterName;
 		 rr:objectMap [
 		    rr:column "PARAMETER_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataType;
 		 rr:objectMap [
 		    rr:column "DATA_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterMaximumLength;
 		 rr:objectMap [
 		    rr:column "CHARACTER_MAXIMUM_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterOctetLength;
 		 rr:objectMap [
 		    rr:column "CHARACTER_OCTET_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericPrecision;
 		 rr:objectMap [
 		    rr:column "NUMERIC_PRECISION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericScale;
 		 rr:objectMap [
 		    rr:column "NUMERIC_SCALE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:datatimePrecision;
 		 rr:objectMap [
 		    rr:column "DATETIME_PRECISION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetName;
 		 rr:objectMap [
 		    rr:column "CHARACTER_SET_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationName;
 		 rr:objectMap [
 		    rr:column "COLLATION_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:didIdentifier;
 		 rr:objectMap [
 		    rr:column "DID_IDENTIFIER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineType;
 		 rr:objectMap [
 		    rr:column "ROUTINE_TYPE";
 		 ];
          ];
 .
 
-
 # 25.13 The INFORMATION_SCHEMA PARTITIONS Table
 # https://dev.mysql.com/doc/refman/8.0/en/partitions-table.html
-
-
 
 <#partitionsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.PARTITIONS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Partition;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:partitionName;
 		 rr:objectMap [
 		    rr:column "PARTITION_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:subpartitionName;
 		 rr:objectMap [
 		    rr:column "SUBPARTITION_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:partitionMethod;
 		 rr:objectMap [
 		    rr:column "PARTITION_METHOD";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:subpartitionMethod;
 		 rr:objectMap [
 		    rr:column "SUBPARTITION_METHOD";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:partitionExpression;
 		 rr:objectMap [
 		    rr:column "PARTITION_EXPRESSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:subpartitionExpression;
 		 rr:objectMap [
 		    rr:column "SUBPARTITION_EXPRESSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:partitionDescription;
 		 rr:objectMap [
 		    rr:column "PARTITION_DESCRIPTION";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableRows;
 		 rr:objectMap [
 		    rr:column "TABLE_ROWS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:avgRowLength;
 		 rr:objectMap [
 		    rr:column "AVG_ROW_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataLength;
 		 rr:objectMap [
 		    rr:column "DATA_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:maxDataLength;
 		 rr:objectMap [
 		    rr:column "MAX_DATA_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexLength;
 		 rr:objectMap [
 		    rr:column "INDEX_LENGTH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataFree;
 		 rr:objectMap [
 		    rr:column "DATA_FREE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:createTime;
 		 rr:objectMap [
 		    rr:column "CREATE_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:updateTime;
 		 rr:objectMap [
 		    rr:column "UPDATE_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:checkTime;
 		 rr:objectMap [
 		    rr:column "CHECK_TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:checksum;
 		 rr:objectMap [
 		    rr:column "CHECKSUM";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:partitionComment;
 		 rr:objectMap [
 		    rr:column "PARTITION_COMMENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:nodegroup;
 		 rr:objectMap [
 		    rr:column "NODEGROUP";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tablespaceName;
 		 rr:objectMap [
 		    rr:column "TABLESPACE_NAME";
 		 ];
@@ -1219,150 +1179,140 @@
 
 <#pluginsMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.PLUGINS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Plugin;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginName;
 		 rr:objectMap [
 		    rr:column "PLUGIN_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginVersion;
 		 rr:objectMap [
 		    rr:column "PLUGIN_VERSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginStatus;
 		 rr:objectMap [
 		    rr:column "PLUGIN_STATUS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginType;
 		 rr:objectMap [
 		    rr:column "PLUGIN_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginTypeVersion;
 		 rr:objectMap [
 		    rr:column "PLUGIN_TYPE_VERSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginLibrary;
 		 rr:objectMap [
 		    rr:column "PLUGIN_LIBRARY";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginLibraryVersion;
 		 rr:objectMap [
 		    rr:column "PLUGIN_LIBRARY_VERSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginAuthor;
 		 rr:objectMap [
 		    rr:column "PLUGIN_AUTHOR";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginDescription;
 		 rr:objectMap [
 		    rr:column "PLUGIN_DESCRIPTION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pluginLicense;
 		 rr:objectMap [
 		    rr:column "PLUGIN_LICENSE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:loadOption;
 		 rr:objectMap [
 		    rr:column "LOAD_OPTION";
 		 ];
          ];
 .
 
-
 # 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
 # https://dev.mysql.com/doc/refman/8.0/en/processlist-table.html
 
 <#processlistMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.PROCESSLIST"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:ProcessList;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:id;
 		 rr:objectMap [
 		    rr:column "ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:user;
 		 rr:objectMap [
 		    rr:column "USER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:host;
 		 rr:objectMap [
 		    rr:column "HOST";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:db;
 		 rr:objectMap [
 		    rr:column "DB";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:command;
 		 rr:objectMap [
 		    rr:column "COMMAND";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:time;
 		 rr:objectMap [
 		    rr:column "TIME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:state;
 		 rr:objectMap [
 		    rr:column "STATE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:info;
 		 rr:objectMap [
 		    rr:column "INFO";
 		 ];
          ];
 .
-
 
 # 25.16 The INFORMATION_SCHEMA PROFILING Table
 # https://dev.mysql.com/doc/refman/8.0/en/profiling-table.html
@@ -1374,7 +1324,8 @@
          rr:subjectMap [
             rr:class mysql:Profiling;
             rr:termType rr:BlankNode;
-	    rr:predicateObjectMap [
+	 ];
+	 rr:predicateObjectMap [
 	        rr:predicate mysql:queryId;	    
                 rr:objectMap [
                     rr:column "QUERY_ID";
@@ -1482,7 +1433,6 @@
                     rr:column "SOURCE_LINE";
                 ];
             ];
-];
 .
 
 # 25.17 The INFORMATION_SCHEMA REFERENTIAL_CONSTRAINTS Table
@@ -1493,8 +1443,9 @@
             rr:tablename "INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:ReferentialConstraint;
             rr:termType rr:BlankNode;
+	    ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:constraintCatalog;
             rr:objectMap [
@@ -1566,7 +1517,7 @@
             rr:tablename "INFORMATION_SCHEMA.RESOURCE_GROUPS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:ResourceGroup;
             rr:termType rr:BlankNode;
          ];
          rr:predicateobjectmap [
@@ -1609,201 +1560,191 @@
             rr:tablename "INFORMATION_SCHEMA.ROUTINES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Routine;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificName;
 		 rr:objectMap [
 		    rr:column "SPECIFIC_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineCatalog;
 		 rr:objectMap [
 		    rr:column "ROUTINE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineSchema;
 		 rr:objectMap [
 		    rr:column "ROUTINE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineName;
 		 rr:objectMap [
 		    rr:column "ROUTINE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineType;
 		 rr:objectMap [
 		    rr:column "ROUTINE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataType;
 		 rr:objectMap [
 		    rr:column "DATA_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterMaximumLength;
 		 rr:objectMap [
 		    rr:column "CHARACTER_MAXIMUM_LENGTH";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterOctetLength;
 		 rr:objectMap [
 		    rr:column "CHARACTER_OCTET_LENGTH";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericPrecision;
 		 rr:objectMap [
 		    rr:column "NUMERIC_PRECISION";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericScale;
 		 rr:objectMap [
 		    rr:column "NUMERIC_SCALE";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:datetimePrecision;
 		 rr:objectMap [
 		    rr:column "DATETIME_PRECISION";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetName;
 		 rr:objectMap [
 		    rr:column "CHARACTER_SET_NAME";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationName;
 		 rr:objectMap [
 		    rr:column "COLLATION_NAME";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dtdIdentifier;
 		 rr:objectMap [
 		    rr:column "DTD_IDENTIFIER";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineBody;
 		 rr:objectMap [
 		    rr:column "ROUTINE_BODY";
 		 ];
          ];	 
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineDefinition;
 		 rr:objectMap [
 		    rr:column "ROUTINE_DEFINITION";
 		 ];
          ];	 	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:externalName;
 		 rr:objectMap [
 		    rr:column "EXTERNAL_NAME";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:externalLanguage;
 		 rr:objectMap [
 		    rr:column "EXTERNAL_LANGUAGE";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:parameterStyle;
 		 rr:objectMap [
 		    rr:column "PARAMETER_STYLE";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isDeterministic;
 		 rr:objectMap [
 		    rr:column "IS_DETERMINISTIC";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlDataAccess;
 		 rr:objectMap [
 		    rr:column "SQL_DATA_ACCESS";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlPath;
 		 rr:objectMap [
 		    rr:column "SQL_PATH";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:securityType;
 		 rr:objectMap [
 		    rr:column "SECURITY_TYPE";
 		 ];
          ];	 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:created;
 		 rr:objectMap [
 		    rr:column "CREATED";
 		 ];
-         ];
+         ]; 	 
         rr:predicateobjectmap [
-            rr:predicate mysql:;
-		 rr:objectMap [
-		    rr:column "";
-		 ];
-         ];	 	 
-        rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:lastAltered;
 		 rr:objectMap [
 		    rr:column "LAST_ALTERED";
 		 ];
          ];	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlMode;
 		 rr:objectMap [
 		    rr:column "SQL_MODE";
 		 ];
          ];	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineComment;
 		 rr:objectMap [
 		    rr:column "ROUTINE_COMMENT";
 		 ];
          ];	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:definer;
 		 rr:objectMap [
 		    rr:column "DEFINER";
 		 ];
          ];	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetClient;
 		 rr:objectMap [
 		    rr:column "CHARACTER_SET_CLIENT";
 		 ];
          ];	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationConnection;
 		 rr:objectMap [
 		    rr:column "COLLATION_CONNECTION";
 		 ];
          ];	
         rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:databaseCollation;
 		 rr:objectMap [
 		    rr:column "DATABASE_COLLATION";
 		 ];
@@ -1818,39 +1759,35 @@
             rr:tablename "INFORMATION_SCHEMA.SCHEMATA"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Schemata;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:catalogName;
 		 rr:objectMap [
 		    rr:column "CATALOG_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:schemaName;
 		 rr:objectMap [
 		    rr:column "SCHEMA_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:defaultCharacterSetName;
 		 rr:objectMap [
 		    rr:column "DEFAULT_CHARACTER_SET_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:defaultCollationName;
 		 rr:objectMap [
 		    rr:column "DEFAULT_COLLATION_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlPath;
 		 rr:objectMap [
 		    rr:column "SQL_PATH";
 		 ];
@@ -1865,7 +1802,7 @@
             rr:tablename "INFORMATION_SCHEMA.SCHEMA_PRIVILEGES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:SchemaPrivileges;
             rr:termType rr:BlankNode;
             rr:objectMap [
                 rr:column "GENERATION_EXPRESSION";
@@ -1873,31 +1810,31 @@
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantee;
 		 rr:objectMap [
 		    rr:column "GRANTEE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:privilegeType;
 		 rr:objectMap [
 		    rr:column "PRIVILEGE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isGrantable;
 		 rr:objectMap [
 		    rr:column "IS_GRANTABLE";
 		 ];
@@ -1912,111 +1849,106 @@
             rr:tablename "INFORMATION_SCHEMA.STATISTICS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:Statistics;
             rr:termType rr:BlankNode;
-            rr:objectMap [
-                rr:column "GENERATION_EXPRESSION";
-            ];
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:nonUnique;
 		 rr:objectMap [
 		    rr:column "NON_UNIQUE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexSchema;
 		 rr:objectMap [
 		    rr:column "INDEX_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexName;
 		 rr:objectMap [
 		    rr:column "INDEX_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlInIndex;
 		 rr:objectMap [
 		    rr:column "SEQ_IN_INDEX";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:columnName;
 		 rr:objectMap [
 		    rr:column "COLUMN_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collation;
 		 rr:objectMap [
 		    rr:column "COLLATION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:cardinality;
 		 rr:objectMap [
 		    rr:column "CARDINALITY";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:subPart;
 		 rr:objectMap [
 		    rr:column "SUB_PART";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:nullable;
 		 rr:objectMap [
 		    rr:column "NULLABLE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexType;
 		 rr:objectMap [
 		    rr:column "INDEX_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comment;
 		 rr:objectMap [
 		    rr:column "COMMENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexComment;
 		 rr:objectMap [
 		    rr:column "INDEX_COMMENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isVisible;
 		 rr:objectMap [
 		    rr:column "IS_VISIBLE";
 		 ];
          ];
 .
-
 
 # 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
 # https://dev.mysql.com/doc/refman/8.0/en/st-geometry-columns-table.html
@@ -2026,48 +1958,48 @@
             rr:tablename "INFORMATION_SCHEMA.ST_GEOMETRY_COLUMNS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:StGeometryColumn;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collumnName;
 		 rr:objectMap [
 		    rr:column "COLUMN_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:srsName;
 		 rr:objectMap [
 		    rr:column "SRS_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:srsId;
 		 rr:objectMap [
 		    rr:column "SRS_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:geometryTypeName;
 		 rr:objectMap [
 		    rr:column "GEOMETRY_TYPE_NAME";
 		 ];
@@ -2082,42 +2014,42 @@
             rr:tablename "INFORMATION_SCHEMA.ST_SPATIAL_REFERENCE_SYSTEMS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:StSpatialReferenceSystem;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:srsName;
 		 rr:objectMap [
 		    rr:column "SRS_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:srsId;
 		 rr:objectMap [
 		    rr:column "SRS_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:organization;
 		 rr:objectMap [
 		    rr:column "ORGANIZATION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:organizationCoordsysId;
 		 rr:objectMap [
 		    rr:column "ORGANIZATION_COORDSYS_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:definition;
 		 rr:objectMap [
 		    rr:column "DEFINITION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:description;
 		 rr:objectMap [
 		    rr:column "DESCRIPTION";
 		 ];
@@ -2132,66 +2064,66 @@
             rr:tablename "INFORMATION_SCHEMA.TABLES"
          ];
          rr:subjectMap [
-            rr:class mysql:Column;
+            rr:class mysql:Table;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "TABLE_CATALOG";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "TABLE_SCHEMA";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "TABLE_NAME";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:columnName;
             rr:objectMap [
                 rr:column "COLUMN_NAME";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:ordinalPosition;
             rr:objectMap [
                 rr:column "ORDINAL_POSITION";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:columnDefault;
             rr:objectMap [
                 rr:column "COLUMN_DEFAULT";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isNullable;
             rr:objectMap [
                 rr:column "IS_NULLABLE";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataType;
             rr:objectMap [
                 rr:column "DATA_TYPE";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterMaximumLength;
             rr:objectMap [
                 rr:column "CHARACTER_MAXIMUM_LENGTH";
             ];
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:characterOctet;
+            rr:predicate mysql:characterOctetLength;
             rr:objectMap [
                 rr:column "CHARACTER_OCTET_LENGTH";
             ];
@@ -2272,60 +2204,59 @@
             rr:tablename "INFORMATION_SCHEMA.TABLE_SPACES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:TableSpace;
             rr:termType rr:BlankNode;
-
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tablespaceName;
 		 rr:objectMap [
 		    rr:column "TABLESPACE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:engine;
 		 rr:objectMap [
 		    rr:column "ENGINE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tablespaceType;
 		 rr:objectMap [
 		    rr:column "TABLESPACE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:logfileGroupName;
 		 rr:objectMap [
 		    rr:column "LOGFILE_GROUP_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:extentSize;
 		 rr:objectMap [
 		    rr:column "EXTENT_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:autoextendSize;
 		 rr:objectMap [
 		    rr:column "AUTOEXTEND_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:maximumSize;
 		 rr:objectMap [
 		    rr:column "MAXIMUM_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:nodegroupId;
 		 rr:objectMap [
 		    rr:column "NODEGROUP_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tablespaceComment;
 		 rr:objectMap [
 		    rr:column "TABLESPACE_COMMENT";
 		 ];
@@ -2340,41 +2271,41 @@
             rr:tablename "INFORMATION_SCHEMA.TABLE_CONSTRAINTS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
-
+            rr:class mysql:Constraint;
+            rr:termType rr:BlankNode;
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintCatalog;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintSchema;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintName;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constaintType;
 		 rr:objectMap [
 		    rr:column "CONSTRAINT_TYPE";
 		 ];
@@ -2389,41 +2320,41 @@
             rr:tablename "INFORMATION_SCHEMA.TABLE_PRIVILEGES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
-
+            rr:class mysql:TablePrivileges;
+            rr:termType rr:BlankNode;
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantee;
 		 rr:objectMap [
 		    rr:column "GRANTEE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
 		 rr:objectMap [
 		    rr:column "TABLE_CATALOG";
 		 ];
          ];
 	          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
 		 rr:objectMap [
 		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
 		 rr:objectMap [
 		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:privilegeType;
 		 rr:objectMap [
 		    rr:column "PRIVILEGE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isGrantable;
 		 rr:objectMap [
 		    rr:column "IS_GRANTABLE";
 		 ];
@@ -2439,137 +2370,137 @@
             rr:tablename "INFORMATION_SCHEMA.TRIGGERS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
-
+            rr:class mysql:Trigger;
+            rr:termType rr:BlankNode;
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerCatalog;
 		 rr:objectMap [
 		    rr:column "TRIGGER_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerSchema;
 		 rr:objectMap [
 		    rr:column "TRIGGER_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerName;
 		 rr:objectMap [
 		    rr:column "TRIGGER_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventManipulation;
 		 rr:objectMap [
 		    rr:column "EVENT_MANIPULATION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectCatalog;
 		 rr:objectMap [
 		    rr:column "EVENT_OBJECT_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectSchema;
 		 rr:objectMap [
 		    rr:column "EVENT_OBJECT_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectTable;
 		 rr:objectMap [
 		    rr:column "EVENT_OBJECT_TABLE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionOrder;
 		 rr:objectMap [
 		    rr:column "ACTION_ORDER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionCondition;
 		 rr:objectMap [
 		    rr:column "ACTION_CONDITION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionStatement;
 		 rr:objectMap [
 		    rr:column "ACTION_STATEMENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionOrientation;
 		 rr:objectMap [
 		    rr:column "ACTION_ORIENTATION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionTiming;
 		 rr:objectMap [
 		    rr:column "ACTION_TIMING";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceOldTable;
 		 rr:objectMap [
 		    rr:column "ACTION_REFERENCE_OLD_TABLE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceNewTable;
 		 rr:objectMap [
 		    rr:column "ACTION_REFERENCE_NEW_TABLE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceOldRow;
 		 rr:objectMap [
 		    rr:column "ACTION_REFERENCE_OLD_ROW";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceNewRow;
 		 rr:objectMap [
 		    rr:column "ACTION_REFERENCE_NEW_ROW";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:created;
 		 rr:objectMap [
 		    rr:column "CREATED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlMode;
 		 rr:objectMap [
 		    rr:column "SQL_MODE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:definer;
 		 rr:objectMap [
 		    rr:column "DEFINER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetClient;
 		 rr:objectMap [
 		    rr:column "CHARACTER_SET_CLIENT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationConnection;
 		 rr:objectMap [
 		    rr:column "COLLATION_CONNECTION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:databaseCollation;
 		 rr:objectMap [
 		    rr:column "DATABASE_COLLATION";
 		 ];
@@ -2584,7 +2515,7 @@
             rr:tablename "INFORMATION_SCHEMA.USER_PRIVILEGES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:UserPrivileges;
             rr:termType rr:BlankNode;
          ];
          rr:predicateobjectmap [
@@ -2621,7 +2552,7 @@
             rr:tablename "INFORMATION_SCHEMA.VIEWS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:View;
             rr:termType rr:BlankNode;
 
          ];
@@ -2712,6 +2643,23 @@ IO_FIX
 IS_OLD
 FREE_PAGE_CLOCK
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 # 25.32.2 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE_LRU Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-page-lru-table.html
 
@@ -2736,6 +2684,24 @@ PAGE_STATE	Page state. Possible values include: NULL (clean compressed pages, co
 IO_FIX	Specifies whether any I/O is pending for this page: IO_NONE = no pending I/O, IO_READ = read pending, IO_WRITE = write pending.
 IS_OLD	Specifies whether or not the block is in the sublist of old blocks in the LRU list.
 FREE_PAGE_CLOCK	The value of the freed_page_clock counter when the block was the last placed at the head of the LRU list. The freed_page_clock counter tracks the number of blocks removed from the end of the LRU list.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.3 The INFORMATION_SCHEMA INNODB_BUFFER_POOL_STATS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-stats-table.html
@@ -2773,12 +2739,48 @@ LRU_IO_CURRENT	LRU IO for the current interval
 UNCOMPRESS_TOTAL	Total number of pages decompressed
 UNCOMPRESS_CURRENT	The number of pages decompressed in the current interval
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.4 The INFORMATION_SCHEMA INNODB_CACHED_INDEXES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cached-indexes-table.html
 
 SPACE_ID	Tablespace Space ID.
 INDEX_ID	An identifier for each index that is unique across all the databases in an instance.
 N_CACHED_PAGES	The number of index pages cached in the InnoDB buffer pool.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.5 The INFORMATION_SCHEMA INNODB_CMP and INNODB_CMP_RESET Tables
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cmp-table.html
@@ -2790,6 +2792,24 @@ COMPRESS_TIME	Total time in seconds spent in attempts to compress B-tree pages o
 UNCOMPRESS_OPS	Number of times a B-tree page of the size PAGE_SIZE has been uncompressed. B-tree pages are uncompressed whenever compression fails or at first access when the uncompressed page does not exist in the buffer pool.
 UNCOMPRESS_TIME	Total time in seconds spent in uncompressing B-tree pages of the size PAGE_SIZE.
 
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 # 25.32.6 The INFORMATION_SCHEMA INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cmpmem-table.html
 
@@ -2799,6 +2819,24 @@ PAGES_USED	Number of blocks of the size PAGE_SIZE that are currently in use.
 PAGES_FREE	Number of blocks of the size PAGE_SIZE that are currently available for allocation. This column shows the external fragmentation in the memory pool. Ideally, these numbers should be at most 1.
 RELOCATION_OPS	Number of times a block of the size PAGE_SIZE has been relocated. The buddy system can relocate the allocated “buddy neighbor” of a freed block when it tries to form a bigger freed block. Reading from the table INNODB_CMPMEM_RESET resets this count.
 RELOCATION_TIME	Total time in microseconds spent in relocating blocks of the size PAGE_SIZE. Reading from the table INNODB_CMPMEM_RESET resets this count.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.7 The INFORMATION_SCHEMA INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cmp-per-index-table.html
@@ -2812,10 +2850,46 @@ COMPRESS_TIME	Total amount of CPU time, in seconds, used for compressing data in
 UNCOMPRESS_OPS	Number of uncompression operations performed. Compressed InnoDB pages are uncompressed whenever compression fails, or the first time a compressed page is accessed in the buffer pool and the uncompressed page does not exist.
 UNCOMPRESS_TIME	Total amount of CPU time, in seconds, used for uncompressing data in this index.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.8 The INFORMATION_SCHEMA INNODB_FT_BEING_DELETED Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-being-deleted-table.html
 
 DOC_ID	The document ID of the row that is in the process of being deleted. This value might reflect the value of an ID column that you defined for the underlying table, or it can be a sequence value generated by InnoDB when the table does not contain a suitable column. This value is used to skip rows in the innodb_ft_index_table table, when you do text searches before data for deleted rows is physically removed from the FULLTEXT index by an OPTIMIZE TABLE statement. See Optimizing InnoDB Full-Text Indexes for more information.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.9 The INFORMATION_SCHEMA INNODB_FT_CONFIG Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-config-table.html
@@ -2823,16 +2897,69 @@ DOC_ID	The document ID of the row that is in the process of being deleted. This 
 KEY	The name designating an item of metadata for an InnoDB table containing a FULLTEXT index.
 VALUE	The value associated with the corresponding KEY column, reflecting some limit or current value for an aspect of a FULLTEXT index for an InnoDB table.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.10 The INFORMATION_SCHEMA INNODB_FT_DEFAULT_STOPWORD Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-default-stopword-table.html
 
 value
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.11 The INFORMATION_SCHEMA INNODB_FT_DELETED Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-deleted-table.html
 
 DOC_ID
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.12 The INFORMATION_SCHEMA INNODB_FT_INDEX_CACHE Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-index-cache-table.html
@@ -2844,6 +2971,24 @@ DOC_COUNT	The number of rows this word appears in the FULLTEXT index. The same w
 DOC_ID	The document ID of the newly inserted row. This value might reflect the value of an ID column that you defined for the underlying table, or it can be a sequence value generated by InnoDB when the table does not contain a suitable column.
 POSITION	The position of this particular instance of the word within the relevant document identified by the DOC_ID value. The value does not represent an absolute position; it is an offset added to the POSITION of the previous instance of that word.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.13 The INFORMATION_SCHEMA INNODB_FT_INDEX_TABLE Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-index-table-table.html
 
@@ -2853,6 +2998,24 @@ LAST_DOC_ID	The last document ID that this word appears in the FULLTEXT index.
 DOC_COUNT	The number of rows this word appears in the FULLTEXT index. The same word can occur several times within the cache table, once for each combination of DOC_ID and POSITION values.
 DOC_ID	The document ID of the row containing the word. This value might reflect the value of an ID column that you defined for the underlying table, or it can be a sequence value generated by InnoDB when the table does not contain a suitable column.
 POSITION	The position of this particular instance of the word within the relevant document identified by the DOC_ID value.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-locks-table.html
@@ -2868,6 +3031,24 @@ LOCK_PAGE	None
 LOCK_REC	None
 LOCK_DATA	LOCK_DATA
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.15 The INFORMATION_SCHEMA INNODB_LOCK_WAITS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-lock-waits-table.html
 
@@ -2875,6 +3056,24 @@ REQUESTING_TRX_ID	REQUESTING_ENGINE_TRANSACTION_ID
 REQUESTED_LOCK_ID	REQUESTING_ENGINE_LOCK_ID
 BLOCKING_TRX_ID	BLOCKING_ENGINE_TRANSACTION_ID
 BLOCKING_LOCK_ID	BLOCKING_ENGINE_LOCK_ID
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.16 The INFORMATION_SCHEMA INNODB_METRICS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-metrics-table.html
@@ -2897,6 +3096,24 @@ STATUS	Whether the counter is still running (enabled) or stopped (disabled).
 TYPE	Whether the item is a cumulative counter, or measures the current value of some resource.
 COMMENT	Counter description.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.17 The INFORMATION_SCHEMA INNODB_COLUMNS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-columns-table.html
 
@@ -2907,11 +3124,47 @@ MTYPE	Stands for “main type”. A numeric identifier for the column type. 1 = 
 PRTYPE	The InnoDB “precise type”, a binary value with bits representing MySQL data type, character set code, and nullability.
 LEN	The column length, for example 4 for INT and 8 for BIGINT. For character columns in multibyte character sets, this length value is the maximum length in bytes needed to represent a definition such as VARCHAR(N); that is, it might be 2*N, 3*N, and so on depending on the character encoding.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.18 The INFORMATION_SCHEMA INNODB_DATAFILES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-datafiles-table.html
 
 SPACE	The tablespace Space ID.
 PATH	The tablespace data file path. If a file-per-table tablespace is created in a location outside the MySQL data directory, the path value is a fully qualified directory path.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.19 The INFORMATION_SCHEMA INNODB_FIELDS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-fields-table.html
@@ -2919,6 +3172,23 @@ PATH	The tablespace data file path. If a file-per-table tablespace is created in
 INDEX_ID	An identifier for the index associated with this key field, using the same value as in INNODB_INDEXES.INDEX_ID.
 NAME	The name of the original column from the table, using the same value as in INNODB_COLUMNS.NAME.
 POS	The ordinal position of the key field within the index, starting from 0 and incrementing sequentially. When a column is dropped, the remaining columns are reordered so that the sequence has no gaps.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
 
 
 # 25.32.20 The INFORMATION_SCHEMA INNODB_FOREIGN Table
@@ -2930,6 +3200,23 @@ REF_NAME	The name of the parent table in this foreign key relationship.
 N_COLS	The number of columns in the foreign key index.
 TYPE	A collection of bit flags with information about the foreign key column, ORed together. 1 = ON DELETE CASCADE, 2 = ON UPDATE SET NULL, 4 = ON UPDATE CASCADE, 8 = ON UPDATE SET NULL, 16 = ON DELETE NO ACTION, 32 = ON UPDATE NO ACTION.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.21 The INFORMATION_SCHEMA INNODB_FOREIGN_COLS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-foreign-cols-table.html
@@ -2938,6 +3225,24 @@ ID	The foreign key index associated with this index key field, using the same va
 FOR_COL_NAME	The name of the associated column in the child table.
 REF_COL_NAME	The name of the associated column in the parent table.
 POS	The ordinal position of this key field within the foreign key index, starting from 0.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-indexes-table.html
@@ -2951,6 +3256,24 @@ PAGE_NO	The root page number of the index B-tree. For full-text indexes, the PAG
 SPACE	An identifier for the tablespace where the index resides. 0 means the InnoDB system tablespace. Any other number represents a table created in file-per-table mode with a separate .ibd file. This identifier stays the same after a TRUNCATE TABLE statement. Because all indexes for a table reside in the same tablespace as the table, this value is not necessarily unique.
 MERGE_THRESHOLD	The merge threshold value for index pages. If the amount of data in an index page falls below the MERGE_THRESHOLD value when a row is deleted or when a row is shortened by an update operation, InnoDB attempts to merge the index page with the neighboring index page. The default threshold value is 50%. For more information, see Section 15.6.12, “Configuring the Merge Threshold for Index Pages”.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tables-table.html
 
@@ -2962,6 +3285,24 @@ SPACE	An identifier for the tablespace where the table resides. 0 means the Inno
 ROW_FORMAT	The table's row format (Compact, Redundant, Dynamic, or Compressed).
 ZIP_PAGE_SIZE	The zip page size. Only applies to tables that use the Compressed row format.
 SPACE_TYPE	The type of tablespace to which the table belongs. Possible values include System for the system tablespace, General for general tablespaces, and Single for file-per-table tablespaces. Tables assigned to the system tablespace using CREATE TABLE or ALTER TABLE TABLESPACE=innodb_system have a General SPACE_TYPE. For more information, see CREATE TABLESPACE.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-table.html
@@ -2979,6 +3320,24 @@ ALLOCATED_SIZE	The actual size of the file, which is the amount of space allocat
 SERVER_VERSION	Defines the MySQL version that created the tablespace, or the MySQL version into which the tablespace was imported, or the version of the last major MySQL version upgrade. The value is unchanged by a release series upgrade, such as an upgrade from MySQL 8.0.x to 8.0.y. The value can be considered a “creation” marker or “certified” marker for the tablespace. This column was added in MySQL 8.0.4.
 SPACE_VERSION	Defines the tablespace version, used to changes to the tablespace format. This column was added in MySQL 8.0.4.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-brief-table.html
 
@@ -2987,6 +3346,24 @@ NAME	The database and table name.
 PATH	The tablespace data file path. If a file-per-table tablespace is created in a location outside the MySQL data directory, the path value is a fully qualified directory path.
 FLAG	Bit-level data about tablespace format and storage characteristics.
 SPACE_TYPE	The type of tablespace. Possible values include General for InnoDB general tablespaces, Single for InnoDB file-per-table tablespaces, and System for the InnoDB system tablespace.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablestats-table.html
@@ -3001,12 +3378,48 @@ MODIFIED_COUNTER	The number of rows modified by DML operations, such as INSERT, 
 AUTOINC	The next number to be issued for any auto-increment-based operation. The rate at which the AUTOINC value changes depends on how many times auto-increment numbers have been requested and how many numbers are granted per request.
 REF_COUNT	When this counter reaches zero, the table metadata can be evicted from the table cache.
 
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
+
 # 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-virtual-table.html
 
 TABLE_ID	An identifier representing the table associated with the virtual column; the same value as INNODB_TABLES.TABLE_ID.
 POS	The position value of the virtual generated column. The value is large because it encodes the column sequence number and ordinal position. The formula used to calculate the value uses a bitwise operation. The formula is ((nth virtual generated column for the InnoDB instance + 1) << 16) + the ordinal position of the virtual generated column. For example, if the first virtual generated column in the InnoDB instance is the third column of the table, the formula is (0 + 1) << 16) + 2. The first virtual generated column in the InnoDB instance is always number 0. As the third column in the table, the ordinal position of the virtual generated column is 2. Ordinal positions are counted from 0.
 BASE_POS	The ordinal position of the columns upon which a virtual generated column is based.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-temp-table-info-table.html
@@ -3015,6 +3428,24 @@ TABLE_ID	The table ID of the active temporary table.
 NAME	The name of the active temporary table.
 N_COLS	The number of columns in the temporary table. The number always includes three hidden columns created by InnoDB (DB_ROW_ID, DB_TRX_ID, and DB_ROLL_PTR).
 SPACE	The tablespace identifier (a numerical value) for the tablespace where the temporary table resides. All InnoDB temporary tables reside in a shared temporary tablespace, as defined by innodb_temp_data_file_path. By default the shared temporary tablespace is named ibtmp1 and located in the data directory. The SPACE ID is always a non-zero value and is dynamically generated on server restart.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-trx-table.html
@@ -3043,6 +3474,24 @@ TRX_ADAPTIVE_HASH_LATCHED	Whether the adaptive hash index is locked by the curre
 TRX_ADAPTIVE_HASH_TIMEOUT	Whether to relinquish the search latch immediately for the adaptive hash index, or reserve it across calls from MySQL. When there is no adaptive hash index contention, this value remains zero and statements reserve the latch until they finish. During times of contention, it counts down to zero, and statements release the latch immediately after each row lookup. When the adaptive hash index search system is partitioned (controlled by innodb_adaptive_hash_index_parts), the value remains 0.
 TRX_IS_READ_ONLY	A value of 1 indicates the transaction is read only.
 TRX_AUTOCOMMIT_NON_LOCKING	A value of 1 indicates the transaction is a SELECT statement that does not use the FOR UPDATE or LOCK IN SHARED MODE clauses, and is executing with autocommit enabled so that the transaction will only contain this one statement. When this column and TRX_IS_READ_ONLY are both 1, InnoDB optimizes the transaction to reduce the overhead associated with transactions that change table data.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class mysql:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "";
+		 ];
+         ];
+.
+
 
 # 25.33 Connection-Control INFORMATION_SCHEMA Tables     
 # https://dev.mysql.com/doc/refman/8.0/en/connection-control-i_s-tables.html
