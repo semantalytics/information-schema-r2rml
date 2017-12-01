@@ -1,0 +1,3 @@
+https://sourceforge.net/projects/ora-info-schema/
+http://www.sqlite.org/cvstrac/wiki?p=InformationSchema
+https://db.apache.org/derby/docs/10.14/ref/rrefsistabs38369.html
