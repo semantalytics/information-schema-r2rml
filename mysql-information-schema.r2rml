@@ -3478,17 +3478,6 @@
 # 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-locks-table.html
 
-	ENGINE_LOCK_ID
-	ENGINE_TRANSACTION_ID
-	LOCK_MODE
-	LOCK_TYPE
- (combined schema/table names)	OBJECT_SCHEMA (schema name), OBJECT_NAME (table name)
-LOCK_INDEX	INDEX_NAME
-LOCK_SPACE	None
-LOCK_PAGE	None
-LOCK_REC	None
-LOCK_DATA	LOCK_DATA
-
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.INNODB_LOCKS"
@@ -3531,31 +3520,31 @@ LOCK_DATA	LOCK_DATA
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "LOCK_INDEX";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "LOCK_SPACE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "LOCK_PAGE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "LOCK_REC";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "LOCK_DATA";
 		 ];
          ];
 .
@@ -3722,7 +3711,7 @@ LOCK_DATA	LOCK_DATA
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_COLUMNS"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -3773,7 +3762,7 @@ LOCK_DATA	LOCK_DATA
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_DATAFILES"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -3799,7 +3788,7 @@ LOCK_DATA	LOCK_DATA
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_FIELDS"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -3832,7 +3821,7 @@ LOCK_DATA	LOCK_DATA
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_FOREIGN"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -3876,33 +3865,33 @@ LOCK_DATA	LOCK_DATA
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_FOREIGN_COLS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbForeignCol;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:id;
 		 rr:objectMap [
 		    rr:column "ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:forColName;
 		 rr:objectMap [
 		    rr:column "FOR_COL_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:refColName;
 		 rr:objectMap [
 		    rr:column "REF_COL_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pos;
 		 rr:objectMap [
 		    rr:column "POS";
 		 ];
@@ -3912,293 +3901,253 @@ LOCK_DATA	LOCK_DATA
 # 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-indexes-table.html
 
-INDEX_ID	An identifier for each index that is unique across all the databases in an instance.
-NAME	The name of the index. Most indexes created implicitly by InnoDB have consistent names but the index names are not necessarily unique. For example, PRIMARY for a primary key index, GEN_CLUST_INDEX for the index representing a primary key when one is not specified, and ID_IND, FOR_IND, and REF_IND for foreign key constraints.
-TABLE_ID	An identifier representing the table associated with the index; the same value from INNODB_TABLES.TABLE_ID.
-TYPE	A numeric identifier signifying the kind of index. 0 = Secondary Index, 1 = Clustered Index, 2 = Unique Index, 3 = Primary Index, 32 = Full-text Index, 64 = Spatial Index, 128 = A secondary index that includes a virtual generated column.
-N_FIELDS	The number of columns in the index key. For the GEN_CLUST_INDEX indexes, this value is 0 because the index is created using an artificial value rather than a real table column.
-PAGE_NO	The root page number of the index B-tree. For full-text indexes, the PAGE_NO field is unused and set to -1 (FIL_NULL) because the full-text index is laid out in several B-trees (auxiliary tables).
-SPACE	An identifier for the tablespace where the index resides. 0 means the InnoDB system tablespace. Any other number represents a table created in file-per-table mode with a separate .ibd file. This identifier stays the same after a TRUNCATE TABLE statement. Because all indexes for a table reside in the same tablespace as the table, this value is not necessarily unique.
-MERGE_THRESHOLD	The merge threshold value for index pages. If the amount of data in an index page falls below the MERGE_THRESHOLD value when a row is deleted or when a row is shortened by an update operation, InnoDB attempts to merge the index page with the neighboring index page. The default threshold value is 50%. For more information, see Section 15.6.12, “Configuring the Merge Threshold for Index Pages”.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_INDEXES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbIndex;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:indexId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "INDEX_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:name;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:type;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:nfields;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "N_FIELDS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pageNo;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "PAGE_NO";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:space;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:mergeThreshold;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "MERGE_THRESHOLD";
 		 ];
          ];
 .
-
 
 # 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tables-table.html
 
-TABLE_ID	An identifier for each InnoDB table that is unique across all databases in the instance.
-NAME	The name of the table. Preceded by the database name where appropriate, for example test/t1. Names of databases and user tables are in the same case as they were originally defined, possibly influenced by the lower_case_table_names setting.
-FLAG	Bit-level data about table format and storage characteristics including row format, compressed page size (if applicable), and whether or not the DATA DIRECTORY clause was used with CREATE TABLE or ALTER TABLE.
-N_COLS	The number of columns in the table. The number reported includes three hidden columns that are created by InnoDB (DB_ROW_ID, DB_TRX_ID, and DB_ROLL_PTR). The number reported also includes virtual generated columns, if present.
-SPACE	An identifier for the tablespace where the table resides. 0 means the InnoDB system tablespace. Any other number represents either a file-per-table tablespace or a general tablespace. This identifier stays the same after a TRUNCATE TABLE statement. For file-per-table tablespaces, this identifier is unique for tables across all databases in the instance.
-ROW_FORMAT	The table's row format (Compact, Redundant, Dynamic, or Compressed).
-ZIP_PAGE_SIZE	The zip page size. Only applies to tables that use the Compressed row format.
-SPACE_TYPE	The type of tablespace to which the table belongs. Possible values include System for the system tablespace, General for general tablespaces, and Single for file-per-table tablespaces. Tables assigned to the system tablespace using CREATE TABLE or ALTER TABLE TABLESPACE=innodb_system have a General SPACE_TYPE. For more information, see CREATE TABLESPACE.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_TABLES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbTable;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:name;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:flag;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "FLAG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:nCols;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "N_COLS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:space;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:rowFormat;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ROW_FORMAT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:zipPageSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ZIP_PAGE_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:spaceType;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE_TYPE";
 		 ];
          ];
 .
-
 
 # 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-table.html
 
-SPACE	Tablespace Space ID.
-NAME	The database and table name.
-FLAG	Bit-level data about tablespace format and storage characteristics.
-ROW_FORMAT	The tablespace row format (Compact or Redundant, Dynamic, or Compressed). The data in this field is interpreted from the tablespace flags information that resides in the .ibd file.
-PAGE_SIZE	The tablespace page size. The data in this field is interpreted from the tablespace flags information that resides in the .ibd file.
-ZIP_PAGE_SIZE	The tablespace zip page size. The data in this field is interpreted from the tablespace flags information that resides in the .ibd file.
-SPACE_TYPE	The type of tablespace. Possible values include General for general tablespaces, Single for file-per-table tablespaces, and System for the system tablespace.
-FS_BLOCK_SIZE	The file system block size, which is the unit size used for hole punching. This column was added with the introduction of the InnoDB transparent page compression feature.
-FILE_SIZE	The apparent size of the file, which represents the maximum size of the file, uncompressed. This column was added with the introduction of the InnoDB transparent page compression feature.
-ALLOCATED_SIZE	The actual size of the file, which is the amount of space allocated on disk. This column was added with the introduction of the InnoDB transparent page compression feature.
-SERVER_VERSION	Defines the MySQL version that created the tablespace, or the MySQL version into which the tablespace was imported, or the version of the last major MySQL version upgrade. The value is unchanged by a release series upgrade, such as an upgrade from MySQL 8.0.x to 8.0.y. The value can be considered a “creation” marker or “certified” marker for the tablespace. This column was added in MySQL 8.0.4.
-SPACE_VERSION	Defines the tablespace version, used to changes to the tablespace format. This column was added in MySQL 8.0.4.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_TABLESPACES"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbTablespace;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:space;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:name;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:flag;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "FLAG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:rowFormat;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ROW_FORMAT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:pageSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "PAGE_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:zipPageSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ZIP_PAGE_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:spaceType;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:fsBlockSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "FS_BLOCK_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:fileSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "FILE_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:allocatedSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ALLOCATED_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:serverVersion;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SERVER_VERSION";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:spaceVersion;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE_VERSION";
 		 ];
          ];
 .
 
-
 # 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-brief-table.html
 
-SPACE	Tablespace Space ID.
-NAME	The database and table name.
-PATH	The tablespace data file path. If a file-per-table tablespace is created in a location outside the MySQL data directory, the path value is a fully qualified directory path.
-FLAG	Bit-level data about tablespace format and storage characteristics.
-SPACE_TYPE	The type of tablespace. Possible values include General for InnoDB general tablespaces, Single for InnoDB file-per-table tablespaces, and System for the InnoDB system tablespace.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_TABLESPACES_BRIEF"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbTablespaceBrief;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:space;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:name;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:path;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "PATH";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:flag;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "FLAG";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:spaceType;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE_TYPE";
 		 ];
          ];
 .
@@ -4207,114 +4156,99 @@ SPACE_TYPE	The type of tablespace. Possible values include General for InnoDB ge
 # 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablestats-table.html
 
-TABLE_ID	An identifier representing the table for which statistics are available, using the same value as INNODB_TABLES.TABLE_ID.
-NAME	The name of the table, using the same value as INNODB_TABLES.NAME.
-STATS_INITIALIZED	The value is Initialized if the statistics are already collected, Uninitialized if not.
-NUM_ROWS	The current estimated number of rows in the table. Updated after each DML operation. Could be imprecise if uncommitted transactions are inserting into or deleting from the table.
-CLUST_INDEX_SIZE	Number of pages on disk that store the clustered index, which holds the InnoDB table data in primary key order. This value might be null if no statistics are collected yet for the table.
-OTHER_INDEX_SIZE	Number of pages on disk that store all secondary indexes for the table. This value might be null if no statistics are collected yet for the table.
-MODIFIED_COUNTER	The number of rows modified by DML operations, such as INSERT, UPDATE, DELETE, and also cascade operations from foreign keys. This column is reset each time table statistics are recalculated
-AUTOINC	The next number to be issued for any auto-increment-based operation. The rate at which the AUTOINC value changes depends on how many times auto-increment numbers have been requested and how many numbers are granted per request.
-REF_COUNT	When this counter reaches zero, the table metadata can be evicted from the table cache.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_TABLESTATS"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbTablestat;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:name;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NAME";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:statsInitialized;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "STATS_INITIALIZED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numRows;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NUM_ROWS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:clustIndexSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "CLUST_INDEX_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:otherIndexSize;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "OTHER_INDEX_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:modifiedCounter;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "MODIFIED_COUNTER";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:autoinc;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "AUTOINC";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:refCount;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "REF_COUNT";
 		 ];
          ];
 .
 
-
 # 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-virtual-table.html
 
-TABLE_ID	An identifier representing the table associated with the virtual column; the same value as INNODB_TABLES.TABLE_ID.
-POS	The position value of the virtual generated column. The value is large because it encodes the column sequence number and ordinal position. The formula used to calculate the value uses a bitwise operation. The formula is ((nth virtual generated column for the InnoDB instance + 1) << 16) + the ordinal position of the virtual generated column. For example, if the first virtual generated column in the InnoDB instance is the third column of the table, the formula is (0 + 1) << 16) + 2. The first virtual generated column in the InnoDB instance is always number 0. As the third column in the table, the ordinal position of the virtual generated column is 2. Ordinal positions are counted from 0.
-BASE_POS	The ordinal position of the columns upon which a virtual generated column is based.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_VIRTUAL"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbVirtual;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_ID";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "POS";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "BASE_POS";
 		 ];
          ];
 .
@@ -4323,14 +4257,9 @@ BASE_POS	The ordinal position of the columns upon which a virtual generated colu
 # 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-temp-table-info-table.html
 
-TABLE_ID	The table ID of the active temporary table.
-NAME	The name of the active temporary table.
-N_COLS	The number of columns in the temporary table. The number always includes three hidden columns created by InnoDB (DB_ROW_ID, DB_TRX_ID, and DB_ROLL_PTR).
-SPACE	The tablespace identifier (a numerical value) for the tablespace where the temporary table resides. All InnoDB temporary tables reside in a shared temporary tablespace, as defined by innodb_temp_data_file_path. By default the shared temporary tablespace is named ibtmp1 and located in the data directory. The SPACE ID is always a non-zero value and is dynamically generated on server restart.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_TEMP_TABLE_INFO"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -4340,197 +4269,177 @@ SPACE	The tablespace identifier (a numerical value) for the tablespace where the
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_ID";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "N_COLS";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SPACE";
 		 ];
          ];
 .
 
-
 # 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-trx-table.html
 
-TRX_ID	Unique transaction ID number, internal to InnoDB. These IDs are not created for transactions that are read only and nonlocking. See Section 8.5.3, “Optimizing InnoDB Read-Only Transactions” for details.
-TRX_WEIGHT	The weight of a transaction, reflecting (but not necessarily the exact count of) the number of rows altered and the number of rows locked by the transaction. To resolve a deadlock, InnoDB selects the transaction with the smallest weight as the “victim” to roll back. Transactions that have changed non-transactional tables are considered heavier than others, regardless of the number of altered and locked rows.
-TRX_STATE	Transaction execution state. Permitted values are RUNNING, LOCK WAIT, ROLLING BACK, and COMMITTING.
-TRX_STARTED	Transaction start time.
-TRX_REQUESTED_LOCK_ID	ID of the lock the transaction is currently waiting for, if TRX_STATE is LOCK WAIT; otherwise NULL. To obtain details about the lock, join this column with the ENGINE_LOCK_ID column of the Performance Schema data_locks table.
-TRX_WAIT_STARTED	Time when the transaction started waiting on the lock, if TRX_STATE is LOCK WAIT; otherwise NULL.
-TRX_MYSQL_THREAD_ID	MySQL thread ID. To obtain details about the thread, join this column with the ID column of the PROCESSLIST table, but see Section 15.14.2.3, “Persistence and Consistency of InnoDB Transaction and Locking Information”.
-TRX_QUERY	The SQL statement that is being executed by the transaction.
-TRX_OPERATION_STATE	The transaction's current operation, if any; otherwise NULL.
-TRX_TABLES_IN_USE	The number of InnoDB tables used while processing the current SQL statement of this transaction.
-TRX_TABLES_LOCKED	Number of InnoDB tables that the current SQL statement has row locks on. (Because these are row locks, not table locks, the tables can usually still be read from and written to by multiple transactions, despite some rows being locked.)
-TRX_LOCK_STRUCTS	The number of locks reserved by the transaction.
-TRX_LOCK_MEMORY_BYTES	Total size taken up by the lock structures of this transaction in memory.
-TRX_ROWS_LOCKED	Approximate number or rows locked by this transaction. The value might include delete-marked rows that are physically present but not visible to the transaction.
-TRX_ROWS_MODIFIED	The number of modified and inserted rows in this transaction.
-TRX_CONCURRENCY_TICKETS	A value indicating how much work the current transaction can do before being swapped out, as specified by the innodb_concurrency_tickets system variable.
-TRX_ISOLATION_LEVEL	The isolation level of the current transaction.
-TRX_UNIQUE_CHECKS	Whether unique checks are turned on or off for the current transaction. For example, they might be turned off during a bulk data load.
-TRX_FOREIGN_KEY_CHECKS	Whether foreign key checks are turned on or off for the current transaction. For example, they might be turned off during a bulk data load.
-TRX_LAST_FOREIGN_KEY_ERROR	Detailed error message for the last foreign key error, if any; otherwise NULL.
-TRX_ADAPTIVE_HASH_LATCHED	Whether the adaptive hash index is locked by the current transaction. When the adaptive hash index search system is partitioned, a single transaction does not lock the entire adaptive hash index. Adaptive hash index partitioning is controlled by innodb_adaptive_hash_index_parts, which is set to 8 by default.
-TRX_ADAPTIVE_HASH_TIMEOUT	Whether to relinquish the search latch immediately for the adaptive hash index, or reserve it across calls from MySQL. When there is no adaptive hash index contention, this value remains zero and statements reserve the latch until they finish. During times of contention, it counts down to zero, and statements release the latch immediately after each row lookup. When the adaptive hash index search system is partitioned (controlled by innodb_adaptive_hash_index_parts), the value remains 0.
-TRX_IS_READ_ONLY	A value of 1 indicates the transaction is read only.
-TRX_AUTOCOMMIT_NON_LOCKING	A value of 1 indicates the transaction is a SELECT statement that does not use the FOR UPDATE or LOCK IN SHARED MODE clauses, and is executing with autocommit enabled so that the transaction will only contain this one statement. When this column and TRX_IS_READ_ONLY are both 1, InnoDB optimizes the transaction to reduce the overhead associated with transactions that change table data.
-
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.INNODB_TRX"
          ];
          rr:subjectMap [
-            rr:class mysql:;
+            rr:class mysql:InnodbTrx;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxWeight;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_WEIGHT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxState;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_STATE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxStarted;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_STARTED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxRequestedLockId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_REQUESTED_LOCK_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxWaitStarted;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_WAIT_STARTED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxMysqlThreadId;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_MYSQL_THREAD_ID";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxQuery;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_QUERY";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxOperationState;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_OPERATION_STATE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxTablesInUse;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_TABLES_IN_USE";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxTAblesLocked;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_TABLES_LOCKED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxLockStructs;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_LOCK_STRUCTS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxLockMemoryBytes;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_LOCK_MEMORY_BYTES";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxRowsLocked;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_ROWS_LOCKED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxRowsModified;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_ROWS_MODIFIED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxConcurrencyTickets;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_CONCURRENCY_TICKETS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxUniqueChecks;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_UNIQUE_CHECKS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxForeignKeyChecks;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_FOREIGN_KEY_CHECKS";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxLastForeignKeyError;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_LAST_FOREIGN_KEY_ERROR";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxAdaptiveHashLatched;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_ADAPTIVE_HASH_LATCHED";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxAdaptiveHashTimeout;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_ADAPTIVE_HASH_TIMEOUT";
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:;
+            rr:predicate mysql:trxIsReadOnly;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TRX_IS_READ_ONLY";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:trxAutocommitNonLocking;
+		 rr:objectMap [
+		    rr:column "TRX_AUTOCOMMIT_NON_LOCKING";
 		 ];
          ];
 .
