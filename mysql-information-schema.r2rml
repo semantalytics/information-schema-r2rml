@@ -1604,8 +1604,6 @@
 # 25.19 The INFORMATION_SCHEMA ROUTINES Table
 # https://dev.mysql.com/doc/refman/8.0/en/routines-table.html
 
-
-
 <#routinesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.ROUTINES"
@@ -1859,7 +1857,6 @@
          ];
 .
 
-
 # 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
 # https://dev.mysql.com/doc/refman/8.0/en/schema-privileges-table.html
 
@@ -2024,35 +2021,9 @@
 # 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
 # https://dev.mysql.com/doc/refman/8.0/en/st-geometry-columns-table.html
 
- TABLE_CATALOG
-
-The COLUMNS.TABLE_CATALOG value.
-
-TABLE_SCHEMA
-
-The COLUMNS.TABLE_SCHEMA value.
-
-TABLE_NAME
-
-The COLUMNS.TABLE_NAME value.
-
-COLUMN_NAME
-
-The COLUMNS.TABLE_COLUMN_NAME value.
-
-SRS_NAME
-
-The spatial reference system (SRS) name.
-
-SRS_ID
-
-The spatial reference system ID (SRID).
-
-GEOMETRY_TYPE_NAME 
-
 <#stGeometryComumnsMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.ST_GEOMETRY_COLUMNS"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -2062,60 +2033,53 @@ GEOMETRY_TYPE_NAME
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "COLUMN_NAME";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "SRS_NAME";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "SRS_ID";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "GEOMETRY_TYPE_NAME";
 		 ];
          ];
 .
-
 
 # 25.24 The INFORMATION_SCHEMA ST_SPATIAL_REFERENCE_SYSTEMS Table
 # https://dev.mysql.com/doc/refman/8.0/en/st-spatial-reference-systems-table.html
 
- SRS_NAME
-
-The spatial reference system name. This value is unique.
-
-SRS_ID
-
-The spatial reference system numeric ID. This value is unique.
-
-SRS_ID values represent the same kind of values passed as the SRID argument to spatial functions.
-
-ORGANIZATION
-
-The name of the organization that defined the coordinate system on which the spatial reference system is based.
-
-ORGANIZATION_COORDSYS_ID
-
-The numeric ID given to the spatial reference system by the organization that defined it.
-
-DEFINITION
-
-The spatial reference system definition, as a WKT value.
-
-DESCRIPTION 
-
 <#stSpatialReferenceSystemsMap>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.ST_SPATIAL_REFERENCE_SYSTEMS"
          ];
          rr:subjectMap [
             rr:class mysql:;
@@ -2125,34 +2089,43 @@ DESCRIPTION
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SRS_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "SRS_ID";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ORGANIZATION";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ORGANIZATION_COORDSYS_ID";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "DEFINITION";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "DESCRIPTION";
 		 ];
          ];
 .
 
-
 # 25.25 The INFORMATION_SCHEMA TABLES Table
 # https://dev.mysql.com/doc/refman/8.0/en/tables-table.html
-
-
 
 <#tablesMap>
          rr:logicalTable [
@@ -2291,155 +2264,8 @@ DESCRIPTION
          ];
 .
 
-<#TablesMap>
-         rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA.TABLES"
-         ];
-         rr:subjectMap [
-            rr:class mysql:Table;
-            rr:template rr:BlankNode;
-
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableCatalog;
-            rr:objectMap [
-                rr:column "TABLE_CATALOG";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableSchema;
-            rr:objectMap [
-                rr:column "TABLE_SCHEMA";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableName;
-            rr:objectMap [
-                rr:column "TABLE_NAME";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableType;
-            rr:objectMap [
-                rr:column "TABLE_TYPE";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableEngine;
-            rr:objectMap [
-                rr:column "TABLE_ENGINE";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableVersion;
-            rr:objectMap [
-                rr:column "TABLE_VERSION";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:rowFormat;
-            rr:objectMap [
-                rr:column "ROW_FORMAT";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:checksum;
-            rr:objectMap [
-                rr:column "CHECKSUM";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:createOptions;
-            rr:objectMap [
-                rr:column "CREATE_OPTIONS";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableComment;
-            rr:objectMap [
-                rr:column "TABLE_COMMENT";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableCollation;
-            rr:objectMap [
-                rr:column "TABLE_COLLATION";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:checkTime;
-            rr:objectMap [
-                rr:column "CHECK_TIME";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:updateTime;
-            rr:objectMap [
-                rr:column "UPDATE_TIME";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:createTime;
-            rr:objectMap [
-                rr:column "CREATE_TIME";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:autoIncrement;
-            rr:objectMap [
-                rr:column "AUTO_INCREMENT";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:dateFree;
-            rr:objectMap [
-                rr:column "DATA_FREE";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:indexLength;
-            rr:objectMap [
-                rr:column "INDEX_LENGTH";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:maxDataLength;
-            rr:objectMap [
-                rr:column "MAX_DATA_LENGTH";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:dataLength;
-            rr:objectMap [
-                rr:column "DATA_LENGTH";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:averageRowLength;
-            rr:objectMap [
-                rr:column "AVG_ROW_LENGTH";
-            ];
-         ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:tableRows;
-            rr:objectMap [
-                rr:column "TABLE_ROWS";
-            ];
-         ];
-.
-
 # 25.26 The INFORMATION_SCHEMA TABLESPACES Table
 # https://dev.mysql.com/doc/refman/8.0/en/tablespaces-table.html
-
-TABLESPACE_NAME	 	MySQL extension
-ENGINE	 	MySQL extension
-TABLESPACE_TYPE	 	MySQL extension
-LOGFILE_GROUP_NAME	 	MySQL extension
-EXTENT_SIZE	 	MySQL extension
-AUTOEXTEND_SIZE	 	MySQL extension
-MAXIMUM_SIZE	 	MySQL extension
-NODEGROUP_ID	 	MySQL extension
-TABLESPACE_COMMENT	 	MySQL extension
 
 <#tableSpacesMap>
          rr:logicalTable [
@@ -2453,74 +2279,61 @@ TABLESPACE_COMMENT	 	MySQL extension
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLESPACE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "ENGINE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLESPACE_TYPE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "LOGFILE_GROUP_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "EXTENT_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "AUTOEXTEND_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "MAXIMUM_SIZE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "NODEGROUP_ID";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
-		 ];
-         ];
-         rr:predicateobjectmap [
-            rr:predicate mysql:;
-		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLESPACE_COMMENT";
 		 ];
          ];
 .
 
 # 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
 # https://dev.mysql.com/doc/refman/8.0/en/table-constraints-table.html
-
-CONSTRAINT_CATALOG	 	def
-CONSTRAINT_SCHEMA	 	 
-CONSTRAINT_NAME	 	 
-TABLE_SCHEMA	 	 
-TABLE_NAME	 	 
-CONSTRAINT_TYPE	 	 
 
 <#tableConstraintsMap>
          rr:logicalTable [
@@ -2533,50 +2346,43 @@ CONSTRAINT_TYPE
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "CONSTRAINT_CATALOG";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "CONSTRAINT_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "CONSTRAINT_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_SCHEMA";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_NAME";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "CONSTRAINT_TYPE";
 		 ];
          ];
 .
 
 # 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
 # https://dev.mysql.com/doc/refman/8.0/en/table-privileges-table.html
-
-GRANTEE	 	'user_name'@'host_name' value
-TABLE_CATALOG	 	def
-TABLE_SCHEMA	 	 
-TABLE_NAME	 	 
-PRIVILEGE_TYPE	 	 
-IS_GRANTABLE	 
 
 <#tablePrivelegesMap>
          rr:logicalTable [
@@ -2589,13 +2395,37 @@ IS_GRANTABLE
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "GRANTEE";
 		 ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:;
 		 rr:objectMap [
-		    rr:column "";
+		    rr:column "TABLE_CATALOG";
+		 ];
+         ];
+	          rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "TABLE_SCHEMA";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "TABLE_NAME";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "PRIVILEGE_TYPE";
+		 ];
+         ];
+         rr:predicateobjectmap [
+            rr:predicate mysql:;
+		 rr:objectMap [
+		    rr:column "IS_GRANTABLE";
 		 ];
          ];
 .
@@ -2859,35 +2689,91 @@ IS_GRANTABLE
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-i_s-tables.html
 
 # 25.32.1 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE Table
-# 25.32.2 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE_LRU Table
-# 25.32.3 The INFORMATION_SCHEMA INNODB_BUFFER_POOL_STATS Table
-# 25.32.4 The INFORMATION_SCHEMA INNODB_CACHED_INDEXES Table
-# 25.32.5 The INFORMATION_SCHEMA INNODB_CMP and INNODB_CMP_RESET Tables
-# 25.32.6 The INFORMATION_SCHEMA INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
-# 25.32.7 The INFORMATION_SCHEMA INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
-# 25.32.8 The INFORMATION_SCHEMA INNODB_FT_BEING_DELETED Table
-# 25.32.9 The INFORMATION_SCHEMA INNODB_FT_CONFIG Table
-# 25.32.10 The INFORMATION_SCHEMA INNODB_FT_DEFAULT_STOPWORD Table
-# 25.32.11 The INFORMATION_SCHEMA INNODB_FT_DELETED Table
-# 25.32.12 The INFORMATION_SCHEMA INNODB_FT_INDEX_CACHE Table
-# 25.32.13 The INFORMATION_SCHEMA INNODB_FT_INDEX_TABLE Table
-# 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
-# 25.32.15 The INFORMATION_SCHEMA INNODB_LOCK_WAITS Table
-# 25.32.16 The INFORMATION_SCHEMA INNODB_METRICS Table
-# 25.32.17 The INFORMATION_SCHEMA INNODB_COLUMNS Table
-# 25.32.18 The INFORMATION_SCHEMA INNODB_DATAFILES Table
-# 25.32.19 The INFORMATION_SCHEMA INNODB_FIELDS Table
-# 25.32.20 The INFORMATION_SCHEMA INNODB_FOREIGN Table
-# 25.32.21 The INFORMATION_SCHEMA INNODB_FOREIGN_COLS Table
-# 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
-# 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
-# 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
-# 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
-# 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
-# 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
-# 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
-# 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-page-table.html
 
+# 25.32.2 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE_LRU Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-page-lru-table.html
+
+# 25.32.3 The INFORMATION_SCHEMA INNODB_BUFFER_POOL_STATS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-stats-table.html
+
+# 25.32.4 The INFORMATION_SCHEMA INNODB_CACHED_INDEXES Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-cached-indexes-table.html
+
+# 25.32.5 The INFORMATION_SCHEMA INNODB_CMP and INNODB_CMP_RESET Tables
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-cmp-table.html
+
+# 25.32.6 The INFORMATION_SCHEMA INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-cmpmem-table.html
+
+# 25.32.7 The INFORMATION_SCHEMA INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-cmp-per-index-table.html
+
+# 25.32.8 The INFORMATION_SCHEMA INNODB_FT_BEING_DELETED Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-being-deleted-table.html
+
+# 25.32.9 The INFORMATION_SCHEMA INNODB_FT_CONFIG Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-config-table.html
+
+# 25.32.10 The INFORMATION_SCHEMA INNODB_FT_DEFAULT_STOPWORD Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-default-stopword-table.html
+
+# 25.32.11 The INFORMATION_SCHEMA INNODB_FT_DELETED Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-deleted-table.html
+
+# 25.32.12 The INFORMATION_SCHEMA INNODB_FT_INDEX_CACHE Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-index-cache-table.html
+
+# 25.32.13 The INFORMATION_SCHEMA INNODB_FT_INDEX_TABLE Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-index-table-table.html
+
+# 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-locks-table.html
+
+# 25.32.15 The INFORMATION_SCHEMA INNODB_LOCK_WAITS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-lock-waits-table.html
+
+# 25.32.16 The INFORMATION_SCHEMA INNODB_METRICS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-metrics-table.html
+
+# 25.32.17 The INFORMATION_SCHEMA INNODB_COLUMNS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-columns-table.html
+
+# 25.32.18 The INFORMATION_SCHEMA INNODB_DATAFILES Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-datafiles-table.html
+
+# 25.32.19 The INFORMATION_SCHEMA INNODB_FIELDS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-fields-table.html
+
+# 25.32.20 The INFORMATION_SCHEMA INNODB_FOREIGN Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-foreign-table.html
+
+# 25.32.21 The INFORMATION_SCHEMA INNODB_FOREIGN_COLS Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-foreign-cols-table.html
+
+# 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-indexes-table.html
+
+# 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-tables-table.html
+
+# 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-table.html
+
+# 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-brief-table.html
+
+# 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-tablestats-table.html
+
+# 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-virtual-table.html
+
+# 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-temp-table-info-table.html
+
+# 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
+# https://dev.mysql.com/doc/refman/8.0/en/innodb-trx-table.html
 
 # 25.33 Connection-Control INFORMATION_SCHEMA Tables     
 # https://dev.mysql.com/doc/refman/8.0/en/connection-control-i_s-tables.html
