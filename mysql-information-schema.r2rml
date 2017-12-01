@@ -2691,89 +2691,358 @@
 # 25.32.1 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-page-table.html
 
+POOL_ID
+BLOCK_ID
+SPACE
+PAGE_NUMBER
+PAGE_TYPE
+FLUSH_TYPE
+FIX_COUNT
+IS_HASHED
+NEWEST_MODIFICATION
+OLDEST_MODIFICATION
+ACCESS_TIME
+TABLE_NAME
+INDEX_NAME
+NUMBER_RECORDS
+DATA_SIZE
+COMPRESSED_SIZE
+PAGE_STATE
+IO_FIX
+IS_OLD
+FREE_PAGE_CLOCK
+
 # 25.32.2 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE_LRU Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-page-lru-table.html
+
+Column name	Description
+POOL_ID	Buffer Pool ID. An identifier to distinguish between multiple buffer pool instances.
+LRU_POSITION	The position of the page in the LRU list.
+SPACE	Tablespace ID. Uses the same value as in INNODB_TABLES.SPACE.
+PAGE_NUMBER	Page number.
+PAGE_TYPE	Page type. Permitted values are: ALLOCATED (Freshly allocated page), INDEX (B-tree node), UNDO_LOG (Undo log page), INODE (Index node), IBUF_FREE_LIST (Insert buffer free list), IBUF_BITMAP (Insert buffer bitmap), SYSTEM (System page), TRX_SYSTEM (Transaction system data), FILE_SPACE_HEADER (File space header), EXTENT_DESCRIPTOR (Extent descriptor page), BLOB (Uncompressed BLOB page), COMPRESSED_BLOB (First compressed BLOB page), COMPRESSED_BLOB2 (Subsequent comp BLOB page), IBUF_INDEX (Insert buffer index), RTREE_INDEX (R-tree index), SDI_INDEX (SDI index), SDI_BLOB (Uncompressed SDI BLOB), SDI_COMPRESSED_BLOB (Compressed SDI BLOB), UNKNOWN (Unknown), PAGE_IO_COMPRESSED (Compressed page), PAGE_IO_ENCRYPTED (Encrypted page), PAGE_IO_COMPRESSED_ENCRYPTED (Compressed and encrypted page), ENCRYPTED_RTREE (Encrypted R-tree), FIL_PAGE_TYPE_UNUSED (Unused), RSEG_ARRAY (Rollback segment array), LOB INDEX (Uncompressed LOB index), LOB_DATA (Uncompressed LOB data), LOB_FIRST (First page of uncompressed LOB), ZLOB_FIRST (First page of compressed LOB), ZLOB_DATA (Compressed LOB data), ZLOB_INDEX (Compressed LOB index), ZLOB_FRAG (Compressed LOB fragment), ZLOB_FRAG_ENTRY (Compressed LOB fragment index).
+FLUSH_TYPE	Flush type.
+FIX_COUNT	Number of threads using this block within the buffer pool. When zero, the block is eligible to be evicted.
+IS_HASHED	Whether hash index has been built on this page.
+NEWEST_MODIFICATION	Log Sequence Number of the youngest modification.
+OLDEST_MODIFICATION	Log Sequence Number of the oldest modification.
+ACCESS_TIME	An abstract number used to judge the first access time of the page.
+TABLE_NAME	Name of the table the page belongs to. This column is only applicable to pages of type INDEX.
+INDEX_NAME	Name of the index the page belongs to. It can be the name of a clustered index or a secondary index. This column is only applicable to pages of type INDEX.
+NUMBER_RECORDS	Number of records within the page.
+DATA_SIZE	Sum of the sizes of the records. This column is only applicable to pages of type INDEX.
+COMPRESSED_SIZE	Compressed page size. Null for pages that are not compressed.
+PAGE_STATE	Page state. Possible values include: NULL (clean compressed pages, compressed pages in the flush list, pages used as buffer pool watch sentinels), NOT_USED (in the free list), READY_FOR_USE (a free page), FILE_PAGE (a buffered file page), MEMORY (contains a main memory object), REMOVE_HASH (hash index should be removed before placing in the free list).
+IO_FIX	Specifies whether any I/O is pending for this page: IO_NONE = no pending I/O, IO_READ = read pending, IO_WRITE = write pending.
+IS_OLD	Specifies whether or not the block is in the sublist of old blocks in the LRU list.
+FREE_PAGE_CLOCK	The value of the freed_page_clock counter when the block was the last placed at the head of the LRU list. The freed_page_clock counter tracks the number of blocks removed from the end of the LRU list.
 
 # 25.32.3 The INFORMATION_SCHEMA INNODB_BUFFER_POOL_STATS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-buffer-pool-stats-table.html
 
+POOL_ID	Buffer Pool ID. A unique identifier to distinguish between multiple buffer pool instances.
+POOL_SIZE	The InnoDB buffer pool size in pages.
+FREE_BUFFERS	The number of free pages in the InnoDB buffer pool
+DATABASE_PAGES	The number of pages in the InnoDB buffer pool containing data. The number includes both dirty and clean pages.
+OLD_DATABASE_PAGES	The number of pages in the old buffer pool sublist.
+MODIFIED_DATABASE_PAGES	The number of modified (dirty) database pages
+PENDING_DECOMPRESS	The number of pages pending decompression
+PENDING_READS	The number of pending reads
+PENDING_FLUSH_LRU	The number of pages pending flush in the LRU
+PENDING_FLUSH_LIST	The number of pages pending flush in the flush list
+PAGES_MADE_YOUNG	The number of pages made young
+PAGES_NOT_MADE_YOUNG	The number of pages not made young
+PAGES_MADE_YOUNG_RATE	The number of pages made young per second (pages made young since the last printout / time elapsed)
+PAGES_MADE_NOT_YOUNG_RATE	The number of pages not made per second (pages not made young since the last printout / time elapsed)
+NUMBER_PAGES_READ	The number of pages read
+NUMBER_PAGES_CREATED	The number of pages created
+NUMBER_PAGES_WRITTEN	The number of pages written
+PAGES_READ_RATE	The number of pages read per second (pages read since the last printout / time elapsed)
+PAGES_CREATE_RATE	The number of pages created per second (pages created since the last printout / time elapsed)
+PAGES_WRITTEN_RATE	The number of pages written per second (pages written since the last printout / time elapsed)
+NUMBER_PAGES_GET	The number of logical read requests.
+HIT_RATE	The buffer pool hit rate
+YOUNG_MAKE_PER_THOUSAND_GETS	The number of pages made young per thousand gets
+NOT_YOUNG_MAKE_PER_THOUSAND_GETS	The number of pages not made young per thousand gets
+NUMBER_PAGES_READ_AHEAD	The number of pages read ahead
+NUMBER_READ_AHEAD_EVICTED	The number of pages read into the InnoDB buffer pool by the read-ahead background thread that were subsequently evicted without having been accessed by queries.
+READ_AHEAD_RATE	The read ahead rate per second (pages read ahead since the last printout / time elapsed)
+READ_AHEAD_EVICTED_RATE	The number of read ahead pages evicted without access per second (read ahead pages not accessed since the last printout / time elapsed)
+LRU_IO_TOTAL	LRU IO total
+LRU_IO_CURRENT	LRU IO for the current interval
+UNCOMPRESS_TOTAL	Total number of pages decompressed
+UNCOMPRESS_CURRENT	The number of pages decompressed in the current interval
+
 # 25.32.4 The INFORMATION_SCHEMA INNODB_CACHED_INDEXES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cached-indexes-table.html
+
+SPACE_ID	Tablespace Space ID.
+INDEX_ID	An identifier for each index that is unique across all the databases in an instance.
+N_CACHED_PAGES	The number of index pages cached in the InnoDB buffer pool.
 
 # 25.32.5 The INFORMATION_SCHEMA INNODB_CMP and INNODB_CMP_RESET Tables
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cmp-table.html
 
+PAGE_SIZE	Compressed page size in bytes.
+COMPRESS_OPS	Number of times a B-tree page of the size PAGE_SIZE has been compressed. Pages are compressed whenever an empty page is created or the space for the uncompressed modification log runs out.
+COMPRESS_OPS_OK	Number of times a B-tree page of the size PAGE_SIZE has been successfully compressed. This count should never exceed COMPRESS_OPS.
+COMPRESS_TIME	Total time in seconds spent in attempts to compress B-tree pages of the size PAGE_SIZE.
+UNCOMPRESS_OPS	Number of times a B-tree page of the size PAGE_SIZE has been uncompressed. B-tree pages are uncompressed whenever compression fails or at first access when the uncompressed page does not exist in the buffer pool.
+UNCOMPRESS_TIME	Total time in seconds spent in uncompressing B-tree pages of the size PAGE_SIZE.
+
 # 25.32.6 The INFORMATION_SCHEMA INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cmpmem-table.html
+
+PAGE_SIZE	Block size in bytes. Each record of this table describes blocks of this size.
+BUFFER_POOL_INSTANCE	A unique identifier for the buffer pool instance.
+PAGES_USED	Number of blocks of the size PAGE_SIZE that are currently in use.
+PAGES_FREE	Number of blocks of the size PAGE_SIZE that are currently available for allocation. This column shows the external fragmentation in the memory pool. Ideally, these numbers should be at most 1.
+RELOCATION_OPS	Number of times a block of the size PAGE_SIZE has been relocated. The buddy system can relocate the allocated “buddy neighbor” of a freed block when it tries to form a bigger freed block. Reading from the table INNODB_CMPMEM_RESET resets this count.
+RELOCATION_TIME	Total time in microseconds spent in relocating blocks of the size PAGE_SIZE. Reading from the table INNODB_CMPMEM_RESET resets this count.
 
 # 25.32.7 The INFORMATION_SCHEMA INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-cmp-per-index-table.html
 
+DATABASE_NAME	Database containing the applicable table.
+TABLE_NAME	Table to monitor for compression statistics.
+INDEX_NAME	Index to monitor for compression statistics.
+COMPRESS_OPS	Number of compression operations attempted. Pages are compressed whenever an empty page is created or the space for the uncompressed modification log runs out.
+COMPRESS_OPS_OK	Number of successful compression operations. Subtract from the COMPRESS_OPS value to get the number of compression failures. Divide by the COMPRESS_OPS value to get the percentage of compression failures.
+COMPRESS_TIME	Total amount of CPU time, in seconds, used for compressing data in this index.
+UNCOMPRESS_OPS	Number of uncompression operations performed. Compressed InnoDB pages are uncompressed whenever compression fails, or the first time a compressed page is accessed in the buffer pool and the uncompressed page does not exist.
+UNCOMPRESS_TIME	Total amount of CPU time, in seconds, used for uncompressing data in this index.
+
 # 25.32.8 The INFORMATION_SCHEMA INNODB_FT_BEING_DELETED Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-being-deleted-table.html
+
+DOC_ID	The document ID of the row that is in the process of being deleted. This value might reflect the value of an ID column that you defined for the underlying table, or it can be a sequence value generated by InnoDB when the table does not contain a suitable column. This value is used to skip rows in the innodb_ft_index_table table, when you do text searches before data for deleted rows is physically removed from the FULLTEXT index by an OPTIMIZE TABLE statement. See Optimizing InnoDB Full-Text Indexes for more information.
 
 # 25.32.9 The INFORMATION_SCHEMA INNODB_FT_CONFIG Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-config-table.html
 
+KEY	The name designating an item of metadata for an InnoDB table containing a FULLTEXT index.
+VALUE	The value associated with the corresponding KEY column, reflecting some limit or current value for an aspect of a FULLTEXT index for an InnoDB table.
+
+
 # 25.32.10 The INFORMATION_SCHEMA INNODB_FT_DEFAULT_STOPWORD Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-default-stopword-table.html
+
+value
 
 # 25.32.11 The INFORMATION_SCHEMA INNODB_FT_DELETED Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-deleted-table.html
 
+DOC_ID
+
 # 25.32.12 The INFORMATION_SCHEMA INNODB_FT_INDEX_CACHE Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-index-cache-table.html
+
+WORD	A word extracted from the text of a newly inserted row.
+FIRST_DOC_ID	The first document ID that this word appears in the FULLTEXT index.
+LAST_DOC_ID	The last document ID that this word appears in the FULLTEXT index.
+DOC_COUNT	The number of rows this word appears in the FULLTEXT index. The same word can occur several times within the cache table, once for each combination of DOC_ID and POSITION values.
+DOC_ID	The document ID of the newly inserted row. This value might reflect the value of an ID column that you defined for the underlying table, or it can be a sequence value generated by InnoDB when the table does not contain a suitable column.
+POSITION	The position of this particular instance of the word within the relevant document identified by the DOC_ID value. The value does not represent an absolute position; it is an offset added to the POSITION of the previous instance of that word.
 
 # 25.32.13 The INFORMATION_SCHEMA INNODB_FT_INDEX_TABLE Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-ft-index-table-table.html
 
+WORD	A word extracted from the text of the columns that are part of a FULLTEXT.
+FIRST_DOC_ID	The first document ID that this word appears in the FULLTEXT index.
+LAST_DOC_ID	The last document ID that this word appears in the FULLTEXT index.
+DOC_COUNT	The number of rows this word appears in the FULLTEXT index. The same word can occur several times within the cache table, once for each combination of DOC_ID and POSITION values.
+DOC_ID	The document ID of the row containing the word. This value might reflect the value of an ID column that you defined for the underlying table, or it can be a sequence value generated by InnoDB when the table does not contain a suitable column.
+POSITION	The position of this particular instance of the word within the relevant document identified by the DOC_ID value.
+
 # 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-locks-table.html
+
+LOCK_ID	ENGINE_LOCK_ID
+LOCK_TRX_ID	ENGINE_TRANSACTION_ID
+LOCK_MODE	LOCK_MODE
+LOCK_TYPE	LOCK_TYPE
+LOCK_TABLE (combined schema/table names)	OBJECT_SCHEMA (schema name), OBJECT_NAME (table name)
+LOCK_INDEX	INDEX_NAME
+LOCK_SPACE	None
+LOCK_PAGE	None
+LOCK_REC	None
+LOCK_DATA	LOCK_DATA
 
 # 25.32.15 The INFORMATION_SCHEMA INNODB_LOCK_WAITS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-lock-waits-table.html
 
+REQUESTING_TRX_ID	REQUESTING_ENGINE_TRANSACTION_ID
+REQUESTED_LOCK_ID	REQUESTING_ENGINE_LOCK_ID
+BLOCKING_TRX_ID	BLOCKING_ENGINE_TRANSACTION_ID
+BLOCKING_LOCK_ID	BLOCKING_ENGINE_LOCK_ID
+
 # 25.32.16 The INFORMATION_SCHEMA INNODB_METRICS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-metrics-table.html
+
+NAME	Unique name for the counter.
+SUBSYSTEM	The aspect of InnoDB that the metric applies to. See the list following the table for the corresponding module names to use with the SET GLOBAL syntax.
+COUNT	Value since the counter is enabled.
+MAX_COUNT	Maximum value since the counter is enabled.
+MIN_COUNT	Minimum value since the counter is enabled.
+AVG_COUNT	Average value since the counter is enabled.
+COUNT_RESET	Counter value since it was last reset. (The _RESET fields act like the lap counter on a stopwatch: you can measure the activity during some time interval, while the cumulative figures are still available in the COUNT, MAX_COUNT, and so on fields.)
+MAX_COUNT_RESET	Maximum counter value since it was last reset.
+MIN_COUNT_RESET	Minimum counter value since it was last reset.
+AVG_COUNT_RESET	Average counter value since it was last reset.
+TIME_ENABLED	Timestamp of last start.
+TIME_DISABLED	Timestamp of last stop.
+TIME_ELAPSED	Elapsed time in seconds since the counter started.
+TIME_RESET	Timestamp of last stop.
+STATUS	Whether the counter is still running (enabled) or stopped (disabled).
+TYPE	Whether the item is a cumulative counter, or measures the current value of some resource.
+COMMENT	Counter description.
 
 # 25.32.17 The INFORMATION_SCHEMA INNODB_COLUMNS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-columns-table.html
 
+TABLE_ID	An identifier representing the table associated with the column; the same value from INNODB_TABLES.TABLE_ID.
+NAME	The name of each column in each table. These names can be uppercase or lowercase depending on the lower_case_table_names setting. There are no special system-reserved names for columns.
+POS	The ordinal position of the column within the table, starting from 0 and incrementing sequentially. When a column is dropped, the remaining columns are reordered so that the sequence has no gaps. The POS value for a virtual generated column encodes the column sequence number and ordinal position of the column. For more information, see the POS column description in Section 25.32.27, “The INFORMATION_SCHEMA INNODB_VIRTUAL Table”.
+MTYPE	Stands for “main type”. A numeric identifier for the column type. 1 = VARCHAR, 2 = CHAR, 3 = FIXBINARY, 4 = BINARY, 5 = BLOB, 6 = INT, 7 = SYS_CHILD, 8 = SYS, 9 = FLOAT, 10 = DOUBLE, 11 = DECIMAL, 12 = VARMYSQL, 13 = MYSQL, 14 = GEOMETRY.
+PRTYPE	The InnoDB “precise type”, a binary value with bits representing MySQL data type, character set code, and nullability.
+LEN	The column length, for example 4 for INT and 8 for BIGINT. For character columns in multibyte character sets, this length value is the maximum length in bytes needed to represent a definition such as VARCHAR(N); that is, it might be 2*N, 3*N, and so on depending on the character encoding.
+
 # 25.32.18 The INFORMATION_SCHEMA INNODB_DATAFILES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-datafiles-table.html
+
+SPACE	The tablespace Space ID.
+PATH	The tablespace data file path. If a file-per-table tablespace is created in a location outside the MySQL data directory, the path value is a fully qualified directory path.
 
 # 25.32.19 The INFORMATION_SCHEMA INNODB_FIELDS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-fields-table.html
 
+INDEX_ID	An identifier for the index associated with this key field, using the same value as in INNODB_INDEXES.INDEX_ID.
+NAME	The name of the original column from the table, using the same value as in INNODB_COLUMNS.NAME.
+POS	The ordinal position of the key field within the index, starting from 0 and incrementing sequentially. When a column is dropped, the remaining columns are reordered so that the sequence has no gaps.
+
+
 # 25.32.20 The INFORMATION_SCHEMA INNODB_FOREIGN Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-foreign-table.html
+
+ID	The name (not a numeric value) of the foreign key index. Preceded by the database name, for example, test/products_fk.
+FOR_NAME	The name of the child table in this foreign key relationship.
+REF_NAME	The name of the parent table in this foreign key relationship.
+N_COLS	The number of columns in the foreign key index.
+TYPE	A collection of bit flags with information about the foreign key column, ORed together. 1 = ON DELETE CASCADE, 2 = ON UPDATE SET NULL, 4 = ON UPDATE CASCADE, 8 = ON UPDATE SET NULL, 16 = ON DELETE NO ACTION, 32 = ON UPDATE NO ACTION.
+
 
 # 25.32.21 The INFORMATION_SCHEMA INNODB_FOREIGN_COLS Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-foreign-cols-table.html
 
+ID	The foreign key index associated with this index key field, using the same value as INNODB_FOREIGN.ID.
+FOR_COL_NAME	The name of the associated column in the child table.
+REF_COL_NAME	The name of the associated column in the parent table.
+POS	The ordinal position of this key field within the foreign key index, starting from 0.
+
 # 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-indexes-table.html
+
+INDEX_ID	An identifier for each index that is unique across all the databases in an instance.
+NAME	The name of the index. Most indexes created implicitly by InnoDB have consistent names but the index names are not necessarily unique. For example, PRIMARY for a primary key index, GEN_CLUST_INDEX for the index representing a primary key when one is not specified, and ID_IND, FOR_IND, and REF_IND for foreign key constraints.
+TABLE_ID	An identifier representing the table associated with the index; the same value from INNODB_TABLES.TABLE_ID.
+TYPE	A numeric identifier signifying the kind of index. 0 = Secondary Index, 1 = Clustered Index, 2 = Unique Index, 3 = Primary Index, 32 = Full-text Index, 64 = Spatial Index, 128 = A secondary index that includes a virtual generated column.
+N_FIELDS	The number of columns in the index key. For the GEN_CLUST_INDEX indexes, this value is 0 because the index is created using an artificial value rather than a real table column.
+PAGE_NO	The root page number of the index B-tree. For full-text indexes, the PAGE_NO field is unused and set to -1 (FIL_NULL) because the full-text index is laid out in several B-trees (auxiliary tables).
+SPACE	An identifier for the tablespace where the index resides. 0 means the InnoDB system tablespace. Any other number represents a table created in file-per-table mode with a separate .ibd file. This identifier stays the same after a TRUNCATE TABLE statement. Because all indexes for a table reside in the same tablespace as the table, this value is not necessarily unique.
+MERGE_THRESHOLD	The merge threshold value for index pages. If the amount of data in an index page falls below the MERGE_THRESHOLD value when a row is deleted or when a row is shortened by an update operation, InnoDB attempts to merge the index page with the neighboring index page. The default threshold value is 50%. For more information, see Section 15.6.12, “Configuring the Merge Threshold for Index Pages”.
 
 # 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tables-table.html
 
+TABLE_ID	An identifier for each InnoDB table that is unique across all databases in the instance.
+NAME	The name of the table. Preceded by the database name where appropriate, for example test/t1. Names of databases and user tables are in the same case as they were originally defined, possibly influenced by the lower_case_table_names setting.
+FLAG	Bit-level data about table format and storage characteristics including row format, compressed page size (if applicable), and whether or not the DATA DIRECTORY clause was used with CREATE TABLE or ALTER TABLE.
+N_COLS	The number of columns in the table. The number reported includes three hidden columns that are created by InnoDB (DB_ROW_ID, DB_TRX_ID, and DB_ROLL_PTR). The number reported also includes virtual generated columns, if present.
+SPACE	An identifier for the tablespace where the table resides. 0 means the InnoDB system tablespace. Any other number represents either a file-per-table tablespace or a general tablespace. This identifier stays the same after a TRUNCATE TABLE statement. For file-per-table tablespaces, this identifier is unique for tables across all databases in the instance.
+ROW_FORMAT	The table's row format (Compact, Redundant, Dynamic, or Compressed).
+ZIP_PAGE_SIZE	The zip page size. Only applies to tables that use the Compressed row format.
+SPACE_TYPE	The type of tablespace to which the table belongs. Possible values include System for the system tablespace, General for general tablespaces, and Single for file-per-table tablespaces. Tables assigned to the system tablespace using CREATE TABLE or ALTER TABLE TABLESPACE=innodb_system have a General SPACE_TYPE. For more information, see CREATE TABLESPACE.
+
 # 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-table.html
+
+SPACE	Tablespace Space ID.
+NAME	The database and table name.
+FLAG	Bit-level data about tablespace format and storage characteristics.
+ROW_FORMAT	The tablespace row format (Compact or Redundant, Dynamic, or Compressed). The data in this field is interpreted from the tablespace flags information that resides in the .ibd file.
+PAGE_SIZE	The tablespace page size. The data in this field is interpreted from the tablespace flags information that resides in the .ibd file.
+ZIP_PAGE_SIZE	The tablespace zip page size. The data in this field is interpreted from the tablespace flags information that resides in the .ibd file.
+SPACE_TYPE	The type of tablespace. Possible values include General for general tablespaces, Single for file-per-table tablespaces, and System for the system tablespace.
+FS_BLOCK_SIZE	The file system block size, which is the unit size used for hole punching. This column was added with the introduction of the InnoDB transparent page compression feature.
+FILE_SIZE	The apparent size of the file, which represents the maximum size of the file, uncompressed. This column was added with the introduction of the InnoDB transparent page compression feature.
+ALLOCATED_SIZE	The actual size of the file, which is the amount of space allocated on disk. This column was added with the introduction of the InnoDB transparent page compression feature.
+SERVER_VERSION	Defines the MySQL version that created the tablespace, or the MySQL version into which the tablespace was imported, or the version of the last major MySQL version upgrade. The value is unchanged by a release series upgrade, such as an upgrade from MySQL 8.0.x to 8.0.y. The value can be considered a “creation” marker or “certified” marker for the tablespace. This column was added in MySQL 8.0.4.
+SPACE_VERSION	Defines the tablespace version, used to changes to the tablespace format. This column was added in MySQL 8.0.4.
 
 # 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablespaces-brief-table.html
 
+SPACE	Tablespace Space ID.
+NAME	The database and table name.
+PATH	The tablespace data file path. If a file-per-table tablespace is created in a location outside the MySQL data directory, the path value is a fully qualified directory path.
+FLAG	Bit-level data about tablespace format and storage characteristics.
+SPACE_TYPE	The type of tablespace. Possible values include General for InnoDB general tablespaces, Single for InnoDB file-per-table tablespaces, and System for the InnoDB system tablespace.
+
 # 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-tablestats-table.html
+
+TABLE_ID	An identifier representing the table for which statistics are available, using the same value as INNODB_TABLES.TABLE_ID.
+NAME	The name of the table, using the same value as INNODB_TABLES.NAME.
+STATS_INITIALIZED	The value is Initialized if the statistics are already collected, Uninitialized if not.
+NUM_ROWS	The current estimated number of rows in the table. Updated after each DML operation. Could be imprecise if uncommitted transactions are inserting into or deleting from the table.
+CLUST_INDEX_SIZE	Number of pages on disk that store the clustered index, which holds the InnoDB table data in primary key order. This value might be null if no statistics are collected yet for the table.
+OTHER_INDEX_SIZE	Number of pages on disk that store all secondary indexes for the table. This value might be null if no statistics are collected yet for the table.
+MODIFIED_COUNTER	The number of rows modified by DML operations, such as INSERT, UPDATE, DELETE, and also cascade operations from foreign keys. This column is reset each time table statistics are recalculated
+AUTOINC	The next number to be issued for any auto-increment-based operation. The rate at which the AUTOINC value changes depends on how many times auto-increment numbers have been requested and how many numbers are granted per request.
+REF_COUNT	When this counter reaches zero, the table metadata can be evicted from the table cache.
 
 # 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-virtual-table.html
 
+TABLE_ID	An identifier representing the table associated with the virtual column; the same value as INNODB_TABLES.TABLE_ID.
+POS	The position value of the virtual generated column. The value is large because it encodes the column sequence number and ordinal position. The formula used to calculate the value uses a bitwise operation. The formula is ((nth virtual generated column for the InnoDB instance + 1) << 16) + the ordinal position of the virtual generated column. For example, if the first virtual generated column in the InnoDB instance is the third column of the table, the formula is (0 + 1) << 16) + 2. The first virtual generated column in the InnoDB instance is always number 0. As the third column in the table, the ordinal position of the virtual generated column is 2. Ordinal positions are counted from 0.
+BASE_POS	The ordinal position of the columns upon which a virtual generated column is based.
+
 # 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-temp-table-info-table.html
 
+TABLE_ID	The table ID of the active temporary table.
+NAME	The name of the active temporary table.
+N_COLS	The number of columns in the temporary table. The number always includes three hidden columns created by InnoDB (DB_ROW_ID, DB_TRX_ID, and DB_ROLL_PTR).
+SPACE	The tablespace identifier (a numerical value) for the tablespace where the temporary table resides. All InnoDB temporary tables reside in a shared temporary tablespace, as defined by innodb_temp_data_file_path. By default the shared temporary tablespace is named ibtmp1 and located in the data directory. The SPACE ID is always a non-zero value and is dynamically generated on server restart.
+
 # 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
 # https://dev.mysql.com/doc/refman/8.0/en/innodb-trx-table.html
+
+TRX_ID	Unique transaction ID number, internal to InnoDB. These IDs are not created for transactions that are read only and nonlocking. See Section 8.5.3, “Optimizing InnoDB Read-Only Transactions” for details.
+TRX_WEIGHT	The weight of a transaction, reflecting (but not necessarily the exact count of) the number of rows altered and the number of rows locked by the transaction. To resolve a deadlock, InnoDB selects the transaction with the smallest weight as the “victim” to roll back. Transactions that have changed non-transactional tables are considered heavier than others, regardless of the number of altered and locked rows.
+TRX_STATE	Transaction execution state. Permitted values are RUNNING, LOCK WAIT, ROLLING BACK, and COMMITTING.
+TRX_STARTED	Transaction start time.
+TRX_REQUESTED_LOCK_ID	ID of the lock the transaction is currently waiting for, if TRX_STATE is LOCK WAIT; otherwise NULL. To obtain details about the lock, join this column with the ENGINE_LOCK_ID column of the Performance Schema data_locks table.
+TRX_WAIT_STARTED	Time when the transaction started waiting on the lock, if TRX_STATE is LOCK WAIT; otherwise NULL.
+TRX_MYSQL_THREAD_ID	MySQL thread ID. To obtain details about the thread, join this column with the ID column of the PROCESSLIST table, but see Section 15.14.2.3, “Persistence and Consistency of InnoDB Transaction and Locking Information”.
+TRX_QUERY	The SQL statement that is being executed by the transaction.
+TRX_OPERATION_STATE	The transaction's current operation, if any; otherwise NULL.
+TRX_TABLES_IN_USE	The number of InnoDB tables used while processing the current SQL statement of this transaction.
+TRX_TABLES_LOCKED	Number of InnoDB tables that the current SQL statement has row locks on. (Because these are row locks, not table locks, the tables can usually still be read from and written to by multiple transactions, despite some rows being locked.)
+TRX_LOCK_STRUCTS	The number of locks reserved by the transaction.
+TRX_LOCK_MEMORY_BYTES	Total size taken up by the lock structures of this transaction in memory.
+TRX_ROWS_LOCKED	Approximate number or rows locked by this transaction. The value might include delete-marked rows that are physically present but not visible to the transaction.
+TRX_ROWS_MODIFIED	The number of modified and inserted rows in this transaction.
+TRX_CONCURRENCY_TICKETS	A value indicating how much work the current transaction can do before being swapped out, as specified by the innodb_concurrency_tickets system variable.
+TRX_ISOLATION_LEVEL	The isolation level of the current transaction.
+TRX_UNIQUE_CHECKS	Whether unique checks are turned on or off for the current transaction. For example, they might be turned off during a bulk data load.
+TRX_FOREIGN_KEY_CHECKS	Whether foreign key checks are turned on or off for the current transaction. For example, they might be turned off during a bulk data load.
+TRX_LAST_FOREIGN_KEY_ERROR	Detailed error message for the last foreign key error, if any; otherwise NULL.
+TRX_ADAPTIVE_HASH_LATCHED	Whether the adaptive hash index is locked by the current transaction. When the adaptive hash index search system is partitioned, a single transaction does not lock the entire adaptive hash index. Adaptive hash index partitioning is controlled by innodb_adaptive_hash_index_parts, which is set to 8 by default.
+TRX_ADAPTIVE_HASH_TIMEOUT	Whether to relinquish the search latch immediately for the adaptive hash index, or reserve it across calls from MySQL. When there is no adaptive hash index contention, this value remains zero and statements reserve the latch until they finish. During times of contention, it counts down to zero, and statements release the latch immediately after each row lookup. When the adaptive hash index search system is partitioned (controlled by innodb_adaptive_hash_index_parts), the value remains 0.
+TRX_IS_READ_ONLY	A value of 1 indicates the transaction is read only.
+TRX_AUTOCOMMIT_NON_LOCKING	A value of 1 indicates the transaction is a SELECT statement that does not use the FOR UPDATE or LOCK IN SHARED MODE clauses, and is executing with autocommit enabled so that the transaction will only contain this one statement. When this column and TRX_IS_READ_ONLY are both 1, InnoDB optimizes the transaction to reduce the overhead associated with transactions that change table data.
 
 # 25.33 Connection-Control INFORMATION_SCHEMA Tables     
 # https://dev.mysql.com/doc/refman/8.0/en/connection-control-i_s-tables.html
