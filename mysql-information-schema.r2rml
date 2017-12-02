@@ -1,4 +1,5 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix mysql: <http://semantalytics.com/2017/12/ns/mysql> .
 
 # https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
 
@@ -132,7 +133,6 @@
          rr:subjectMap [
             rr:class mysql:Column;
             rr:termType rr:BlankNode;
-
          ];
          rr:predicateObjectMap [
             rr:predicate mysql:tableCatalog;
@@ -329,7 +329,6 @@
             rr:objectMap [
                 rr:column "GENERATION_EXPRESSION";
             ];
-
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:schemaName;
@@ -1330,25 +1329,25 @@
                 rr:objectMap [
                     rr:column "QUERY_ID";
                 ];
-            ];
-	    rr:predicateObjectMap [
-	        rr:predicate mysql:seq;	    
-                rr:objectMap [
-                    rr:column "SEQ";
-                ];
-            ];
-	    rr:predicateObjectMap [
-	        rr:predicate mysql:state;    
-                rr:objectMap [
-                    rr:column "STATE";
-                ];
-            ];
-	    rr:predicateObjectMap [
-	        rr:predicate mysql:duration;   
-                rr:objectMap [
-                    rr:column "DURATION";
-                ];
-            ];
+         ];
+	 rr:predicateObjectMap [
+	     rr:predicate mysql:seq;	    
+             rr:objectMap [
+                rr:column "SEQ";
+             ];
+         ];
+	 rr:predicateObjectMap [
+	     rr:predicate mysql:state;    
+             rr:objectMap [
+                 rr:column "STATE";
+             ];
+         ];
+	 rr:predicateObjectMap [
+	     rr:predicate mysql:duration;   
+             rr:objectMap [
+                 rr:column "DURATION";
+             ];
+         ];
 	    rr:predicateObjectMap [
 	        rr:predicate mysql:cpuUser; 
                 rr:objectMap [
@@ -1445,62 +1444,73 @@
          rr:subjectMap [
             rr:class mysql:ReferentialConstraint;
             rr:termType rr:BlankNode;
-	    ];
+	 ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:constraintCatalog;
             rr:objectMap [
                 rr:column "CONSTRAINT_CATALOG";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:constraintSchema;
             rr:objectMap [
                 rr:column "CONSTRAINT_SCHEMA";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:constraintSchema;
             rr:objectMap [
                 rr:column "CONSTRAINT_SCHEMA";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:constraintName;
             rr:objectMap [
                 rr:column "CONSTRAINT_NAME";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:uniqueConstraintCatalog;
             rr:objectMap [
                 rr:column "UNIQUE_CONSTRAINT_CATALOG";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:uniqueConstraintSchema;
             rr:objectMap [
                 rr:column "UNIQUE_CONSTRAINT_SCHEMA";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:uniqueConstraintName;
             rr:objectMap [
                 rr:column "UNIQUE_CONSTRAINT_NAME";
-            ];
+            ];	 		 	 
+         ];
          rr:predicateObjectMap [
 	    rr:predicate mysql:matchOption;
             rr:objectMap [
                 rr:column "MATCH_OPTION";
-            ];	 	 
+            ];	 		 	 
+         ];	 	 
          rr:predicateObjectMap [
 	    rr:predicate mysql:updateRule;
             rr:objectMap [
                 rr:column "UPDATE_RULE";
-            ];	 	 
+            ];	 		 	 
+         ];	 	 
          rr:predicateObjectMap [
 	    rr:predicate mysql:deleteRule;
             rr:objectMap [
                 rr:column "DELETE_RULE";
-            ];	 	
+            ];	 		 	 
+         ];	 	
          rr:predicateObjectMap [
 	    rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "TABLE_NAME";
             ];	 		 	 
+         ];	 		 	 
          rr:predicateObjectMap [
 	    rr:predicate mysql:referencedTableName;
             rr:objectMap [
@@ -2554,13 +2564,12 @@
          rr:subjectMap [
             rr:class mysql:View;
             rr:termType rr:BlankNode;
-
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:tableCatalog;
-		 rr:objectMap [
-		    rr:column "TABLE_CATALOG";
-		 ];
+            rr:objectMap [
+	      rr:column "TABLE_CATALOG";
+            ];
          ];
          rr:predicateobjectmap [
             rr:predicate mysql:tableSchema;
@@ -2571,12 +2580,14 @@
          rr:predicateobjectmap [
             rr:predicate mysql:tableName;
 	    rr:objectMap [
-            rr:column "TABLE_NAME";
+              rr:column "TABLE_NAME";
+            ];
 	 ];
          rr:predicateobjectmap [
             rr:predicate mysql:viewDefinition;
 	    rr:objectMap [
-            rr:column "VIEW_DEFINITION";
+              rr:column "VIEW_DEFINITION";
+            ];
 	 ];
          rr:predicateobjectmap [
             rr:predicate mysql:checkOption;
@@ -2587,13 +2598,13 @@
          rr:predicateobjectmap [
             rr:predicate mysql:isUpdatable;
 	    rr:objectMap [
-            rr:column "IS_UPDATABLE";
+              rr:column "IS_UPDATABLE";
             ];
 	 ];
          rr:predicateobjectmap [
             rr:predicate mysql:definer;
-	 rr:objectMap [
-            rr:column "DEFINER";
+	    rr:objectMap [
+              rr:column "DEFINER";
             ];
 	 ];
          rr:predicateobjectmap [
@@ -2604,14 +2615,14 @@
 	 ];
          rr:predicateobjectmap [
             rr:predicate mysql:characterSetClient;
-	 rr:objectMap [
-            rr:column "CHARACTER_SET_CLIENT";
+	    rr:objectMap [
+              rr:column "CHARACTER_SET_CLIENT";
             ];
 	 ];
          rr:predicateobjectmap [
             rr:predicate mysql:collationConnection;
-	 rr:objectMap [
-            rr:column "COLLATION_CONNECTION";
+	    rr:objectMap [
+              rr:column "COLLATION_CONNECTION";
             ];
 	 ];
 .
@@ -2905,7 +2916,6 @@
 		    rr:column "POOL_ID";
 		 ];
          ];
-	 
          rr:predicateobjectmap [
             rr:predicate mysql:poolSize;
 		 rr:objectMap [
@@ -3087,10 +3097,10 @@
 		 ];
          ];
          rr:predicateobjectmap [
-            rr:predicate mysql:uncompressCurrent";
-		 rr:objectMap [
-		    rr:column "UNCOMPRESS_CURRENT";
-		 ];
+            rr:predicate mysql:uncompressCurrent;
+            rr:objectMap [
+              rr:column "UNCOMPRESS_CURRENT";
+            ];
          ];
 .
 
