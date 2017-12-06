@@ -6,6 +6,8 @@
 # 34.3. information_schema_catalog_name
 # https://www.postgresql.org/docs/9.1/static/infoschema-information-schema-catalog-name.html
 
+catalog_name 	sql_identifier 	Name of the database that contains this information schema
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -25,6 +27,10 @@
 
 # 34.4. administrable_role_authorizations
 # https://www.postgresql.org/docs/9.1/static/infoschema-administrable-role-authorizations.html
+
+grantee 	sql_identifier 	Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
+role_name 	sql_identifier 	Name of a role
+is_grantable 	yes_or_no 	Always YES
 
 <#Map>
          rr:logicalTable [
@@ -46,6 +52,10 @@
 # 34.5. applicable_roles
 # https://www.postgresql.org/docs/9.1/static/infoschema-applicable-roles.html
 
+grantee 	sql_identifier 	Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
+role_name 	sql_identifier 	Name of a role
+is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO if not
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -65,6 +75,38 @@
 
 # 34.6. attributes
 # https://www.postgresql.org/docs/9.1/static/infoschema-attributes.html
+
+udt_catalog 	sql_identifier 	Name of the database containing the data type (always the current database)
+udt_schema 	sql_identifier 	Name of the schema containing the data type
+udt_name 	sql_identifier 	Name of the data type
+attribute_name 	sql_identifier 	Name of the attribute
+ordinal_position 	cardinal_number 	Ordinal position of the attribute within the data type (count starts at 1)
+attribute_default 	character_data 	Default expression of the attribute
+is_nullable 	yes_or_no 	YES if the attribute is possibly nullable, NO if it is known not nullable.
+data_type 	character_data 	Data type of the attribute, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in attribute_udt_name and associated columns).
+character_maximum_length 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+character_octet_length 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
+character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+collation_catalog 	sql_identifier 	Not yet implemented
+collation_schema 	sql_identifier 	Not yet implemented
+collation_name 	sql_identifier 	Not yet implemented
+numeric_precision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this attribute. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numeric_precision_radix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
+numeric_scale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this attribute. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this attribute, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
+interval_type 	character_data 	Not yet implemented
+interval_precision 	character_data 	Not yet implemented
+attribute_udt_catalog 	sql_identifier 	Name of the database that the attribute data type is defined in (always the current database)
+attribute_udt_schema 	sql_identifier 	Name of the schema that the attribute data type is defined in
+attribute_udt_name 	sql_identifier 	Name of the attribute data type
+scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
+is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -86,6 +128,16 @@
 # 34.7. character_sets
 # https://www.postgresql.org/docs/9.1/static/infoschema-character-sets.html
 
+character_set_catalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
+character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
+character_set_name 	sql_identifier 	Name of the character set, currently implemented as showing the name of the database encoding
+character_repertoire 	sql_identifier 	Character repertoire, showing UCS if the encoding is UTF8, else just the encoding name
+form_of_use 	sql_identifier 	Character encoding form, same as the database encoding
+default_collate_catalog 	sql_identifier 	Name of the database containing the default collation (always the current database, if any collation is identified)
+default_collate_schema 	sql_identifier 	Name of the schema containing the default collation
+default_collate_name 	sql_identifier 	Name of the default collation. The default collation is identified as the collation that matches the COLLATE and CTYPE settings of the current database. If there is no such collation, then this column and the associated schema and catalog columns are null.
+
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -105,6 +157,13 @@
 
 # 34.8. check_constraint_routine_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-check-constraint-routine-usage.html
+
+constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema containing the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specific_schema 	sql_identifier 	Name of the schema containing the function
+specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
 
 <#Map>
          rr:logicalTable [
@@ -126,6 +185,11 @@
 # 34.9. check_constraints
 # https://www.postgresql.org/docs/9.1/static/infoschema-check-constraints.html
 
+constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema containing the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+check_clause 	character_data 	The check expression of the check constraint
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -146,6 +210,11 @@
 # 34.10. collations
 # https://www.postgresql.org/docs/9.1/static/infoschema-collations.html
 
+collation_catalog 	sql_identifier 	Name of the database containing the collation (always the current database)
+collation_schema 	sql_identifier 	Name of the schema containing the collation
+collation_name 	sql_identifier 	Name of the default collation
+pad_attribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not supported by PostgreSQL.)
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -164,6 +233,13 @@
 
 # 34.11. collation_character_set_applicability
 # https://www.postgresql.org/docs/9.1/static/infoschema-collation-character-set-applicab.html
+
+collation_catalog 	sql_identifier 	Name of the database containing the collation (always the current database)
+collation_schema 	sql_identifier 	Name of the schema containing the collation
+collation_name 	sql_identifier 	Name of the default collation
+character_set_catalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
+character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
+character_set_name 	sql_identifier 	Name of the character set
 
 <#Map>
          rr:logicalTable [
@@ -185,6 +261,15 @@
 # 34.12. column_domain_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-column-domain-usage.html
 
+domain_catalog 	sql_identifier 	Name of the database containing the domain (always the current database)
+domain_schema 	sql_identifier 	Name of the schema containing the domain
+domain_name 	sql_identifier 	Name of the domain
+table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema containing the table
+table_name 	sql_identifier 	Name of the table
+column_name 	sql_identifier 	Name of the column
+
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -204,6 +289,15 @@
 
 # 34.13. column_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-column-privileges.html
+
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column
+table_name 	sql_identifier 	Name of the table that contains the column
+column_name 	sql_identifier 	Name of the column
+privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, or REFERENCES
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -225,6 +319,14 @@
 # 34.14. column_udt_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-column-udt-usage.html
 
+udt_catalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
+udt_schema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
+udt_name 	sql_identifier 	Name of the column data type (the underlying type of the domain, if applicable)
+table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema containing the table
+table_name 	sql_identifier 	Name of the table
+column_name 	sql_identifier 	Name of the column
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -244,6 +346,51 @@
 
 # 34.15. columns
 # https://www.postgresql.org/docs/9.1/static/infoschema-columns.html
+
+table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema containing the table
+table_name 	sql_identifier 	Name of the table
+column_name 	sql_identifier 	Name of the column
+ordinal_position 	cardinal_number 	Ordinal position of the column within the table (count starts at 1)
+column_default 	character_data 	Default expression of the column
+is_nullable 	yes_or_no 	YES if the column is possibly nullable, NO if it is known not nullable. A not-null constraint is one way a column can be known not nullable, but there can be others.
+data_type 	character_data 	Data type of the column, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns). If the column is based on a domain, this column refers to the type underlying the domain (and the domain is identified in domain_name and associated columns).
+character_maximum_length 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+character_octet_length 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
+numeric_precision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this column. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numeric_precision_radix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
+numeric_scale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this column. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this column, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
+interval_type 	character_data 	Not yet implemented
+interval_precision 	character_data 	Not yet implemented
+character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+collation_catalog 	sql_identifier 	Not yet implemented
+collation_schema 	sql_identifier 	Not yet implemented
+collation_name 	sql_identifier 	Not yet implemented
+domain_catalog 	sql_identifier 	If the column has a domain type, the name of the database that the domain is defined in (always the current database), else null.
+domain_schema 	sql_identifier 	If the column has a domain type, the name of the schema that the domain is defined in, else null.
+domain_name 	sql_identifier 	If the column has a domain type, the name of the domain, else null.
+udt_catalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
+udt_schema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
+udt_name 	sql_identifier 	Name of the column data type (the underlying type of the domain, if applicable)
+scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
+is_self_referencing 	yes_or_no 	Applies to a feature not available in PostgreSQL
+is_identity 	yes_or_no 	Applies to a feature not available in PostgreSQL
+identity_generation 	character_data 	Applies to a feature not available in PostgreSQL
+identity_start 	character_data 	Applies to a feature not available in PostgreSQL
+identity_increment 	character_data 	Applies to a feature not available in PostgreSQL
+identity_maximum 	character_data 	Applies to a feature not available in PostgreSQL
+identity_minimum 	character_data 	Applies to a feature not available in PostgreSQL
+identity_cycle 	yes_or_no 	Applies to a feature not available in PostgreSQL
+is_generated 	character_data 	Applies to a feature not available in PostgreSQL
+generation_expression 	character_data 	Applies to a feature not available in PostgreSQL
+is_updatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in base tables are always updatable, columns in views not necessarily)
 
 <#Map>
          rr:logicalTable [
@@ -265,6 +412,14 @@
 # 34.16. constraint_column_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-constraint-column-usage.html
 
+table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column that is used by some constraint (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column that is used by some constraint
+table_name 	sql_identifier 	Name of the table that contains the column that is used by some constraint
+column_name 	sql_identifier 	Name of the column that is used by some constraint
+constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -284,6 +439,13 @@
 
 # 34.17. constraint_table_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-constraint-table-usage.html
+
+table_catalog 	sql_identifier 	Name of the database that contains the table that is used by some constraint (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that is used by some constraint
+table_name 	sql_identifier 	Name of the table that is used by some constraint
+constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraint_name 	sql_identifier 	Name of the constraint
 
 <#Map>
          rr:logicalTable [
@@ -305,6 +467,12 @@
 # 34.18. data_type_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-data-type-privileges.html
 
+object_catalog 	sql_identifier 	Name of the database that contains the described object (always the current database)
+object_schema 	sql_identifier 	Name of the schema that contains the described object
+object_name 	sql_identifier 	Name of the described object
+object_type 	character_data 	The type of the described object: one of TABLE (the data type descriptor pertains to a column of that table), DOMAIN (the data type descriptors pertains to that domain), ROUTINE (the data type descriptor pertains to a parameter or the return data type of that function).
+dtd_identifier 	sql_identifier 	The identifier of the data type descriptor, which is unique among the data type descriptors for that same object.
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -324,6 +492,15 @@
 
 # 34.19. domain_constraints
 # https://www.postgresql.org/docs/9.1/static/infoschema-domain-constraints.html
+
+constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
+domain_schema 	sql_identifier 	Name of the schema that contains the domain
+domain_name 	sql_identifier 	Name of the domain
+is_deferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
+initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -345,6 +522,13 @@
 # 34.20. domain_udt_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-domain-udt-usage.html
 
+udt_catalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
+udt_schema 	sql_identifier 	Name of the schema that the domain data type is defined in
+udt_name 	sql_identifier 	Name of the domain data type
+domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
+domain_schema 	sql_identifier 	Name of the schema that contains the domain
+domain_name 	sql_identifier 	Name of the domain
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -364,6 +548,34 @@
 
 # 34.21. domains
 # https://www.postgresql.org/docs/9.1/static/infoschema-domains.html
+
+domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
+domain_schema 	sql_identifier 	Name of the schema that contains the domain
+domain_name 	sql_identifier 	Name of the domain
+data_type 	character_data 	Data type of the domain, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
+character_maximum_length 	cardinal_number 	If the domain has a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+character_octet_length 	cardinal_number 	If the domain has a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
+character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+collation_catalog 	sql_identifier 	Not yet implemented
+collation_schema 	sql_identifier 	Not yet implemented
+collation_name 	sql_identifier 	Not yet implemented
+numeric_precision 	cardinal_number 	If the domain has a numeric type, this column contains the (declared or implicit) precision of the type for this domain. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numeric_precision_radix 	cardinal_number 	If the domain has a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
+numeric_scale 	cardinal_number 	If the domain has an exact numeric type, this column contains the (declared or implicit) scale of the type for this domain. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this domain, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
+interval_type 	character_data 	Not yet implemented
+interval_precision 	character_data 	Not yet implemented
+domain_default 	character_data 	Default expression of the domain
+udt_catalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
+udt_schema 	sql_identifier 	Name of the schema that the domain data type is defined in
+udt_name 	sql_identifier 	Name of the domain data type
+scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the domain, unique among the data type descriptors pertaining to the domain (which is trivial, because a domain only contains one data type descriptor). This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
 <#Map>
          rr:logicalTable [
@@ -385,6 +597,36 @@
 # 34.22. element_types
 # https://www.postgresql.org/docs/9.1/static/infoschema-element-types.html
 
+object_catalog 	sql_identifier 	Name of the database that contains the object that uses the array being described (always the current database)
+object_schema 	sql_identifier 	Name of the schema that contains the object that uses the array being described
+object_name 	sql_identifier 	Name of the object that uses the array being described
+object_type 	character_data 	The type of the object that uses the array being described: one of TABLE (the array is used by a column of that table), DOMAIN (the array is used by that domain), ROUTINE (the array is used by a parameter or the return data type of that function).
+collection_type_identifier 	sql_identifier 	The identifier of the data type descriptor of the array being described. Use this to join with the dtd_identifier columns of other information schema views.
+data_type 	character_data 	Data type of the array elements, if it is a built-in type, else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
+character_maximum_length 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+character_octet_length 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+collation_catalog 	sql_identifier 	Not yet implemented
+collation_schema 	sql_identifier 	Not yet implemented
+collation_name 	sql_identifier 	Not yet implemented
+numeric_precision 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+numeric_precision_radix 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+numeric_scale 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+datetime_precision 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+interval_type 	character_data 	Always null, since this information is not applied to array element data types in PostgreSQL
+interval_precision 	character_data 	Always null, since this information is not applied to array element data types in PostgreSQL
+domain_default 	character_data 	Not yet implemented
+udt_catalog 	sql_identifier 	Name of the database that the data type of the elements is defined in (always the current database)
+udt_schema 	sql_identifier 	Name of the schema that the data type of the elements is defined in
+udt_name 	sql_identifier 	Name of the data type of the elements
+scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the element. This is currently not useful.
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -404,6 +646,8 @@
 
 # 34.23. enabled_roles
 # https://www.postgresql.org/docs/9.1/static/infoschema-enabled-roles.html
+
+role_name 	sql_identifier 	Name of a role
 
 <#Map>
          rr:logicalTable [
@@ -425,6 +669,11 @@
 # 34.24. foreign_data_wrapper_options
 # https://www.postgresql.org/docs/9.1/static/infoschema-foreign-data-wrapper-options.html
 
+foreign_data_wrapper_catalog 	sql_identifier 	Name of the database that the foreign-data wrapper is defined in (always the current database)
+foreign_data_wrapper_name 	sql_identifier 	Name of the foreign-data wrapper
+option_name 	sql_identifier 	Name of an option
+option_value 	character_data 	Value of the option
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -444,6 +693,12 @@
 
 # 34.25. foreign_data_wrappers
 # https://www.postgresql.org/docs/9.1/static/infoschema-foreign-data-wrappers.html
+
+foreign_data_wrapper_catalog 	sql_identifier 	Name of the database that contains the foreign-data wrapper (always the current database)
+foreign_data_wrapper_name 	sql_identifier 	Name of the foreign-data wrapper
+authorization_identifier 	sql_identifier 	Name of the owner of the foreign server
+library_name 	character_data 	File name of the library that implementing this foreign-data wrapper
+foreign_data_wrapper_language 	character_data 	Language used to implement this foreign-data wrapper
 
 <#Map>
          rr:logicalTable [
@@ -465,6 +720,11 @@
 # 34.26. foreign_server_options
 # https://www.postgresql.org/docs/9.1/static/infoschema-foreign-server-options.html
 
+foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server is defined in (always the current database)
+foreign_server_name 	sql_identifier 	Name of the foreign server
+option_name 	sql_identifier 	Name of an option
+option_value 	character_data 	Value of the option
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -484,6 +744,14 @@
 
 # 34.27. foreign_servers
 # https://www.postgresql.org/docs/9.1/static/infoschema-foreign-servers.html
+
+foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server is defined in (always the current database)
+foreign_server_name 	sql_identifier 	Name of the foreign server
+foreign_data_wrapper_catalog 	sql_identifier 	Name of the database that contains the foreign-data wrapper used by the foreign server (always the current database)
+foreign_data_wrapper_name 	sql_identifier 	Name of the foreign-data wrapper used by the foreign server
+foreign_server_type 	character_data 	Foreign server type information, if specified upon creation
+foreign_server_version 	character_data 	Foreign server version information, if specified upon creation
+authorization_identifier 	sql_identifier 	Name of the owner of the foreign server
 
 <#Map>
          rr:logicalTable [
@@ -505,6 +773,12 @@
 # 34.28. foreign_table_options
 # https://www.postgresql.org/docs/9.1/static/infoschema-foreign-table-options.html
 
+foreign_table_catalog 	sql_identifier 	Name of the database that contains the foreign table (always the current database)
+foreign_table_schema 	sql_identifier 	Name of the schema that contains the foreign table
+foreign_table_name 	sql_identifier 	Name of the foreign table
+option_name 	sql_identifier 	Name of an option
+option_value 	character_data 	Value of the option
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -524,6 +798,12 @@
 
 # 34.29. foreign_tables
 # https://www.postgresql.org/docs/9.1/static/infoschema-foreign-tables.html
+
+foreign_table_catalog 	sql_identifier 	Name of the database that the foreign table is defined in (always the current database)
+foreign_table_schema 	sql_identifier 	Name of the schema that contains the foreign table
+foreign_table_name 	sql_identifier 	Name of the foreign table
+foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server is defined in (always the current database)
+foreign_server_name 	sql_identifier 	Name of the foreign server
 
 <#Map>
          rr:logicalTable [
@@ -545,6 +825,16 @@
 # 34.30. key_column_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-key-column-usage.html
 
+constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column that is restricted by this constraint (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column that is restricted by this constraint
+table_name 	sql_identifier 	Name of the table that contains the column that is restricted by this constraint
+column_name 	sql_identifier 	Name of the column that is restricted by this constraint
+ordinal_position 	cardinal_number 	Ordinal position of the column within the constraint key (count starts at 1)
+position_in_unique_constraint 	cardinal_number 	For a foreign-key constraint, ordinal position of the referenced column within its unique constraint (count starts at 1); otherwise null
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -564,6 +854,38 @@
 
 # 34.31. parameters
 # https://www.postgresql.org/docs/9.1/static/infoschema-parameters.html
+
+specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specific_schema 	sql_identifier 	Name of the schema containing the function
+specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
+ordinal_position 	cardinal_number 	Ordinal position of the parameter in the argument list of the function (count starts at 1)
+parameter_mode 	character_data 	IN for input parameter, OUT for output parameter, and INOUT for input/output parameter.
+is_result 	yes_or_no 	Applies to a feature not available in PostgreSQL
+as_locator 	yes_or_no 	Applies to a feature not available in PostgreSQL
+parameter_name 	sql_identifier 	Name of the parameter, or null if the parameter has no name
+data_type 	character_data 	Data type of the parameter, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
+character_maximum_length 	cardinal_number 	Always null, since this information is not applied to parameter data types in PostgreSQL
+character_octet_length 	cardinal_number 	Always null, since this information is not applied to parameter data types in PostgreSQL
+character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+collation_catalog 	sql_identifier 	Always null, since this information is not applied to parameter data types in PostgreSQL
+collation_schema 	sql_identifier 	Always null, since this information is not applied to parameter data types in PostgreSQL
+collation_name 	sql_identifier 	Always null, since this information is not applied to parameter data types in PostgreSQL
+numeric_precision 	cardinal_number 	Always null, since this information is not applied to parameter data types in PostgreSQL
+numeric_precision_radix 	cardinal_number 	Always null, since this information is not applied to parameter data types in PostgreSQL
+numeric_scale 	cardinal_number 	Always null, since this information is not applied to parameter data types in PostgreSQL
+datetime_precision 	cardinal_number 	Always null, since this information is not applied to parameter data types in PostgreSQL
+interval_type 	character_data 	Always null, since this information is not applied to parameter data types in PostgreSQL
+interval_precision 	character_data 	Always null, since this information is not applied to parameter data types in PostgreSQL
+udt_catalog 	sql_identifier 	Name of the database that the data type of the parameter is defined in (always the current database)
+udt_schema 	sql_identifier 	Name of the schema that the data type of the parameter is defined in
+udt_name 	sql_identifier 	Name of the data type of the parameter
+scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the parameter, unique among the data type descriptors pertaining to the function. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
 <#Map>
          rr:logicalTable [
@@ -585,6 +907,16 @@
 # 34.32. referential_constraints
 # https://www.postgresql.org/docs/9.1/static/infoschema-referential-constraints.html
 
+constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema containing the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+unique_constraint_catalog 	sql_identifier 	Name of the database that contains the unique or primary key constraint that the foreign key constraint references (always the current database)
+unique_constraint_schema 	sql_identifier 	Name of the schema that contains the unique or primary key constraint that the foreign key constraint references
+unique_constraint_name 	sql_identifier 	Name of the unique or primary key constraint that the foreign key constraint references
+match_option 	character_data 	Match option of the foreign key constraint: FULL, PARTIAL, or NONE.
+update_rule 	character_data 	Update rule of the foreign key constraint: CASCADE, SET NULL, SET DEFAULT, RESTRICT, or NO ACTION.
+delete_rule 	character_data 	Delete rule of the foreign key constraint: CASCADE, SET NULL, SET DEFAULT, RESTRICT, or NO ACTION.
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -604,6 +936,15 @@
 
 # 34.33. role_column_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-column-grants.html
+
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column
+table_name 	sql_identifier 	Name of the table that contains the column
+column_name 	sql_identifier 	Name of the column
+privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, or REFERENCES
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -625,6 +966,17 @@
 # 34.34. role_routine_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-routine-grants.html
 
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specific_schema 	sql_identifier 	Name of the schema containing the function
+specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
+routine_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+routine_schema 	sql_identifier 	Name of the schema containing the function
+routine_name 	sql_identifier 	Name of the function (might be duplicated in case of overloading)
+privilege_type 	character_data 	Always EXECUTE (the only privilege type for functions)
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -644,6 +996,15 @@
 
 # 34.35. role_table_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-table-grants.html
+
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table
+table_name 	sql_identifier 	Name of the table
+privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, or TRIGGER
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
+with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -665,6 +1026,15 @@
 # 34.36. role_usage_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-usage-grants.html
 
+grantor 	sql_identifier 	The name of the role that granted the privilege
+grantee 	sql_identifier 	The name of the role that the privilege was granted to
+object_catalog 	sql_identifier 	Name of the database containing the object (always the current database)
+object_schema 	sql_identifier 	Name of the schema containing the object, if applicable, else an empty string
+object_name 	sql_identifier 	Name of the object
+object_type 	character_data 	COLLATION or DOMAIN or FOREIGN DATA WRAPPER or FOREIGN SERVER
+privilege_type 	character_data 	Always USAGE
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -684,6 +1054,17 @@
 
 # 34.37. routine_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-routine-privileges.html
+
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specific_schema 	sql_identifier 	Name of the schema containing the function
+specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
+routine_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+routine_schema 	sql_identifier 	Name of the schema containing the function
+routine_name 	sql_identifier 	Name of the function (might be duplicated in case of overloading)
+privilege_type 	character_data 	Always EXECUTE (the only privilege type for functions)
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -705,6 +1086,89 @@
 # 34.38. routines
 # https://www.postgresql.org/docs/9.1/static/infoschema-routines.html
 
+specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specific_schema 	sql_identifier 	Name of the schema containing the function
+specific_name 	sql_identifier 	The "specific name" of the function. This is a name that uniquely identifies the function in the schema, even if the real name of the function is overloaded. The format of the specific name is not defined, it should only be used to compare it to other instances of specific routine names.
+routine_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+routine_schema 	sql_identifier 	Name of the schema containing the function
+routine_name 	sql_identifier 	Name of the function (might be duplicated in case of overloading)
+routine_type 	character_data 	Always FUNCTION (In the future there might be other types of routines.)
+module_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+module_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+module_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+udt_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+udt_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+udt_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+data_type 	character_data 	Return data type of the function, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in type_udt_name and associated columns).
+character_maximum_length 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
+character_octet_length 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
+character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+collation_catalog 	sql_identifier 	Always null, since this information is not applied to return data types in PostgreSQL
+collation_schema 	sql_identifier 	Always null, since this information is not applied to return data types in PostgreSQL
+collation_name 	sql_identifier 	Always null, since this information is not applied to return data types in PostgreSQL
+numeric_precision 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
+numeric_precision_radix 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
+numeric_scale 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
+datetime_precision 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
+interval_type 	character_data 	Always null, since this information is not applied to return data types in PostgreSQL
+interval_precision 	character_data 	Always null, since this information is not applied to return data types in PostgreSQL
+type_udt_catalog 	sql_identifier 	Name of the database that the return data type of the function is defined in (always the current database)
+type_udt_schema 	sql_identifier 	Name of the schema that the return data type of the function is defined in
+type_udt_name 	sql_identifier 	Name of the return data type of the function
+scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the return data type of this function, unique among the data type descriptors pertaining to the function. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
+routine_body 	character_data 	If the function is an SQL function, then SQL, else EXTERNAL.
+routine_definition 	character_data 	The source text of the function (null if the function is not owned by a currently enabled role). (According to the SQL standard, this column is only applicable if routine_body is SQL, but in PostgreSQL it will contain whatever source text was specified when the function was created.)
+external_name 	character_data 	If this function is a C function, then the external name (link symbol) of the function; else null. (This works out to be the same value that is shown in routine_definition.)
+external_language 	character_data 	The language the function is written in
+parameter_style 	character_data 	Always GENERAL (The SQL standard defines other parameter styles, which are not available in PostgreSQL.)
+is_deterministic 	yes_or_no 	If the function is declared immutable (called deterministic in the SQL standard), then YES, else NO. (You cannot query the other volatility levels available in PostgreSQL through the information schema.)
+sql_data_access 	character_data 	Always MODIFIES, meaning that the function possibly modifies SQL data. This information is not useful for PostgreSQL.
+is_null_call 	yes_or_no 	If the function automatically returns null if any of its arguments are null, then YES, else NO.
+sql_path 	character_data 	Applies to a feature not available in PostgreSQL
+schema_level_routine 	yes_or_no 	Always YES (The opposite would be a method of a user-defined type, which is a feature not available in PostgreSQL.)
+max_dynamic_result_sets 	cardinal_number 	Applies to a feature not available in PostgreSQL
+is_user_defined_cast 	yes_or_no 	Applies to a feature not available in PostgreSQL
+is_implicitly_invocable 	yes_or_no 	Applies to a feature not available in PostgreSQL
+security_type 	character_data 	If the function runs with the privileges of the current user, then INVOKER, if the function runs with the privileges of the user who defined it, then DEFINER.
+to_sql_specific_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+to_sql_specific_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+to_sql_specific_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+as_locator 	yes_or_no 	Applies to a feature not available in PostgreSQL
+created 	time_stamp 	Applies to a feature not available in PostgreSQL
+last_altered 	time_stamp 	Applies to a feature not available in PostgreSQL
+new_savepoint_level 	yes_or_no 	Applies to a feature not available in PostgreSQL
+is_udt_dependent 	yes_or_no 	Applies to a feature not available in PostgreSQL
+result_cast_from_data_type 	character_data 	Applies to a feature not available in PostgreSQL
+result_cast_as_locator 	yes_or_no 	Applies to a feature not available in PostgreSQL
+result_cast_char_max_length 	cardinal_number 	Applies to a feature not available in PostgreSQL
+result_cast_char_octet_length 	character_data 	Applies to a feature not available in PostgreSQL
+result_cast_char_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_char_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_char_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_collation_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_collation_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_collation_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_numeric_precision 	cardinal_number 	Applies to a feature not available in PostgreSQL
+result_cast_numeric_precision_radix 	cardinal_number 	Applies to a feature not available in PostgreSQL
+result_cast_numeric_scale 	cardinal_number 	Applies to a feature not available in PostgreSQL
+result_cast_datetime_precision 	character_data 	Applies to a feature not available in PostgreSQL
+result_cast_interval_type 	character_data 	Applies to a feature not available in PostgreSQL
+result_cast_interval_precision 	character_data 	Applies to a feature not available in PostgreSQL
+result_cast_type_udt_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_type_udt_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_type_udt_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+result_cast_maximum_cardinality 	cardinal_number 	Applies to a feature not available in PostgreSQL
+result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available in PostgreSQL
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -724,6 +1188,14 @@
 
 # 34.39. schemata
 # https://www.postgresql.org/docs/9.1/static/infoschema-schemata.html
+
+catalog_name 	sql_identifier 	Name of the database that the schema is contained in (always the current database)
+schema_name 	sql_identifier 	Name of the schema
+schema_owner 	sql_identifier 	Name of the owner of the schema
+default_character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+default_character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+default_character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+sql_path 	character_data 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -745,6 +1217,19 @@
 # 34.40. sequences
 # https://www.postgresql.org/docs/9.1/static/infoschema-sequences.html
 
+sequence_catalog 	sql_identifier 	Name of the database that contains the sequence (always the current database)
+sequence_schema 	sql_identifier 	Name of the schema that contains the sequence
+sequence_name 	sql_identifier 	Name of the sequence
+data_type 	character_data 	The data type of the sequence. In PostgreSQL, this is currently always bigint.
+numeric_precision 	cardinal_number 	This column contains the (declared or implicit) precision of the sequence data type (see above). The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix.
+numeric_precision_radix 	cardinal_number 	This column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10.
+numeric_scale 	cardinal_number 	This column contains the (declared or implicit) scale of the sequence data type (see above). The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix.
+start_value 	character_data 	The start value of the sequence
+minimum_value 	character_data 	The minimum value of the sequence
+maximum_value 	character_data 	The maximum value of the sequence
+increment 	character_data 	The increment of the sequence
+cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -764,6 +1249,14 @@
 
 # 34.41. sql_features
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-features.html
+
+feature_id 	character_data 	Identifier string of the feature
+feature_name 	character_data 	Descriptive name of the feature
+sub_feature_id 	character_data 	Identifier string of the subfeature, or a zero-length string if not a subfeature
+sub_feature_name 	character_data 	Descriptive name of the subfeature, or a zero-length string if not a subfeature
+is_supported 	yes_or_no 	YES if the feature is fully supported by the current version of PostgreSQL, NO if not
+is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
+comments 	character_data 	Possibly a comment about the supported status of the feature
 
 <#Map>
          rr:logicalTable [
@@ -785,6 +1278,13 @@
 # 34.42. sql_implementation_info
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-implementation-info.html
 
+implementation_info_id 	character_data 	Identifier string of the implementation information item
+implementation_info_name 	character_data 	Descriptive name of the implementation information item
+integer_value 	cardinal_number 	Value of the implementation information item, or null if the value is contained in the column character_value
+character_value 	character_data 	Value of the implementation information item, or null if the value is contained in the column integer_value
+comments 	character_data 	Possibly a comment pertaining to the implementation information item
+
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -804,6 +1304,14 @@
 
 # 34.43. sql_languages
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-languages.html
+
+sql_language_source 	character_data 	The name of the source of the language definition; always ISO 9075, that is, the SQL standard
+sql_language_year 	character_data 	The year the standard referenced in sql_language_source was approved.
+sql_language_conformance 	character_data 	The standard conformance level for the language binding. For ISO 9075:2003 this is always CORE.
+sql_language_integrity 	character_data 	Always null (This value is relevant to an earlier version of the SQL standard.)
+sql_language_implementation 	character_data 	Always null
+sql_language_binding_style 	character_data 	The language binding style, either DIRECT or EMBEDDED
+sql_language_programming_language 	character_data 	The programming language, if the binding style is EMBEDDED, else null. PostgreSQL only supports the language C.
 
 <#Map>
          rr:logicalTable [
@@ -825,6 +1333,12 @@
 # 34.44. sql_packages
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-packages.html
 
+feature_id 	character_data 	Identifier string of the package
+feature_name 	character_data 	Descriptive name of the package
+is_supported 	yes_or_no 	YES if the package is fully supported by the current version of PostgreSQL, NO if not
+is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
+comments 	character_data 	Possibly a comment about the supported status of the package
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -844,6 +1358,12 @@
 
 # 34.45. sql_parts
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-parts.html
+
+feature_id 	character_data 	An identifier string containing the number of the part
+feature_name 	character_data 	Descriptive name of the part
+is_supported 	yes_or_no 	YES if the part is fully supported by the current version of PostgreSQL, NO if not
+is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
+comments 	character_data 	Possibly a comment about the supported status of the part
 
 <#Map>
          rr:logicalTable [
@@ -865,6 +1385,11 @@
 # 34.46. sql_sizing
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-sizing.html
 
+sizing_id 	cardinal_number 	Identifier of the sizing item
+sizing_name 	character_data 	Descriptive name of the sizing item
+supported_value 	cardinal_number 	Value of the sizing item, or 0 if the size is unlimited or cannot be determined, or null if the features for which the sizing item is applicable are not supported
+comments 	character_data 	Possibly a comment pertaining to the sizing item
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -884,6 +1409,12 @@
 
 # 34.47. sql_sizing_profiles
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-sizing-profiles.html
+
+sizing_id 	cardinal_number 	Identifier of the sizing item
+sizing_name 	character_data 	Descriptive name of the sizing item
+profile_id 	character_data 	Identifier string of a profile
+required_value 	cardinal_number 	The value required by the SQL profile for the sizing item, or 0 if the profile places no limit on the sizing item, or null if the profile does not require any of the features for which the sizing item is applicable
+comments 	character_data 	Possibly a comment pertaining to the sizing item within the profile
 
 <#Map>
          rr:logicalTable [
@@ -905,6 +1436,16 @@
 # 34.48. table_constraints
 # https://www.postgresql.org/docs/9.1/static/infoschema-table-constraints.html
 
+constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraint_name 	sql_identifier 	Name of the constraint
+table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table
+table_name 	sql_identifier 	Name of the table
+constraint_type 	character_data 	Type of the constraint: CHECK, FOREIGN KEY, PRIMARY KEY, or UNIQUE
+is_deferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
+initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -924,6 +1465,15 @@
 
 # 34.49. table_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-table-privileges.html
+
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table
+table_name 	sql_identifier 	Name of the table
+privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, or TRIGGER
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
+with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -945,6 +1495,19 @@
 # 34.50. tables
 # https://www.postgresql.org/docs/9.1/static/infoschema-tables.html
 
+table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table
+table_name 	sql_identifier 	Name of the table
+table_type 	character_data 	Type of the table: BASE TABLE for a persistent base table (the normal table type), VIEW for a view, FOREIGN TABLE for a foreign table, or LOCAL TEMPORARY for a temporary table
+self_referencing_column_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+reference_generation 	character_data 	Applies to a feature not available in PostgreSQL
+user_defined_type_catalog 	sql_identifier 	If the table is a typed table, the name of the database that contains the underlying data type (always the current database), else null.
+user_defined_type_schema 	sql_identifier 	If the table is a typed table, the name of the schema that contains the underlying data type, else null.
+user_defined_type_name 	sql_identifier 	If the table is a typed table, the name of the underlying data type, else null.
+is_insertable_into 	yes_or_no 	YES if the table is insertable into, NO if not (Base tables are always insertable into, views not necessarily.)
+is_typed 	yes_or_no 	YES if the table is a typed table, NO if not
+commit_action 	character_data 	If the table is a temporary table, then PRESERVE, else null. (The SQL standard defines other commit actions for temporary tables, which are not supported by PostgreSQL.)
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -964,6 +1527,14 @@
 
 # 34.51. triggered_update_columns
 # https://www.postgresql.org/docs/9.1/static/infoschema-triggered-update-columns.html
+
+trigger_catalog 	sql_identifier 	Name of the database that contains the trigger (always the current database)
+trigger_schema 	sql_identifier 	Name of the schema that contains the trigger
+trigger_name 	sql_identifier 	Name of the trigger
+event_object_catalog 	sql_identifier 	Name of the database that contains the table that the trigger is defined on (always the current database)
+event_object_schema 	sql_identifier 	Name of the schema that contains the table that the trigger is defined on
+event_object_table 	sql_identifier 	Name of the table that the trigger is defined on
+event_object_column 	sql_identifier 	Name of the column that the trigger is defined on
 
 <#Map>
          rr:logicalTable [
@@ -985,6 +1556,24 @@
 # 34.52. triggers
 # https://www.postgresql.org/docs/9.1/static/infoschema-triggers.html
 
+trigger_catalog 	sql_identifier 	Name of the database that contains the trigger (always the current database)
+trigger_schema 	sql_identifier 	Name of the schema that contains the trigger
+trigger_name 	sql_identifier 	Name of the trigger
+event_manipulation 	character_data 	Event that fires the trigger (INSERT, UPDATE, or DELETE)
+event_object_catalog 	sql_identifier 	Name of the database that contains the table that the trigger is defined on (always the current database)
+event_object_schema 	sql_identifier 	Name of the schema that contains the table that the trigger is defined on
+event_object_table 	sql_identifier 	Name of the table that the trigger is defined on
+action_order 	cardinal_number 	Not yet implemented
+action_condition 	character_data 	WHEN condition of the trigger, null if none (also null if the table is not owned by a currently enabled role)
+action_statement 	character_data 	Statement that is executed by the trigger (currently always EXECUTE PROCEDURE function(...))
+action_orientation 	character_data 	Identifies whether the trigger fires once for each processed row or once for each statement (ROW or STATEMENT)
+action_timing 	character_data 	Time at which the trigger fires (BEFORE, AFTER, or INSTEAD OF)
+action_reference_old_table 	sql_identifier 	Applies to a feature not available in PostgreSQL
+action_reference_new_table 	sql_identifier 	Applies to a feature not available in PostgreSQL
+action_reference_old_row 	sql_identifier 	Applies to a feature not available in PostgreSQL
+action_reference_new_row 	sql_identifier 	Applies to a feature not available in PostgreSQL
+created 	time_stamp 	Applies to a feature not available in PostgreSQL
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -1004,6 +1593,15 @@
 
 # 34.53. usage_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-usage-privileges.html
+
+grantor 	sql_identifier 	Name of the role that granted the privilege
+grantee 	sql_identifier 	Name of the role that the privilege was granted to
+object_catalog 	sql_identifier 	Name of the database containing the object (always the current database)
+object_schema 	sql_identifier 	Name of the schema containing the object, if applicable, else an empty string
+object_name 	sql_identifier 	Name of the object
+object_type 	character_data 	COLLATION or DOMAIN or FOREIGN DATA WRAPPER or FOREIGN SERVER
+privilege_type 	character_data 	Always USAGE
+is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -1025,6 +1623,12 @@
 # 34.54. user_mapping_options
 # https://www.postgresql.org/docs/9.1/static/infoschema-user-mapping-options.html
 
+authorization_identifier 	sql_identifier 	Name of the user being mapped, or PUBLIC if the mapping is public
+foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server used by this mapping is defined in (always the current database)
+foreign_server_name 	sql_identifier 	Name of the foreign server used by this mapping
+option_name 	sql_identifier 	Name of an option
+option_value 	character_data 	Value of the option. This column will show as null unless the current user is the user being mapped, or the mapping is for PUBLIC and the current user is the server owner, or the current user is a superuser. The intent is to protect password information stored as user mapping option.
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -1044,6 +1648,10 @@
 
 # 34.55. user_mappings
 # https://www.postgresql.org/docs/9.1/static/infoschema-user-mappings.html
+
+authorization_identifier 	sql_identifier 	Name of the user being mapped, or PUBLIC if the mapping is public
+foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server used by this mapping is defined in (always the current database)
+foreign_server_name 	sql_identifier 	Name of the foreign server used by this mapping
 
 <#Map>
          rr:logicalTable [
@@ -1065,6 +1673,14 @@
 # 34.56. view_column_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-view-column-usage.html
 
+view_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
+view_schema 	sql_identifier 	Name of the schema that contains the view
+view_name 	sql_identifier 	Name of the view
+table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column that is used by the view (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column that is used by the view
+table_name 	sql_identifier 	Name of the table that contains the column that is used by the view
+column_name 	sql_identifier 	Name of the column that is used by the view
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -1084,6 +1700,13 @@
 
 # 34.57. view_routine_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-view-routine-usage.html
+
+table_catalog 	sql_identifier 	Name of the database containing the view (always the current database)
+table_schema 	sql_identifier 	Name of the schema containing the view
+table_name 	sql_identifier 	Name of the view
+specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specific_schema 	sql_identifier 	Name of the schema containing the function
+specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
 
 <#Map>
          rr:logicalTable [
@@ -1105,6 +1728,13 @@
 # 34.58. view_table_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-view-table-usage.html
 
+view_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
+view_schema 	sql_identifier 	Name of the schema that contains the view
+view_name 	sql_identifier 	Name of the view
+table_catalog 	sql_identifier 	Name of the database that contains the table that is used by the view (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the table that is used by the view
+table_name 	sql_identifier 	Name of the table that is used by the view
+
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA."
@@ -1124,6 +1754,17 @@
 
 # 34.59. views
 # https://www.postgresql.org/docs/9.1/static/infoschema-views.html
+
+table_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
+table_schema 	sql_identifier 	Name of the schema that contains the view
+table_name 	sql_identifier 	Name of the view
+view_definition 	character_data 	Query expression defining the view (null if the view is not owned by a currently enabled role)
+check_option 	character_data 	Applies to a feature not available in PostgreSQL
+is_updatable 	yes_or_no 	YES if the view is updatable (allows UPDATE and DELETE), NO if not
+is_insertable_into 	yes_or_no 	YES if the view is insertable into (allows INSERT), NO if not
+is_trigger_updatable 	yes_or_no 	YES if the view has an INSTEAD OF UPDATE trigger defined on it, NO if not
+is_trigger_deletable 	yes_or_no 	YES if the view has an INSTEAD OF DELETE trigger defined on it, NO if not
+is_trigger_insertable_into 	yes_or_no 	YES if the view has an INSTEAD OF INSERT trigger defined on it, NO if not
 
 <#Map>
          rr:logicalTable [
