@@ -10,7 +10,7 @@ catalog_name 	sql_identifier 	Name of the database that contains this informatio
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.information_schema_catalog_name"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -34,7 +34,7 @@ is_grantable 	yes_or_no 	Always YES
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.administrable_role_authorizations"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -58,7 +58,7 @@ is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.applicable_roles"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -110,7 +110,7 @@ is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.attributes"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -140,7 +140,7 @@ default_collate_name 	sql_identifier 	Name of the default collation. The default
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.character_sets"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -167,7 +167,7 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.check_constraint_routine_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -192,7 +192,7 @@ check_clause 	character_data 	The check expression of the check constraint
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.check_constraints"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -217,7 +217,7 @@ pad_attribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not s
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.collations"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -243,7 +243,7 @@ character_set_name 	sql_identifier 	Name of the character set
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.collation_character_set_applicability"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -272,7 +272,7 @@ column_name 	sql_identifier 	Name of the column
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.column_domain_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -301,7 +301,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.column_privileges"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -329,7 +329,7 @@ column_name 	sql_identifier 	Name of the column
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.column_udt_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -394,7 +394,7 @@ is_updatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in b
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.columns"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -422,7 +422,7 @@ constraint_name 	sql_identifier 	Name of the constraint
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.constraint_column_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -449,7 +449,7 @@ constraint_name 	sql_identifier 	Name of the constraint
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.constraint_table_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -475,7 +475,7 @@ dtd_identifier 	sql_identifier 	The identifier of the data type descriptor, whic
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.data_type_privileges"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -504,7 +504,7 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.domain_constraints"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -531,7 +531,7 @@ domain_name 	sql_identifier 	Name of the domain
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.domain_udt_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -579,7 +579,7 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.domains"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -629,7 +629,7 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.element_types"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -651,7 +651,7 @@ role_name 	sql_identifier 	Name of a role
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.enabled_roles"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -676,7 +676,7 @@ option_value 	character_data 	Value of the option
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.foreign_data_wrapper_options"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -702,7 +702,7 @@ foreign_data_wrapper_language 	character_data 	Language used to implement this f
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.foreign_data_wrappers"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -727,7 +727,7 @@ option_value 	character_data 	Value of the option
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.foreign_server_options"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -755,7 +755,7 @@ authorization_identifier 	sql_identifier 	Name of the owner of the foreign serve
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.foreign_servers"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -781,7 +781,7 @@ option_value 	character_data 	Value of the option
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.foreign_table_options"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -807,7 +807,7 @@ foreign_server_name 	sql_identifier 	Name of the foreign server
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.foreign_tables"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -837,7 +837,7 @@ position_in_unique_constraint 	cardinal_number 	For a foreign-key constraint, or
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.key_column_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -889,7 +889,7 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.parameters"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -919,7 +919,7 @@ delete_rule 	character_data 	Delete rule of the foreign key constraint: CASCADE,
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.referential_constraints"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -948,7 +948,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.role_column_grants"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -979,7 +979,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.role_routine_grants"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1008,7 +1008,7 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.role_table_grants"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1037,7 +1037,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.role_usage_grants"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1068,7 +1068,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.routine_privileges"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1171,7 +1171,7 @@ result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available i
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.routines"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1199,7 +1199,7 @@ sql_path 	character_data 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.schemata"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1232,7 +1232,7 @@ cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sequences"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1260,7 +1260,7 @@ comments 	character_data 	Possibly a comment about the supported status of the f
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_features"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1287,7 +1287,7 @@ comments 	character_data 	Possibly a comment pertaining to the implementation in
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_implementation_info"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1315,7 +1315,7 @@ sql_language_programming_language 	character_data 	The programming language, if 
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_languages"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1341,7 +1341,7 @@ comments 	character_data 	Possibly a comment about the supported status of the p
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_packages"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1367,7 +1367,7 @@ comments 	character_data 	Possibly a comment about the supported status of the p
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_parts"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1392,7 +1392,7 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_sizing"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1418,7 +1418,7 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item withi
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.sql_sizing_profiles"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1448,7 +1448,7 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.table_constraints"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1477,7 +1477,7 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.table_privileges"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1510,7 +1510,7 @@ commit_action 	character_data 	If the table is a temporary table, then PRESERVE,
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.tables"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1538,7 +1538,7 @@ event_object_column 	sql_identifier 	Name of the column that the trigger is defi
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.triggered_update_columns"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1576,7 +1576,7 @@ created 	time_stamp 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.triggers"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1605,7 +1605,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.usage_privileges"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1631,7 +1631,7 @@ option_value 	character_data 	Value of the option. This column will show as null
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.user_mapping_options"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1655,7 +1655,7 @@ foreign_server_name 	sql_identifier 	Name of the foreign server used by this map
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.user_mappings"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1683,7 +1683,7 @@ column_name 	sql_identifier 	Name of the column that is used by the view
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.view_column_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1710,7 +1710,7 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.view_routine_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1737,7 +1737,7 @@ table_name 	sql_identifier 	Name of the table that is used by the view
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.view_table_usage"
          ];
          rr:subjectMap [
             rr:class pgsql:;
@@ -1768,7 +1768,7 @@ is_trigger_insertable_into 	yes_or_no 	YES if the view has an INSTEAD OF INSERT 
 
 <#Map>
          rr:logicalTable [
-            rr:tablename "INFORMATION_SCHEMA."
+            rr:tablename "INFORMATION_SCHEMA.views"
          ];
          rr:subjectMap [
             rr:class pgsql:;
