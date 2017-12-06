@@ -24,7 +24,7 @@
 .
 
 # 34.4. administrable_role_authorizations
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-administrable-role-authorizations.html
 
 <#Map>
          rr:logicalTable [
@@ -44,7 +44,7 @@
 .
 
 # 34.5. applicable_roles
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-applicable-roles.html
 
 <#Map>
          rr:logicalTable [
@@ -64,7 +64,7 @@
 .
 
 # 34.6. attributes
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-attributes.html
 
 <#Map>
          rr:logicalTable [
@@ -84,7 +84,7 @@
 .
 
 # 34.7. character_sets
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-character-sets.html
 
 <#Map>
          rr:logicalTable [
@@ -104,7 +104,7 @@
 .
 
 # 34.8. check_constraint_routine_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-check-constraint-routine-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -124,7 +124,7 @@
 .
 
 # 34.9. check_constraints
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-check-constraints.html
 
 <#Map>
          rr:logicalTable [
@@ -144,7 +144,7 @@
 .
 
 # 34.10. collations
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-collations.html
 
 <#Map>
          rr:logicalTable [
@@ -163,7 +163,7 @@
 ];
 
 # 34.11. collation_character_set_applicability
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-collation-character-set-applicab.html
 
 <#Map>
          rr:logicalTable [
@@ -183,7 +183,7 @@
 .
 
 # 34.12. column_domain_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-column-domain-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -203,7 +203,7 @@
 .
 
 # 34.13. column_privileges
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-column-privileges.html
 
 <#Map>
          rr:logicalTable [
@@ -223,7 +223,7 @@
 .
 
 # 34.14. column_udt_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-column-udt-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -243,7 +243,7 @@
 .
 
 # 34.15. columns
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-columns.html
 
 <#Map>
          rr:logicalTable [
@@ -263,7 +263,7 @@
 .
 
 # 34.16. constraint_column_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-constraint-column-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -283,7 +283,7 @@
 .
 
 # 34.17. constraint_table_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-constraint-table-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -303,7 +303,7 @@
 .
 
 # 34.18. data_type_privileges
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-data-type-privileges.html
 
 <#Map>
          rr:logicalTable [
@@ -323,7 +323,7 @@
 .
 
 # 34.19. domain_constraints
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-domain-constraints.html
 
 <#Map>
          rr:logicalTable [
@@ -343,7 +343,7 @@
 .
 
 # 34.20. domain_udt_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-domain-udt-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -363,7 +363,7 @@
 .
 
 # 34.21. domains
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-domains.html
 
 <#Map>
          rr:logicalTable [
@@ -383,7 +383,7 @@
 .
 
 # 34.22. element_types
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-element-types.html
 
 <#Map>
          rr:logicalTable [
@@ -403,7 +403,7 @@
 .
 
 # 34.23. enabled_roles
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-enabled-roles.html
 
 <#Map>
          rr:logicalTable [
@@ -423,7 +423,7 @@
 .
 
 # 34.24. foreign_data_wrapper_options
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-foreign-data-wrapper-options.html
 
 <#Map>
          rr:logicalTable [
@@ -443,7 +443,7 @@
 .
 
 # 34.25. foreign_data_wrappers
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-foreign-data-wrappers.html
 
 <#Map>
          rr:logicalTable [
@@ -463,7 +463,7 @@
 .
 
 # 34.26. foreign_server_options
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-foreign-server-options.html
 
 <#Map>
          rr:logicalTable [
@@ -483,7 +483,7 @@
 .
 
 # 34.27. foreign_servers
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-foreign-servers.html
 
 <#Map>
          rr:logicalTable [
@@ -503,7 +503,7 @@
 .
 
 # 34.28. foreign_table_options
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-foreign-table-options.html
 
 <#Map>
          rr:logicalTable [
@@ -523,7 +523,7 @@
 .
 
 # 34.29. foreign_tables
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-foreign-tables.html
 
 <#Map>
          rr:logicalTable [
@@ -543,7 +543,7 @@
 .
 
 # 34.30. key_column_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-key-column-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -563,7 +563,7 @@
 .
 
 # 34.31. parameters
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-parameters.html
 
 <#Map>
          rr:logicalTable [
@@ -583,7 +583,7 @@
 .
 
 # 34.32. referential_constraints
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-referential-constraints.html
 
 <#Map>
          rr:logicalTable [
@@ -603,7 +603,7 @@
 .
 
 # 34.33. role_column_grants
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-role-column-grants.html
 
 <#Map>
          rr:logicalTable [
@@ -623,7 +623,7 @@
 .
 
 # 34.34. role_routine_grants
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-role-routine-grants.html
 
 <#Map>
          rr:logicalTable [
@@ -643,7 +643,7 @@
 .
 
 # 34.35. role_table_grants
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-role-table-grants.html
 
 <#Map>
          rr:logicalTable [
@@ -663,7 +663,7 @@
 .
 
 # 34.36. role_usage_grants
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-role-usage-grants.html
 
 <#Map>
          rr:logicalTable [
@@ -683,7 +683,7 @@
 .
 
 # 34.37. routine_privileges
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-routine-privileges.html
 
 <#Map>
          rr:logicalTable [
@@ -703,7 +703,7 @@
 .
 
 # 34.38. routines
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-routines.html
 
 <#Map>
          rr:logicalTable [
@@ -723,7 +723,7 @@
 .
 
 # 34.39. schemata
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-schemata.html
 
 <#Map>
          rr:logicalTable [
@@ -743,7 +743,7 @@
 .
 
 # 34.40. sequences
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sequences.html
 
 <#Map>
          rr:logicalTable [
@@ -763,7 +763,7 @@
 .
 
 # 34.41. sql_features
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-features.html
 
 <#Map>
          rr:logicalTable [
@@ -783,7 +783,7 @@
 .
 
 # 34.42. sql_implementation_info
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-implementation-info.html
 
 <#Map>
          rr:logicalTable [
@@ -803,7 +803,7 @@
 .
 
 # 34.43. sql_languages
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-languages.html
 
 <#Map>
          rr:logicalTable [
@@ -823,7 +823,7 @@
 .
 
 # 34.44. sql_packages
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-packages.html
 
 <#Map>
          rr:logicalTable [
@@ -843,7 +843,7 @@
 .
 
 # 34.45. sql_parts
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-parts.html
 
 <#Map>
          rr:logicalTable [
@@ -863,7 +863,7 @@
 .
 
 # 34.46. sql_sizing
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-sizing.html
 
 <#Map>
          rr:logicalTable [
@@ -883,7 +883,7 @@
 .
 
 # 34.47. sql_sizing_profiles
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-sql-sizing-profiles.html
 
 <#Map>
          rr:logicalTable [
@@ -903,7 +903,7 @@
 .
 
 # 34.48. table_constraints
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-table-constraints.html
 
 <#Map>
          rr:logicalTable [
@@ -923,7 +923,7 @@
 .
 
 # 34.49. table_privileges
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-table-privileges.html
 
 <#Map>
          rr:logicalTable [
@@ -943,7 +943,7 @@
 .
 
 # 34.50. tables
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-tables.html
 
 <#Map>
          rr:logicalTable [
@@ -963,7 +963,7 @@
 .
 
 # 34.51. triggered_update_columns
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-triggered-update-columns.html
 
 <#Map>
          rr:logicalTable [
@@ -983,7 +983,7 @@
 .
 
 # 34.52. triggers
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-triggers.html
 
 <#Map>
          rr:logicalTable [
@@ -1003,7 +1003,7 @@
 .
 
 # 34.53. usage_privileges
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-usage-privileges.html
 
 <#Map>
          rr:logicalTable [
@@ -1023,7 +1023,7 @@
 .
 
 # 34.54. user_mapping_options
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-user-mapping-options.html
 
 <#Map>
          rr:logicalTable [
@@ -1043,7 +1043,7 @@
 .
 
 # 34.55. user_mappings
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-user-mappings.html
 
 <#Map>
          rr:logicalTable [
@@ -1063,7 +1063,7 @@
 .
 
 # 34.56. view_column_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-view-column-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -1083,7 +1083,7 @@
 .
 
 # 34.57. view_routine_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-view-routine-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -1103,7 +1103,7 @@
 .
 
 # 34.58. view_table_usage
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-view-table-usage.html
 
 <#Map>
          rr:logicalTable [
@@ -1123,7 +1123,7 @@
 .
 
 # 34.59. views
-# 
+# https://www.postgresql.org/docs/9.1/static/infoschema-views.html
 
 <#Map>
          rr:logicalTable [
