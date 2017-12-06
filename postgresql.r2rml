@@ -46,6 +46,16 @@ is_grantable 	yes_or_no 	Always YES
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -65,6 +75,16 @@ is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -122,6 +142,151 @@ is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -147,6 +312,41 @@ default_collate_name 	sql_identifier 	Name of the default collation. The default
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -179,6 +379,31 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -199,6 +424,21 @@ check_clause 	character_data 	The check expression of the check constraint
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -229,6 +469,21 @@ pad_attribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not s
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 # 34.11. collation_character_set_applicability
@@ -250,6 +505,31 @@ character_set_name 	sql_identifier 	Name of the character set
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -284,6 +564,36 @@ column_name 	sql_identifier 	Name of the column
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -313,6 +623,41 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -336,6 +681,36 @@ column_name 	sql_identifier 	Name of the column
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -406,6 +781,221 @@ is_updatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in b
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -429,6 +1019,36 @@ constraint_name 	sql_identifier 	Name of the constraint
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -461,6 +1081,31 @@ constraint_name 	sql_identifier 	Name of the constraint
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -482,6 +1127,26 @@ dtd_identifier 	sql_identifier 	The identifier of the data type descriptor, whic
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -516,6 +1181,41 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -538,6 +1238,31 @@ domain_name 	sql_identifier 	Name of the domain
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -586,6 +1311,131 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -641,6 +1491,151 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -688,6 +1683,21 @@ option_value 	character_data 	Value of the option
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -714,6 +1724,26 @@ foreign_data_wrapper_language 	character_data 	Language used to implement this f
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -734,6 +1764,21 @@ option_value 	character_data 	Value of the option
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -767,6 +1812,41 @@ authorization_identifier 	sql_identifier 	Name of the owner of the foreign serve
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -788,6 +1868,26 @@ option_value 	character_data 	Value of the option
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -819,6 +1919,26 @@ foreign_server_name 	sql_identifier 	Name of the foreign server
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -844,6 +1964,46 @@ position_in_unique_constraint 	cardinal_number 	For a foreign-key constraint, or
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -901,6 +2061,156 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -931,6 +2241,46 @@ delete_rule 	character_data 	Delete rule of the foreign key constraint: CASCADE,
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -955,6 +2305,41 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -991,6 +2376,51 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1015,6 +2445,41 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1049,6 +2514,41 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1075,6 +2575,51 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1183,6 +2728,386 @@ result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available i
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1206,6 +3131,36 @@ sql_path 	character_data 	Applies to a feature not available in PostgreSQL
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1244,6 +3199,61 @@ cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1272,6 +3282,36 @@ comments 	character_data 	Possibly a comment about the supported status of the f
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1294,6 +3334,26 @@ comments 	character_data 	Possibly a comment pertaining to the implementation in
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1327,6 +3387,36 @@ sql_language_programming_language 	character_data 	The programming language, if 
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1348,6 +3438,26 @@ comments 	character_data 	Possibly a comment about the supported status of the p
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1379,6 +3489,26 @@ comments 	character_data 	Possibly a comment about the supported status of the p
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1399,6 +3529,21 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1425,6 +3570,26 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item withi
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1460,6 +3625,46 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1484,6 +3689,41 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1522,6 +3762,66 @@ commit_action 	character_data 	If the table is a temporary table, then PRESERVE,
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1545,6 +3845,36 @@ event_object_column 	sql_identifier 	Name of the column that the trigger is defi
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1588,6 +3918,86 @@ created 	time_stamp 	Applies to a feature not available in PostgreSQL
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1612,6 +4022,41 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1643,6 +4088,26 @@ option_value 	character_data 	Value of the option. This column will show as null
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1662,6 +4127,16 @@ foreign_server_name 	sql_identifier 	Name of the foreign server used by this map
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1695,6 +4170,36 @@ column_name 	sql_identifier 	Name of the column that is used by the view
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1717,6 +4222,31 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
@@ -1749,6 +4279,31 @@ table_name 	sql_identifier 	Name of the table that is used by the view
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 .
 
@@ -1775,6 +4330,51 @@ is_trigger_insertable_into 	yes_or_no 	YES if the view has an INSTEAD OF INSERT 
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
