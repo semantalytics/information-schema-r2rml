@@ -3,7 +3,7 @@
 
 # http://h2database.com/html/grammar.html#information_schema
 
-<#Map>
+<#CatalogsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.CATALOGS"
          ];
@@ -19,7 +19,7 @@
             ];
 ];
 
-<#Map>
+<#CollationsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.COLLATIONS"
          ];
@@ -64,7 +64,7 @@ SEQUENCE_NAME,
 REMARKS, 
 SOURCE_DATA_TYPE
 
-<#Map>
+<#ColumnsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.COLUMNS"
          ];
@@ -90,7 +90,7 @@ COLUMN_NAME,
 PRIVILEGE_TYPE,
 IS_GRANTABLE
 
-<#Map>
+<#PrivilegesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.COLUMN_PRIVILEGES"
          ];
@@ -115,7 +115,7 @@ REMARKS,
 SQL, 
 ID
 
-<#Map>
+<#ConstantsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.CONSTANTS"
          ];
@@ -146,7 +146,7 @@ REMARKS,
 SQL, 
 ID
 
-<#Map>
+<#ConstraintsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.CONSTRAINTS"
          ];
@@ -178,7 +178,7 @@ FK_NAME,
 PK_NAME, 
 DEFERRABILITY
 
-<#Map>
+<#CrossReferencesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.CROSS_REFERENCES"
          ];
@@ -210,7 +210,7 @@ REMARKS,
 SQL,
 ID
 
-<#Map>
+<#DomainsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.DOMAINS"
          ];
@@ -240,7 +240,7 @@ REMARKS,
 ID, 
 SOURCE
 
-<#Map>
+<#FuncationAliasesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.FUNCTION_ALIASES"
          ];
@@ -275,7 +275,7 @@ COLUMN_TYPE,
 REMARKS, 
 COLUMN_DEFAULT
 
-<#Map>
+<#FunctionColumnsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.FUNCTION_COLUMNS"
          ];
@@ -298,7 +298,7 @@ TOPIC,
 SYNTAX,
 TEXT
 
-<#Map>
+<#HelpMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.HELP"
          ];
@@ -338,7 +338,7 @@ CONSTRAINT_NAME,
 INDEX_CLASS, 
 AFFINITY
 
-<#Map>
+<#IndexesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.INDEXES"
          ];
@@ -359,7 +359,7 @@ IN_DOUBT
 TRANSACTION, 
 STATE
 
-<#Map>
+<#InDoubtMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.IN_DOUBT"
          ];
@@ -381,7 +381,7 @@ TABLE_NAME,
 SESSION_ID, 
 LOCK_TYPE
 
-<#Map>
+<#LocksMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.LOCKS"
          ];
@@ -411,7 +411,7 @@ CUMULATIVE_ROW_COUNT,
 AVERAGE_ROW_COUNT, 
 STD_DEV_ROW_COUNT
 
-<#Map>
+<#QueryStatisticsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.QUERY_STATISTICS"
          ];
@@ -437,7 +437,7 @@ TABLE_SCHEMA,
 TABLE_NAME, 
 ID
 
-<#Map>
+<#RightsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.RIGHTS"
          ];
@@ -458,7 +458,7 @@ NAME,
 REMARKS, 
 ID
 
-<#Map>
+<#RolesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.ROLES"
          ];
@@ -484,7 +484,7 @@ IS_DEFAULT,
 REMARKS, 
 ID
 
-<#Map>
+<#SchemataMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.SCHEMATA"
          ];
@@ -514,7 +514,7 @@ MAX_VALUE,
 IS_CYCLE, 
 ID
 
-<#Map>
+<#SequencesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.SEQUENCES"
          ];
@@ -539,7 +539,7 @@ STATEMENT,
 STATEMENT_START, 
 CONTAINS_UNCOMMITTED
 
-<#Map>
+<#SessionsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.SESSIONS"
          ];
@@ -559,7 +559,7 @@ SESSION_STATE
 KEY, 
 SQL
 
-<#Map>
+<#SessionStateMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.SESSION_STATE"
          ];
@@ -579,7 +579,7 @@ SETTINGS
 NAME, 
 VALUE
 
-<#Map>
+<#SettingsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.SETTINGS"
          ];
@@ -610,7 +610,7 @@ TYPE_NAME,
 TABLE_CLASS,
 ROW_COUNT_ESTIMATE
 
-<#Map>
+<#TablesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TABLES"
          ];
@@ -635,7 +635,7 @@ TABLE_NAME,
 PRIVILEGE_TYPE, 
 IS_GRANTABLE
 
-<#Map>
+<#TablePrivilegesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TABLE_PRIVILEGES"
          ];
@@ -654,7 +654,7 @@ IS_GRANTABLE
 TABLE_TYPES 	
 TYPE
 
-<#Map>
+<#TableTypesMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TABLE_TYPES"
          ];
@@ -686,7 +686,7 @@ REMARKS,
 SQL, 
 ID
 
-<#Map>
+<#TriggersMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TRIGGERS"
          ];
@@ -718,7 +718,7 @@ CASE_SENSITIVE,
 NULLABLE, 
 SEARCHABLE
 
-<#Map>
+<#TypeInfoMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.TYPE_INFO"
          ];
@@ -740,7 +740,7 @@ ADMIN,
 REMARKS, 
 ID
 
-<#Map>
+<#UsersMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.USERS"
          ];
@@ -767,7 +767,7 @@ STATUS,
 REMARKS, 
 ID
 
-<#Map>
+<#ViewsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.VIEWS"
          ];
