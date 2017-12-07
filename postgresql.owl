@@ -1,58 +1,230 @@
 
 34.3. information_schema_catalog_name
+
+catalog_name 	sql_identifier 	Name of the database that contains this information schema
+
 34.4. administrable_role_authorizations
+
+
+
 34.5. applicable_roles
+
+
+
 34.6. attributes
+
+
+
+
 34.7. character_sets
+
+
+
 34.8. check_constraint_routine_usage
+
+
+
 34.9. check_constraints
+
+
+
 34.10. collations
+
+
+
 34.11. collation_character_set_applicability
+
+
+
 34.12. column_domain_usage
+
+
+
 34.13. column_privileges
+
+
+
 34.14. column_udt_usage
+
+
+
 34.15. columns
+
+
+
 34.16. constraint_column_usage
+
+
+
 34.17. constraint_table_usage
+
+
+
 34.18. data_type_privileges
+
+
+
 34.19. domain_constraints
+
+
+
 34.20. domain_udt_usage
+
+
+
 34.21. domains
+
+
+
 34.22. element_types
+
+
+
 34.23. enabled_roles
+
+
+
 34.24. foreign_data_wrapper_options
+
+
+
 34.25. foreign_data_wrappers
+
+
+
 34.26. foreign_server_options
+
+
+
 34.27. foreign_servers
+
+
+
 34.28. foreign_table_options
+
+
+
 34.29. foreign_tables
+
+
+
 34.30. key_column_usage
+
+
+
 34.31. parameters
+
+
+
 34.32. referential_constraints
+
+
+
 34.33. role_column_grants
+
+
+
 34.34. role_routine_grants
+
+
+
 34.35. role_table_grants
+
+
+
 34.36. role_usage_grants
+
+
+
 34.37. routine_privileges
+
+
+
 34.38. routines
+
+
+
 34.39. schemata
+
+
+
 34.40. sequences
+
+
+
 34.41. sql_features
+
+
+
 34.42. sql_implementation_info
+
+
+
 34.43. sql_languages
+
+
+
 34.44. sql_packages
+
+
+
 34.45. sql_parts
+
+
+
 34.46. sql_sizing
+
+
+
 34.47. sql_sizing_profiles
+
+
+
 34.48. table_constraints
+
+
+
 34.49. table_privileges
+
+
+
 34.50. tables
+
+
+
 34.51. triggered_update_columns
+
+
+
 34.52. triggers
+
+
+
 34.53. usage_privileges
+
+
+
 34.54. user_mapping_options
+
+
+
 34.55. user_mappings
+
+
+
 34.56. view_column_usage
+
+
+
 34.57. view_routine_usage
+
+
+
 34.58. view_table_usage
+
+
+
 34.59. views
+
+
+
