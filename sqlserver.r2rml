@@ -1,1 +1,730 @@
 
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix mysql: <http://semantalytics.com/2017/12/ns/mysql> .
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/check-constraints-transact-sql
+
+CONSTRAINT_CATALOG 	nvarchar(128) 	Constraint qualifier.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of the schema to which the constraint belongs.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	sysname 	Constraint name.
+CHECK_CLAUSE 	nvarchar(4000) 	Actual text of the Transact-SQL definition statement.
+
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/column-domain-usage-transact-sql
+DOMAIN_CATALOG 	nvarchar(128) 	Database in which the alias data type exists.
+DOMAIN_SCHEMA 	nvarchar(128) 	Name of schema that contains the alias data type.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of a data type. The only reliable way to find the schema of a type is to use the TYPEPROPERTY function.
+DOMAIN_NAME 	sysname 	Alias data type.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Table owner.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Table in which the alias data type is used.
+COLUMN_NAME 	sysname 	Column using the alias data type.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/column-privileges-transact-sql
+GRANTOR 	nvarchar(128) 	Privilege grantor.
+GRANTEE 	nvarchar(128) 	Privilege grantee.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Table name.
+COLUMN_NAME 	sysname 	Column name.
+PRIVILEGE_TYPE 	varchar(10) 	Type of privilege.
+IS_GRANTABLE 	varchar(3) 	Specifies whether the grantee can grant permissions to others.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/columns-transact-sql
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	nvarchar(128) 	Table name.
+COLUMN_NAME 	nvarchar(128) 	Column name.
+ORDINAL_POSITION 	int 	Column identification number.
+COLUMN_DEFAULT 	nvarchar(4000) 	Default value of the column.
+IS_NULLABLE 	varchar(3) 	Nullability of the column. If this column allows for NULL, this column returns YES. Otherwise, NO is returned.
+DATA_TYPE 	nvarchar(128) 	System-supplied data type.
+CHARACTER_MAXIMUM_LENGTH 	int 	Maximum length, in characters, for binary data, character data, or text and image data.
+
+-1 for xml and large-value type data. Otherwise, NULL is returned. For more information, see Data Types (Transact-SQL).
+CHARACTER_OCTET_LENGTH 	int 	Maximum length, in bytes, for binary data, character data, or text and image data.
+
+-1 for xml and large-value type data. Otherwise, NULL is returned.
+NUMERIC_PRECISION 	tinyint 	Precision of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, NULL is returned.
+NUMERIC_PRECISION_RADIX 	smallint 	Precision radix of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, NULL is returned.
+NUMERIC_SCALE 	int 	Scale of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, NULL is returned.
+DATETIME_PRECISION 	smallint 	Subtype code for datetime and ISO interval data types. For other data types, NULL is returned.
+CHARACTER_SET_CATALOG 	nvarchar(128) 	Returns master. This indicates the database in which the character set is located, if the column is character data or text data type. Otherwise, NULL is returned.
+CHARACTER_SET_SCHEMA 	nvarchar(128) 	Always returns NULL.
+CHARACTER_SET_NAME 	nvarchar(128) 	Returns the unique name for the character set if this column is character data or text data type. Otherwise, NULL is returned.
+COLLATION_CATALOG 	nvarchar(128) 	Always returns NULL.
+COLLATION_SCHEMA 	nvarchar(128) 	Always returns NULL.
+COLLATION_NAME 	nvarchar(128) 	Returns the unique name for the collation if the column is character data or text data type. Otherwise, NULL is returned.
+DOMAIN_CATALOG 	nvarchar(128) 	If the column is an alias data type, this column is the database name in which the user-defined data type was created. Otherwise, NULL is returned.
+DOMAIN_SCHEMA 	nvarchar(128) 	If the column is a user-defined data type, this column returns the name of the schema of the user-defined data type. Otherwise, NULL is returned.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of a data type. The only reliable way to find the schema of a type is to use the TYPEPROPERTY function.
+DOMAIN_NAME 	nvarchar(128) 	If the column is a user-defined data type, this column is the name of the user-defined data type. Otherwise, NULL is returned.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/constraint-column-usage-transact-sql
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table owner.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	nvarchar(128) 	Table name.
+COLUMN_NAME 	nvarchar(128) 	Column name.
+CONSTRAINT_CATALOG 	nvarchar(128) 	Constraint qualifier.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	nvarchar(128) 	Constraint name.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/constraint-table-usage-transact-sql
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Table name.
+CONSTRAINT_CATALOG 	nvarchar(128) 	Constraint qualifier.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	sysname 	Constraint name.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/domain-constraints-transact-sql
+CONSTRAINT_CATALOG 	nvarchar(128) 	Database in which the rule exists.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	sysname 	Rule name.
+DOMAIN_CATALOG 	nvarchar(128) 	Database in which the alias data type exists.
+DOMAIN_SCHEMA 	nvarchar(128) 	Name of schema that contains the alias data type.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of a data type. The only reliable way to find the schema of a type is to use the TYPEPROPERTY function.
+DOMAIN_NAME 	sysname 	Alias data type.
+IS_DEFERRABLE 	varchar(2) 	Specifies whether constraint checking is deferrable. Always returns NO.
+INITIALLY_DEFERRED 	varchar(2) 	Specifies whether constraint checking is at first deferred. Always returns NO.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/domains-transact-sql
+DOMAIN_CATALOG 	nvarchar(128) 	Database in which the alias data type exists.
+DOMAIN_SCHEMA 	nvarchar(128) 	Name of the schema that contains the alias data type.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of a data type. The only reliable way to find the schema of a type is to use the TYPEPROPERTY function.
+DOMAIN_NAME 	sysname 	Alias data type.
+DATA_TYPE 	sysname 	System-supplied data type.
+CHARACTER_MAXIMUM_LENGTH 	int 	Maximum length, in characters, for binary data, character data, or text and image data.
+
+-1 for xml and large-value type data. Otherwise, NULL is returned. For more information, see Data Types (Transact-SQL).
+CHARACTER_OCTET_LENGTH 	int 	Maximum length, in bytes, for binary data, character data, or text and image data.
+
+-1 for xml and large-value type data. Otherwise, NULL is returned.
+COLLATION_CATALOG 	varchar(6) 	Always returns NULL.
+COLLATION_SCHEMA 	varchar(3) 	Always returns NULL.
+COLLATION_NAME 	nvarchar(128) 	Returns the unique name for the sort order if the column is character data or text data type. Otherwise, NULL is returned.
+CHARACTER_SET_CATALOG 	varchar(6) 	Returns master. This indicates the database in which the character set is located, if the column is character data or text data type. Otherwise, NULL is returned.
+CHARACTER_SET_SCHEMA 	varchar(3) 	Always returns NULL.
+CHARACTER_SET_NAME 	nvarchar(128) 	Returns the unique name for the character set if this column is character data or text data type. Otherwise, NULL is returned.
+NUMERIC_PRECISION 	tinyint 	Precision of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, NULL is returned.
+NUMERIC_PRECISION_RADIX 	smallint 	Precision radix of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, NULL is returned.
+NUMERIC_SCALE 	tinyint 	Scale of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, NULL is returned.
+DATETIME_PRECISION 	smallint 	Subtype code for datetime and ISO interval data type. For other data types, this column returns a NULL.
+DOMAIN_DEFAULT 	nvarchar(4000) 	Actual text of the definition Transact-SQL statement.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/key-column-usage-transact-sql
+CONSTRAINT_CATALOG 	nvarchar(128) 	Constraint qualifier.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	nvarchar(128) 	Constraint name.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	nvarchar(128) 	Table name.
+COLUMN_NAME 	nvarchar(128) 	Column name.
+ORDINAL_POSITION 	int 	Column ordinal position.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/parameters-transact-sql
+SPECIFIC_CATALOG 	nvarchar(128) 	Catalog name of the routine for which this is a parameter.
+SPECIFIC_SCHEMA 	nvarchar(128) 	Name of the schema of the routine for which this is a parameter.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+SPECIFIC_NAME 	nvarchar(128) 	Name of the routine for which this is a parameter.
+ORDINAL_POSITION 	int 	Ordinal position of the parameter starting at 1. For the return value of a function, this is a 0.
+PARAMETER_MODE 	nvarchar(10) 	Returns IN if an input parameter, OUT if an output parameter, and INOUT if an input/output parameter.
+IS_RESULT 	nvarchar(10) 	Returns YES if indicates result of the routine that is a function. Otherwise, returns NO.
+AS_LOCATOR 	nvarchar(10) 	Returns YES if declared as locator. Otherwise, returns NO.
+PARAMETER_NAME 	nvarchar(128) 	Name of the parameter. NULL if this corresponds to the return value of a function.
+DATA_TYPE 	nvarchar(128) 	System-supplied data type.
+CHARACTER_MAXIMUM_LENGTH 	int 	Maximum length in characters for binary or character data types.
+
+-1 for xml and large-value type data. Otherwise, returns NULL.
+CHARACTER_OCTET_LENGTH 	int 	Maximum length, in bytes, for binary or character data types.
+
+-1 for xml and large-value type data. Otherwise, returns NULL.
+COLLATION_CATALOG 	nvarchar(128) 	Always returns NULL.
+COLLATION_SCHEMA 	nvarchar(128) 	Always returns NULL.
+COLLATION_NAME 	nvarchar(128) 	Name of the collation of the parameter. If not one of the character types, returns NULL.
+CHARACTER_SET_CATALOG 	nvarchar(128) 	Catalog name of the character set of the parameter. If not one of the character types, returns NULL.
+CHARACTER_SET_SCHEMA 	nvarchar(128) 	Always returns NULL.
+CHARACTER_SET_NAME 	nvarchar(128) 	Name of the character set of the parameter. If not one of the character types, returns NULL.
+NUMERIC_PRECISION 	tinyint 	Precision of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, returns NULL.
+NUMERIC_PRECISION_RADIX 	smallint 	Precision radix of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, returns NULL.
+NUMERIC_SCALE 	tinyint 	Scale of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, returns NULL.
+DATETIME_PRECISION 	smallint 	Precision in fractional seconds if the parameter type is datetime or smalldatetime. Otherwise, returns NULL.
+INTERVAL_TYPE 	nvarchar(30) 	NULL. Reserved for future use.
+INTERVAL_PRECISION 	smallint 	NULL. Reserved for future use.
+USER_DEFINED_TYPE_CATALOG 	nvarchar(128) 	NULL. Reserved for future use.
+USER_DEFINED_TYPE_SCHEMA 	nvarchar(128) 	NULL. Reserved for future use.
+USER_DEFINED_TYPE_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+SCOPE_CATALOG 	nvarchar(128) 	NULL. Reserved for future use.
+SCOPE_SCHEMA 	nvarchar(128) 	NULL. Reserved for future use.
+SCOPE_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/referential-constraints-transact-sql
+CONSTRAINT_CATALOG 	nvarchar(128) 	Constraint qualifier.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	sysname 	Constraint name.
+UNIQUE_CONSTRAINT_CATALOG 	nvarchar(128) 	UNIQUE constraint qualifier.
+UNIQUE_CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the UNIQUE constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+UNIQUE_CONSTRAINT_NAME 	sysname 	UNIQUE constraint.
+MATCH_OPTION 	varchar(7) 	Referential constraint-matching conditions. Always returns SIMPLE. This means that no match is defined. The condition is considered a match when one of the following is true:
+
+At least one value in the foreign key column is NULL.
+
+All values in the foreign key column are not NULL, and there is a row in the primary key table that has the same key.
+UPDATE_RULE 	varchar(11) 	Action taken when a Transact-SQL statement violates the referential integrity that is defined by this constraint. Returns one of the following:
+NO ACTION
+CASCADE
+SET NULL
+SET DEFAULT
+
+If NO ACTION is specified on ON UPDATE for this constraint, the update of the primary key that is referenced in the constraint will not be propagated to the foreign key. If such an update of a primary key will cause a referential integrity violation because at least one foreign key contains the same value, SQL Server will not make any change to the parent and referring tables. SQL Server also will raise an error.
+
+If CASCADE is specified on ON UPDATE for this constraint, any change to the primary key value is automatically propagated to the foreign key value.
+DELETE_RULE 	varchar(11) 	Action taken when a Transact-SQL statement violates referential integrity defined by this constraint. Returns one of the following:
+NO ACTION
+CASCADE
+SET NULL
+SET DEFAULT
+
+If NO ACTION is specified on ON DELETE for this constraint, the delete on the primary key that is referenced in the constraint will not be propagated to the foreign key. If such a delete of a primary key will cause a referential integrity violation because at least one foreign key contains the same value, SQL Server will not make any change to the parent and referring tables. SQL Server also will raise an error.
+
+If CASCADE is specified on ON DELETE on this constraint, any change to the primary key value is automatically propagated to the foreign key value.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/routine-columns-transact-sql
+TABLE_CATALOG 	nvarchar(128) 	Catalog or database name of the table-valued function.
+TABLE_SCHEMA 	nvarchar(128) 	Name of the schema that contains the table-valued function.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	nvarchar(128) 	Name of the table-valued function.
+COLUMN_NAME 	nvarchar(128) 	Column name.
+ORDINAL_POSITION 	int 	Column identification number.
+COLUMN_DEFAULT 	nvarchar(4000) 	Default value of the column.
+IS_NULLABLE 	varchar(3) 	If this column allows for NULL, returns YES. Otherwise, returns NO.
+DATA_TYPE 	nvarchar(128) 	System-supplied data type.
+CHARACTER_MAXIMUM_LENGTH 	int 	Maximum length, in characters, for binary data, character data, or text and image data.
+
+-1 for xml and large-value type data. Otherwise, returns NULL. For more information, see Data Types (Transact-SQL).
+CHARACTER_OCTET_LENGTH 	int 	Maximum length, in bytes, for binary data, character data, or text and image data.
+
+-1 for xml and large-value type data. Otherwise, returns NULL.
+NUMERIC_PRECISION 	tinyint 	Precision of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, returns NULL.
+NUMERIC_PRECISION_RADIX 	smallint 	Precision radix of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, returns NULL.
+NUMERIC_SCALE 	tinyint 	Scale of approximate numeric data, exact numeric data, integer data, or monetary data. Otherwise, returns NULL.
+DATETIME_PRECISION 	smallint 	Subtype code for datetime and ISOinteger data types. For other data types, returns NULL.
+CHARACTER_SET_CATALOG 	varchar(6) 	Returns master. This indicates the database in which the character set is located if the column is character data or text data type. Otherwise, returns NULL.
+CHARACTER_SET_SCHEMA 	varchar(3) 	Always returns NULL.
+CHARACTER_SET_NAME 	nvarchar(128) 	Returns the unique name for the character set if this column is character data or text data type. Otherwise, returns NULL.
+COLLATION_CATALOG 	varchar(6) 	Always returns NULL.
+COLLATION_SCHEMA 	varchar(3) 	Always returns NULL.
+COLLATION_NAME 	nvarchar(128) 	Returns the unique name for the sort order if the column is character data or text data type. Otherwise, returns NULL.
+DOMAIN_CATALOG 	nvarchar(128) 	If the column is an alias data type, this column is the database name in which the user-defined data type was created. Otherwise, returns NULL.
+DOMAIN_SCHEMA 	nvarchar(128) 	If the column is a user-defined data type, this column is the name of the schema that contains the user-defined data type. Otherwise, returns NULL.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+DOMAIN_NAME 	nvarchar(128) 	If the column is a user-defined data type, this column is the name of the user-defined data type. Otherwise, returns NULL.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/routines-transact-sql
+SPECIFIC_CATALOG 	nvarchar(128) 	Specific name of the catalog. This name is the same as ROUTINE_CATALOG.
+SPECIFIC_SCHEMA 	nvarchar(128) 	Specific name of the schema.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+SPECIFIC_NAME 	nvarchar(128) 	Specific name of the catalog. This name is the same as ROUTINE_NAME.
+ROUTINE_CATALOG 	nvarchar(128) 	Catalog name of the function.
+ROUTINE_SCHEMA 	nvarchar(128) 	Name of the schema that contains this function.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+ROUTINE_NAME 	nvarchar(128) 	Name of the function.
+ROUTINE_TYPE 	nvarchar(20) 	Returns PROCEDURE for stored procedures, and FUNCTION for functions.
+MODULE_CATALOG 	nvarchar(128) 	NULL. Reserved for future use.
+MODULE_SCHEMA 	nvarchar(128) 	NULL. Reserved for future use.
+MODULE_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+UDT_CATALOG 	nvarchar(128) 	NULL. Reserved for future use.
+UDT_SCHEMA 	nvarchar(128) 	NULL. Reserved for future use.
+UDT_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+DATA_TYPE 	nvarchar(128) 	Data type of the return value of the function. Returns table if a table-valued function.
+CHARACTER_MAXIMUM_LENGTH 	int 	Maximum length in characters, if the return type is a character type.
+
+-1 for xml and large-value type data.
+CHARACTER_OCTET_LENGTH 	int 	Maximum length in bytes, if the return type is a character type.
+
+-1 for xml and large-value type data.
+COLLATION_CATALOG 	nvarchar(128) 	Always returns NULL.
+COLLATION_SCHEMA 	nvarchar(128) 	Always returns NULL.
+COLLATION_NAME 	nvarchar(128) 	Collation name of the return value. For noncharacter types, returns NULL.
+CHARACTER_SET_CATALOG 	nvarchar(128) 	Always returns NULL.
+CHARACTER_SET_SCHEMA 	nvarchar(128) 	Always returns NULL.
+CHARACTER_SET_NAME 	nvarchar(128) 	Name of the character set of the return value. For noncharacter types, returns NULL.
+NUMERIC_PRECISION 	smallint 	Numeric precision of the return value. For the nonnumeric types, returns NULL.
+NUMERIC_PRECISION_RADIX 	smallint 	Numeric precision radix of the return value. For nonnumeric types, returns NULL.
+NUMERIC_SCALE 	smallint 	Scale of the return value. For nonnumeric types, returns NULL.
+DATETIME_PRECISION 	smallint 	Fractional precision of a second if the return value is of type datetime. Otherwise, returns NULL.
+INTERVAL_TYPE 	nvarchar(30) 	NULL. Reserved for future use.
+INTERVAL_PRECISION 	smallint 	NULL. Reserved for future use.
+TYPE_UDT_CATALOG 	nvarchar(128) 	NULL. Reserved for future use.
+TYPE_UDT_SCHEMA 	nvarchar(128) 	NULL. Reserved for future use.
+TYPE_UDT_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+SCOPE_CATALOG 	nvarchar(128) 	NULL. Reserved for future use.
+SCOPE_SCHEMA 	nvarchar(128) 	NULL. Reserved for future use.
+SCOPE_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+MAXIMUM_CARDINALITY 	bigint 	NULL. Reserved for future use.
+DTD_IDENTIFIER 	nvarchar(128) 	NULL. Reserved for future use.
+ROUTINE_BODY 	nvarchar(30) 	Returns SQL for a Transact-SQL function and EXTERNAL for an externally written function.
+
+Functions will always be SQL.
+ROUTINE_DEFINITION 	nvarchar(4000) 	Returns the first 4000 characters of the definition text of the function or stored procedure if the function or stored procedure is not encrypted. Otherwise, returns NULL.
+
+To ensure that you obtain the complete definition, query the OBJECT_DEFINITION function or the definition column in the sys.sql_modules catalog view.
+EXTERNAL_NAME 	nvarchar(128) 	NULL. Reserved for future use.
+EXTERNAL_LANGUAGE 	nvarchar(30) 	NULL. Reserved for future use.
+PARAMETER_STYLE 	nvarchar(30) 	NULL. Reserved for future use.
+IS_DETERMINISTIC 	nvarchar(10) 	Returns YES if the routine is deterministic.
+
+Returns NO if the routine is nondeterministic.
+
+Always returns NO for stored procedures.
+SQL_DATA_ACCESS 	nvarchar(30) 	Returns one of the following values:
+
+NONE = Function does not contain SQL.
+
+CONTAINS = Function possibly contains SQL.
+
+READS = Function possibly reads SQL data.
+
+MODIFIES = Function possibly modifies SQL data.
+
+Returns READS for all functions, and MODIFIES for all stored procedures.
+IS_NULL_CALL 	nvarchar(10) 	Indicates whether the routine will be called if any one of its arguments is NULL.
+SQL_PATH 	nvarchar(128) 	NULL. Reserved for future use.
+SCHEMA_LEVEL_ROUTINE 	nvarchar(10) 	Returns YES if schema-level function, or NO if not a schema-level function.
+
+Always returns YES.
+MAX_DYNAMIC_RESULT_SETS 	smallint 	Maximum number of dynamic result sets returned by routine.
+
+Returns 0 if functions.
+IS_USER_DEFINED_CAST 	nvarchar(10) 	Returns YES if user-defined cast function, and NO if not a user-defined cast function.
+
+Always returns NO.
+IS_IMPLICITLY_INVOCABLE 	nvarchar(10) 	Returns YES if the routine can be implicitly invoked, and NO if function cannot be implicitly invoked.
+
+Always returns NO.
+CREATED 	datetime 	Time when the routine was created.
+LAST_ALTERED 	datetime 	The last time the function was modified.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/schemata-transact-sql
+CATALOG_NAME 	sysname 	Name of current database
+SCHEMA_NAME 	nvarchar(128) 	Returns the name of the schema.
+SCHEMA_OWNER 	nvarchar(128) 	Schema owner name.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of an object is to query the sys.objects catalog view.
+DEFAULT_CHARACTER_SET_CATALOG 	varchar(6) 	Always returns NULL.
+DEFAULT_CHARACTER_SET_SCHEMA 	varchar(3) 	Always returns NULL.
+DEFAULT_CHARACTER_SET_NAME 	sysname 	Returns the name of the default character set.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/table-constraints-transact-sql
+CONSTRAINT_CATALOG 	nvarchar(128) 	Constraint qualifier.
+CONSTRAINT_SCHEMA 	nvarchar(128) 	Name of schema that contains the constraint.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+CONSTRAINT_NAME 	sysname 	Constraint name.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Table name.
+CONSTRAINT_TYPE 	varchar(11) 	Type of constraint:
+
+CHECK
+
+UNIQUE
+
+PRIMARY KEY
+
+FOREIGN KEY
+IS_DEFERRABLE 	varchar(2) 	Specifies whether constraint checking is deferrable. Always returns NO.
+INITIALLY_DEFERRED 	varchar(2) 	Specifies whether constraint checking is at first deferred. Always returns NO.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/table-privileges-transact-sql
+GRANTOR 	nvarchar(128) 	Privilege grantor.
+GRANTEE 	nvarchar(128) 	Privilege grantee.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Table name.
+PRIVILEGE_TYPE 	varchar(10) 	Type of privilege.
+IS_GRANTABLE 	varchar(3) 	Specifies whether the grantee can grant permissions to others.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/tables-transact-sql
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of an object is to query the sys.objects catalog view. INFORMATION_SCHEMA views could be incomplete since they are not updated for all new features.
+TABLE_NAME 	sysname 	Table name.
+TABLE_TYPE 	varchar(10) 	Type of table. Can be VIEW or BASE TABLE.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/view-column-usage-transact-sql
+VIEW_CATALOG 	nvarchar(128) 	View qualifier.
+VIEW_SCHEMA 	nvarchar(128) 	Name of schema that contains the view.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+VIEW_NAME 	sysname 	View name.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Base table.
+COLUMN_NAME 	sysname 	Column name.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/view-table-usage-transact-sql
+VIEW_CATALOG 	nvarchar(128) 	View qualifier.
+VIEW_SCHEMA 	nvarchar(128) 	Name of schema that contains the view.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+VIEW_NAME 	sysname 	View name.
+TABLE_CATALOG 	nvarchar(128) 	Table qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the base table.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	sysname 	Base table that the view is based on.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
+
+# https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/views-transact-sql
+TABLE_CATALOG 	nvarchar(128) 	View qualifier.
+TABLE_SCHEMA 	nvarchar(128) 	Name of schema that contains the view.
+
+** Important *\* Do not use INFORMATION_SCHEMA views to determine the schema of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+TABLE_NAME 	nvarchar(128) 	View name.
+VIEW_DEFINITION 	nvarchar(4000) 	If the length of definition is larger than nvarchar(4000), this column is NULL. Otherwise, this column is the view definition text.
+CHECK_OPTION 	varchar(7) 	Type of WITH CHECK OPTION. Is CASCADE if the original view was created by using the WITH CHECK OPTION. Otherwise, NONE is returned.
+IS_UPDATABLE 	varchar(2) 	Specifies whether the view is updatable. Always returns NO.
+<#Map>
+         rr:logicalTable [
+            rr:tablename "INFORMATION_SCHEMA."
+         ];
+         rr:subjectMap [
+            rr:class h2:;
+            rr:termType rr:BlankNode;
+
+         ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+];
