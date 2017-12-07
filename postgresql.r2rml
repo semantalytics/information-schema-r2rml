@@ -6,21 +6,19 @@
 # 34.3. information_schema_catalog_name
 # https://www.postgresql.org/docs/9.1/static/infoschema-information-schema-catalog-name.html
 
-catalog_name 	sql_identifier 	Name of the database that contains this information schema
-
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.information_schema_catalog_name"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:CatalogName;
             rr:termType rr:BlankNode;
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:catalogName;
             rr:objectMap [
-                rr:column "";
+                rr:column "catalog_name";
             ];
 ];
 .
@@ -37,7 +35,7 @@ is_grantable 	yes_or_no 	Always YES
             rr:tablename "INFORMATION_SCHEMA.administrable_role_authorizations"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:AdministrableRoleAuthorization;
             rr:termType rr:BlankNode;
 
          ];
@@ -71,7 +69,7 @@ is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO
             rr:tablename "INFORMATION_SCHEMA.applicable_roles"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ApplicableRole;
             rr:termType rr:BlankNode;
 
          ];
@@ -133,7 +131,7 @@ is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in
             rr:tablename "INFORMATION_SCHEMA.attributes"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Attribute;
             rr:termType rr:BlankNode;
 
          ];
@@ -308,7 +306,7 @@ default_collate_name 	sql_identifier 	Name of the default collation. The default
             rr:tablename "INFORMATION_SCHEMA.character_sets"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:CharacterSet;
             rr:termType rr:BlankNode;
 
          ];
@@ -370,7 +368,7 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
             rr:tablename "INFORMATION_SCHEMA.check_constraint_routine_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:CheckConstraintRoutineUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -420,7 +418,7 @@ check_clause 	character_data 	The check expression of the check constraint
             rr:tablename "INFORMATION_SCHEMA.check_constraints"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:CheckConstraint;
             rr:termType rr:BlankNode;
 
          ];
@@ -460,7 +458,7 @@ pad_attribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not s
             rr:tablename "INFORMATION_SCHEMA.collations"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Collations;
             rr:termType rr:BlankNode;
 
          ];
@@ -501,7 +499,7 @@ character_set_name 	sql_identifier 	Name of the character set
             rr:tablename "INFORMATION_SCHEMA.collation_character_set_applicability"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:CollationCharacterSetApplicability;
             rr:termType rr:BlankNode;
 
          ];
@@ -555,7 +553,7 @@ column_name 	sql_identifier 	Name of the column
             rr:tablename "INFORMATION_SCHEMA.column_domain_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ColumnDomainUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -614,7 +612,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:tablename "INFORMATION_SCHEMA.column_privileges"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ColumnPrivilege;
             rr:termType rr:BlankNode;
 
          ];
@@ -677,7 +675,7 @@ column_name 	sql_identifier 	Name of the column
             rr:tablename "INFORMATION_SCHEMA.column_udt_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ColumnUdtUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -772,7 +770,7 @@ is_updatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in b
             rr:tablename "INFORMATION_SCHEMA.columns"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Column;
             rr:termType rr:BlankNode;
 
          ];
@@ -1015,7 +1013,7 @@ constraint_name 	sql_identifier 	Name of the constraint
             rr:tablename "INFORMATION_SCHEMA.constraint_column_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ConstraintColumnUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -1072,7 +1070,7 @@ constraint_name 	sql_identifier 	Name of the constraint
             rr:tablename "INFORMATION_SCHEMA.constraint_table_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ConstraintTableUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -1123,7 +1121,7 @@ dtd_identifier 	sql_identifier 	The identifier of the data type descriptor, whic
             rr:tablename "INFORMATION_SCHEMA.data_type_privileges"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:DataTypePrivileges;
             rr:termType rr:BlankNode;
 
          ];
@@ -1172,7 +1170,7 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
             rr:tablename "INFORMATION_SCHEMA.domain_constraints"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:DomainConstraint;
             rr:termType rr:BlankNode;
 
          ];
@@ -1234,7 +1232,7 @@ domain_name 	sql_identifier 	Name of the domain
             rr:tablename "INFORMATION_SCHEMA.domain_udt_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:DomainUdtUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -1307,7 +1305,7 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
             rr:tablename "INFORMATION_SCHEMA.domains"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Domain;
             rr:termType rr:BlankNode;
 
          ];
@@ -1482,7 +1480,7 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
             rr:tablename "INFORMATION_SCHEMA.element_types"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ElementType;
             rr:termType rr:BlankNode;
 
          ];
@@ -1649,7 +1647,7 @@ role_name 	sql_identifier 	Name of a role
             rr:tablename "INFORMATION_SCHEMA.enabled_roles"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:EnabledRole;
             rr:termType rr:BlankNode;
 
          ];
@@ -1674,7 +1672,7 @@ option_value 	character_data 	Value of the option
             rr:tablename "INFORMATION_SCHEMA.foreign_data_wrapper_options"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ForeignDataWrapperOption;
             rr:termType rr:BlankNode;
 
          ];
@@ -1715,7 +1713,7 @@ foreign_data_wrapper_language 	character_data 	Language used to implement this f
             rr:tablename "INFORMATION_SCHEMA.foreign_data_wrappers"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ForeignDataWrapper;
             rr:termType rr:BlankNode;
 
          ];
@@ -1760,7 +1758,7 @@ option_value 	character_data 	Value of the option
             rr:tablename "INFORMATION_SCHEMA.foreign_server_options"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ForeignServerOption;
             rr:termType rr:BlankNode;
 
          ];
@@ -1803,7 +1801,7 @@ authorization_identifier 	sql_identifier 	Name of the owner of the foreign serve
             rr:tablename "INFORMATION_SCHEMA.foreign_servers"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ForeignServer;
             rr:termType rr:BlankNode;
 
          ];
@@ -1864,7 +1862,7 @@ option_value 	character_data 	Value of the option
             rr:tablename "INFORMATION_SCHEMA.foreign_table_options"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ForeignTableOption;
             rr:termType rr:BlankNode;
 
          ];
@@ -1910,7 +1908,7 @@ foreign_server_name 	sql_identifier 	Name of the foreign server
             rr:tablename "INFORMATION_SCHEMA.foreign_tables"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ForeignTable;
             rr:termType rr:BlankNode;
 
          ];
@@ -1960,7 +1958,7 @@ position_in_unique_constraint 	cardinal_number 	For a foreign-key constraint, or
             rr:tablename "INFORMATION_SCHEMA.key_column_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:KeyColumnUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -2052,7 +2050,7 @@ dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the
             rr:tablename "INFORMATION_SCHEMA.parameters"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Parameter;
             rr:termType rr:BlankNode;
 
          ];
@@ -2232,7 +2230,7 @@ delete_rule 	character_data 	Delete rule of the foreign key constraint: CASCADE,
             rr:tablename "INFORMATION_SCHEMA.referential_constraints"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ReferentialConstraint;
             rr:termType rr:BlankNode;
 
          ];
@@ -2301,7 +2299,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:tablename "INFORMATION_SCHEMA.role_column_grants"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:RoleColumnGrant;
             rr:termType rr:BlankNode;
 
          ];
@@ -2367,7 +2365,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:tablename "INFORMATION_SCHEMA.role_routine_grants"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:RoleRoutineGrant;
             rr:termType rr:BlankNode;
 
          ];
@@ -2441,7 +2439,7 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
             rr:tablename "INFORMATION_SCHEMA.role_table_grants"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:RoleTableGrant;
             rr:termType rr:BlankNode;
 
          ];
@@ -2505,7 +2503,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:tablename "INFORMATION_SCHEMA.role_usage_grants"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:RoleUsageGrant;
             rr:termType rr:BlankNode;
 
          ];
@@ -2571,7 +2569,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:tablename "INFORMATION_SCHEMA.routine_privileges"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:RoutinePrivilege;
             rr:termType rr:BlankNode;
 
          ];
@@ -2719,7 +2717,7 @@ result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available i
             rr:tablename "INFORMATION_SCHEMA.routines"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Routine;
             rr:termType rr:BlankNode;
 
          ];
@@ -3127,7 +3125,7 @@ sql_path 	character_data 	Applies to a feature not available in PostgreSQL
             rr:tablename "INFORMATION_SCHEMA.schemata"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Schemata;
             rr:termType rr:BlankNode;
 
          ];
@@ -3190,7 +3188,7 @@ cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
             rr:tablename "INFORMATION_SCHEMA.sequences"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Sequence;
             rr:termType rr:BlankNode;
 
          ];
@@ -3273,7 +3271,7 @@ comments 	character_data 	Possibly a comment about the supported status of the f
             rr:tablename "INFORMATION_SCHEMA.sql_features"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlFeature;
             rr:termType rr:BlankNode;
 
          ];
@@ -3330,7 +3328,7 @@ comments 	character_data 	Possibly a comment pertaining to the implementation in
             rr:tablename "INFORMATION_SCHEMA.sql_implementation_info"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlImplementationInfo;
             rr:termType rr:BlankNode;
 
          ];
@@ -3378,7 +3376,7 @@ sql_language_programming_language 	character_data 	The programming language, if 
             rr:tablename "INFORMATION_SCHEMA.sql_languages"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlLanguages;
             rr:termType rr:BlankNode;
 
          ];
@@ -3434,7 +3432,7 @@ comments 	character_data 	Possibly a comment about the supported status of the p
             rr:tablename "INFORMATION_SCHEMA.sql_packages"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlPackages;
             rr:termType rr:BlankNode;
 
          ];
@@ -3480,7 +3478,7 @@ comments 	character_data 	Possibly a comment about the supported status of the p
             rr:tablename "INFORMATION_SCHEMA.sql_parts"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlParts;
             rr:termType rr:BlankNode;
 
          ];
@@ -3525,7 +3523,7 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item
             rr:tablename "INFORMATION_SCHEMA.sql_sizing"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlSizing;
             rr:termType rr:BlankNode;
 
          ];
@@ -3566,7 +3564,7 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item withi
             rr:tablename "INFORMATION_SCHEMA.sql_sizing_profiles"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:SqlSizingProfile;
             rr:termType rr:BlankNode;
 
          ];
@@ -3616,7 +3614,7 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
             rr:tablename "INFORMATION_SCHEMA.table_constraints"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:TableConstraints;
             rr:termType rr:BlankNode;
 
          ];
@@ -3685,7 +3683,7 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
             rr:tablename "INFORMATION_SCHEMA.table_privileges"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:TablePrivilege;
             rr:termType rr:BlankNode;
 
          ];
@@ -3753,7 +3751,7 @@ commit_action 	character_data 	If the table is a temporary table, then PRESERVE,
             rr:tablename "INFORMATION_SCHEMA.tables"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Table;
             rr:termType rr:BlankNode;
 
          ];
@@ -3841,7 +3839,7 @@ event_object_column 	sql_identifier 	Name of the column that the trigger is defi
             rr:tablename "INFORMATION_SCHEMA.triggered_update_columns"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:TriggeredUpdateColumn;
             rr:termType rr:BlankNode;
 
          ];
@@ -3909,7 +3907,7 @@ created 	time_stamp 	Applies to a feature not available in PostgreSQL
             rr:tablename "INFORMATION_SCHEMA.triggers"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:Trigger;
             rr:termType rr:BlankNode;
 
          ];
@@ -4018,7 +4016,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
             rr:tablename "INFORMATION_SCHEMA.usage_privileges"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:UsagePrivilege;
             rr:termType rr:BlankNode;
 
          ];
@@ -4079,7 +4077,7 @@ option_value 	character_data 	Value of the option. This column will show as null
             rr:tablename "INFORMATION_SCHEMA.user_mapping_options"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:UserMappingOption;
             rr:termType rr:BlankNode;
 
          ];
@@ -4123,7 +4121,7 @@ foreign_server_name 	sql_identifier 	Name of the foreign server used by this map
             rr:tablename "INFORMATION_SCHEMA.user_mappings"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:UserMapping;
             rr:termType rr:BlankNode;
 
          ];
@@ -4161,7 +4159,7 @@ column_name 	sql_identifier 	Name of the column that is used by the view
             rr:tablename "INFORMATION_SCHEMA.view_column_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ViewColumnUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -4218,7 +4216,7 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
             rr:tablename "INFORMATION_SCHEMA.view_routine_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ViewRoutineUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -4270,7 +4268,7 @@ table_name 	sql_identifier 	Name of the table that is used by the view
             rr:tablename "INFORMATION_SCHEMA.view_table_usage"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:ViewTableUsage;
             rr:termType rr:BlankNode;
 
          ];
@@ -4326,7 +4324,7 @@ is_trigger_insertable_into 	yes_or_no 	YES if the view has an INSTEAD OF INSERT 
             rr:tablename "INFORMATION_SCHEMA.views"
          ];
          rr:subjectMap [
-            rr:class pgsql:;
+            rr:class pgsql:View;
             rr:termType rr:BlankNode;
 
          ];
