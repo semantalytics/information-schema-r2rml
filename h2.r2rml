@@ -40,29 +40,6 @@
             ];
 ];
 
-TABLE_CATALOG, 
-TABLE_SCHEMA, 
-TABLE_NAME, 
-COLUMN_NAME,
-ORDINAL_POSITION,
-COLUMN_DEFAULT, 
-IS_NULLABLE,
-DATA_TYPE,
-CHARACTER_MAXIMUM_LENGTH, 
-CHARACTER_OCTET_LENGTH,
-NUMERIC_PRECISION, 
-NUMERIC_PRECISION_RADIX,
-NUMERIC_SCALE, 
-CHARACTER_SET_NAME, 
-COLLATION_NAME, 
-TYPE_NAME, NULLABLE,
-IS_COMPUTED, 
-SELECTIVITY, 
-CHECK_CONSTRAINT,
-SEQUENCE_NAME, 
-REMARKS, 
-SOURCE_DATA_TYPE
-
 <#ColumnsMap>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.COLUMNS"
@@ -75,119 +52,119 @@ SOURCE_DATA_TYPE
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ORDINAL_POSITION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_DEFAULT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "IS_NULLABLE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DATA_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CHARACTER_MAXIMUM_LENGTH";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CHARACTER_OCTET_LENGTH";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "NUMERIC_PRECISION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "NUMERIC_PRECISION_RADIX";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "NUMERIC_SCALE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CHARACTER_SET_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLLATION_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TYPE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "NULLABLE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "IS_COMPUTED";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SELECTIVITY";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CHECK_CONSTRAINT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SEQUENCE_NAME";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "REMARKS";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "SOURCE_DATA_TYPE";
             ];
 ];
-
-COLUMN_PRIVILEGES 	
-GRANTOR,
-GRANTEE, 
-TABLE_CATALOG,
-TABLE_SCHEMA,
-TABLE_NAME,
-COLUMN_NAME,
-PRIVILEGE_TYPE,
-IS_GRANTABLE
 
 <#PrivilegesMap>
          rr:logicalTable [
@@ -201,53 +178,44 @@ IS_GRANTABLE
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "GRANTOR";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "GRANTEE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PRIVILEGE_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "IS_GRANTABLE";
             ];
 ];
-
-CONSTANTS 	
-CONSTANT_CATALOG,
-CONSTANT_SCHEMA,
-CONSTANT_NAME, 
-DATA_TYPE, 
-REMARKS, 
-SQL, 
-ID
 
 <#ConstantsMap>
          rr:logicalTable [
@@ -261,59 +229,39 @@ ID
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTANT_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTANT_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTANT_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DATA_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "REMARKS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SQL";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
-            ];
-         rr:predicateObjectMap [
-            rr:predicate h2:;
-            rr:objectMap [
-                rr:column "";
+                rr:column "ID";
             ];
 ];
-
-CONSTRAINTS 	
-CONSTRAINT_CATALOG, 
-CONSTRAINT_SCHEMA, 
-CONSTRAINT_NAME, 
-CONSTRAINT_TYPE,
-TABLE_CATALOG, 
-TABLE_SCHEMA,
-TABLE_NAME, 
-UNIQUE_INDEX_NAME,
-CHECK_EXPRESSION,
-COLUMN_LIST,
-REMARKS,
-SQL, 
-ID
 
 <#ConstraintsMap>
          rr:logicalTable [
@@ -327,85 +275,69 @@ ID
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTRAINT_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTRAINT_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTRAINT_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTRAINT_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "UNIQUE_INDEX_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CHECK_EXPRESSION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_LIST";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "REMARKS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SQL";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ID";
             ];
 ];
-
-CROSS_REFERENCES 
-PKTABLE_CATALOG,
-PKTABLE_SCHEMA, 
-KTABLE_NAME, 
-PKCOLUMN_NAME, 
-FKTABLE_CATALOG, 
-FKTABLE_SCHEMA, 
-FKTABLE_NAME, 
-FKCOLUMN_NAME, 
-ORDINAL_POSITION, 
-UPDATE_RULE, 
-DELETE_RULE, 
-FK_NAME, 
-PK_NAME, 
-DEFERRABILITY
 
 <#CrossReferencesMap>
          rr:logicalTable [
@@ -419,90 +351,90 @@ DEFERRABILITY
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PKTABLE_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PKTABLE_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "KTABLE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PKCOLUMN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "FKTABLE_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "FKTABLE_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "FKTABLE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "FKCOLUMN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ORDINAL_POSITION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "UPDATE_RULE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DELETE_RULE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "FK_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PK_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DEFERRABILITY";
             ];
 ];
 
-DOMAINS 
-DOMAIN_CATALOG,
-DOMAIN_SCHEMA, 
-DOMAIN_NAME, 
-COLUMN_DEFAULT, 
-IS_NULLABLE,
-DATA_TYPE,
-PRECISION, 
-SCALE, 
-TYPE_NAME,
-SELECTIVITY,
-CHECK_CONSTRAINT,
-REMARKS,
-SQL,
-ID
+
+,
+, 
+, 
+, 
+,
+,
+, 
+, 
+,
+,
+,
+,
+,
+
 
 <#DomainsMap>
          rr:logicalTable [
@@ -516,98 +448,74 @@ ID
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DOMAIN_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DOMAIN_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DOMAIN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_DEFAULT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "IS_NULLABLE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DATA_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PRECISION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SCALE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TYPE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SELECTIVITY";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CHECK_CONSTRAINT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "REMARKS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SQL";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
-            ];
-         rr:predicateObjectMap [
-            rr:predicate h2:;
-            rr:objectMap [
-                rr:column "";
-            ];
-         rr:predicateObjectMap [
-            rr:predicate h2:;
-            rr:objectMap [
-                rr:column "";
+                rr:column "ID";
             ];
 ];
-
-FUNCTION_ALIASES 	
-ALIAS_CATALOG, 
-ALIAS_SCHEMA, 
-ALIAS_NAME, 
-JAVA_CLASS, 
-JAVA_METHOD, 
-DATA_TYPE,
-TYPE_NAME, 
-COLUMN_COUNT, 
-RETURNS_RESULT, 
-REMARKS,
-ID, 
-SOURCE
 
 <#FuncationAliasesMap>
          rr:logicalTable [
@@ -621,83 +529,64 @@ SOURCE
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ALIAS_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ALIAS_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ALIAS_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "JAVA_CLASS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "JAVA_METHOD";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DATA_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TYPE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_COUNT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "RETURNS_RESULT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "REMARKS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ID";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SOURCE";
             ];
 ];
-
-FUNCTION_COLUMNS 	
-ALIAS_CATALOG,
-ALIAS_SCHEMA,
-ALIAS_NAME, 
-JAVA_CLASS,
-JAVA_METHOD, 
-COLUMN_COUNT, 
-POS, 
-COLUMN_NAME, 
-DATA_TYPE,
-TYPE_NAME, 
-PRECISION, 
-SCALE, 
-RADIX, 
-NULLABLE, 
-COLUMN_TYPE, 
-REMARKS, 
-COLUMN_DEFAULT
 
 <#FunctionColumnsMap>
          rr:logicalTable [
@@ -711,96 +600,89 @@ COLUMN_DEFAULT
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ALIAS_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ALIAS_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ALIAS_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "JAVA_CLASS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "JAVA_METHOD";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_COUNT";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "POS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "DATA_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TYPE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PRECISION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SCALE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "RADIX";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "NULLABLE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "REMARKS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_DEFAULT";
             ];
 ];
-
-HELP 	
-ID, 
-SECTION,
-TOPIC,
-SYNTAX,
-TEXT
 
 <#HelpMap>
          rr:logicalTable [
@@ -814,53 +696,29 @@ TEXT
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ID";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SECTION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TOPIC";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SYNTAX";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TEXT";
             ];
 ];
-
-INDEXES 	
-TABLE_CATALOG, 
-TABLE_SCHEMA, 
-TABLE_NAME, 
-NON_UNIQUE, 
-INDEX_NAME, 
-ORDINAL_POSITION, 
-COLUMN_NAME, 
-CARDINALITY, 
-PRIMARY_KEY, 
-INDEX_TYPE_NAME, 
-IS_GENERATED, 
-INDEX_TYPE, 
-ASC_OR_DESC, 
-PAGES, 
-FILTER_CONDITION, 
-REMARKS, 
-SQL, 
-ID, 
-SORT_TYPE, 
-CONSTRAINT_NAME, 
-INDEX_CLASS, 
-AFFINITY
 
 <#IndexesMap>
          rr:logicalTable [
@@ -874,114 +732,114 @@ AFFINITY
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_CATALOG";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_SCHEMA";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TABLE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "NON_UNIQUE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "INDEX_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ORDINAL_POSITION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "COLUMN_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CARDINALITY";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PRIMARY_KEY";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "INDEX_TYPE_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "IS_GENERATED";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "INDEX_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ASC_OR_DESC";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "PAGES";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "FILTER_CONDITION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "REMARKS";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SQL";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ID";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "SORT_TYPE";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "CONSTRAINT_NAME";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "INDEX_CLASS";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "AFFINITY";
             ];
 ];
-
-
-IN_DOUBT 	
-TRANSACTION, 
-STATE
 
 <#InDoubtMap>
          rr:logicalTable [
@@ -995,16 +853,15 @@ STATE
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "TRANSACTION";
             ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
-                rr:column "";
+                rr:column "STATE";
             ];
 ];
 
-LOCKS 	
 TABLE_SCHEMA, 
 TABLE_NAME, 
 SESSION_ID, 
@@ -1041,7 +898,7 @@ LOCK_TYPE
             ];
 ];
 
-QUERY_STATISTICS 	
+
 SQL_STATEMENT, 
 EXECUTION_COUNT, 
 MIN_EXECUTION_TIME,
@@ -1127,7 +984,6 @@ STD_DEV_ROW_COUNT
 ];
 
 
-RIGHTS 	
 GRANTEE, 
 GRANTEETYPE, 
 GRANTEDROLE, 
@@ -1187,7 +1043,6 @@ ID
             ];
 ];
 
-ROLES 	
 NAME, 
 REMARKS, 
 ID
@@ -1217,8 +1072,7 @@ ID
                 rr:column "";
             ];
 ];
-
-SCHEMATA 	
+	
 CATALOG_NAME, 
 SCHEMA_NAME,
 SCHEMA_OWNER, 
@@ -1279,7 +1133,7 @@ ID
             ];
 ];
 
-SEQUENCES 	
+	
 SEQUENCE_CATALOG, 
 SEQUENCE_SCHEMA, 
 SEQUENCE_NAME, 
@@ -1365,7 +1219,7 @@ ID
 ];
 
 
-SESSIONS 	
+	
 ID, 
 USER_NAME,
 SESSION_START, 
@@ -1414,7 +1268,7 @@ CONTAINS_UNCOMMITTED
             ];
 ];
 
-SESSION_STATE 	
+	
 KEY, 
 SQL
 
@@ -1439,7 +1293,7 @@ SQL
             ];
 ];
 
-SETTINGS 	
+	
 NAME, 
 VALUE
 
@@ -1465,7 +1319,7 @@ VALUE
 ];
 
 
-TABLES 	
+
 TABLE_CATALOG, 
 TABLE_SCHEMA, 
 TABLE_NAME,
@@ -1550,7 +1404,7 @@ ROW_COUNT_ESTIMATE
             ];
 ];
 
-TABLE_PRIVILEGES 	
+
 GRANTOR, 
 GRANTEE, 
 TABLE_CATALOG, 
@@ -1605,7 +1459,7 @@ IS_GRANTABLE
             ];
 ];
 
-TABLE_TYPES 	
+	
 TYPE
 
 <#TableTypesMap>
@@ -1624,7 +1478,7 @@ TYPE
             ];
 ];
 
-TRIGGERS 	
+	
 TRIGGER_CATALOG, 
 TRIGGER_SCHEMA, 
 TRIGGER_NAME, 
@@ -1721,7 +1575,7 @@ ID
             ];
 ];
 
-TYPE_INFO 	
+	
 TYPE_NAME,
 DATA_TYPE, 
 PRECISION, 
@@ -1818,7 +1672,7 @@ SEARCHABLE
             ];
 ];
 
-USERS 	
+
 NAME,
 ADMIN, 
 REMARKS, 
@@ -1855,7 +1709,7 @@ ID
             ];
 ];
 
-VIEWS 	
+
 TABLE_CATALOG, 
 TABLE_SCHEMA, 
 TABLE_NAME, 
