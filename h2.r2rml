@@ -40,7 +40,6 @@
             ];
 ];
 
-COLUMNS 	
 TABLE_CATALOG, 
 TABLE_SCHEMA, 
 TABLE_NAME, 
@@ -78,6 +77,106 @@ SOURCE_DATA_TYPE
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 COLUMN_PRIVILEGES 	
@@ -104,6 +203,41 @@ IS_GRANTABLE
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 CONSTANTS 	
@@ -124,6 +258,41 @@ ID
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -155,6 +324,66 @@ ID
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -192,6 +421,71 @@ DEFERRABILITY
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 DOMAINS 
@@ -224,6 +518,81 @@ ID
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 FUNCTION_ALIASES 	
@@ -249,6 +618,61 @@ SOURCE
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -289,6 +713,86 @@ COLUMN_DEFAULT
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 HELP 	
@@ -307,6 +811,26 @@ TEXT
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -352,6 +876,106 @@ AFFINITY
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 
@@ -368,6 +992,11 @@ STATE
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -390,6 +1019,21 @@ LOCK_TYPE
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -425,6 +1069,61 @@ STD_DEV_ROW_COUNT
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 
@@ -451,6 +1150,41 @@ ID
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 ROLES 	
@@ -467,6 +1201,16 @@ ID
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -493,6 +1237,41 @@ ID
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -528,6 +1307,61 @@ ID
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 
@@ -553,6 +1387,31 @@ CONTAINS_UNCOMMITTED
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 SESSION_STATE 	
@@ -573,6 +1432,11 @@ SQL
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 SETTINGS 	
@@ -588,6 +1452,11 @@ VALUE
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -624,6 +1493,61 @@ ROW_COUNT_ESTIMATE
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 TABLE_PRIVILEGES 	
@@ -644,6 +1568,36 @@ IS_GRANTABLE
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -700,6 +1654,71 @@ ID
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 TYPE_INFO 	
@@ -732,6 +1751,71 @@ SEARCHABLE
             rr:objectMap [
                 rr:column "";
             ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
 ];
 
 USERS 	
@@ -749,6 +1833,21 @@ ID
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
@@ -776,6 +1875,46 @@ ID
             rr:termType rr:BlankNode;
 
          ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate h2:;
+            rr:objectMap [
+                rr:column "";
+            ];
          rr:predicateObjectMap [
             rr:predicate h2:;
             rr:objectMap [
