@@ -2015,17 +2015,6 @@
 # 34.34. role_routine_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-routine-grants.html
 
-grantor 	sql_identifier 	Name of the role that granted the privilege
-grantee 	sql_identifier 	Name of the role that the privilege was granted to
-specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-specific_schema 	sql_identifier 	Name of the schema containing the function
-specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
-routine_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-routine_schema 	sql_identifier 	Name of the schema containing the function
-routine_name 	sql_identifier 	Name of the function (might be duplicated in case of overloading)
-privilege_type 	character_data 	Always EXECUTE (the only privilege type for functions)
-is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
-
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.role_routine_grants"
@@ -2038,67 +2027,58 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantor";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
 ];
 .
 
 # 34.35. role_table_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-table-grants.html
-
-grantor 	sql_identifier 	Name of the role that granted the privilege
-grantee 	sql_identifier 	Name of the role that the privilege was granted to
-table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the table
-table_name 	sql_identifier 	Name of the table
-privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, or TRIGGER
-is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
-with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -2112,57 +2092,48 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantor";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "with_hierarchy";
             ];
 ];
 .
 
 # 34.36. role_usage_grants
 # https://www.postgresql.org/docs/9.1/static/infoschema-role-usage-grants.html
-
-grantor 	sql_identifier 	The name of the role that granted the privilege
-grantee 	sql_identifier 	The name of the role that the privilege was granted to
-object_catalog 	sql_identifier 	Name of the database containing the object (always the current database)
-object_schema 	sql_identifier 	Name of the schema containing the object, if applicable, else an empty string
-object_name 	sql_identifier 	Name of the object
-object_type 	character_data 	COLLATION or DOMAIN or FOREIGN DATA WRAPPER or FOREIGN SERVER
-privilege_type 	character_data 	Always USAGE
-is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -2176,59 +2147,48 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantor";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
 ];
 .
 
 # 34.37. routine_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-routine-privileges.html
-
-grantor 	sql_identifier 	Name of the role that granted the privilege
-grantee 	sql_identifier 	Name of the role that the privilege was granted to
-specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-specific_schema 	sql_identifier 	Name of the schema containing the function
-specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
-routine_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-routine_schema 	sql_identifier 	Name of the schema containing the function
-routine_name 	sql_identifier 	Name of the function (might be duplicated in case of overloading)
-privilege_type 	character_data 	Always EXECUTE (the only privilege type for functions)
-is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -2242,52 +2202,52 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantor";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
 ];
 .
