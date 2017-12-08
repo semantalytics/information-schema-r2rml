@@ -86,38 +86,6 @@
 # 34.6. attributes
 # https://www.postgresql.org/docs/9.1/static/infoschema-attributes.html
 
- 	sql_identifier 	Name of the database containing the data type (always the current database)
- 	sql_identifier 	Name of the schema containing the data type
- 	sql_identifier 	Name of the data type
- 	sql_identifier 	Name of the attribute
- 	cardinal_number 	Ordinal position of the attribute within the data type (count starts at 1)
- 	character_data 	Default expression of the attribute
- 	yes_or_no 	YES if the attribute is possibly nullable, NO if it is known not nullable.
- 	character_data 	Data type of the attribute, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in attribute_udt_name and associated columns).
- 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
-character_octet_length 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
-character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-collation_catalog 	sql_identifier 	Not yet implemented
-collation_schema 	sql_identifier 	Not yet implemented
-collation_name 	sql_identifier 	Not yet implemented
-numeric_precision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this attribute. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
-numeric_precision_radix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
-numeric_scale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this attribute. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
-datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this attribute, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
-interval_type 	character_data 	Not yet implemented
-interval_precision 	character_data 	Not yet implemented
-attribute_udt_catalog 	sql_identifier 	Name of the database that the attribute data type is defined in (always the current database)
-attribute_udt_schema 	sql_identifier 	Name of the schema that the attribute data type is defined in
-attribute_udt_name 	sql_identifier 	Name of the attribute data type
-scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
-dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
-is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in PostgreSQL
-
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.attributes"
@@ -175,123 +143,118 @@ is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_octet_length";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "collation_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "collation_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "collation_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_precision_radix";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_scale";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "datetime_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "interval_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "interval_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "attribute_udt_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "attribute_udt_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "attribute_udt_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "scope_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "scope_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "scope_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "maximum_cardinality";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "dtd_identifier";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "is_derived_reference_attribute";
             ];
 ];
 .
 
 # 34.7. character_sets
 # https://www.postgresql.org/docs/9.1/static/infoschema-character-sets.html
-
-character_set_catalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
-character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
-character_set_name 	sql_identifier 	Name of the character set, currently implemented as showing the name of the database encoding
-character_repertoire 	sql_identifier 	Character repertoire, showing UCS if the encoding is UTF8, else just the encoding name
-form_of_use 	sql_identifier 	Character encoding form, same as the database encoding
-default_collate_catalog 	sql_identifier 	Name of the database containing the default collation (always the current database, if any collation is identified)
-default_collate_schema 	sql_identifier 	Name of the schema containing the default collation
-default_collate_name 	sql_identifier 	Name of the default collation. The default collation is identified as the collation that matches the COLLATE and CTYPE settings of the current database. If there is no such collation, then this column and the associated schema and catalog columns are null.
-
 
 <#Map>
          rr:logicalTable [
@@ -305,42 +268,42 @@ default_collate_name 	sql_identifier 	Name of the default collation. The default
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_repertoire";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "form_of_use";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "default_collate_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "default_collate_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "default_collate_name";
             ];
 ];
 .
