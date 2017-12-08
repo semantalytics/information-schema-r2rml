@@ -26,10 +26,6 @@
 # 34.4. administrable_role_authorizations
 # https://www.postgresql.org/docs/9.1/static/infoschema-administrable-role-authorizations.html
 
-grantee 	sql_identifier 	Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
-role_name 	sql_identifier 	Name of a role
-is_grantable 	yes_or_no 	Always YES
-
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.administrable_role_authorizations"
@@ -42,27 +38,23 @@ is_grantable 	yes_or_no 	Always YES
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "role_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
 ];
 .
 
 # 34.5. applicable_roles
 # https://www.postgresql.org/docs/9.1/static/infoschema-applicable-roles.html
-
-grantee 	sql_identifier 	Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
-role_name 	sql_identifier 	Name of a role
-is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -76,17 +68,17 @@ is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "role_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
 ];
 .
@@ -94,15 +86,15 @@ is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO
 # 34.6. attributes
 # https://www.postgresql.org/docs/9.1/static/infoschema-attributes.html
 
-udt_catalog 	sql_identifier 	Name of the database containing the data type (always the current database)
-udt_schema 	sql_identifier 	Name of the schema containing the data type
-udt_name 	sql_identifier 	Name of the data type
-attribute_name 	sql_identifier 	Name of the attribute
-ordinal_position 	cardinal_number 	Ordinal position of the attribute within the data type (count starts at 1)
-attribute_default 	character_data 	Default expression of the attribute
-is_nullable 	yes_or_no 	YES if the attribute is possibly nullable, NO if it is known not nullable.
-data_type 	character_data 	Data type of the attribute, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in attribute_udt_name and associated columns).
-character_maximum_length 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+ 	sql_identifier 	Name of the database containing the data type (always the current database)
+ 	sql_identifier 	Name of the schema containing the data type
+ 	sql_identifier 	Name of the data type
+ 	sql_identifier 	Name of the attribute
+ 	cardinal_number 	Ordinal position of the attribute within the data type (count starts at 1)
+ 	character_data 	Default expression of the attribute
+ 	yes_or_no 	YES if the attribute is possibly nullable, NO if it is known not nullable.
+ 	character_data 	Data type of the attribute, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in attribute_udt_name and associated columns).
+ 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
 character_octet_length 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
 character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
@@ -138,47 +130,47 @@ is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "udt_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "udt_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "udt_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "attribute_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "ordinal_position";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "attribute_default";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_nullable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "data_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_maximum_length";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
