@@ -1,1 +1,168 @@
 
+CREATE OR REPLACE VIEW views 
+AS
+SELECT * FROM (
+    SELECT SYS_CONTEXT('userenv', 'DB_NAME') TABLE_CATALOG,
+           owner TABLE_SCHEMA,
+           view_name table_name, 
+           text view_definition,
+           'VIEW' table_type,
+           (select max(
+                   case
+                   when uuc.updatable = 'YES'
+                     or uuc.deletable = 'YES'
+                     or uuc.insertable = 'YES'
+                   then
+                     'YES'
+                   else
+                     'NO'
+                   end )
+              from USER_UPDATABLE_COLUMNS uuc
+              where uuc.owner = av.owner
+                and uuc.table_name = av.view_name) is_updatable,
+            decode((select 1
+               from all_constraints ac
+               where ac.owner = av.owner
+                 and ac.table_name = AV.VIEW_NAME
+                 and AC.CONSTRAINT_TYPE = 'V'), 1, 'CASCADE', 'NONE') check_option 
+    FROM all_views av
+) views;
+
+CREATE OR REPLACE VIEW tables 
+AS
+SELECT * FROM (
+  SELECT SYS_CONTEXT('userenv', 'DB_NAME') TABLE_CATALOG, 
+         owner TABLE_SCHEMA,
+         TABLE_NAME,
+         case 
+         when iot_type = 'Y'
+           then 'IOT'
+         when temporary = 'Y'
+           then 'TEMP'
+         else
+          'BASE TABLE'
+         end table_type         
+    FROM all_tables
+    UNION ALL
+    SELECT SYS_CONTEXT('userenv', 'DB_NAME') TABLE_CATALOG,
+           owner TABLE_SCHEMA,
+           view_name table_name, 
+           'VIEW' table_type
+    FROM all_views    
+) tables;
+
+CREATE OR REPLACE VIEW schemata 
+AS
+SELECT * FROM (
+  WITH char_set AS (
+    SELECT value$ cs
+      FROM sys.props$ 
+      WHERE name = 'NLS_CHARACTERSET')
+  SELECT SYS_CONTEXT('userenv', 'DB_NAME') CATALOG_NAME, 
+         USERname SCHEMA_NAME, 
+         char_set.cs DEFAULT_CHARACTER_SET_NAME,     
+         SYS_CONTEXT('USERENV','NLS_SORT') DEFAULT_COLLATION_NAME, 
+         TO_CHAR(NULL) SQL_PATH
+    FROM char_set,
+         all_users
+) schemata
+
+CREATE OR REPLACE VIEW routines
+AS
+SELECT * FROM (
+    SELECT SYS_CONTEXT('userenv', 'DB_NAME') ROUTINE_CATALOG,
+           SYS_CONTEXT('userenv', 'DB_NAME') SPECIFIC_CATALOG,
+           ap.owner specific_SCHEMA,
+           ap.owner routine_SCHEMA,
+           decode( ap.procedure_name, null, ap.object_name || ap.procedure_name, ap.procedure_name ) specific_name, 
+           decode( ap.procedure_name, null, ap.object_name || ap.procedure_name, ap.procedure_name ) routine_name, 
+           ao.object_type routine_type,
+           decode(impltypeowner, null, to_char(null), SYS_CONTEXT('userenv', 'DB_NAME')) type_udt_catalog,
+           to_clob(get_proc_text(ap.owner, ap.object_name, ao.object_type, 32767)) routine_body,
+           to_clob(get_proc_text(ap.owner, ap.object_name, ao.object_type, 4000)) routine_definition,
+           SYS_CONTEXT('userenv', 'DB_NAME') character_set_catalog,
+           'SYS' character_set_schema,
+           SYS_CONTEXT('userenv', 'DB_NAME') collation_catalog,
+           'SYS' collation_schema,
+           deterministic is_deterministic,
+           pipelined is_pipelined ,
+           aggregate is_aggregate,
+           authid is_definer
+  FROM all_procedures ap,
+       all_objects ao
+  WHERE ap.owner = ao.owner
+    AND ap.object_name = ao.object_name
+    AND ao.object_type in ('PACKAGE', 'PROCEDURE', 'FUNCTION')
+) routines
+
+CREATE OR REPLACE VIEW domains
+AS
+SELECT * FROM (
+    SELECT SYS_CONTEXT('userenv', 'DB_NAME') DOMAIN_CATALOG,
+           owner domain_SCHEMA,
+           type_name domain_name, 
+           to_number(null) character_maximum_length, 
+           to_number(null) character_octet_length, 
+           SYS_CONTEXT('userenv', 'DB_NAME') character_set_catalog,
+           'SYS' character_set_schema,
+           SYS_CONTEXT('userenv', 'DB_NAME') collation_catalog,
+           'SYS' collation_schema,
+           SYS_CONTEXT('USERENV','NLS_SORT') COLLATION_NAME, 
+           TO_NUMBER(NULL) NUMERIC_PRECISION, 
+           TO_NUMBER(NULL) NUMERIC_PRECISION_RADIX, 
+           TO_NUMBER(NULL) NUMERIC_SCALE ,
+           TO_NUMBER(NULL) DATETIME_PRECISION, 
+           TO_CHAR(NULL) DOMAIN_DEFAULT 
+  FROM all_types
+) domains
+
+CREATE OR REPLACE VIEW columns
+AS
+SELECT * FROM (
+    SELECT SYS_CONTEXT('userenv', 'DB_NAME') TABLE_CATALOG,
+           owner TABLE_SCHEMA,
+           table_name, 
+           data_type,
+           data_type_mod,
+           decode(data_type_owner, null, to_char(null), SYS_CONTEXT('userenv', 'DB_NAME')) domain_catalog,
+           data_type_owner domain_schema,
+           data_length character_maximum_length,
+           data_length character_octet_length,
+           data_length,
+           data_precision numeric_precision,
+           data_scale numeric_scale,
+           nullable is_nullable,
+           column_id ordinal_position,
+           default_length,
+           data_default column_default,
+           num_distinct,
+           low_value,
+           high_value,
+           density,
+           num_nulls,
+           num_buckets,
+           last_analyzed,
+           sample_size,
+           SYS_CONTEXT('userenv', 'DB_NAME') character_set_catalog,
+           'SYS' character_set_schema,
+           SYS_CONTEXT('userenv', 'DB_NAME') collation_catalog,
+           'SYS' collation_schema,
+           character_set_name,
+           char_col_decl_length,
+           global_stats,
+           user_stats,
+           avg_col_len,
+           char_length,
+           char_used,
+           v80_fmt_image,
+           data_upgraded,
+           histogram
+  FROM all_tab_columns av
+) columns;
+
+CREATE OR REPLACE VIEW CATALOG_NAME
+AS
+  SELECT SYS_CONTEXT('userenv', 'DB_NAME') CATALOG_NAME 
+    FROM dual    
+    
+
