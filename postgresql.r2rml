@@ -3218,19 +3218,6 @@
 # 34.50. tables
 # https://www.postgresql.org/docs/9.1/static/infoschema-tables.html
 
-table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the table
-table_name 	sql_identifier 	Name of the table
-table_type 	character_data 	Type of the table: BASE TABLE for a persistent base table (the normal table type), VIEW for a view, FOREIGN TABLE for a foreign table, or LOCAL TEMPORARY for a temporary table
-self_referencing_column_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-reference_generation 	character_data 	Applies to a feature not available in PostgreSQL
-user_defined_type_catalog 	sql_identifier 	If the table is a typed table, the name of the database that contains the underlying data type (always the current database), else null.
-user_defined_type_schema 	sql_identifier 	If the table is a typed table, the name of the schema that contains the underlying data type, else null.
-user_defined_type_name 	sql_identifier 	If the table is a typed table, the name of the underlying data type, else null.
-is_insertable_into 	yes_or_no 	YES if the table is insertable into, NO if not (Base tables are always insertable into, views not necessarily.)
-is_typed 	yes_or_no 	YES if the table is a typed table, NO if not
-commit_action 	character_data 	If the table is a temporary table, then PRESERVE, else null. (The SQL standard defines other commit actions for temporary tables, which are not supported by PostgreSQL.)
-
 <#Map>
          rr:logicalTable [
             rr:tablename "INFORMATION_SCHEMA.tables"
@@ -3243,81 +3230,68 @@ commit_action 	character_data 	If the table is a temporary table, then PRESERVE,
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "self_referencing_column_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "reference_generation";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "user_defined_type_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "user_defined_type_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "user_defined_type_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_insertable_into";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_typed";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
-            ];
-         rr:predicateObjectMap [
-            rr:predicate mysql:;
-            rr:objectMap [
-                rr:column "";
+                rr:column "commit_action";
             ];
 ];
 .
 
 # 34.51. triggered_update_columns
 # https://www.postgresql.org/docs/9.1/static/infoschema-triggered-update-columns.html
-
-trigger_catalog 	sql_identifier 	Name of the database that contains the trigger (always the current database)
-trigger_schema 	sql_identifier 	Name of the schema that contains the trigger
-trigger_name 	sql_identifier 	Name of the trigger
-event_object_catalog 	sql_identifier 	Name of the database that contains the table that the trigger is defined on (always the current database)
-event_object_schema 	sql_identifier 	Name of the schema that contains the table that the trigger is defined on
-event_object_table 	sql_identifier 	Name of the table that the trigger is defined on
-event_object_column 	sql_identifier 	Name of the column that the trigger is defined on
 
 <#Map>
          rr:logicalTable [
@@ -3331,61 +3305,43 @@ event_object_column 	sql_identifier 	Name of the column that the trigger is defi
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "trigger_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "trigger_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "trigger_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_table";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_column";
             ];
 ];
 .
 
 # 34.52. triggers
 # https://www.postgresql.org/docs/9.1/static/infoschema-triggers.html
-
-trigger_catalog 	sql_identifier 	Name of the database that contains the trigger (always the current database)
-trigger_schema 	sql_identifier 	Name of the schema that contains the trigger
-trigger_name 	sql_identifier 	Name of the trigger
-event_manipulation 	character_data 	Event that fires the trigger (INSERT, UPDATE, or DELETE)
-event_object_catalog 	sql_identifier 	Name of the database that contains the table that the trigger is defined on (always the current database)
-event_object_schema 	sql_identifier 	Name of the schema that contains the table that the trigger is defined on
-event_object_table 	sql_identifier 	Name of the table that the trigger is defined on
-action_order 	cardinal_number 	Not yet implemented
-action_condition 	character_data 	WHEN condition of the trigger, null if none (also null if the table is not owned by a currently enabled role)
-action_statement 	character_data 	Statement that is executed by the trigger (currently always EXECUTE PROCEDURE function(...))
-action_orientation 	character_data 	Identifies whether the trigger fires once for each processed row or once for each statement (ROW or STATEMENT)
-action_timing 	character_data 	Time at which the trigger fires (BEFORE, AFTER, or INSTEAD OF)
-action_reference_old_table 	sql_identifier 	Applies to a feature not available in PostgreSQL
-action_reference_new_table 	sql_identifier 	Applies to a feature not available in PostgreSQL
-action_reference_old_row 	sql_identifier 	Applies to a feature not available in PostgreSQL
-action_reference_new_row 	sql_identifier 	Applies to a feature not available in PostgreSQL
-created 	time_stamp 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -3399,102 +3355,93 @@ created 	time_stamp 	Applies to a feature not available in PostgreSQL
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "trigger_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "trigger_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "trigger_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_manipulation";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "event_object_table";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_order";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_condition";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_statement";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_orientation";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_timing";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_reference_old_table";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_reference_new_table";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_reference_old_row";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "action_reference_new_row";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "created";
             ];
 ];
 .
 
 # 34.53. usage_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-usage-privileges.html
-
-grantor 	sql_identifier 	Name of the role that granted the privilege
-grantee 	sql_identifier 	Name of the role that the privilege was granted to
-object_catalog 	sql_identifier 	Name of the database containing the object (always the current database)
-object_schema 	sql_identifier 	Name of the schema containing the object, if applicable, else an empty string
-object_name 	sql_identifier 	Name of the object
-object_type 	character_data 	COLLATION or DOMAIN or FOREIGN DATA WRAPPER or FOREIGN SERVER
-privilege_type 	character_data 	Always USAGE
-is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -3508,54 +3455,48 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantor";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "object_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
 ];
 .
 
 # 34.54. user_mapping_options
 # https://www.postgresql.org/docs/9.1/static/infoschema-user-mapping-options.html
-
-authorization_identifier 	sql_identifier 	Name of the user being mapped, or PUBLIC if the mapping is public
-foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server used by this mapping is defined in (always the current database)
-foreign_server_name 	sql_identifier 	Name of the foreign server used by this mapping
-option_name 	sql_identifier 	Name of an option
-option_value 	character_data 	Value of the option. This column will show as null unless the current user is the user being mapped, or the mapping is for PUBLIC and the current user is the server owner, or the current user is a superuser. The intent is to protect password information stored as user mapping option.
 
 <#Map>
          rr:logicalTable [
@@ -3569,37 +3510,33 @@ option_value 	character_data 	Value of the option. This column will show as null
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "authorization_identifier";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "foreign_server_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "foreign_server_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "option_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "option_value";
             ];
 ];
 .
 
 # 34.55. user_mappings
 # https://www.postgresql.org/docs/9.1/static/infoschema-user-mappings.html
-
-authorization_identifier 	sql_identifier 	Name of the user being mapped, or PUBLIC if the mapping is public
-foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server used by this mapping is defined in (always the current database)
-foreign_server_name 	sql_identifier 	Name of the foreign server used by this mapping
 
 <#Map>
          rr:logicalTable [
@@ -3613,31 +3550,23 @@ foreign_server_name 	sql_identifier 	Name of the foreign server used by this map
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "authorization_identifier";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "foreign_server_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "foreign_server_name";
             ];
 ];
 .
 
 # 34.56. view_column_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-view-column-usage.html
-
-view_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
-view_schema 	sql_identifier 	Name of the schema that contains the view
-view_name 	sql_identifier 	Name of the view
-table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column that is used by the view (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column that is used by the view
-table_name 	sql_identifier 	Name of the table that contains the column that is used by the view
-column_name 	sql_identifier 	Name of the column that is used by the view
 
 <#Map>
          rr:logicalTable [
@@ -3651,50 +3580,43 @@ column_name 	sql_identifier 	Name of the column that is used by the view
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "column_name";
             ];
 ];
 .
 
 # 34.57. view_routine_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-view-routine-usage.html
-
-table_catalog 	sql_identifier 	Name of the database containing the view (always the current database)
-table_schema 	sql_identifier 	Name of the schema containing the view
-table_name 	sql_identifier 	Name of the view
-specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-specific_schema 	sql_identifier 	Name of the schema containing the function
-specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
 
 <#Map>
          rr:logicalTable [
@@ -3708,45 +3630,38 @@ specific_name 	sql_identifier 	The "specific name" of the function. See Section 
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_name";
             ];
 ];
 .
 
 # 34.58. view_table_usage
 # https://www.postgresql.org/docs/9.1/static/infoschema-view-table-usage.html
-
-view_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
-view_schema 	sql_identifier 	Name of the schema that contains the view
-view_name 	sql_identifier 	Name of the view
-table_catalog 	sql_identifier 	Name of the database that contains the table that is used by the view (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the table that is used by the view
-table_name 	sql_identifier 	Name of the table that is used by the view
 
 <#Map>
          rr:logicalTable [
@@ -3760,49 +3675,38 @@ table_name 	sql_identifier 	Name of the table that is used by the view
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
 ];
 .
 
 # 34.59. views
 # https://www.postgresql.org/docs/9.1/static/infoschema-views.html
-
-table_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the view
-table_name 	sql_identifier 	Name of the view
-view_definition 	character_data 	Query expression defining the view (null if the view is not owned by a currently enabled role)
-check_option 	character_data 	Applies to a feature not available in PostgreSQL
-is_updatable 	yes_or_no 	YES if the view is updatable (allows UPDATE and DELETE), NO if not
-is_insertable_into 	yes_or_no 	YES if the view is insertable into (allows INSERT), NO if not
-is_trigger_updatable 	yes_or_no 	YES if the view has an INSTEAD OF UPDATE trigger defined on it, NO if not
-is_trigger_deletable 	yes_or_no 	YES if the view has an INSTEAD OF DELETE trigger defined on it, NO if not
-is_trigger_insertable_into 	yes_or_no 	YES if the view has an INSTEAD OF INSERT trigger defined on it, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -3816,52 +3720,52 @@ is_trigger_insertable_into 	yes_or_no 	YES if the view has an INSTEAD OF INSERT 
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "view_definition";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "check_option";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_updatable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_insertable_into";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_trigger_updatable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_trigger_deletable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_trigger_insertable_into";
             ];
 ];
 .
