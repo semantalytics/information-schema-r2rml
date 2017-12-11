@@ -2255,88 +2255,8 @@
 # 34.38. routines
 # https://www.postgresql.org/docs/9.1/static/infoschema-routines.html
 
-specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-specific_schema 	sql_identifier 	Name of the schema containing the function
-specific_name 	sql_identifier 	The "specific name" of the function. This is a name that uniquely identifies the function in the schema, even if the real name of the function is overloaded. The format of the specific name is not defined, it should only be used to compare it to other instances of specific routine names.
-routine_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
-routine_schema 	sql_identifier 	Name of the schema containing the function
-routine_name 	sql_identifier 	Name of the function (might be duplicated in case of overloading)
-routine_type 	character_data 	Always FUNCTION (In the future there might be other types of routines.)
-module_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-module_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-module_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-udt_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-udt_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-udt_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-data_type 	character_data 	Return data type of the function, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in type_udt_name and associated columns).
-character_maximum_length 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
-character_octet_length 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
-character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-collation_catalog 	sql_identifier 	Always null, since this information is not applied to return data types in PostgreSQL
-collation_schema 	sql_identifier 	Always null, since this information is not applied to return data types in PostgreSQL
-collation_name 	sql_identifier 	Always null, since this information is not applied to return data types in PostgreSQL
-numeric_precision 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
-numeric_precision_radix 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
-numeric_scale 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
-datetime_precision 	cardinal_number 	Always null, since this information is not applied to return data types in PostgreSQL
-interval_type 	character_data 	Always null, since this information is not applied to return data types in PostgreSQL
-interval_precision 	character_data 	Always null, since this information is not applied to return data types in PostgreSQL
-type_udt_catalog 	sql_identifier 	Name of the database that the return data type of the function is defined in (always the current database)
-type_udt_schema 	sql_identifier 	Name of the schema that the return data type of the function is defined in
-type_udt_name 	sql_identifier 	Name of the return data type of the function
-scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
-dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the return data type of this function, unique among the data type descriptors pertaining to the function. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
-routine_body 	character_data 	If the function is an SQL function, then SQL, else EXTERNAL.
-routine_definition 	character_data 	The source text of the function (null if the function is not owned by a currently enabled role). (According to the SQL standard, this column is only applicable if routine_body is SQL, but in PostgreSQL it will contain whatever source text was specified when the function was created.)
-external_name 	character_data 	If this function is a C function, then the external name (link symbol) of the function; else null. (This works out to be the same value that is shown in routine_definition.)
-external_language 	character_data 	The language the function is written in
-parameter_style 	character_data 	Always GENERAL (The SQL standard defines other parameter styles, which are not available in PostgreSQL.)
-is_deterministic 	yes_or_no 	If the function is declared immutable (called deterministic in the SQL standard), then YES, else NO. (You cannot query the other volatility levels available in PostgreSQL through the information schema.)
-sql_data_access 	character_data 	Always MODIFIES, meaning that the function possibly modifies SQL data. This information is not useful for PostgreSQL.
-is_null_call 	yes_or_no 	If the function automatically returns null if any of its arguments are null, then YES, else NO.
-sql_path 	character_data 	Applies to a feature not available in PostgreSQL
-schema_level_routine 	yes_or_no 	Always YES (The opposite would be a method of a user-defined type, which is a feature not available in PostgreSQL.)
-max_dynamic_result_sets 	cardinal_number 	Applies to a feature not available in PostgreSQL
-is_user_defined_cast 	yes_or_no 	Applies to a feature not available in PostgreSQL
-is_implicitly_invocable 	yes_or_no 	Applies to a feature not available in PostgreSQL
-security_type 	character_data 	If the function runs with the privileges of the current user, then INVOKER, if the function runs with the privileges of the user who defined it, then DEFINER.
-to_sql_specific_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-to_sql_specific_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-to_sql_specific_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-as_locator 	yes_or_no 	Applies to a feature not available in PostgreSQL
-created 	time_stamp 	Applies to a feature not available in PostgreSQL
-last_altered 	time_stamp 	Applies to a feature not available in PostgreSQL
-new_savepoint_level 	yes_or_no 	Applies to a feature not available in PostgreSQL
-is_udt_dependent 	yes_or_no 	Applies to a feature not available in PostgreSQL
-result_cast_from_data_type 	character_data 	Applies to a feature not available in PostgreSQL
-result_cast_as_locator 	yes_or_no 	Applies to a feature not available in PostgreSQL
-result_cast_char_max_length 	cardinal_number 	Applies to a feature not available in PostgreSQL
-result_cast_char_octet_length 	character_data 	Applies to a feature not available in PostgreSQL
-result_cast_char_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_char_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_char_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_collation_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_collation_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_collation_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_numeric_precision 	cardinal_number 	Applies to a feature not available in PostgreSQL
-result_cast_numeric_precision_radix 	cardinal_number 	Applies to a feature not available in PostgreSQL
-result_cast_numeric_scale 	cardinal_number 	Applies to a feature not available in PostgreSQL
-result_cast_datetime_precision 	character_data 	Applies to a feature not available in PostgreSQL
-result_cast_interval_type 	character_data 	Applies to a feature not available in PostgreSQL
-result_cast_interval_precision 	character_data 	Applies to a feature not available in PostgreSQL
-result_cast_type_udt_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_type_udt_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_type_udt_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-result_cast_maximum_cardinality 	cardinal_number 	Applies to a feature not available in PostgreSQL
-result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available in PostgreSQL
+
+
 
 <#Map>
          rr:logicalTable [
@@ -2350,401 +2270,418 @@ result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available i
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "specific_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "module_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "module_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "module_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "udt_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "udt_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "udt_name;
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "data_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_maximum_length";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_octet_length";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_set_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "collation_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "collation_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "collation_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_precision_radix";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_scale";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "datetime_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "interval_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "interval_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "type_udt_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "type_udt_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "type_udt_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "scope_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "scope_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "scope_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "maximum_cardinality";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "dtd_identifier";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_body";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "routine_definition";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "external_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "external_language";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "parameter_style";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_deterministic";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_data_access";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_null_call";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_path";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "schema_level_routine";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "max_dynamic_result_sets";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_user_defined_cast";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_implicitly_invocable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "security_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "to_sql_specific_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "to_sql_specific_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "to_sql_specific_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "as_locator";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "created";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "last_altered";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "new_savepoint_level";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_udt_dependent";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_from_data_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_as_locator";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_char_max_length";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_char_octet_length";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_char_set_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_char_set_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_char_set_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_collation_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_collation_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_collation_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_numeric_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_numeric_precision_radix";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_numeric_scale";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_datetime_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_interval_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_interval_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_type_udt_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_type_udt_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "result_cast_type_udt_name";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "result_cast_scope_catalog";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "result_cast_scope_schema";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "result_cast_scope_name";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "result_cast_maximum_cardinality";
+            ];
+         rr:predicateObjectMap [
+            rr:predicate mysql:;
+            rr:objectMap [
+                rr:column "result_cast_dtd_identifier";
             ];
 ];
 .
 
 # 34.39. schemata
 # https://www.postgresql.org/docs/9.1/static/infoschema-schemata.html
-
-catalog_name 	sql_identifier 	Name of the database that the schema is contained in (always the current database)
-schema_name 	sql_identifier 	Name of the schema
-schema_owner 	sql_identifier 	Name of the owner of the schema
-default_character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
-default_character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
-default_character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
-sql_path 	character_data 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -2758,56 +2695,43 @@ sql_path 	character_data 	Applies to a feature not available in PostgreSQL
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "catalog_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "schema_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "schema_owner";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "default_character_set_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "default_character_set_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "default_character_set_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_path";
             ];
 ];
 .
 
 # 34.40. sequences
 # https://www.postgresql.org/docs/9.1/static/infoschema-sequences.html
-
-sequence_catalog 	sql_identifier 	Name of the database that contains the sequence (always the current database)
-sequence_schema 	sql_identifier 	Name of the schema that contains the sequence
-sequence_name 	sql_identifier 	Name of the sequence
-data_type 	character_data 	The data type of the sequence. In PostgreSQL, this is currently always bigint.
-numeric_precision 	cardinal_number 	This column contains the (declared or implicit) precision of the sequence data type (see above). The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix.
-numeric_precision_radix 	cardinal_number 	This column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10.
-numeric_scale 	cardinal_number 	This column contains the (declared or implicit) scale of the sequence data type (see above). The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix.
-start_value 	character_data 	The start value of the sequence
-minimum_value 	character_data 	The minimum value of the sequence
-maximum_value 	character_data 	The maximum value of the sequence
-increment 	character_data 	The increment of the sequence
-cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
 
 <#Map>
          rr:logicalTable [
@@ -2821,76 +2745,68 @@ cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sequence_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sequence_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sequence_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "data_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_precision";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_precision_radix";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "numeric_scale";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "start_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "minimum_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "maximum_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "increment";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "cycle_option";
             ];
 ];
 .
 
 # 34.41. sql_features
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-features.html
-
-feature_id 	character_data 	Identifier string of the feature
-feature_name 	character_data 	Descriptive name of the feature
-sub_feature_id 	character_data 	Identifier string of the subfeature, or a zero-length string if not a subfeature
-sub_feature_name 	character_data 	Descriptive name of the subfeature, or a zero-length string if not a subfeature
-is_supported 	yes_or_no 	YES if the feature is fully supported by the current version of PostgreSQL, NO if not
-is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
-comments 	character_data 	Possibly a comment about the supported status of the feature
 
 <#Map>
          rr:logicalTable [
@@ -2904,50 +2820,43 @@ comments 	character_data 	Possibly a comment about the supported status of the f
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "feature_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "feature_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sub_feature_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sub_feature_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_supported";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_verified_by";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "comments";
             ];
 ];
 .
 
 # 34.42. sql_implementation_info
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-implementation-info.html
-
-implementation_info_id 	character_data 	Identifier string of the implementation information item
-implementation_info_name 	character_data 	Descriptive name of the implementation information item
-integer_value 	cardinal_number 	Value of the implementation information item, or null if the value is contained in the column character_value
-character_value 	character_data 	Value of the implementation information item, or null if the value is contained in the column integer_value
-comments 	character_data 	Possibly a comment pertaining to the implementation information item
-
 
 <#Map>
          rr:logicalTable [
@@ -2961,41 +2870,33 @@ comments 	character_data 	Possibly a comment pertaining to the implementation in
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "implementation_info_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "implementation_info_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "integer_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "character_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "comments";
             ];
 ];
 .
 
 # 34.43. sql_languages
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-languages.html
-
-sql_language_source 	character_data 	The name of the source of the language definition; always ISO 9075, that is, the SQL standard
-sql_language_year 	character_data 	The year the standard referenced in sql_language_source was approved.
-sql_language_conformance 	character_data 	The standard conformance level for the language binding. For ISO 9075:2003 this is always CORE.
-sql_language_integrity 	character_data 	Always null (This value is relevant to an earlier version of the SQL standard.)
-sql_language_implementation 	character_data 	Always null
-sql_language_binding_style 	character_data 	The language binding style, either DIRECT or EMBEDDED
-sql_language_programming_language 	character_data 	The programming language, if the binding style is EMBEDDED, else null. PostgreSQL only supports the language C.
 
 <#Map>
          rr:logicalTable [
@@ -3009,49 +2910,43 @@ sql_language_programming_language 	character_data 	The programming language, if 
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_source";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_year";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_conformance";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_integrity";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_implementation";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_binding_style";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sql_language_programming_language";
             ];
 ];
 .
 
 # 34.44. sql_packages
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-packages.html
-
-feature_id 	character_data 	Identifier string of the package
-feature_name 	character_data 	Descriptive name of the package
-is_supported 	yes_or_no 	YES if the package is fully supported by the current version of PostgreSQL, NO if not
-is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
-comments 	character_data 	Possibly a comment about the supported status of the package
 
 <#Map>
          rr:logicalTable [
@@ -3065,39 +2960,33 @@ comments 	character_data 	Possibly a comment about the supported status of the p
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "feature_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "feature_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_supported";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_verified_by";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "comments";
             ];
 ];
 .
 
 # 34.45. sql_parts
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-parts.html
-
-feature_id 	character_data 	An identifier string containing the number of the part
-feature_name 	character_data 	Descriptive name of the part
-is_supported 	yes_or_no 	YES if the part is fully supported by the current version of PostgreSQL, NO if not
-is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
-comments 	character_data 	Possibly a comment about the supported status of the part
 
 <#Map>
          rr:logicalTable [
@@ -3111,38 +3000,33 @@ comments 	character_data 	Possibly a comment about the supported status of the p
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "feature_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "feature_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_supported";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_verified_by";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "comments";
             ];
 ];
 .
 
 # 34.46. sql_sizing
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-sizing.html
-
-sizing_id 	cardinal_number 	Identifier of the sizing item
-sizing_name 	character_data 	Descriptive name of the sizing item
-supported_value 	cardinal_number 	Value of the sizing item, or 0 if the size is unlimited or cannot be determined, or null if the features for which the sizing item is applicable are not supported
-comments 	character_data 	Possibly a comment pertaining to the sizing item
 
 <#Map>
          rr:logicalTable [
@@ -3156,34 +3040,28 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sizing_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sizing_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "supported_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "comments";
             ];
 ];
 .
 
 # 34.47. sql_sizing_profiles
 # https://www.postgresql.org/docs/9.1/static/infoschema-sql-sizing-profiles.html
-
-sizing_id 	cardinal_number 	Identifier of the sizing item
-sizing_name 	character_data 	Descriptive name of the sizing item
-profile_id 	character_data 	Identifier string of a profile
-required_value 	cardinal_number 	The value required by the SQL profile for the sizing item, or 0 if the profile places no limit on the sizing item, or null if the profile does not require any of the features for which the sizing item is applicable
-comments 	character_data 	Possibly a comment pertaining to the sizing item within the profile
 
 <#Map>
          rr:logicalTable [
@@ -3197,43 +3075,33 @@ comments 	character_data 	Possibly a comment pertaining to the sizing item withi
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sizing_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "sizing_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "profile_id";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "required_value";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "comments";
             ];
 ];
 .
 
 # 34.48. table_constraints
 # https://www.postgresql.org/docs/9.1/static/infoschema-table-constraints.html
-
-constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
-constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
-constraint_name 	sql_identifier 	Name of the constraint
-table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the table
-table_name 	sql_identifier 	Name of the table
-constraint_type 	character_data 	Type of the constraint: CHECK, FOREIGN KEY, PRIMARY KEY, or UNIQUE
-is_deferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
-initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
 
 <#Map>
          rr:logicalTable [
@@ -3247,62 +3115,53 @@ initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "constraint_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "constraint_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "constraint_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "constraint_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_deferrable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "initially_deferred";
             ];
 ];
 .
 
 # 34.49. table_privileges
 # https://www.postgresql.org/docs/9.1/static/infoschema-table-privileges.html
-
-grantor 	sql_identifier 	Name of the role that granted the privilege
-grantee 	sql_identifier 	Name of the role that the privilege was granted to
-table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
-table_schema 	sql_identifier 	Name of the schema that contains the table
-table_name 	sql_identifier 	Name of the table
-privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, or TRIGGER
-is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
-with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 <#Map>
          rr:logicalTable [
@@ -3316,42 +3175,42 @@ with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantor";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "grantee";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_schema";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "table_name";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "is_grantable";
             ];
          rr:predicateObjectMap [
             rr:predicate mysql:;
             rr:objectMap [
-                rr:column "";
+                rr:column "with_hierarchy";
             ];
 ];
 .
