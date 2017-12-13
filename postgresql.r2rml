@@ -2195,52 +2195,52 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantor;
             rr:objectMap [
                 rr:column "grantor";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantee;
             rr:objectMap [
                 rr:column "grantee";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificCatalog;
             rr:objectMap [
                 rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificSchema;
             rr:objectMap [
                 rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificName;
             rr:objectMap [
                 rr:column "specific_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineCatalog;
             rr:objectMap [
                 rr:column "routine_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineSchema;
             rr:objectMap [
                 rr:column "routine_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineName;
             rr:objectMap [
                 rr:column "routine_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:privilegeType;
             rr:objectMap [
                 rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isGrantable;
             rr:objectMap [
                 rr:column "is_grantable";
             ];
@@ -2249,9 +2249,6 @@
 
 # 34.38. routines
 # https://www.postgresql.org/docs/9.1/static/infoschema-routines.html
-
-
-
 
 <#Map>
          rr:logicalTable [
@@ -2263,412 +2260,412 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificCatalog;
             rr:objectMap [
                 rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificSchema;
             rr:objectMap [
                 rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificName;
             rr:objectMap [
                 rr:column "specific_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineCatalog;
             rr:objectMap [
                 rr:column "routine_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineSchema;
             rr:objectMap [
                 rr:column "routine_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineName;
             rr:objectMap [
                 rr:column "routine_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineType;
             rr:objectMap [
                 rr:column "routine_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:moduleCatalog;
             rr:objectMap [
                 rr:column "module_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:moduleSchema;
             rr:objectMap [
                 rr:column "module_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:moduleName;
             rr:objectMap [
                 rr:column "module_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:udtCatalog;
             rr:objectMap [
                 rr:column "udt_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:udtSchema;
             rr:objectMap [
                 rr:column "udt_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:udtName;
             rr:objectMap [
                 rr:column "udt_name;
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataType;
             rr:objectMap [
                 rr:column "data_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterMaximumLength;
             rr:objectMap [
                 rr:column "character_maximum_length";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterOctetLength;
             rr:objectMap [
                 rr:column "character_octet_length";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetCatalog;
             rr:objectMap [
                 rr:column "character_set_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetSchema;
             rr:objectMap [
                 rr:column "character_set_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterSetName;
             rr:objectMap [
                 rr:column "character_set_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationcatalog;
             rr:objectMap [
                 rr:column "collation_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationSchema;
             rr:objectMap [
                 rr:column "collation_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:collationName;
             rr:objectMap [
                 rr:column "collation_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericPrecision;
             rr:objectMap [
                 rr:column "numeric_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericPrecisionRadix;
             rr:objectMap [
                 rr:column "numeric_precision_radix";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericScale;
             rr:objectMap [
                 rr:column "numeric_scale";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:datetimePrecision;
             rr:objectMap [
                 rr:column "datetime_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:inervalType;
             rr:objectMap [
                 rr:column "interval_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:intervalPrecision;
             rr:objectMap [
                 rr:column "interval_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:typeUdtCatalog;
             rr:objectMap [
                 rr:column "type_udt_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:typeUdtSchema;
             rr:objectMap [
                 rr:column "type_udt_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:typeUdtName;
             rr:objectMap [
                 rr:column "type_udt_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:scopeCatalog;
             rr:objectMap [
                 rr:column "scope_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:scopeSchema;
             rr:objectMap [
                 rr:column "scope_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:scopeName;
             rr:objectMap [
                 rr:column "scope_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:maximumCardinality;
             rr:objectMap [
                 rr:column "maximum_cardinality";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dtdIdentifier;
             rr:objectMap [
                 rr:column "dtd_identifier";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineBody;
             rr:objectMap [
                 rr:column "routine_body";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:routineDefinition;
             rr:objectMap [
                 rr:column "routine_definition";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:externalName;
             rr:objectMap [
                 rr:column "external_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:externalLanguage;
             rr:objectMap [
                 rr:column "external_language";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:parameterStyle;
             rr:objectMap [
                 rr:column "parameter_style";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isDeterministic;
             rr:objectMap [
                 rr:column "is_deterministic";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlDataAccess;
             rr:objectMap [
                 rr:column "sql_data_access";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isNullCall;
             rr:objectMap [
                 rr:column "is_null_call";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlPath;
             rr:objectMap [
                 rr:column "sql_path";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:schemaLevelRoutine;
             rr:objectMap [
                 rr:column "schema_level_routine";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:maxDynamicResultSets;
             rr:objectMap [
                 rr:column "max_dynamic_result_sets";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isUserDefinedCast;
             rr:objectMap [
                 rr:column "is_user_defined_cast";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isImplicitlyInvocable;
             rr:objectMap [
                 rr:column "is_implicitly_invocable";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:securityType;
             rr:objectMap [
                 rr:column "security_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:toSqlSpecificCatalog;
             rr:objectMap [
                 rr:column "to_sql_specific_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:toSqlSpecificSchema;
             rr:objectMap [
                 rr:column "to_sql_specific_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:toSqlSpecificName;
             rr:objectMap [
                 rr:column "to_sql_specific_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:asLocator;
             rr:objectMap [
                 rr:column "as_locator";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:created;
             rr:objectMap [
                 rr:column "created";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:lastAltered;
             rr:objectMap [
                 rr:column "last_altered";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:newSavepointLevel;
             rr:objectMap [
                 rr:column "new_savepoint_level";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isUdtDependent;
             rr:objectMap [
                 rr:column "is_udt_dependent";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastFromDataType;
             rr:objectMap [
                 rr:column "result_cast_from_data_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastAsLocator;
             rr:objectMap [
                 rr:column "result_cast_as_locator";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCharMaxLength;
             rr:objectMap [
                 rr:column "result_cast_char_max_length";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCharOctetLength;
             rr:objectMap [
                 rr:column "result_cast_char_octet_length";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCharSetCatalog;
             rr:objectMap [
                 rr:column "result_cast_char_set_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCharSetSchema;
             rr:objectMap [
                 rr:column "result_cast_char_set_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCharSetName;
             rr:objectMap [
                 rr:column "result_cast_char_set_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCollationCatalog;
             rr:objectMap [
                 rr:column "result_cast_collation_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCollationSchema;
             rr:objectMap [
                 rr:column "result_cast_collation_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastCollationName;
             rr:objectMap [
                 rr:column "result_cast_collation_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastNumericPrecision;
             rr:objectMap [
                 rr:column "result_cast_numeric_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastNumericPrecisionRadix;
             rr:objectMap [
                 rr:column "result_cast_numeric_precision_radix";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastNumericScale;
             rr:objectMap [
                 rr:column "result_cast_numeric_scale";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resutCastDatetimePrecision;
             rr:objectMap [
                 rr:column "result_cast_datetime_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastIntervalType;
             rr:objectMap [
                 rr:column "result_cast_interval_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastIntervalPrecision;
             rr:objectMap [
                 rr:column "result_cast_interval_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastTypeUdtCatalog;
             rr:objectMap [
                 rr:column "result_cast_type_udt_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resutCasttypeUdtSchema;
             rr:objectMap [
                 rr:column "result_cast_type_udt_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastTypeUdtName;
             rr:objectMap [
                 rr:column "result_cast_type_udt_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastScopeCatalog;
             rr:objectMap [
                 rr:column "result_cast_scope_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastScopeSchema;
             rr:objectMap [
                 rr:column "result_cast_scope_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastScopeName;
             rr:objectMap [
                 rr:column "result_cast_scope_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastMaximumCardinality;
             rr:objectMap [
                 rr:column "result_cast_maximum_cardinality";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:resultCastDtdIdentifier;
             rr:objectMap [
                 rr:column "result_cast_dtd_identifier";
             ];
