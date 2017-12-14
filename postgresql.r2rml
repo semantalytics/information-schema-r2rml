@@ -2685,37 +2685,37 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:catalogName;
             rr:objectMap [
                 rr:column "catalog_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:schemaName;
             rr:objectMap [
                 rr:column "schema_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:schemaOwner;
             rr:objectMap [
                 rr:column "schema_owner";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:defaultCharacterSetCatalog;
             rr:objectMap [
                 rr:column "default_character_set_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:defaultCharacterSetSchema;
             rr:objectMap [
                 rr:column "default_character_set_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:defaultCharacterSetName;
             rr:objectMap [
                 rr:column "default_character_set_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlPath;
             rr:objectMap [
                 rr:column "sql_path";
             ];
@@ -2735,62 +2735,62 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sequenceCatalog;
             rr:objectMap [
                 rr:column "sequence_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sequenceSchema;
             rr:objectMap [
                 rr:column "sequence_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sequenceName;
             rr:objectMap [
                 rr:column "sequence_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:dataType;
             rr:objectMap [
                 rr:column "data_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericPrecision;
             rr:objectMap [
                 rr:column "numeric_precision";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericPrecisionRadix;
             rr:objectMap [
                 rr:column "numeric_precision_radix";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:numericScale;
             rr:objectMap [
                 rr:column "numeric_scale";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:startValue;
             rr:objectMap [
                 rr:column "start_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:minimumValue;
             rr:objectMap [
                 rr:column "minimum_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:maximumValue;
             rr:objectMap [
                 rr:column "maximum_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:increment;
             rr:objectMap [
                 rr:column "increment";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:cycleOption;
             rr:objectMap [
                 rr:column "cycle_option";
             ];
@@ -2810,37 +2810,37 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:featureOf;
             rr:objectMap [
                 rr:column "feature_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:featureName;
             rr:objectMap [
                 rr:column "feature_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:subFeatureId;
             rr:objectMap [
                 rr:column "sub_feature_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:subFeatureName;
             rr:objectMap [
                 rr:column "sub_feature_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isSupported;
             rr:objectMap [
                 rr:column "is_supported";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isVerifiedBy;
             rr:objectMap [
                 rr:column "is_verified_by";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comments;
             rr:objectMap [
                 rr:column "comments";
             ];
@@ -2860,27 +2860,27 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:implementationInfoId;
             rr:objectMap [
                 rr:column "implementation_info_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:implementationInfoName;
             rr:objectMap [
                 rr:column "implementation_info_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:integerValue;
             rr:objectMap [
                 rr:column "integer_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:characterValue;
             rr:objectMap [
                 rr:column "character_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comments;
             rr:objectMap [
                 rr:column "comments";
             ];
@@ -2900,37 +2900,37 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageSource;
             rr:objectMap [
                 rr:column "sql_language_source";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageYear;
             rr:objectMap [
                 rr:column "sql_language_year";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageConformance;
             rr:objectMap [
                 rr:column "sql_language_conformance";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageIntegrity;
             rr:objectMap [
                 rr:column "sql_language_integrity";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageImplementation;
             rr:objectMap [
                 rr:column "sql_language_implementation";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageBindingStyle;
             rr:objectMap [
                 rr:column "sql_language_binding_style";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sqlLanguageProgrammingLanguage;
             rr:objectMap [
                 rr:column "sql_language_programming_language";
             ];
@@ -2950,27 +2950,27 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:featureId;
             rr:objectMap [
                 rr:column "feature_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:featureName;
             rr:objectMap [
                 rr:column "feature_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isSupported;
             rr:objectMap [
                 rr:column "is_supported";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isVerifiedBy;
             rr:objectMap [
                 rr:column "is_verified_by";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comments;
             rr:objectMap [
                 rr:column "comments";
             ];
@@ -2990,27 +2990,27 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:featureId;
             rr:objectMap [
                 rr:column "feature_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:featureName;
             rr:objectMap [
                 rr:column "feature_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isSupported;
             rr:objectMap [
                 rr:column "is_supported";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isVerifiedBy;
             rr:objectMap [
                 rr:column "is_verified_by";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comments;
             rr:objectMap [
                 rr:column "comments";
             ];
@@ -3030,22 +3030,22 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sizingId;
             rr:objectMap [
                 rr:column "sizing_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sizingName;
             rr:objectMap [
                 rr:column "sizing_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:supportedValue;
             rr:objectMap [
                 rr:column "supported_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comments;
             rr:objectMap [
                 rr:column "comments";
             ];
@@ -3065,27 +3065,27 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sizingId;
             rr:objectMap [
                 rr:column "sizing_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:sizingName;
             rr:objectMap [
                 rr:column "sizing_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:profileId;
             rr:objectMap [
                 rr:column "profile_id";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:requiredValue;
             rr:objectMap [
                 rr:column "required_value";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:comments;
             rr:objectMap [
                 rr:column "comments";
             ];
@@ -3105,47 +3105,47 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintCatalog;
             rr:objectMap [
                 rr:column "constraint_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintSchema;
             rr:objectMap [
                 rr:column "constraint_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:consraintName;
             rr:objectMap [
                 rr:column "constraint_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:constraintType;
             rr:objectMap [
                 rr:column "constraint_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isDeferrable;
             rr:objectMap [
                 rr:column "is_deferrable";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:initiallyDeferred;
             rr:objectMap [
                 rr:column "initially_deferred";
             ];
@@ -3165,42 +3165,42 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantor;
             rr:objectMap [
                 rr:column "grantor";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantee;
             rr:objectMap [
                 rr:column "grantee";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:privilegeType;
             rr:objectMap [
                 rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isGrantable;
             rr:objectMap [
                 rr:column "is_grantable";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:withHierarchy;
             rr:objectMap [
                 rr:column "with_hierarchy";
             ];
@@ -3220,62 +3220,62 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableType;
             rr:objectMap [
                 rr:column "table_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:selfReferencingColumnName;
             rr:objectMap [
                 rr:column "self_referencing_column_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:referenceGeneration;
             rr:objectMap [
                 rr:column "reference_generation";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:userDefinedTypeCatalog;
             rr:objectMap [
                 rr:column "user_defined_type_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:userDefinedTypeSchema;
             rr:objectMap [
                 rr:column "user_defined_type_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:userDefinedTypeName;
             rr:objectMap [
                 rr:column "user_defined_type_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isInsertableInto;
             rr:objectMap [
                 rr:column "is_insertable_into";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isTyped;
             rr:objectMap [
                 rr:column "is_typed";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:commitAction;
             rr:objectMap [
                 rr:column "commit_action";
             ];
@@ -3295,37 +3295,37 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerCatalog;
             rr:objectMap [
                 rr:column "trigger_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerSchema;
             rr:objectMap [
                 rr:column "trigger_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerName;
             rr:objectMap [
                 rr:column "trigger_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectCatalog;
             rr:objectMap [
                 rr:column "event_object_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectSchema;
             rr:objectMap [
                 rr:column "event_object_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectTable;
             rr:objectMap [
                 rr:column "event_object_table";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectColumn;
             rr:objectMap [
                 rr:column "event_object_column";
             ];
@@ -3345,87 +3345,87 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerCatalog;
             rr:objectMap [
                 rr:column "trigger_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerSchema;
             rr:objectMap [
                 rr:column "trigger_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:triggerName;
             rr:objectMap [
                 rr:column "trigger_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventManipulation;
             rr:objectMap [
                 rr:column "event_manipulation";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectCatalog;
             rr:objectMap [
                 rr:column "event_object_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:evnetObjectSchema;
             rr:objectMap [
                 rr:column "event_object_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:eventObjectTable;
             rr:objectMap [
                 rr:column "event_object_table";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionOrder;
             rr:objectMap [
                 rr:column "action_order";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionCondition;
             rr:objectMap [
                 rr:column "action_condition";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionStatement;
             rr:objectMap [
                 rr:column "action_statement";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionOrientation;
             rr:objectMap [
                 rr:column "action_orientation";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionTiming;
             rr:objectMap [
                 rr:column "action_timing";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceOldTable;
             rr:objectMap [
                 rr:column "action_reference_old_table";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceNewTable;
             rr:objectMap [
                 rr:column "action_reference_new_table";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceOldRow;
             rr:objectMap [
                 rr:column "action_reference_old_row";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:actionReferenceNewRow;
             rr:objectMap [
                 rr:column "action_reference_new_row";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:created;
             rr:objectMap [
                 rr:column "created";
             ];
@@ -3445,42 +3445,42 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantor;
             rr:objectMap [
                 rr:column "grantor";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:grantee;
             rr:objectMap [
                 rr:column "grantee";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:objectCatalog;
             rr:objectMap [
                 rr:column "object_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:objectSchema;
             rr:objectMap [
                 rr:column "object_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:objectName;
             rr:objectMap [
                 rr:column "object_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:objectType;
             rr:objectMap [
                 rr:column "object_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:privilegeType;
             rr:objectMap [
                 rr:column "privilege_type";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isGrantable;
             rr:objectMap [
                 rr:column "is_grantable";
             ];
@@ -3500,27 +3500,27 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:authorizationIdentifier;
             rr:objectMap [
                 rr:column "authorization_identifier";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:foreignServerCatalog;
             rr:objectMap [
                 rr:column "foreign_server_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:foreignServerName;
             rr:objectMap [
                 rr:column "foreign_server_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:optionName;
             rr:objectMap [
                 rr:column "option_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:optionValue;
             rr:objectMap [
                 rr:column "option_value";
             ];
@@ -3540,17 +3540,17 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:authorizationIdentifier;
             rr:objectMap [
                 rr:column "authorization_identifier";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:foreignServerCatalog;
             rr:objectMap [
                 rr:column "foreign_server_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:foreignServerName;
             rr:objectMap [
                 rr:column "foreign_server_name";
             ];
@@ -3570,37 +3570,37 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewCatalog;
             rr:objectMap [
                 rr:column "view_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewSchema;
             rr:objectMap [
                 rr:column "view_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewName;
             rr:objectMap [
                 rr:column "view_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:columnName;
             rr:objectMap [
                 rr:column "column_name";
             ];
@@ -3620,32 +3620,32 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificCatalog;
             rr:objectMap [
                 rr:column "specific_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificSchema;
             rr:objectMap [
                 rr:column "specific_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:specificName;
             rr:objectMap [
                 rr:column "specific_name";
             ];
@@ -3665,32 +3665,32 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewCatalog;
             rr:objectMap [
                 rr:column "view_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewSchema;
             rr:objectMap [
                 rr:column "view_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewName;
             rr:objectMap [
                 rr:column "view_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
@@ -3710,52 +3710,52 @@
 
          ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableCatalog;
             rr:objectMap [
                 rr:column "table_catalog";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableSchema;
             rr:objectMap [
                 rr:column "table_schema";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:tableName;
             rr:objectMap [
                 rr:column "table_name";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:viewDefinition;
             rr:objectMap [
                 rr:column "view_definition";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:checkOption;
             rr:objectMap [
                 rr:column "check_option";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isUpdatable;
             rr:objectMap [
                 rr:column "is_updatable";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isInsertableInto;
             rr:objectMap [
                 rr:column "is_insertable_into";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isTriggerUpdatable;
             rr:objectMap [
                 rr:column "is_trigger_updatable";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isTriggerDeletable;
             rr:objectMap [
                 rr:column "is_trigger_deletable";
             ];
          rr:predicateObjectMap [
-            rr:predicate mysql:;
+            rr:predicate mysql:isTriggerInsertableInto;
             rr:objectMap [
                 rr:column "is_trigger_insertable_into";
             ];
