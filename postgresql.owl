@@ -1,7 +1,7 @@
 
 # 34.3. information_schema_catalog_name
 
-catalog_name
+catalogName
 sql_idenfifier
 Name of the database that contains this information schema
 
@@ -11,11 +11,11 @@ grantee
 sql_identifier
 Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
 
-role_name
+roleName
 sql_identifier
 Name of a role
 
-is_grantable
+isGrantable
 yes_or_no
 Always YES
 
@@ -25,80 +25,87 @@ grantee
 sql_identifier
 Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
 
-role_name
+roleName
 sql_identifier
 Name of a role
 
-is_grantable
+isGrantable
 yes_or_no
 YES if the grantee has the admin option on the role, NO if not
 
+
+
+
+
 # 34.6. attributes
 
-
-udt_catalog 
+udtCatalog 
 sql_identifier 
 Name of the database containing the data type (always the current database)
 
-udt_schema 	sql_identifier 	Name of the schema containing the data type
+udtSchema 	sql_identifier 	Name of the schema containing the data type
 
-udt_name 	sql_identifier 	Name of the data type
+udtName 	sql_identifier 	Name of the data type
 
-attribute_name 	sql_identifier 	Name of the attribute
+attributeName 	sql_identifier 	Name of the attribute
 
-ordinal_position 	cardinal_number 	Ordinal position of the attribute within the data type (count starts at 1)
+ordinalPosition 	cardinal_number 	Ordinal position of the attribute within the data type (count starts at 1)
 
-attribute_default 	character_data 	Default expression of the attribute
+attributeDefault 	character_data 	Default expression of the attribute
 
-is_nullable 	yes_or_no 	YES if the attribute is possibly nullable, NO if it is known not nullable.
+isNullable 	yes_or_no 	YES if the attribute is possibly nullable, NO if it is known not nullable.
 
-data_type 	character_data 	Data type of the attribute, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in attribute_udt_name and associated columns).
+dataType 	character_data 	Data type of the attribute, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in attribute_udt_name and associated columns).
 
-character_maximum_length 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+characterMaximumLength 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
 
-character_octet_length 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
+characterOctetLength 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
 
-character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-collation_catalog 	sql_identifier 	Not yet implemented
+collationCatalog 	sql_identifier 	Not yet implemented
 
-collation_schema 	sql_identifier 	Not yet implemented
+collationSchema 	sql_identifier 	Not yet implemented
 
-collation_name 	sql_identifier 	Not yet implemented
+collationName 	sql_identifier 	Not yet implemented
 
-numeric_precision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this attribute. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numericPrecision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this attribute. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
 
-numeric_precision_radix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
+numericPrecisionRadix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
 
-numeric_scale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this attribute. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numericScale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this attribute. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
 
-datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this attribute, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
+datetimePrecision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this attribute, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
 
-interval_type 	character_data 	Not yet implemented
+intervalType 	character_data 	Not yet implemented
 
-interval_precision 	character_data 	Not yet implemented
+intervalPrecision 	character_data 	Not yet implemented
 
-attribute_udt_catalog 	sql_identifier 	Name of the database that the attribute data type is defined in (always the current database)
+attributeUdtCatalog 	sql_identifier 	Name of the database that the attribute data type is defined in (always the current database)
 
-attribute_udt_schema 	sql_identifier 	Name of the schema that the attribute data type is defined in
+attributeUdtSchema 	sql_identifier 	Name of the schema that the attribute data type is defined in
 
-attribute_udt_name 	sql_identifier 	Name of the attribute data type
+attributeUdtName 	sql_identifier 	Name of the attribute data type
 
-scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+maximumCardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
 
-dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
+dtdIdentifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
-is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in PostgreSQL
+isDerivedReferenceAttribute 	yes_or_no 	Applies to a feature not available in PostgreSQL
+
+
+
+
 
 # 34.7. character_sets
 
