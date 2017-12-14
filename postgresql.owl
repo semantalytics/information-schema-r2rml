@@ -1,21 +1,21 @@
 
-34.3. information_schema_catalog_name
+# 34.3. information_schema_catalog_name
 
 catalog_name 	sql_identifier 	Name of the database that contains this information schema
 
-34.4. administrable_role_authorizations
+# 34.4. administrable_role_authorizations
 
 grantee 	sql_identifier 	Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
 role_name 	sql_identifier 	Name of a role
 is_grantable 	yes_or_no 	Always YES
 
-34.5. applicable_roles
+# 34.5. applicable_roles
 
 grantee 	sql_identifier 	Name of the role to which this role membership was granted (can be the current user, or a different role in case of nested role memberships)
 role_name 	sql_identifier 	Name of a role
 is_grantable 	yes_or_no 	YES if the grantee has the admin option on the role, NO if not
 
-34.6. attributes
+# 34.6. attributes
 
 
 udt_catalog 	sql_identifier 	Name of the database containing the data type (always the current database)
@@ -50,7 +50,7 @@ maximum_cardinality 	cardinal_number 	Always null, because arrays always have un
 dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 is_derived_reference_attribute 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
-34.7. character_sets
+# 34.7. character_sets
 
 character_set_catalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
 character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
@@ -61,7 +61,7 @@ default_collate_catalog 	sql_identifier 	Name of the database containing the def
 default_collate_schema 	sql_identifier 	Name of the schema containing the default collation
 default_collate_name 	sql_identifier 	Name of the default collation. The default collation is identified as the collation that matches the COLLATE and CTYPE settings of the current database. If there is no such collation, then this column and the associated schema and catalog columns are null.
 
-34.8. check_constraint_routine_usage
+# 34.8. check_constraint_routine_usage
 
 constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
 constraint_schema 	sql_identifier 	Name of the schema containing the constraint
@@ -71,21 +71,21 @@ specific_schema 	sql_identifier 	Name of the schema containing the function
 specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
 
 
-34.9. check_constraints
+# 34.9. check_constraints
 
 constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
 constraint_schema 	sql_identifier 	Name of the schema containing the constraint
 constraint_name 	sql_identifier 	Name of the constraint
 check_clause 	character_data 	The check expression of the check constraint
 
-34.10. collations
+# 34.10. collations
 
 collation_catalog 	sql_identifier 	Name of the database containing the collation (always the current database)
 collation_schema 	sql_identifier 	Name of the schema containing the collation
 collation_name 	sql_identifier 	Name of the default collation
 pad_attribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not supported by PostgreSQL.)
 
-34.11. collation_character_set_applicability
+# 34.11. collation_character_set_applicability
 
 collation_catalog 	sql_identifier 	Name of the database containing the collation (always the current database)
 collation_schema 	sql_identifier 	Name of the schema containing the collation
@@ -94,7 +94,7 @@ character_set_catalog 	sql_identifier 	Character sets are currently not implemen
 character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
 character_set_name 	sql_identifier 	Name of the character set
 
-34.12. column_domain_usage
+# 34.12. column_domain_usage
 
 domain_catalog 	sql_identifier 	Name of the database containing the domain (always the current database)
 domain_schema 	sql_identifier 	Name of the schema containing the domain
@@ -104,7 +104,7 @@ table_schema 	sql_identifier 	Name of the schema containing the table
 table_name 	sql_identifier 	Name of the table
 column_name 	sql_identifier 	Name of the column
 
-34.13. column_privileges
+# 34.13. column_privileges
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -115,7 +115,7 @@ column_name 	sql_identifier 	Name of the column
 privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, or REFERENCES
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
-34.14. column_udt_usage
+# 34.14. column_udt_usage
 
 udt_catalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
 udt_schema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
@@ -125,7 +125,7 @@ table_schema 	sql_identifier 	Name of the schema containing the table
 table_name 	sql_identifier 	Name of the table
 column_name 	sql_identifier 	Name of the column
 
-34.15. columns
+# 34.15. columns
 
 table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
 table_schema 	sql_identifier 	Name of the schema containing the table
@@ -172,7 +172,7 @@ is_generated 	character_data 	Applies to a feature not available in PostgreSQL
 generation_expression 	character_data 	Applies to a feature not available in PostgreSQL
 is_updatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in base tables are always updatable, columns in views not necessarily)
 
-34.16. constraint_column_usage
+# 34.16. constraint_column_usage
 
 table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column that is used by some constraint (always the current database)
 table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column that is used by some constraint
@@ -182,7 +182,7 @@ constraint_catalog 	sql_identifier 	Name of the database that contains the const
 constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
 constraint_name 	sql_identifier 	Name of the constraint
 
-34.17. constraint_table_usage
+# 34.17. constraint_table_usage
 
 table_catalog 	sql_identifier 	Name of the database that contains the table that is used by some constraint (always the current database)
 table_schema 	sql_identifier 	Name of the schema that contains the table that is used by some constraint
@@ -191,7 +191,7 @@ constraint_catalog 	sql_identifier 	Name of the database that contains the const
 constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
 constraint_name 	sql_identifier 	Name of the constraint
 
-34.18. data_type_privileges
+# 34.18. data_type_privileges
 
 object_catalog 	sql_identifier 	Name of the database that contains the described object (always the current database)
 object_schema 	sql_identifier 	Name of the schema that contains the described object
@@ -199,7 +199,7 @@ object_name 	sql_identifier 	Name of the described object
 object_type 	character_data 	The type of the described object: one of TABLE (the data type descriptor pertains to a column of that table), DOMAIN (the data type descriptors pertains to that domain), ROUTINE (the data type descriptor pertains to a parameter or the return data type of that function).
 dtd_identifier 	sql_identifier 	The identifier of the data type descriptor, which is unique among the data type descriptors for that same object.
 
-34.19. domain_constraints
+# 34.19. domain_constraints
 
 constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
 constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
@@ -210,7 +210,7 @@ domain_name 	sql_identifier 	Name of the domain
 is_deferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
 initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
 
-34.20. domain_udt_usage
+# 34.20. domain_udt_usage
 
 udt_catalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
 udt_schema 	sql_identifier 	Name of the schema that the domain data type is defined in
@@ -219,7 +219,7 @@ domain_catalog 	sql_identifier 	Name of the database that contains the domain (a
 domain_schema 	sql_identifier 	Name of the schema that contains the domain
 domain_name 	sql_identifier 	Name of the domain
 
-34.21. domains
+# 34.21. domains
 
 domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
 domain_schema 	sql_identifier 	Name of the schema that contains the domain
@@ -249,7 +249,7 @@ scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
 maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
 dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the domain, unique among the data type descriptors pertaining to the domain (which is trivial, because a domain only contains one data type descriptor). This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
-34.22. element_types
+# 34.22. element_types
 
 object_catalog 	sql_identifier 	Name of the database that contains the object that uses the array being described (always the current database)
 object_schema 	sql_identifier 	Name of the schema that contains the object that uses the array being described
@@ -281,18 +281,18 @@ scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
 maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
 dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the element. This is currently not useful.
 
-34.23. enabled_roles
+# 34.23. enabled_roles
 
 role_name 	sql_identifier 	Name of a role
 
-34.24. foreign_data_wrapper_options
+# 34.24. foreign_data_wrapper_options
 
 foreign_data_wrapper_catalog 	sql_identifier 	Name of the database that the foreign-data wrapper is defined in (always the current database)
 foreign_data_wrapper_name 	sql_identifier 	Name of the foreign-data wrapper
 option_name 	sql_identifier 	Name of an option
 option_value 	character_data 	Value of the option
 
-34.25. foreign_data_wrappers
+# 34.25. foreign_data_wrappers
 
 foreign_data_wrapper_catalog 	sql_identifier 	Name of the database that contains the foreign-data wrapper (always the current database)
 foreign_data_wrapper_name 	sql_identifier 	Name of the foreign-data wrapper
@@ -300,7 +300,7 @@ authorization_identifier 	sql_identifier 	Name of the owner of the foreign serve
 library_name 	character_data 	File name of the library that implementing this foreign-data wrapper
 foreign_data_wrapper_language 	character_data 	Language used to implement this foreign-data wrapper
 
-34.26. foreign_server_options
+# 34.26. foreign_server_options
 
 foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server is defined in (always the current database)
 foreign_server_name 	sql_identifier 	Name of the foreign server
@@ -308,7 +308,7 @@ option_name 	sql_identifier 	Name of an option
 option_value 	character_data 	Value of the option
 
 
-34.27. foreign_servers
+# 34.27. foreign_servers
 
 foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server is defined in (always the current database)
 foreign_server_name 	sql_identifier 	Name of the foreign server
@@ -318,7 +318,7 @@ foreign_server_type 	character_data 	Foreign server type information, if specifi
 foreign_server_version 	character_data 	Foreign server version information, if specified upon creation
 authorization_identifier 	sql_identifier 	Name of the owner of the foreign server
 
-34.28. foreign_table_options
+# 34.28. foreign_table_options
 
 foreign_table_catalog 	sql_identifier 	Name of the database that contains the foreign table (always the current database)
 foreign_table_schema 	sql_identifier 	Name of the schema that contains the foreign table
@@ -326,7 +326,7 @@ foreign_table_name 	sql_identifier 	Name of the foreign table
 option_name 	sql_identifier 	Name of an option
 option_value 	character_data 	Value of the option
 
-34.29. foreign_tables
+# 34.29. foreign_tables
 
 foreign_table_catalog 	sql_identifier 	Name of the database that the foreign table is defined in (always the current database)
 foreign_table_schema 	sql_identifier 	Name of the schema that contains the foreign table
@@ -334,7 +334,7 @@ foreign_table_name 	sql_identifier 	Name of the foreign table
 foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server is defined in (always the current database)
 foreign_server_name 	sql_identifier 	Name of the foreign server
 
-34.30. key_column_usage
+# 34.30. key_column_usage
 
 constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
 constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
@@ -346,7 +346,7 @@ column_name 	sql_identifier 	Name of the column that is restricted by this const
 ordinal_position 	cardinal_number 	Ordinal position of the column within the constraint key (count starts at 1)
 position_in_unique_constraint 	cardinal_number 	For a foreign-key constraint, ordinal position of the referenced column within its unique constraint (count starts at 1); otherwise null
 
-34.31. parameters
+# 34.31. parameters
 
 specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
 specific_schema 	sql_identifier 	Name of the schema containing the function
@@ -380,7 +380,7 @@ scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
 maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
 dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the parameter, unique among the data type descriptors pertaining to the function. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
-34.32. referential_constraints
+# 34.32. referential_constraints
 
 constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
 constraint_schema 	sql_identifier 	Name of the schema containing the constraint
@@ -392,7 +392,7 @@ match_option 	character_data 	Match option of the foreign key constraint: FULL, 
 update_rule 	character_data 	Update rule of the foreign key constraint: CASCADE, SET NULL, SET DEFAULT, RESTRICT, or NO ACTION.
 delete_rule 	character_data 	Delete rule of the foreign key constraint: CASCADE, SET NULL, SET DEFAULT, RESTRICT, or NO ACTION.
 
-34.33. role_column_grants
+# 34.33. role_column_grants
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -403,7 +403,7 @@ column_name 	sql_identifier 	Name of the column
 privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, or REFERENCES
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
-34.34. role_routine_grants
+# 34.34. role_routine_grants
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -416,7 +416,7 @@ routine_name 	sql_identifier 	Name of the function (might be duplicated in case 
 privilege_type 	character_data 	Always EXECUTE (the only privilege type for functions)
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
-34.35. role_table_grants
+# 34.35. role_table_grants
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -428,7 +428,7 @@ is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
 
-34.36. role_usage_grants
+# 34.36. role_usage_grants
 
 grantor 	sql_identifier 	The name of the role that granted the privilege
 grantee 	sql_identifier 	The name of the role that the privilege was granted to
@@ -439,7 +439,7 @@ object_type 	character_data 	COLLATION or DOMAIN or FOREIGN DATA WRAPPER or FORE
 privilege_type 	character_data 	Always USAGE
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
-34.37. routine_privileges
+# 34.37. routine_privileges
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -452,7 +452,7 @@ routine_name 	sql_identifier 	Name of the function (might be duplicated in case 
 privilege_type 	character_data 	Always EXECUTE (the only privilege type for functions)
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
-34.38. routines
+# 34.38. routines
 
 specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
 specific_schema 	sql_identifier 	Name of the schema containing the function
@@ -537,7 +537,7 @@ result_cast_scope_name 	sql_identifier 	Applies to a feature not available in Po
 result_cast_maximum_cardinality 	cardinal_number 	Applies to a feature not available in PostgreSQL
 result_cast_dtd_identifier 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-34.39. schemata
+# 34.39. schemata
 
 catalog_name 	sql_identifier 	Name of the database that the schema is contained in (always the current database)
 schema_name 	sql_identifier 	Name of the schema
@@ -547,7 +547,7 @@ default_character_set_schema 	sql_identifier 	Applies to a feature not available
 default_character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
 sql_path 	character_data 	Applies to a feature not available in PostgreSQL
 
-34.40. sequences
+# 34.40. sequences
 
 sequence_catalog 	sql_identifier 	Name of the database that contains the sequence (always the current database)
 sequence_schema 	sql_identifier 	Name of the schema that contains the sequence
@@ -562,7 +562,7 @@ maximum_value 	character_data 	The maximum value of the sequence
 increment 	character_data 	The increment of the sequence
 cycle_option 	yes_or_no 	YES if the sequence cycles, else NO
 
-34.41. sql_features
+# 34.41. sql_features
 
 feature_id 	character_data 	Identifier string of the feature
 feature_name 	character_data 	Descriptive name of the feature
@@ -572,7 +572,7 @@ is_supported 	yes_or_no 	YES if the feature is fully supported by the current ve
 is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
 comments 	character_data 	Possibly a comment about the supported status of the feature
 
-34.42. sql_implementation_info
+# 34.42. sql_implementation_info
 
 implementation_info_id 	character_data 	Identifier string of the implementation information item
 implementation_info_name 	character_data 	Descriptive name of the implementation information item
@@ -580,7 +580,7 @@ integer_value 	cardinal_number 	Value of the implementation information item, or
 character_value 	character_data 	Value of the implementation information item, or null if the value is contained in the column integer_value
 comments 	character_data 	Possibly a comment pertaining to the implementation information item
 
-34.43. sql_languages
+# 34.43. sql_languages
 
 sql_language_source 	character_data 	The name of the source of the language definition; always ISO 9075, that is, the SQL standard
 sql_language_year 	character_data 	The year the standard referenced in sql_language_source was approved.
@@ -590,7 +590,7 @@ sql_language_implementation 	character_data 	Always null
 sql_language_binding_style 	character_data 	The language binding style, either DIRECT or EMBEDDED
 sql_language_programming_language 	character_data 	The programming language, if the binding style is EMBEDDED, else null. PostgreSQL only supports the language C.
 
-34.44. sql_packages
+# 34.44. sql_packages
 
 feature_id 	character_data 	Identifier string of the package
 feature_name 	character_data 	Descriptive name of the package
@@ -598,7 +598,7 @@ is_supported 	yes_or_no 	YES if the package is fully supported by the current ve
 is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
 comments 	character_data 	Possibly a comment about the supported status of the package
 
-34.45. sql_parts
+# 34.45. sql_parts
 
 feature_id 	character_data 	An identifier string containing the number of the part
 feature_name 	character_data 	Descriptive name of the part
@@ -606,14 +606,14 @@ is_supported 	yes_or_no 	YES if the part is fully supported by the current versi
 is_verified_by 	character_data 	Always null, since the PostgreSQL development group does not perform formal testing of feature conformance
 comments 	character_data 	Possibly a comment about the supported status of the part
 
-34.46. sql_sizing
+# 34.46. sql_sizing
 
 sizing_id 	cardinal_number 	Identifier of the sizing item
 sizing_name 	character_data 	Descriptive name of the sizing item
 supported_value 	cardinal_number 	Value of the sizing item, or 0 if the size is unlimited or cannot be determined, or null if the features for which the sizing item is applicable are not supported
 comments 	character_data 	Possibly a comment pertaining to the sizing item
 
-34.47. sql_sizing_profiles
+# 34.47. sql_sizing_profiles
 
 sizing_id 	cardinal_number 	Identifier of the sizing item
 sizing_name 	character_data 	Descriptive name of the sizing item
@@ -621,7 +621,7 @@ profile_id 	character_data 	Identifier string of a profile
 required_value 	cardinal_number 	The value required by the SQL profile for the sizing item, or 0 if the profile places no limit on the sizing item, or null if the profile does not require any of the features for which the sizing item is applicable
 comments 	character_data 	Possibly a comment pertaining to the sizing item within the profile
 
-34.48. table_constraints
+# 34.48. table_constraints
 
 constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
 constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
@@ -633,7 +633,7 @@ constraint_type 	character_data 	Type of the constraint: CHECK, FOREIGN KEY, PRI
 is_deferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
 initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
 
-34.49. table_privileges
+# 34.49. table_privileges
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -644,7 +644,7 @@ privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, D
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 with_hierarchy 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
-34.50. tables
+# 34.50. tables
 
 table_catalog 	sql_identifier 	Name of the database that contains the table (always the current database)
 table_schema 	sql_identifier 	Name of the schema that contains the table
@@ -659,7 +659,7 @@ is_insertable_into 	yes_or_no 	YES if the table is insertable into, NO if not (B
 is_typed 	yes_or_no 	YES if the table is a typed table, NO if not
 commit_action 	character_data 	If the table is a temporary table, then PRESERVE, else null. (The SQL standard defines other commit actions for temporary tables, which are not supported by PostgreSQL.)
 
-34.51. triggered_update_columns
+# 34.51. triggered_update_columns
 
 trigger_catalog 	sql_identifier 	Name of the database that contains the trigger (always the current database)
 trigger_schema 	sql_identifier 	Name of the schema that contains the trigger
@@ -669,7 +669,7 @@ event_object_schema 	sql_identifier 	Name of the schema that contains the table 
 event_object_table 	sql_identifier 	Name of the table that the trigger is defined on
 event_object_column 	sql_identifier 	Name of the column that the trigger is defined on
 
-34.52. triggers
+# 34.52. triggers
 
 trigger_catalog 	sql_identifier 	Name of the database that contains the trigger (always the current database)
 trigger_schema 	sql_identifier 	Name of the schema that contains the trigger
@@ -689,7 +689,7 @@ action_reference_old_row 	sql_identifier 	Applies to a feature not available in 
 action_reference_new_row 	sql_identifier 	Applies to a feature not available in PostgreSQL
 created 	time_stamp 	Applies to a feature not available in PostgreSQL
 
-34.53. usage_privileges
+# 34.53. usage_privileges
 
 grantor 	sql_identifier 	Name of the role that granted the privilege
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
@@ -700,7 +700,7 @@ object_type 	character_data 	COLLATION or DOMAIN or FOREIGN DATA WRAPPER or FORE
 privilege_type 	character_data 	Always USAGE
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
-34.54. user_mapping_options
+# 34.54. user_mapping_options
 
 authorization_identifier 	sql_identifier 	Name of the user being mapped, or PUBLIC if the mapping is public
 foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server used by this mapping is defined in (always the current database)
@@ -708,14 +708,14 @@ foreign_server_name 	sql_identifier 	Name of the foreign server used by this map
 option_name 	sql_identifier 	Name of an option
 option_value 	character_data 	Value of the option. This column will show as null unless the current user is the user being mapped, or the mapping is for PUBLIC and the current user is the server owner, or the current user is a superuser. The intent is to protect password information stored as user mapping option.
 
-34.55. user_mappings
+# 34.55. user_mappings
 
 authorization_identifier 	sql_identifier 	Name of the user being mapped, or PUBLIC if the mapping is public
 foreign_server_catalog 	sql_identifier 	Name of the database that the foreign server used by this mapping is defined in (always the current database)
 foreign_server_name 	sql_identifier 	Name of the foreign server used by this mapping
 
 
-34.56. view_column_usage
+# 34.56. view_column_usage
 
 view_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
 view_schema 	sql_identifier 	Name of the schema that contains the view
@@ -725,7 +725,7 @@ table_schema 	sql_identifier 	Name of the schema that contains the table that co
 table_name 	sql_identifier 	Name of the table that contains the column that is used by the view
 column_name 	sql_identifier 	Name of the column that is used by the view
 
-34.57. view_routine_usage
+# 34.57. view_routine_usage
 
 table_catalog 	sql_identifier 	Name of the database containing the view (always the current database)
 table_schema 	sql_identifier 	Name of the schema containing the view
@@ -734,7 +734,7 @@ specific_catalog 	sql_identifier 	Name of the database containing the function (
 specific_schema 	sql_identifier 	Name of the schema containing the function
 specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
 
-34.58. view_table_usage
+# 34.58. view_table_usage
 
 view_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
 view_schema 	sql_identifier 	Name of the schema that contains the view
@@ -743,7 +743,7 @@ table_catalog 	sql_identifier 	Name of the database that contains the table that
 table_schema 	sql_identifier 	Name of the schema that contains the table that is used by the view
 table_name 	sql_identifier 	Name of the table that is used by the view
 
-34.59. views
+# 34.59. views
 
 table_catalog 	sql_identifier 	Name of the database that contains the view (always the current database)
 table_schema 	sql_identifier 	Name of the schema that contains the view
