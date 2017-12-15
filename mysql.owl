@@ -2,346 +2,347 @@
 
 # 25.1 The INFORMATION_SCHEMA CHARACTER_SETS Table
 
-mysql:CHARACTER_SET_NAME	Charset	 
-mysql:DEFAULT_COLLATE_NAME	Default collation	 
-mysql:DESCRIPTION	Description	MySQL extension
-mysql:MAXLEN	Maxlen	MySQL extension
+mysql:Table a owl:Class .
+mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
+mysql:DEFAULT_COLLATE_NAME a owl:DatatypeProperty .
+mysql:DESCRIPTION	Description a owl:DatatypeProperty .
+mysql:MAXLEN	Maxlen a owl:DatatypeProperty .
 
 # 25.2 The INFORMATION_SCHEMA COLLATIONS Table
 
-mysql:COLLATION_NAME	Collation	 
-mysql:CHARACTER_SET_NAME	Charset	MySQL extension
-mysql:ID	Id	MySQL extension
-mysql:IS_DEFAULT	Default	MySQL extension
-mysql:IS_COMPILED	Compiled	MySQL extension
-mysql:SORTLEN	Sortlen	MySQL extension
-mysql:PAD_ATTRIBUTE	 	omit
+mysql:COLLATION_NAME a owl:DatatypeProperty .
+mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
+mysql:ID a owl:DatatypeProperty .
+mysql:IS_DEFAULT a owl:DatatypeProperty .
+mysql:IS_COMPILED a owl:DatatypeProperty .
+mysql:SORTLEN a owl:DatatypeProperty .
+mysql:PAD_ATTRIBUTE a owl:DatatypeProperty .
 
 # 25.3 The INFORMATION_SCHEMA COLLATION_CHARACTER_SET_APPLICABILITY Table
 
-mysql:COLLATION_NAME	Collation	 
-mysql:CHARACTER_SET_NAME	Charset	 
+mysql:COLLATION_NAM a owl:DatatypeProperty .
+mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
 
 # 25.4 The INFORMATION_SCHEMA COLUMNS Table
 
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	 	 
-mysql:TABLE_NAME	 	 
-mysql:COLUMN_NAME	Field	 
-mysql:ORDINAL_POSITION	 	see notes
-mysql:COLUMN_DEFAULT	Default	 
-mysql:IS_NULLABLE	Null	 
-mysql:DATA_TYPE	Type	 
-mysql:CHARACTER_MAXIMUM_LENGTH	Type	 
-mysql:CHARACTER_OCTET_LENGTH	 	 
-mysql:NUMERIC_PRECISION	Type	 
-mysql:NUMERIC_SCALE	Type	 
-mysql:DATETIME_PRECISION	Type	 
-mysql:CHARACTER_SET_NAME	 	 
-mysql:COLLATION_NAME	Collation	 
-mysql:COLUMN_TYPE	Type	MySQL extension
-mysql:COLUMN_KEY	Key	MySQL extension
-mysql:EXTRA	Extra	MySQL extension
-mysql:PRIVILEGES	Privileges	MySQL extension
-mysql:COLUMN_COMMENT	Comment	MySQL extension
-mysql:GENERATION_EXPRESSION	 	MySQL extension
-mysql:SRS_ID	 	MySQL extension
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:COLUMN_NAME a owl:DatatypeProperty .
+mysql:ORDINAL_POSITION a owl:DatatypeProperty .
+mysql:COLUMN_DEFAULT a owl:DatatypeProperty .
+mysql:IS_NULLABLE a owl:DatatypeProperty .
+mysql:DATA_TYPE a owl:DatatypeProperty .
+mysql:CHARACTER_MAXIMUM_LENGTH a owl:DatatypeProperty .
+mysql:CHARACTER_OCTET_LENGTH a owl:DatatypeProperty .
+mysql:NUMERIC_PRECISION a owl:DatatypeProperty .
+mysql:NUMERIC_SCALE a owl:DatatypeProperty .
+mysql:DATETIME_PRECISION a owl:DatatypeProperty .
+mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
+mysql:COLLATION_NAME a owl:DatatypeProperty .
+mysql:COLUMN_TYPE a owl:DatatypeProperty .
+mysql:COLUMN_KEY a owl:DatatypeProperty .
+mysql:EXTRA	Extra a owl:DatatypeProperty .
+mysql:PRIVILEGES a owl:DatatypeProperty .
+mysql:COLUMN_COMMENT a owl:DatatypeProperty .
+mysql:GENERATION_EXPRESSION a owl:DatatypeProperty .
+mysql:SRS_ID a owl:DatatypeProperty .
 
 # 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
 
-mysql:GRANTEE	 	'user_name'@'host_name' value
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	 	 
-mysql:TABLE_NAME	 	 
-mysql:COLUMN_NAME	 	 
-mysql:PRIVILEGE_TYPE	 	 
-mysql:IS_GRANTABLE	 	 
+mysql:GRANTEE a owl:DatatypeProperty .
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:COLUMN_NAME a owl:DatatypeProperty .
+mysql:PRIVILEGE_TYPE a owl:DatatypeProperty .
+mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
 
-mysql:SCHEMA_NAME The names of the schema for which the statistics apply.
-mysql:TABLE_NAME The names of the column for which the statistics apply.
-mysql:COLUMN_NAME The names of the column for which the statistics apply.
-mysql:HISTOGRAM A JSON object describing the column statistics, stored as a histogram. 
+mysql:SCHEMA_NAME a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:COLUMN_NAME a owl:DatatypeProperty .
+mysql:HISTOGRAM a owl:DatatypeProperty .
 
 # 25.7 The INFORMATION_SCHEMA ENGINES Table
 
-mysql:ENGINE	Engine	MySQL extension
-mysql:SUPPORT	Support	MySQL extension
-mysql:COMMENT	Comment	MySQL extension
-mysql:TRANSACTIONS	Transactions	MySQL extension
-mysql:XA	XA	MySQL extension
-mysql:SAVEPOINTS	Savepoints	MySQL extension
+mysql:ENGINE a owl:DatatypeProperty .
+mysql:SUPPORT a owl:DatatypeProperty .
+mysql:COMMENT a owl:DatatypeProperty .
+mysql:TRANSACTIONS a owl:DatatypeProperty .
+mysql:XA a owl:DatatypeProperty .
+mysql:SAVEPOINTS a owl:DatatypeProperty .
 
 # 25.8 The INFORMATION_SCHEMA EVENTS Table
 
-mysql:EVENT_CATALOG	 	def, MySQL extension
-mysql:EVENT_SCHEMA	Db	MySQL extension
-mysql:EVENT_NAME	Name	MySQL extension
-mysql:DEFINER	Definer	MySQL extension
-mysql:TIME_ZONE	Time zone	MySQL extension
-mysql:EVENT_BODY	 	MySQL extension
-mysql:EVENT_DEFINITION	 	MySQL extension
-mysql:EVENT_TYPE	Type	MySQL extension
-mysql:EXECUTE_AT	Execute at	MySQL extension
-mysql:INTERVAL_VALUE	Interval value	MySQL extension
-mysql:INTERVAL_FIELD	Interval field	MySQL extension
-mysql:SQL_MODE	 	MySQL extension
-mysql:STARTS	Starts	MySQL extension
-mysql:ENDS	Ends	MySQL extension
-mysql:STATUS	Status	MySQL extension
-mysql:ON_COMPLETION	 	MySQL extension
-mysql:CREATED	 	MySQL extension
-mysql:LAST_ALTERED	 	MySQL extension
-mysql:LAST_EXECUTED	 	MySQL extension
-mysql:EVENT_COMMENT	 	MySQL extension
-mysql:ORIGINATOR	Originator	MySQL extension
-mysql:CHARACTER_SET_CLIENT	character_set_client	MySQL extension
-mysql:COLLATION_CONNECTION	collation_connection	MySQL extension
-mysql:DATABASE_COLLATION	Database Collation	MySQL extension
+mysql:EVENT_CATALOG a owl:DatatypeProperty .
+mysql:EVENT_SCHEMA a owl:DatatypeProperty .
+mysql:EVENT_NAME a owl:DatatypeProperty .
+mysql:DEFINER a owl:DatatypeProperty .
+mysql:TIME_ZONE a owl:DatatypeProperty .
+mysql:EVENT_BODY a owl:DatatypeProperty .
+mysql:EVENT_DEFINITION a owl:DatatypeProperty .
+mysql:EVENT_TYPE a owl:DatatypeProperty .
+mysql:EXECUTE_AT a owl:DatatypeProperty .
+mysql:INTERVAL_VALUE a owl:DatatypeProperty .
+mysql:INTERVAL_FIELD a owl:DatatypeProperty .
+mysql:SQL_MODE a owl:DatatypeProperty .
+mysql:STARTS a owl:DatatypeProperty .
+mysql:ENDS a owl:DatatypeProperty .
+mysql:STATUS a owl:DatatypeProperty .
+mysql:ON_COMPLETION a owl:DatatypeProperty .
+mysql:CREATED a owl:DatatypeProperty .
+mysql:LAST_ALTERED a owl:DatatypeProperty .
+mysql:LAST_EXECUTED a owl:DatatypeProperty .
+mysql:EVENT_COMMENT a owl:DatatypeProperty .
+mysql:ORIGINATOR a owl:DatatypeProperty .
+mysql:CHARACTER_SET_CLIENT a owl:DatatypeProperty .
+mysql:COLLATION_CONNECTION a owl:DatatypeProperty .
+mysql:DATABASE_COLLATION a owl:DatatypeProperty .
 
 # 25.9 The INFORMATION_SCHEMA FILES Table
 
-mysql:FILE_ID	 	MySQL extension
-mysql:FILE_NAME	 	MySQL extension
-mysql:FILE_TYPE	 	MySQL extension
-mysql:TABLESPACE_NAME	 	MySQL extension
-mysql:TABLE_CATALOG	 	MySQL extension
-mysql:TABLE_SCHEMA	 	MySQL extension
-mysql:TABLE_NAME	 	MySQL extension
-mysql:LOGFILE_GROUP_NAME	 	MySQL extension
-mysql:LOGFILE_GROUP_NUMBER	 	MySQL extension
-mysql:ENGINE	 	MySQL extension
-mysql:FULLTEXT_KEYS	 	MySQL extension
-mysql:DELETED_ROWS	 	MySQL extension
-mysql:UPDATE_COUNT	 	MySQL extension
-mysql:FREE_EXTENTS	 	MySQL extension
-mysql:TOTAL_EXTENTS	 	MySQL extension
-mysql:EXTENT_SIZE	 	MySQL extension
-mysql:INITIAL_SIZE	 	MySQL extension
-mysql:MAXIMUM_SIZE	 	MySQL extension
-mysql:AUTOEXTEND_SIZE	 	MySQL extension
-mysql:CREATION_TIME	 	MySQL extension
-mysql:LAST_UPDATE_TIME	 	MySQL extension
-mysql:LAST_ACCESS_TIME	 	MySQL extension
-mysql:RECOVER_TIME	 	MySQL extension
-mysql:TRANSACTION_COUNTER	 	MySQL extension
-mysql:VERSION	 	MySQL extension
-mysql:ROW_FORMAT	 	MySQL extension
-mysql:TABLE_ROWS	 	MySQL extension
-mysql:AVG_ROW_LENGTH	 	MySQL extension
-mysql:DATA_LENGTH	 	MySQL extension
-mysql:MAX_DATA_LENGTH	 	MySQL extension
-mysql:INDEX_LENGTH	 	MySQL extension
-mysql:DATA_FREE	 	MySQL extension
-mysql:CREATE_TIME	 	MySQL extension
-mysql:UPDATE_TIME	 	MySQL extension
-mysql:CHECK_TIME	 	MySQL extension
-mysql:CHECKSUM	 	MySQL extension
-mysql:STATUS	 	MySQL extension
-mysql:EXTRA	 	MySQL extension
+mysql:FILE_ID a owl:DatatypeProperty .
+mysql:FILE_NAME a owl:DatatypeProperty .
+mysql:FILE_TYPE a owl:DatatypeProperty .
+mysql:TABLESPACE_NAME a owl:DatatypeProperty .
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:LOGFILE_GROUP_NAME a owl:DatatypeProperty .
+mysql:LOGFILE_GROUP_NUMBER a owl:DatatypeProperty .
+mysql:ENGINE a owl:DatatypeProperty .
+mysql:FULLTEXT_KEYS a owl:DatatypeProperty .
+mysql:DELETED_ROWS a owl:DatatypeProperty .
+mysql:UPDATE_COUNT a owl:DatatypeProperty .
+mysql:FREE_EXTENTS a owl:DatatypeProperty .
+mysql:TOTAL_EXTENTS a owl:DatatypeProperty .
+mysql:EXTENT_SIZE a owl:DatatypeProperty .
+mysql:INITIAL_SIZE a owl:DatatypeProperty .
+mysql:MAXIMUM_SIZE a owl:DatatypeProperty .
+mysql:AUTOEXTEND_SIZE a owl:DatatypeProperty .
+mysql:CREATION_TIME a owl:DatatypeProperty .
+mysql:LAST_UPDATE_TIME a owl:DatatypeProperty .
+mysql:LAST_ACCESS_TIME a owl:DatatypeProperty .
+mysql:RECOVER_TIME a owl:DatatypeProperty .
+mysql:TRANSACTION_COUNTER a owl:DatatypeProperty .
+mysql:VERSION a owl:DatatypeProperty .
+mysql:ROW_FORMAT a owl:DatatypeProperty .
+mysql:TABLE_ROWS a owl:DatatypeProperty .
+mysql:AVG_ROW_LENGTH a owl:DatatypeProperty .
+mysql:DATA_LENGTH a owl:DatatypeProperty .
+mysql:MAX_DATA_LENGTH a owl:DatatypeProperty .
+mysql:INDEX_LENGTH a owl:DatatypeProperty .
+mysql:DATA_FREE a owl:DatatypeProperty .
+mysql:CREATE_TIME a owl:DatatypeProperty .
+mysql:UPDATE_TIME a owl:DatatypeProperty .
+mysql:CHECK_TIME a owl:DatatypeProperty .
+mysql:CHECKSUM a owl:DatatypeProperty .
+mysql:STATUS a owl:DatatypeProperty .
+mysql:EXTRA a owl:DatatypeProperty .
 
 # 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
 
-mysql:CONSTRAINT_CATALOG	 	def
-mysql:CONSTRAINT_SCHEMA	 	 
-mysql:CONSTRAINT_NAME	 	 
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	 	 
-mysql:TABLE_NAME	 	 
-mysql:COLUMN_NAME	 	 
-mysql:ORDINAL_POSITION	 	 
-mysql:POSITION_IN_UNIQUE_CONSTRAINT	 	 
-mysql:REFERENCED_TABLE_SCHEMA	 	 
-mysql:REFERENCED_TABLE_NAME	 	 
-mysql:REFERENCED_COLUMN_NAME	 	 
+mysql:CONSTRAINT_CATALOG a owl:DatatypeProperty .
+mysql:CONSTRAINT_SCHEMA a owl:DatatypeProperty .
+mysql:CONSTRAINT_NAME a owl:DatatypeProperty .
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:COLUMN_NAME a owl:DatatypeProperty .
+mysql:ORDINAL_POSITION a owl:DatatypeProperty .
+mysql:POSITION_IN_UNIQUE_CONSTRAINT a owl:DatatypeProperty .
+mysql:REFERENCED_TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:REFERENCED_TABLE_NAME a owl:DatatypeProperty .
+mysql:REFERENCED_COLUMN_NAME a owl:DatatypeProperty .
 
 # 25.11 The INFORMATION_SCHEMA OPTIMIZER_TRACE Table
 
 # 25.12 The INFORMATION_SCHEMA PARAMETERS Table
 
-mysql:SPECIFIC_CATALOG	def
-mysql:SPECIFIC_SCHEMA	routine database
-mysql:SPECIFIC_NAME	routine name
-mysql:ORDINAL_POSITION	1, 2, 3, ... for parameters, 0 for function RETURNS clause
-mysql:PARAMETER_MODE	IN, OUT, INOUT (NULL for RETURNS)
-mysql:PARAMETER_NAME	parameter name (NULL for RETURNS)
-mysql:DATA_TYPE	same as for COLUMNS table
-mysql:CHARACTER_MAXIMUM_LENGTH	same as for COLUMNS table
-mysql:CHARACTER_OCTET_LENGTH	same as for COLUMNS table
-mysql:NUMERIC_PRECISION	same as for COLUMNS table
-mysql:NUMERIC_SCALE	same as for COLUMNS table
-mysql:DATETIME_PRECISION	same as for COLUMNS table
-mysql:CHARACTER_SET_NAME	same as for COLUMNS table
-mysql:COLLATION_NAME	same as for COLUMNS table
-mysql:DTD_IDENTIFIER	same as for COLUMNS table
-mysql:ROUTINE_TYPE	same as for ROUTINES table
+mysql:SPECIFIC_CATALOG a owl:DatatypeProperty .
+mysql:SPECIFIC_SCHEMA a owl:DatatypeProperty .
+mysql:SPECIFIC_NAME a owl:DatatypeProperty .
+mysql:ORDINAL_POSITION a owl:DatatypeProperty .
+mysql:PARAMETER_MODE a owl:DatatypeProperty .
+mysql:PARAMETER_NAME a owl:DatatypeProperty .
+mysql:DATA_TYPE a owl:DatatypeProperty .
+mysql:CHARACTER_MAXIMUM_LENGTH a owl:DatatypeProperty .
+mysql:CHARACTER_OCTET_LENGTH a owl:DatatypeProperty .
+mysql:NUMERIC_PRECISION a owl:DatatypeProperty .
+mysql:NUMERIC_SCALE a owl:DatatypeProperty .
+mysql:DATETIME_PRECISION a owl:DatatypeProperty .
+mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
+mysql:COLLATION_NAME a owl:DatatypeProperty .
+mysql:DTD_IDENTIFIER a owl:DatatypeProperty .
+mysql:ROUTINE_TYPE a owl:DatatypeProperty .
 
 # 25.13 The INFORMATION_SCHEMA PARTITIONS Table
 
-mysql:TABLE_CATALOG	 	MySQL extension
-mysql:TABLE_SCHEMA	 	MySQL extension
-mysql:TABLE_NAME	 	MySQL extension
-mysql:PARTITION_NAME	 	MySQL extension
-mysql:SUBPARTITION_NAME	 	MySQL extension
-mysql:PARTITION_ORDINAL_POSITION	 	MySQL extension
-mysql:SUBPARTITION_ORDINAL_POSITION	 	MySQL extension
-mysql:PARTITION_METHOD	 	MySQL extension
-mysql:SUBPARTITION_METHOD	 	MySQL extension
-mysql:PARTITION_EXPRESSION	 	MySQL extension
-mysql:SUBPARTITION_EXPRESSION	 	MySQL extension
-mysql:PARTITION_DESCRIPTION	 	MySQL extension
-mysql:TABLE_ROWS	 	MySQL extension
-mysql:AVG_ROW_LENGTH	 	MySQL extension
-mysql:DATA_LENGTH	 	MySQL extension
-mysql:MAX_DATA_LENGTH	 	MySQL extension
-mysql:INDEX_LENGTH	 	MySQL extension
-mysql:DATA_FREE	 	MySQL extension
-mysql:CREATE_TIME	 	MySQL extension
-mysql:UPDATE_TIME	 	MySQL extension
-mysql:CHECK_TIME	 	MySQL extension
-mysql:CHECKSUM	 	MySQL extension
-mysql:PARTITION_COMMENT	 	MySQL extension
-mysql:NODEGROUP	 	MySQL extension
-mysql:TABLESPACE_NAME	 	MySQL extension
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:PARTITION_NAME a owl:DatatypeProperty .
+mysql:SUBPARTITION_NAME a owl:DatatypeProperty .
+mysql:PARTITION_ORDINAL_POSITION a owl:DatatypeProperty .
+mysql:SUBPARTITION_ORDINAL_POSITION a owl:DatatypeProperty .
+mysql:PARTITION_METHOD a owl:DatatypeProperty .
+mysql:SUBPARTITION_METHOD a owl:DatatypeProperty .
+mysql:PARTITION_EXPRESSION a owl:DatatypeProperty .
+mysql:SUBPARTITION_EXPRESSION a owl:DatatypeProperty .
+mysql:PARTITION_DESCRIPTION a owl:DatatypeProperty .
+mysql:TABLE_ROWS a owl:DatatypeProperty .
+mysql:AVG_ROW_LENGTH a owl:DatatypeProperty .
+mysql:DATA_LENGTH a owl:DatatypeProperty .
+mysql:MAX_DATA_LENGTH a owl:DatatypeProperty .
+mysql:INDEX_LENGTH a owl:DatatypeProperty .
+mysql:DATA_FREE a owl:DatatypeProperty .
+mysql:CREATE_TIME a owl:DatatypeProperty .
+mysql:UPDATE_TIME a owl:DatatypeProperty .
+mysql:CHECK_TIME a owl:DatatypeProperty .
+mysql:CHECKSUM a owl:DatatypeProperty .
+mysql:PARTITION_COMMENT a owl:DatatypeProperty .
+mysql:NODEGROUP a owl:DatatypeProperty .
+mysql:TABLESPACE_NAME a owl:DatatypeProperty .
 
 # 25.14 The INFORMATION_SCHEMA PLUGINS Table
 
-mysql:PLUGIN_NAME	Name	MySQL extension
-mysql:PLUGIN_VERSION	 	MySQL extension
-mysql:PLUGIN_STATUS	Status	MySQL extension
-mysql:PLUGIN_TYPE	Type	MySQL extension
-mysql:PLUGIN_TYPE_VERSION	 	MySQL extension
-mysql:PLUGIN_LIBRARY	Library	MySQL extension
-mysql:PLUGIN_LIBRARY_VERSION	 	MySQL extension
-mysql:PLUGIN_AUTHOR	 	MySQL extension
-mysql:PLUGIN_DESCRIPTION	 	MySQL extension
-mysql:PLUGIN_LICENSE	License	MySQL extension
-mysql:LOAD_OPTION	 	MySQL extension
+mysql:PLUGIN_NAME a owl:DatatypeProperty .
+mysql:PLUGIN_VERSION a owl:DatatypeProperty .
+mysql:PLUGIN_STATUS a owl:DatatypeProperty .
+mysql:PLUGIN_TYP a owl:DatatypeProperty .
+mysql:PLUGIN_TYPE_VERSION a owl:DatatypeProperty .
+mysql:PLUGIN_LIBRARY a owl:DatatypeProperty .
+mysql:PLUGIN_LIBRARY_VERSION a owl:DatatypeProperty .
+mysql:PLUGIN_AUTHOR a owl:DatatypeProperty .
+mysql:PLUGIN_DESCRIPTION a owl:DatatypeProperty .
+mysql:PLUGIN_LICENSE a owl:DatatypeProperty .
+mysql:LOAD_OPTION a owl:DatatypeProperty .
 
 # 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
 
-mysql:ID	Id	MySQL extension
-mysql:USER	User	MySQL extension
-mysql:HOST	Host	MySQL extension
-mysql:DB	db	MySQL extension
-mysql:COMMAND	Command	MySQL extension
-mysql:TIME	Time	MySQL extension
-mysql:STATE	State	MySQL extension
-mysql:INFO	Info	MySQL extension
+mysql:ID a owl:DatatypeProperty .
+mysql:USER a owl:DatatypeProperty .
+mysql:HOST a owl:DatatypeProperty .
+mysql:DB a owl:DatatypeProperty .
+mysql:COMMAND a owl:DatatypeProperty .
+mysql:TIME a owl:DatatypeProperty .
+mysql:STATE a owl:DatatypeProperty .
+mysql:INFO a owl:DatatypeProperty .
 
 # 25.16 The INFORMATION_SCHEMA PROFILING Table
 
-mysql:QUERY_ID	Query_ID	 
-mysql:SEQ		 
-mysql:STATE	Status	 
-mysql:DURATION	Duration	 
-mysql:CPU_USER	CPU_user	 
-mysql:CPU_SYSTEM	CPU_system	 
-mysql:CONTEXT_VOLUNTARY	Context_voluntary	 
-mysql:CONTEXT_INVOLUNTARY	Context_involuntary	 
-mysql:BLOCK_OPS_IN	Block_ops_in	 
-mysql:BLOCK_OPS_OUT	Block_ops_out	 
-mysql:MESSAGES_SENT	Messages_sent	 
-mysql:MESSAGES_RECEIVED	Messages_received	 
-mysql:PAGE_FAULTS_MAJOR	Page_faults_major	 
-mysql:PAGE_FAULTS_MINOR	Page_faults_minor	 
-mysql:SWAPS	Swaps	 
-mysql:SOURCE_FUNCTION	Source_function	 
-mysql:SOURCE_FILE	Source_file	 
-mysql:SOURCE_LINE	Source_line	 
+mysql:QUERY_ID a owl:DatatypeProperty .
+mysql:SEQ a owl:DatatypeProperty .
+mysql:STATE a owl:DatatypeProperty .
+mysql:DURATION a owl:DatatypeProperty .
+mysql:CPU_USER a owl:DatatypeProperty .
+mysql:CPU_SYSTEM a owl:DatatypeProperty .
+mysql:CONTEXT_VOLUNTARY a owl:DatatypeProperty .
+mysql:CONTEXT_INVOLUNTARY a owl:DatatypeProperty .
+mysql:BLOCK_OPS_IN a owl:DatatypeProperty .
+mysql:BLOCK_OPS_OUT a owl:DatatypeProperty .
+mysql:MESSAGES_SENT a owl:DatatypeProperty .
+mysql:MESSAGES_RECEIVED a owl:DatatypeProperty .
+mysql:PAGE_FAULTS_MAJOR a owl:DatatypeProperty .
+mysql:PAGE_FAULTS_MINOR a owl:DatatypeProperty .
+mysql:SWAPS a owl:DatatypeProperty .
+mysql:SOURCE_FUNCTION a owl:DatatypeProperty .
+mysql:SOURCE_FILE a owl:DatatypeProperty .
+mysql:SOURCE_LINE a owl:DatatypeProperty .
 
 # 25.17 The INFORMATION_SCHEMA REFERENTIAL_CONSTRAINTS Table
 
-mysql:CONSTRAINT_CATALOG	 	def
-mysql:CONSTRAINT_SCHEMA	 	 
-mysql:CONSTRAINT_NAME	 	 
-mysql:UNIQUE_CONSTRAINT_CATALOG	 	def
-mysql:UNIQUE_CONSTRAINT_SCHEMA	 	 
-mysql:UNIQUE_CONSTRAINT_NAME	 	 
-mysql:MATCH_OPTION	 	 
-mysql:UPDATE_RULE	 	 
-mysql:DELETE_RULE	 	 
-mysql:TABLE_NAME	 	 
-mysql:REFERENCED_TABLE_NAME	 	 
+mysql:CONSTRAINT_CATALOG a owl:DatatypeProperty .
+mysql:CONSTRAINT_SCHEMA a owl:DatatypeProperty .
+mysql:CONSTRAINT_NAME a owl:DatatypeProperty .
+mysql:UNIQUE_CONSTRAINT_CATALOG a owl:DatatypeProperty .
+mysql:UNIQUE_CONSTRAINT_SCHEMA a owl:DatatypeProperty .
+mysql:UNIQUE_CONSTRAINT_NAME a owl:DatatypeProperty .
+mysql:MATCH_OPTION a owl:DatatypeProperty .
+mysql:UPDATE_RULE a owl:DatatypeProperty .
+mysql:DELETE_RULE a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:REFERENCED_TABLE_NAME a owl:DatatypeProperty .
 
 # 25.18 The INFORMATION_SCHEMA RESOURCE_GROUPS Table
 
-mysql:RESOURCE_GROUP_NAME The name of the resource group.
-mysql:RESOURCE_GROUP_TYPE The resource group type, either SYSTEM or USER.
-mysql:RESOURCE_GROUP_ENABLED Whether the resource group is enabled (1) or disabled (0);
-mysql:VCPU_IDS The CPU affinity; that is, the set of virtual CPUs that the resource group can use. The value is a list of comma-separated CPU numbers or ranges.
-mysql:THREAD_PRIORITY 
+mysql:RESOURCE_GROUP_NAME a owl:DatatypeProperty .
+mysql:RESOURCE_GROUP_TYPE a owl:DatatypeProperty .
+mysql:RESOURCE_GROUP_ENABLED a owl:DatatypeProperty .
+mysql:VCPU_IDS a owl:DatatypeProperty .
+mysql:THREAD_PRIORITY a owl:DatatypeProperty .
 
 # 25.19 The INFORMATION_SCHEMA ROUTINES Table
 
-mysql:SPECIFIC_NAME	 
-mysql:ROUTINE_CATALOG	def
-mysql:ROUTINE_SCHEMA	 
-mysql:ROUTINE_NAME	 
-mysql:ROUTINE_TYPE	{PROCEDURE|FUNCTION}
-mysql:DATA_TYPE	same as for COLUMNS table
-mysql:CHARACTER_MAXIMUM_LENGTH	same as for COLUMNS table
-mysql:CHARACTER_OCTET_LENGTH	same as for COLUMNS table
-mysql:NUMERIC_PRECISION	same as for COLUMNS table
-mysql:NUMERIC_SCALE	same as for COLUMNS table
-mysql:DATETIME_PRECISION	same as for COLUMNS table
-mysql:CHARACTER_SET_NAME	same as for COLUMNS table
-mysql:COLLATION_NAME	same as for COLUMNS table
-mysql:DTD_IDENTIFIER	data type descriptor
-mysql:ROUTINE_BODY	SQL
-mysql:ROUTINE_DEFINITION	 
-mysql:EXTERNAL_NAME	NULL
-mysql:EXTERNAL_LANGUAGE	NULL
-mysql:PARAMETER_STYLE	SQL
-mysql:IS_DETERMINISTIC	 
-mysql:SQL_DATA_ACCESS	 
-mysql:SQL_PATH	NULL
-mysql:SECURITY_TYPE	 
-mysql:CREATED	 
-mysql:LAST_ALTERED	 
-mysql:SQL_MODE	MySQL extension
-mysql:ROUTINE_COMMENT	MySQL extension
-mysql:DEFINER	MySQL extension
-mysql:CHARACTER_SET_CLIENT	MySQL extension
-mysql:COLLATION_CONNECTION	MySQL extension
-mysql:DATABASE_COLLATION	MySQL extension
+mysql:SPECIFIC_NAME a owl:DatatypeProperty .
+mysql:ROUTINE_CATALOG a owl:DatatypeProperty .
+mysql:ROUTINE_SCHEMA a owl:DatatypeProperty .
+mysql:ROUTINE_NAME a owl:DatatypeProperty .
+mysql:ROUTINE_TYPE a owl:DatatypeProperty .
+mysql:DATA_TYPE a owl:DatatypeProperty .
+mysql:CHARACTER_MAXIMUM_LENGTH a owl:DatatypeProperty .
+mysql:CHARACTER_OCTET_LENGTH a owl:DatatypeProperty .
+mysql:NUMERIC_PRECISION a owl:DatatypeProperty .
+mysql:NUMERIC_SCALE a owl:DatatypeProperty .
+mysql:DATETIME_PRECISION a owl:DatatypeProperty .
+mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
+mysql:COLLATION_NAME a owl:DatatypeProperty .
+mysql:DTD_IDENTIFIER a owl:DatatypeProperty .
+mysql:ROUTINE_BODY a owl:DatatypeProperty .
+mysql:ROUTINE_DEFINITION a owl:DatatypeProperty .
+mysql:EXTERNAL_NAME a owl:DatatypeProperty .
+mysql:EXTERNAL_LANGUAGE a owl:DatatypeProperty .
+mysql:PARAMETER_STYLE a owl:DatatypeProperty .
+mysql:IS_DETERMINISTIC a owl:DatatypeProperty .
+mysql:SQL_DATA_ACCESS a owl:DatatypeProperty .
+mysql:SQL_PATH	NULL a owl:DatatypeProperty .
+mysql:SECURITY_TYPE a owl:DatatypeProperty .
+mysql:CREATED a owl:DatatypeProperty .
+mysql:LAST_ALTERED a owl:DatatypeProperty .
+mysql:SQL_MODE a owl:DatatypeProperty .
+mysql:ROUTINE_COMMENT a owl:DatatypeProperty .
+mysql:DEFINER a owl:DatatypeProperty .
+mysql:CHARACTER_SET_CLIENT a owl:DatatypeProperty .
+mysql:COLLATION_CONNECTION a owl:DatatypeProperty .
+mysql:DATABASE_COLLATION a owl:DatatypeProperty .
 
 # 25.20 The INFORMATION_SCHEMA SCHEMATA Table
 
-mysql:CATALOG_NAME	 	def
-mysql:SCHEMA_NAME	Database	 
-mysql:DEFAULT_CHARACTER_SET_NAME	 	 
-mysql:DEFAULT_COLLATION_NAME	 	 
-mysql:SQL_PATH	 	NULL
+mysql:CATALOG_NAME a owl:DatatypeProperty .
+mysql:SCHEMA_NAME a owl:DatatypeProperty .
+mysql:DEFAULT_CHARACTER_SET_NAME a owl:DatatypeProperty .
+mysql:DEFAULT_COLLATION_NAME a owl:DatatypeProperty .
+mysql:SQL_PATH a owl:DatatypeProperty .
 
 # 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
 
-mysql:GRANTEE	 	'user_name'@'host_name' value, MySQL extension
-mysql:TABLE_CATALOG	 	def, MySQL extension
-mysql:TABLE_SCHEMA	 	MySQL extension
-mysql:PRIVILEGE_TYPE	 	MySQL extension
-mysql:IS_GRANTABLE	 	MySQL extension
+mysql:GRANTEE a owl:DatatypeProperty .
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:PRIVILEGE_TYPE a owl:DatatypeProperty .
+mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.22 The INFORMATION_SCHEMA STATISTICS Table
 
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	 	= Database
-mysql:TABLE_NAME	Table	 
-mysql:NON_UNIQUE	Non_unique	 
-mysql:INDEX_SCHEMA	 	= Database
-mysql:INDEX_NAME	Key_name	 
-mysql:SEQ_IN_INDEX	Seq_in_index	 
-mysql:COLUMN_NAME	Column_name	 
-mysql:COLLATION	Collation	 
-mysql:CARDINALITY	Cardinality	 
-mysql:SUB_PART	Sub_part	MySQL extension
-mysql:PACKED	Packed	MySQL extension
-mysql:NULLABLE	Null	MySQL extension
-mysql:INDEX_TYPE	Index_type	MySQL extension
-mysql:COMMENT	Comment	MySQL extension
-mysql:INDEX_COMMENT	Index_comment	MySQL extension
-mysql:IS_VISIBLE	Visible	MySQL extension
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:NON_UNIQUE a owl:DatatypeProperty .
+mysql:INDEX_SCHEMA a owl:DatatypeProperty .
+mysql:INDEX_NAME a owl:DatatypeProperty .
+mysql:SEQ_IN_INDEX a owl:DatatypeProperty .
+mysql:COLUMN_NAME a owl:DatatypeProperty .
+mysql:COLLATION a owl:DatatypeProperty .
+mysql:CARDINALITY a owl:DatatypeProperty .
+mysql:SUB_PART a owl:DatatypeProperty .
+mysql:PACKED a owl:DatatypeProperty .
+mysql:NULLABLE a owl:DatatypeProperty .
+mysql:INDEX_TYPE a owl:DatatypeProperty .
+mysql:COMMENT a owl:DatatypeProperty .
+mysql:INDEX_COMMENT a owl:DatatypeProperty .
+mysql:IS_VISIBLE a owl:DatatypeProperty .
 
 # 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
 
@@ -402,102 +403,102 @@ Notes:
 
 # 25.25 The INFORMATION_SCHEMA TABLES Table
 
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	Table_...	 
-mysql:TABLE_NAME	Table_...	 
-mysql:TABLE_TYPE	 	 
-mysql:ENGINE	Engine	MySQL extension
-mysql:VERSION	Version	The .frm file version. With the removal of .frm files in MySQL 8.0, this field now reports a hardcoded value of 10, which is the last .frm file version used in MySQL 5.7.
-mysql:ROW_FORMAT	Row_format	MySQL extension
-mysql:TABLE_ROWS	Rows	MySQL extension
-mysql:AVG_ROW_LENGTH	Avg_row_length	MySQL extension
-mysql:DATA_LENGTH	Data_length	MySQL extension
-mysql:MAX_DATA_LENGTH	Max_data_length	MySQL extension
-mysql:INDEX_LENGTH	Index_length	MySQL extension
-mysql:DATA_FREE	Data_free	MySQL extension
-mysql:AUTO_INCREMENT	Auto_increment	MySQL extension
-mysql:CREATE_TIME	Create_time	MySQL extension
-mysql:UPDATE_TIME	Update_time	MySQL extension
-mysql:CHECK_TIME	Check_time	MySQL extension
-mysql:TABLE_COLLATION	Collation	MySQL extension
-mysql:CHECKSUM	Checksum	MySQL extension
-mysql:CREATE_OPTIONS	Create_options	MySQL extension
-mysql:TABLE_COMMENT	Comment	MySQL extension
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:TABLE_TYPE a owl:DatatypeProperty .
+mysql:ENGINE a owl:DatatypeProperty .
+mysql:VERSION a owl:DatatypeProperty .
+mysql:ROW_FORMAT a owl:DatatypeProperty .
+mysql:TABLE_ROWS a owl:DatatypeProperty .
+mysql:AVG_ROW_LENGTH a owl:DatatypeProperty .
+mysql:DATA_LENGTH a owl:DatatypeProperty .
+mysql:MAX_DATA_LENGTH a owl:DatatypeProperty .
+mysql:INDEX_LENGTH a owl:DatatypeProperty .
+mysql:DATA_FREE a owl:DatatypeProperty .
+mysql:AUTO_INCREMENT a owl:DatatypeProperty .
+mysql:CREATE_TIME a owl:DatatypeProperty .
+mysql:UPDATE_TIME a owl:DatatypeProperty .
+mysql:CHECK_TIME a owl:DatatypeProperty .
+mysql:TABLE_COLLATION a owl:DatatypeProperty .
+mysql:CHECKSUM a owl:DatatypeProperty .
+mysql:CREATE_OPTIONS a owl:DatatypeProperty .
+mysql:TABLE_COMMENT a owl:DatatypeProperty .
 
 # 25.26 The INFORMATION_SCHEMA TABLESPACES Table
 
-mysql:TABLESPACE_NAME	 	MySQL extension
-mysql:ENGINE	 	MySQL extension
-mysql:TABLESPACE_TYPE	 	MySQL extension
-mysql:LOGFILE_GROUP_NAME	 	MySQL extension
-mysql:EXTENT_SIZE	 	MySQL extension
-mysql:AUTOEXTEND_SIZE	 	MySQL extension
-mysql:MAXIMUM_SIZE	 	MySQL extension
-mysql:NODEGROUP_ID	 	MySQL extension
-mysql:TABLESPACE_COMMENT	 	MySQL extension
+mysql:TABLESPACE_NAME a owl:DatatypeProperty .
+mysql:ENGINE a owl:DatatypeProperty .
+mysql:TABLESPACE_TYPE a owl:DatatypeProperty .
+mysql:LOGFILE_GROUP_NAME a owl:DatatypeProperty .
+mysql:EXTENT_SIZE a owl:DatatypeProperty .
+mysql:AUTOEXTEND_SIZE a owl:DatatypeProperty .
+mysql:MAXIMUM_SIZE a owl:DatatypeProperty .
+mysql:NODEGROUP_ID a owl:DatatypeProperty .
+mysql:TABLESPACE_COMMENT a owl:DatatypeProperty .
 
 # 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
 
-mysql:CONSTRAINT_CATALOG	 	def
-mysql:CONSTRAINT_SCHEMA	 	 
-mysql:CONSTRAINT_NAME	 	 
-mysql:TABLE_SCHEMA	 	 
-mysql:TABLE_NAME	 	 
-mysql:CONSTRAINT_TYPE	 	 
+mysql:CONSTRAINT_CATALOG a owl:DatatypeProperty .
+mysql:CONSTRAINT_SCHEMA a owl:DatatypeProperty .
+mysql:CONSTRAINT_NAME a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:CONSTRAINT_TYPE a owl:DatatypeProperty .
 
 # 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
 
-mysql:GRANTEE	 	'user_name'@'host_name' value
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	 	 
-mysql:TABLE_NAME	 	 
-mysql:PRIVILEGE_TYPE	 	 
-mysql:IS_GRANTABLE	 	 
+mysql:GRANTEE a owl:DatatypeProperty .
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:PRIVILEGE_TYPE a owl:DatatypeProperty .
+mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.29 The INFORMATION_SCHEMA TRIGGERS Table
 
-mysql:TRIGGER_CATALOG	 	def
-mysql:TRIGGER_SCHEMA	 	 
-mysql:TRIGGER_NAME	Trigger	 
-mysql:EVENT_MANIPULATION	Event	 
-mysql:EVENT_OBJECT_CATALOG	 	def
-mysql:EVENT_OBJECT_SCHEMA	 	 
-mysql:EVENT_OBJECT_TABLE	Table	 
-mysql:ACTION_ORDER	 	 
-mysql:ACTION_CONDITION	 	NULL
-mysql:ACTION_STATEMENT	Statement	 
-mysql:ACTION_ORIENTATION	 	ROW
-mysql:ACTION_TIMING	Timing	 
-mysql:ACTION_REFERENCE_OLD_TABLE	 	NULL
-mysql:ACTION_REFERENCE_NEW_TABLE	 	NULL
-mysql:ACTION_REFERENCE_OLD_ROW	 	OLD
-mysql:ACTION_REFERENCE_NEW_ROW	 	NEW
-mysql:CREATED	Created	 
-mysql:SQL_MODE	sql_mode	MySQL extension
-mysql:DEFINER	Definer	MySQL extension
-mysql:CHARACTER_SET_CLIENT	character_set_client	MySQL extension
-mysql:COLLATION_CONNECTION	collation_connection	MySQL extension
-mysql:DATABASE_COLLATION	Database Collation	MySQL extension
+mysql:TRIGGER_CATALOG a owl:DatatypeProperty .
+mysql:TRIGGER_SCHEMA a owl:DatatypeProperty .
+mysql:TRIGGER_NAME a owl:DatatypeProperty .
+mysql:EVENT_MANIPULATION a owl:DatatypeProperty .
+mysql:EVENT_OBJECT_CATALOG a owl:DatatypeProperty .
+mysql:EVENT_OBJECT_SCHEMA a owl:DatatypeProperty .
+mysql:EVENT_OBJECT_TABLE a owl:DatatypeProperty .
+mysql:ACTION_ORDER a owl:DatatypeProperty .
+mysql:ACTION_CONDITION a owl:DatatypeProperty .
+mysql:ACTION_STATEMENT a owl:DatatypeProperty .
+mysql:ACTION_ORIENTATION a owl:DatatypeProperty .
+mysql:ACTION_TIMING a owl:DatatypeProperty .
+mysql:ACTION_REFERENCE_OLD_TABLE a owl:DatatypeProperty .
+mysql:ACTION_REFERENCE_NEW_TABLE a owl:DatatypeProperty .
+mysql:ACTION_REFERENCE_OLD_ROW a owl:DatatypeProperty .
+mysql:ACTION_REFERENCE_NEW_ROW a owl:DatatypeProperty .
+mysql:CREATED a owl:DatatypeProperty .
+mysql:SQL_MODE a owl:DatatypeProperty .
+mysql:DEFINER a owl:DatatypeProperty .
+mysql:CHARACTER_SET_CLIENT a owl:DatatypeProperty .
+mysql:COLLATION_CONNECTION a owl:DatatypeProperty .
+mysql:DATABASE_COLLATION a owl:DatatypeProperty .
 
 # 25.30 The INFORMATION_SCHEMA USER_PRIVILEGES Table
 
-mysql:GRANTEE	 	'user_name'@'host_name' value, MySQL extension
-mysql:TABLE_CATALOG	 	def, MySQL extension
-mysql:PRIVILEGE_TYPE	 	MySQL extension
-mysql:IS_GRANTABLE	 	MySQL extension
+mysql:GRANTEE a owl:DatatypeProperty .
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:PRIVILEGE_TYPE a owl:DatatypeProperty .
+mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.31 The INFORMATION_SCHEMA VIEWS Table
 
-mysql:TABLE_CATALOG	 	def
-mysql:TABLE_SCHEMA	 	 
-mysql:TABLE_NAME	 	 
-mysql:VIEW_DEFINITION	 	 
-mysql:CHECK_OPTION	 	 
-mysql:IS_UPDATABLE	 	 
-mysql:DEFINER	 	 
-mysql:SECURITY_TYPE	 	 
-mysql:CHARACTER_SET_CLIENT	 	MySQL extension
-mysql:COLLATION_CONNECTION	 	MySQL extension
+mysql:TABLE_CATALOG a owl:DatatypeProperty .
+mysql:TABLE_SCHEMA a owl:DatatypeProperty .
+mysql:TABLE_NAME a owl:DatatypeProperty .
+mysql:VIEW_DEFINITION a owl:DatatypeProperty .
+mysql:CHECK_OPTION a owl:DatatypeProperty .
+mysql:IS_UPDATABLE a owl:DatatypeProperty .
+mysql:DEFINER a owl:DatatypeProperty .
+mysql:SECURITY_TYPE a owl:DatatypeProperty .
+mysql:CHARACTER_SET_CLIENT a owl:DatatypeProperty .
+mysql:COLLATION_CONNECTION a owl:DatatypeProperty .
 
 # 25.32 InnoDB INFORMATION_SCHEMA Tables     
 
