@@ -2,7 +2,7 @@
 
 # 25.1 The INFORMATION_SCHEMA CHARACTER_SETS Table
 
-mysql:Table a owl:Class .
+mysql:CharacterSet a owl:Class .
 mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
 mysql:DEFAULT_COLLATE_NAME a owl:DatatypeProperty .
 mysql:DESCRIPTION	Description a owl:DatatypeProperty .
@@ -10,6 +10,7 @@ mysql:MAXLEN	Maxlen a owl:DatatypeProperty .
 
 # 25.2 The INFORMATION_SCHEMA COLLATIONS Table
 
+mysql:Collation a owl:Class .
 mysql:COLLATION_NAME a owl:DatatypeProperty .
 mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
 mysql:ID a owl:DatatypeProperty .
@@ -20,11 +21,13 @@ mysql:PAD_ATTRIBUTE a owl:DatatypeProperty .
 
 # 25.3 The INFORMATION_SCHEMA COLLATION_CHARACTER_SET_APPLICABILITY Table
 
+ a owl:Class .
 mysql:COLLATION_NAM a owl:DatatypeProperty .
 mysql:CHARACTER_SET_NAME a owl:DatatypeProperty .
 
 # 25.4 The INFORMATION_SCHEMA COLUMNS Table
 
+ a owl:Class .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
 mysql:TABLE_NAME a owl:DatatypeProperty .
@@ -50,6 +53,7 @@ mysql:SRS_ID a owl:DatatypeProperty .
 
 # 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
 
+ a owl:Class .
 mysql:GRANTEE a owl:DatatypeProperty .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
@@ -60,6 +64,7 @@ mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
 
+ a owl:Class .
 mysql:SCHEMA_NAME a owl:DatatypeProperty .
 mysql:TABLE_NAME a owl:DatatypeProperty .
 mysql:COLUMN_NAME a owl:DatatypeProperty .
@@ -67,6 +72,7 @@ mysql:HISTOGRAM a owl:DatatypeProperty .
 
 # 25.7 The INFORMATION_SCHEMA ENGINES Table
 
+ a owl:Class .
 mysql:ENGINE a owl:DatatypeProperty .
 mysql:SUPPORT a owl:DatatypeProperty .
 mysql:COMMENT a owl:DatatypeProperty .
@@ -76,6 +82,7 @@ mysql:SAVEPOINTS a owl:DatatypeProperty .
 
 # 25.8 The INFORMATION_SCHEMA EVENTS Table
 
+ a owl:Class .
 mysql:EVENT_CATALOG a owl:DatatypeProperty .
 mysql:EVENT_SCHEMA a owl:DatatypeProperty .
 mysql:EVENT_NAME a owl:DatatypeProperty .
@@ -103,6 +110,7 @@ mysql:DATABASE_COLLATION a owl:DatatypeProperty .
 
 # 25.9 The INFORMATION_SCHEMA FILES Table
 
+ a owl:Class .
 mysql:FILE_ID a owl:DatatypeProperty .
 mysql:FILE_NAME a owl:DatatypeProperty .
 mysql:FILE_TYPE a owl:DatatypeProperty .
@@ -144,6 +152,7 @@ mysql:EXTRA a owl:DatatypeProperty .
 
 # 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
 
+ a owl:Class .
 mysql:CONSTRAINT_CATALOG a owl:DatatypeProperty .
 mysql:CONSTRAINT_SCHEMA a owl:DatatypeProperty .
 mysql:CONSTRAINT_NAME a owl:DatatypeProperty .
@@ -161,6 +170,7 @@ mysql:REFERENCED_COLUMN_NAME a owl:DatatypeProperty .
 
 # 25.12 The INFORMATION_SCHEMA PARAMETERS Table
 
+ a owl:Class .
 mysql:SPECIFIC_CATALOG a owl:DatatypeProperty .
 mysql:SPECIFIC_SCHEMA a owl:DatatypeProperty .
 mysql:SPECIFIC_NAME a owl:DatatypeProperty .
@@ -180,6 +190,7 @@ mysql:ROUTINE_TYPE a owl:DatatypeProperty .
 
 # 25.13 The INFORMATION_SCHEMA PARTITIONS Table
 
+ a owl:Class .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
 mysql:TABLE_NAME a owl:DatatypeProperty .
@@ -208,6 +219,7 @@ mysql:TABLESPACE_NAME a owl:DatatypeProperty .
 
 # 25.14 The INFORMATION_SCHEMA PLUGINS Table
 
+ a owl:Class .
 mysql:PLUGIN_NAME a owl:DatatypeProperty .
 mysql:PLUGIN_VERSION a owl:DatatypeProperty .
 mysql:PLUGIN_STATUS a owl:DatatypeProperty .
@@ -222,6 +234,7 @@ mysql:LOAD_OPTION a owl:DatatypeProperty .
 
 # 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
 
+ a owl:Class .
 mysql:ID a owl:DatatypeProperty .
 mysql:USER a owl:DatatypeProperty .
 mysql:HOST a owl:DatatypeProperty .
@@ -233,6 +246,7 @@ mysql:INFO a owl:DatatypeProperty .
 
 # 25.16 The INFORMATION_SCHEMA PROFILING Table
 
+ a owl:Class .
 mysql:QUERY_ID a owl:DatatypeProperty .
 mysql:SEQ a owl:DatatypeProperty .
 mysql:STATE a owl:DatatypeProperty .
@@ -254,6 +268,7 @@ mysql:SOURCE_LINE a owl:DatatypeProperty .
 
 # 25.17 The INFORMATION_SCHEMA REFERENTIAL_CONSTRAINTS Table
 
+ a owl:Class .
 mysql:CONSTRAINT_CATALOG a owl:DatatypeProperty .
 mysql:CONSTRAINT_SCHEMA a owl:DatatypeProperty .
 mysql:CONSTRAINT_NAME a owl:DatatypeProperty .
@@ -268,6 +283,7 @@ mysql:REFERENCED_TABLE_NAME a owl:DatatypeProperty .
 
 # 25.18 The INFORMATION_SCHEMA RESOURCE_GROUPS Table
 
+ a owl:Class .
 mysql:RESOURCE_GROUP_NAME a owl:DatatypeProperty .
 mysql:RESOURCE_GROUP_TYPE a owl:DatatypeProperty .
 mysql:RESOURCE_GROUP_ENABLED a owl:DatatypeProperty .
@@ -276,6 +292,7 @@ mysql:THREAD_PRIORITY a owl:DatatypeProperty .
 
 # 25.19 The INFORMATION_SCHEMA ROUTINES Table
 
+ a owl:Class .
 mysql:SPECIFIC_NAME a owl:DatatypeProperty .
 mysql:ROUTINE_CATALOG a owl:DatatypeProperty .
 mysql:ROUTINE_SCHEMA a owl:DatatypeProperty .
@@ -310,6 +327,7 @@ mysql:DATABASE_COLLATION a owl:DatatypeProperty .
 
 # 25.20 The INFORMATION_SCHEMA SCHEMATA Table
 
+ a owl:Class .
 mysql:CATALOG_NAME a owl:DatatypeProperty .
 mysql:SCHEMA_NAME a owl:DatatypeProperty .
 mysql:DEFAULT_CHARACTER_SET_NAME a owl:DatatypeProperty .
@@ -318,6 +336,7 @@ mysql:SQL_PATH a owl:DatatypeProperty .
 
 # 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
 
+ a owl:Class .
 mysql:GRANTEE a owl:DatatypeProperty .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
@@ -326,6 +345,7 @@ mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.22 The INFORMATION_SCHEMA STATISTICS Table
 
+mysql:Statistic a owl:Class .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
 mysql:TABLE_NAME a owl:DatatypeProperty .
@@ -346,6 +366,7 @@ mysql:IS_VISIBLE a owl:DatatypeProperty .
 
 # 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
 
+ a owl:Class .
  ST_GEOMETRY_COLUMNS has these columns:
 
     TABLE_CATALOG
@@ -373,6 +394,7 @@ mysql:IS_VISIBLE a owl:DatatypeProperty .
 
 # 25.24 The INFORMATION_SCHEMA ST_SPATIAL_REFERENCE_SYSTEMS Table
 
+ a owl:Class .
  ST_SPATIAL_REFERENCE_SYSTEMS has these columns:
 
     SRS_NAME
@@ -403,6 +425,7 @@ Notes:
 
 # 25.25 The INFORMATION_SCHEMA TABLES Table
 
+ a owl:Class .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
 mysql:TABLE_NAME a owl:DatatypeProperty .
@@ -427,6 +450,7 @@ mysql:TABLE_COMMENT a owl:DatatypeProperty .
 
 # 25.26 The INFORMATION_SCHEMA TABLESPACES Table
 
+ a owl:Class .
 mysql:TABLESPACE_NAME a owl:DatatypeProperty .
 mysql:ENGINE a owl:DatatypeProperty .
 mysql:TABLESPACE_TYPE a owl:DatatypeProperty .
@@ -439,6 +463,7 @@ mysql:TABLESPACE_COMMENT a owl:DatatypeProperty .
 
 # 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
 
+ a owl:Class .
 mysql:CONSTRAINT_CATALOG a owl:DatatypeProperty .
 mysql:CONSTRAINT_SCHEMA a owl:DatatypeProperty .
 mysql:CONSTRAINT_NAME a owl:DatatypeProperty .
@@ -448,6 +473,7 @@ mysql:CONSTRAINT_TYPE a owl:DatatypeProperty .
 
 # 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
 
+ a owl:Class .
 mysql:GRANTEE a owl:DatatypeProperty .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
@@ -457,6 +483,7 @@ mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.29 The INFORMATION_SCHEMA TRIGGERS Table
 
+ a owl:Class .
 mysql:TRIGGER_CATALOG a owl:DatatypeProperty .
 mysql:TRIGGER_SCHEMA a owl:DatatypeProperty .
 mysql:TRIGGER_NAME a owl:DatatypeProperty .
@@ -482,6 +509,7 @@ mysql:DATABASE_COLLATION a owl:DatatypeProperty .
 
 # 25.30 The INFORMATION_SCHEMA USER_PRIVILEGES Table
 
+ a owl:Class .
 mysql:GRANTEE a owl:DatatypeProperty .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:PRIVILEGE_TYPE a owl:DatatypeProperty .
@@ -489,6 +517,7 @@ mysql:IS_GRANTABLE a owl:DatatypeProperty .
 
 # 25.31 The INFORMATION_SCHEMA VIEWS Table
 
+ a owl:Class .
 mysql:TABLE_CATALOG a owl:DatatypeProperty .
 mysql:TABLE_SCHEMA a owl:DatatypeProperty .
 mysql:TABLE_NAME a owl:DatatypeProperty .
