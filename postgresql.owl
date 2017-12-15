@@ -109,87 +109,87 @@ isDerivedReferenceAttribute 	yes_or_no 	Applies to a feature not available in Po
 
 # 34.7. character_sets
 
-character_set_catalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
+characterSetCatalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
 
-character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
+characterSetSchema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null.
 
-character_set_name 	sql_identifier 	Name of the character set, currently implemented as showing the name of the database encoding
+characterSetName 	sql_identifier 	Name of the character set, currently implemented as showing the name of the database encoding
 
-character_repertoire 	sql_identifier 	Character repertoire, showing UCS if the encoding is UTF8, else just the encoding name
+characterRepertoire 	sql_identifier 	Character repertoire, showing UCS if the encoding is UTF8, else just the encoding name
 
-form_of_use 	sql_identifier 	Character encoding form, same as the database encoding
+formOfUse 	sql_identifier 	Character encoding form, same as the database encoding
 
-default_collate_catalog 	sql_identifier 	Name of the database containing the default collation (always the current database, if any collation is identified)
+defaultCollateCatalog 	sql_identifier 	Name of the database containing the default collation (always the current database, if any collation is identified)
 
-default_collate_schema 	sql_identifier 	Name of the schema containing the default collation
+defaultCollateSchema 	sql_identifier 	Name of the schema containing the default collation
 
-default_collate_name 	sql_identifier 	Name of the default collation. The default collation is identified as the collation that matches the COLLATE and CTYPE settings of the current database. If there is no such collation, then this column and the associated schema and catalog columns are null.
+defaultCollateName 	sql_identifier 	Name of the default collation. The default collation is identified as the collation that matches the COLLATE and CTYPE settings of the current database. If there is no such collation, then this column and the associated schema and catalog columns are null.
 
 # 34.8. check_constraint_routine_usage
 
-constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
+constraintCatalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
 
-constraint_schema 	sql_identifier 	Name of the schema containing the constraint
+constraintSchema 	sql_identifier 	Name of the schema containing the constraint
 
-constraint_name 	sql_identifier 	Name of the constraint
+constraintName 	sql_identifier 	Name of the constraint
 
-specific_catalog 	sql_identifier 	Name of the database containing the function (always the current database)
+specificCatalog 	sql_identifier 	Name of the database containing the function (always the current database)
 
-specific_schema 	sql_identifier 	Name of the schema containing the function
+specificSchema 	sql_identifier 	Name of the schema containing the function
 
-specific_name 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
+specificName 	sql_identifier 	The "specific name" of the function. See Section 34.38 for more information.
 
 
 # 34.9. check_constraints
 
-constraint_catalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
+constraintCatalog 	sql_identifier 	Name of the database containing the constraint (always the current database)
 
-constraint_schema 	sql_identifier 	Name of the schema containing the constraint
+constraintSchema 	sql_identifier 	Name of the schema containing the constraint
 
-constraint_name 	sql_identifier 	Name of the constraint
+constraintName 	sql_identifier 	Name of the constraint
 
-check_clause 	character_data 	The check expression of the check constraint
+checkClause 	character_data 	The check expression of the check constraint
 
 
 # 34.10. collations
 
-collation_catalog 	sql_identifier 	Name of the database containing the collation (always the current database)
+collationCatalog 	sql_identifier 	Name of the database containing the collation (always the current database)
 
-collation_schema 	sql_identifier 	Name of the schema containing the collation
+collationSchema 	sql_identifier 	Name of the schema containing the collation
 
-collation_name 	sql_identifier 	Name of the default collation
+collationName 	sql_identifier 	Name of the default collation
 
-pad_attribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not supported by PostgreSQL.)
+padAttribute 	character_data 	Always NO PAD (The alternative PAD SPACE is not supported by PostgreSQL.)
 
 # 34.11. collation_character_set_applicability
 
-collation_catalog 	sql_identifier 	Name of the database containing the collation (always the current database)
+collationCatalog 	sql_identifier 	Name of the database containing the collation (always the current database)
 
-collation_schema 	sql_identifier 	Name of the schema containing the collation
+collationSchema 	sql_identifier 	Name of the schema containing the collation
 
-collation_name 	sql_identifier 	Name of the default collation
+collationName 	sql_identifier 	Name of the default collation
 
-character_set_catalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
+characterSetCatalog 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
 
-character_set_schema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
+characterSetSchema 	sql_identifier 	Character sets are currently not implemented as schema objects, so this column is null
 
-character_set_name 	sql_identifier 	Name of the character set
+characterSetName 	sql_identifier 	Name of the character set
 
 # 34.12. column_domain_usage
 
-domain_catalog 	sql_identifier 	Name of the database containing the domain (always the current database)
+domainCatalog 	sql_identifier 	Name of the database containing the domain (always the current database)
 
-domain_schema 	sql_identifier 	Name of the schema containing the domain
+domainSchema 	sql_identifier 	Name of the schema containing the domain
 
-domain_name 	sql_identifier 	Name of the domain
+domainName 	sql_identifier 	Name of the domain
 
-table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
+tableCatalog 	sql_identifier 	Name of the database containing the table (always the current database)
 
-table_schema 	sql_identifier 	Name of the schema containing the table
+tableSchema 	sql_identifier 	Name of the schema containing the table
 
-table_name 	sql_identifier 	Name of the table
+tableName 	sql_identifier 	Name of the table
 
-column_name 	sql_identifier 	Name of the column
+columnName 	sql_identifier 	Name of the column
 
 # 34.13. column_privileges
 
@@ -197,288 +197,288 @@ grantor 	sql_identifier 	Name of the role that granted the privilege
 
 grantee 	sql_identifier 	Name of the role that the privilege was granted to
 
-table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column (always the current database)
+tableCatalog 	sql_identifier 	Name of the database that contains the table that contains the column (always the current database)
 
-table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column
+tableSchema 	sql_identifier 	Name of the schema that contains the table that contains the column
 
-table_name 	sql_identifier 	Name of the table that contains the column
+tableName 	sql_identifier 	Name of the table that contains the column
 
-column_name 	sql_identifier 	Name of the column
+columnName 	sql_identifier 	Name of the column
 
-privilege_type 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, or REFERENCES
+privilegeType 	character_data 	Type of the privilege: SELECT, INSERT, UPDATE, or REFERENCES
 
 is_grantable 	yes_or_no 	YES if the privilege is grantable, NO if not
 
 # 34.14. column_udt_usage
 
-udt_catalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
+udtCatalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
 
-udt_schema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
+udtSchema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
 
-udt_name 	sql_identifier 	Name of the column data type (the underlying type of the domain, if applicable)
+udtName 	sql_identifier 	Name of the column data type (the underlying type of the domain, if applicable)
 
-table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
+tableCatalog 	sql_identifier 	Name of the database containing the table (always the current database)
 
-table_schema 	sql_identifier 	Name of the schema containing the table
+tableSchema 	sql_identifier 	Name of the schema containing the table
 
-table_name 	sql_identifier 	Name of the table
+tableName 	sql_identifier 	Name of the table
 
-column_name 	sql_identifier 	Name of the column
+columnName 	sql_identifier 	Name of the column
 
 # 34.15. columns
 
-table_catalog 	sql_identifier 	Name of the database containing the table (always the current database)
+tableCatalog 	sql_identifier 	Name of the database containing the table (always the current database)
 
-table_schema 	sql_identifier 	Name of the schema containing the table
+tableSchema 	sql_identifier 	Name of the schema containing the table
 
-table_name 	sql_identifier 	Name of the table
+tableName 	sql_identifier 	Name of the table
 
-column_name 	sql_identifier 	Name of the column
+columnName 	sql_identifier 	Name of the column
 
-ordinal_position 	cardinal_number 	Ordinal position of the column within the table (count starts at 1)
+ordinalPosition 	cardinal_number 	Ordinal position of the column within the table (count starts at 1)
 
-column_default 	character_data 	Default expression of the column
+columnDefault 	character_data 	Default expression of the column
 
-is_nullable 	yes_or_no 	YES if the column is possibly nullable, NO if it is known not nullable. A not-null constraint is one way a column can be known not nullable, but there can be others.
+isNullable 	yes_or_no 	YES if the column is possibly nullable, NO if it is known not nullable. A not-null constraint is one way a column can be known not nullable, but there can be others.
 
-data_type 	character_data 	Data type of the column, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns). If the column is based on a domain, this column refers to the type underlying the domain (and the domain is identified in domain_name and associated columns).
+dataType 	character_data 	Data type of the column, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns). If the column is based on a domain, this column refers to the type underlying the domain (and the domain is identified in domain_name and associated columns).
 
-character_maximum_length 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+characterMaximumLength 	cardinal_number 	If data_type identifies a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
 
-character_octet_length 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
+characterOctetLength 	cardinal_number 	If data_type identifies a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
 
-numeric_precision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this column. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numericPrecision 	cardinal_number 	If data_type identifies a numeric type, this column contains the (declared or implicit) precision of the type for this column. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
 
-numeric_precision_radix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
+numericPrecisionRadix 	cardinal_number 	If data_type identifies a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
 
-numeric_scale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this column. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numericScale 	cardinal_number 	If data_type identifies an exact numeric type, this column contains the (declared or implicit) scale of the type for this column. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
 
-datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this column, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
+datetimePrecision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this column, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
 
-interval_type 	character_data 	Not yet implemented
+intervalType 	character_data 	Not yet implemented
 
-interval_precision 	character_data 	Not yet implemented
+intervalPrecision 	character_data 	Not yet implemented
 
-character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-collation_catalog 	sql_identifier 	Not yet implemented
+collationCatalog 	sql_identifier 	Not yet implemented
 
-collation_schema 	sql_identifier 	Not yet implemented
+collationSchema 	sql_identifier 	Not yet implemented
 
-collation_name 	sql_identifier 	Not yet implemented
+collationName 	sql_identifier 	Not yet implemented
 
-domain_catalog 	sql_identifier 	If the column has a domain type, the name of the database that the domain is defined in (always the current database), else null.
+domainCatalog 	sql_identifier 	If the column has a domain type, the name of the database that the domain is defined in (always the current database), else null.
 
-domain_schema 	sql_identifier 	If the column has a domain type, the name of the schema that the domain is defined in, else null.
+domainSchema 	sql_identifier 	If the column has a domain type, the name of the schema that the domain is defined in, else null.
 
-domain_name 	sql_identifier 	If the column has a domain type, the name of the domain, else null.
+domainName 	sql_identifier 	If the column has a domain type, the name of the domain, else null.
 
-udt_catalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
+udtCatalog 	sql_identifier 	Name of the database that the column data type (the underlying type of the domain, if applicable) is defined in (always the current database)
 
-udt_schema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
+udtSchema 	sql_identifier 	Name of the schema that the column data type (the underlying type of the domain, if applicable) is defined in
 
-udt_name 	sql_identifier 	Name of the column data type (the underlying type of the domain, if applicable)
+udtName 	sql_identifier 	Name of the column data type (the underlying type of the domain, if applicable)
 
-scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+maximumCardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
 
-dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
+dtdIdentifier 	sql_identifier 	An identifier of the data type descriptor of the column, unique among the data type descriptors pertaining to the table. This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
-is_self_referencing 	yes_or_no 	Applies to a feature not available in PostgreSQL
+isSelfReferencing 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
-is_identity 	yes_or_no 	Applies to a feature not available in PostgreSQL
+isIdentity 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
-identity_generation 	character_data 	Applies to a feature not available in PostgreSQL
+identityGeneration 	character_data 	Applies to a feature not available in PostgreSQL
 
-identity_start 	character_data 	Applies to a feature not available in PostgreSQL
+identityStart 	character_data 	Applies to a feature not available in PostgreSQL
 
-identity_increment 	character_data 	Applies to a feature not available in PostgreSQL
+identityIncrement 	character_data 	Applies to a feature not available in PostgreSQL
 
-identity_maximum 	character_data 	Applies to a feature not available in PostgreSQL
+identityMaximum 	character_data 	Applies to a feature not available in PostgreSQL
 
-identity_minimum 	character_data 	Applies to a feature not available in PostgreSQL
+identityMinimum 	character_data 	Applies to a feature not available in PostgreSQL
 
-identity_cycle 	yes_or_no 	Applies to a feature not available in PostgreSQL
+identityCycle 	yes_or_no 	Applies to a feature not available in PostgreSQL
 
-is_generated 	character_data 	Applies to a feature not available in PostgreSQL
+isGenerated 	character_data 	Applies to a feature not available in PostgreSQL
 
-generation_expression 	character_data 	Applies to a feature not available in PostgreSQL
+generationExpression 	character_data 	Applies to a feature not available in PostgreSQL
 
-is_updatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in base tables are always updatable, columns in views not necessarily)
+isUpdatable 	yes_or_no 	YES if the column is updatable, NO if not (Columns in base tables are always updatable, columns in views not necessarily)
 
 # 34.16. constraint_column_usage
 
-table_catalog 	sql_identifier 	Name of the database that contains the table that contains the column that is used by some constraint (always the current database)
+tableCatalog 	sql_identifier 	Name of the database that contains the table that contains the column that is used by some constraint (always the current database)
 
-table_schema 	sql_identifier 	Name of the schema that contains the table that contains the column that is used by some constraint
+tableSchema 	sql_identifier 	Name of the schema that contains the table that contains the column that is used by some constraint
 
-table_name 	sql_identifier 	Name of the table that contains the column that is used by some constraint
+tableName 	sql_identifier 	Name of the table that contains the column that is used by some constraint
 
-column_name 	sql_identifier 	Name of the column that is used by some constraint
+columnName 	sql_identifier 	Name of the column that is used by some constraint
 
-constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraintCatalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
 
-constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraintSchema 	sql_identifier 	Name of the schema that contains the constraint
 
-constraint_name 	sql_identifier 	Name of the constraint
+constraintName 	sql_identifier 	Name of the constraint
 
 # 34.17. constraint_table_usage
 
-table_catalog 	sql_identifier 	Name of the database that contains the table that is used by some constraint (always the current database)
+tableCatalog 	sql_identifier 	Name of the database that contains the table that is used by some constraint (always the current database)
 
-table_schema 	sql_identifier 	Name of the schema that contains the table that is used by some constraint
+tableSchema 	sql_identifier 	Name of the schema that contains the table that is used by some constraint
 
-table_name 	sql_identifier 	Name of the table that is used by some constraint
+tableName 	sql_identifier 	Name of the table that is used by some constraint
 
 
-constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraintCatalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
 
-constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraintSchema 	sql_identifier 	Name of the schema that contains the constraint
 
-constraint_name 	sql_identifier 	Name of the constraint
+constraintName 	sql_identifier 	Name of the constraint
 
 # 34.18. data_type_privileges
 
-object_catalog 	sql_identifier 	Name of the database that contains the described object (always the current database)
+objectCatalog 	sql_identifier 	Name of the database that contains the described object (always the current database)
 
-object_schema 	sql_identifier 	Name of the schema that contains the described object
+objectSchema 	sql_identifier 	Name of the schema that contains the described object
 
-object_name 	sql_identifier 	Name of the described object
+objectName 	sql_identifier 	Name of the described object
 
-object_type 	character_data 	The type of the described object: one of TABLE (the data type descriptor pertains to a column of that table), DOMAIN (the data type descriptors pertains to that domain), ROUTINE (the data type descriptor pertains to a parameter or the return data type of that function).
+objectType 	character_data 	The type of the described object: one of TABLE (the data type descriptor pertains to a column of that table), DOMAIN (the data type descriptors pertains to that domain), ROUTINE (the data type descriptor pertains to a parameter or the return data type of that function).
 
-dtd_identifier 	sql_identifier 	The identifier of the data type descriptor, which is unique among the data type descriptors for that same object.
+dtdIdentifier 	sql_identifier 	The identifier of the data type descriptor, which is unique among the data type descriptors for that same object.
 
 # 34.19. domain_constraints
 
-constraint_catalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
+constraintCatalog 	sql_identifier 	Name of the database that contains the constraint (always the current database)
 
-constraint_schema 	sql_identifier 	Name of the schema that contains the constraint
+constraintSchema 	sql_identifier 	Name of the schema that contains the constraint
 
-constraint_name 	sql_identifier 	Name of the constraint
+constraintName 	sql_identifier 	Name of the constraint
 
-domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
+domainCatalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
 
-domain_schema 	sql_identifier 	Name of the schema that contains the domain
+domainSchema 	sql_identifier 	Name of the schema that contains the domain
 
-domain_name 	sql_identifier 	Name of the domain
+domainName 	sql_identifier 	Name of the domain
 
-is_deferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
+isDeferrable 	yes_or_no 	YES if the constraint is deferrable, NO if not
 
-initially_deferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
+initiallyDeferred 	yes_or_no 	YES if the constraint is deferrable and initially deferred, NO if not
 
 # 34.20. domain_udt_usage
 
-udt_catalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
+udtCatalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
 
-udt_schema 	sql_identifier 	Name of the schema that the domain data type is defined in
+udtSchema 	sql_identifier 	Name of the schema that the domain data type is defined in
 
-udt_name 	sql_identifier 	Name of the domain data type
+udtName 	sql_identifier 	Name of the domain data type
 
-domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
+domainCatalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
 
-domain_schema 	sql_identifier 	Name of the schema that contains the domain
+domainSchema 	sql_identifier 	Name of the schema that contains the domain
 
-domain_name 	sql_identifier 	Name of the domain
+domainName 	sql_identifier 	Name of the domain
 
 # 34.21. domains
 
-domain_catalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
+domainCatalog 	sql_identifier 	Name of the database that contains the domain (always the current database)
 
-domain_schema 	sql_identifier 	Name of the schema that contains the domain
+domainSchema 	sql_identifier 	Name of the schema that contains the domain
 
-domain_name 	sql_identifier 	Name of the domain
+domainName 	sql_identifier 	Name of the domain
 
-data_type 	character_data 	Data type of the domain, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
+dataType 	character_data 	Data type of the domain, if it is a built-in type, or ARRAY if it is some array (in that case, see the view element_types), else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
 
-character_maximum_length 	cardinal_number 	If the domain has a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
+characterMaximumLength 	cardinal_number 	If the domain has a character or bit string type, the declared maximum length; null for all other data types or if no maximum length was declared.
 
-character_octet_length 	cardinal_number 	If the domain has a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
+characterOctetLength 	cardinal_number 	If the domain has a character type, the maximum possible length in octets (bytes) of a datum; null for all other data types. The maximum octet length depends on the declared character maximum length (see above) and the server encoding.
 
-character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-collation_catalog 	sql_identifier 	Not yet implemented
+collationCatalog 	sql_identifier 	Not yet implemented
 
-collation_schema 	sql_identifier 	Not yet implemented
+collationSchema 	sql_identifier 	Not yet implemented
 
-collation_name 	sql_identifier 	Not yet implemented
+collationName 	sql_identifier 	Not yet implemented
 
-numeric_precision 	cardinal_number 	If the domain has a numeric type, this column contains the (declared or implicit) precision of the type for this domain. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numericPrecision 	cardinal_number 	If the domain has a numeric type, this column contains the (declared or implicit) precision of the type for this domain. The precision indicates the number of significant digits. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
 
-numeric_precision_radix 	cardinal_number 	If the domain has a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
+numericPrecisionRadix 	cardinal_number 	If the domain has a numeric type, this column indicates in which base the values in the columns numeric_precision and numeric_scale are expressed. The value is either 2 or 10. For all other data types, this column is null.
 
-numeric_scale 	cardinal_number 	If the domain has an exact numeric type, this column contains the (declared or implicit) scale of the type for this domain. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
+numericScale 	cardinal_number 	If the domain has an exact numeric type, this column contains the (declared or implicit) scale of the type for this domain. The scale indicates the number of significant digits to the right of the decimal point. It can be expressed in decimal (base 10) or binary (base 2) terms, as specified in the column numeric_precision_radix. For all other data types, this column is null.
 
-datetime_precision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this domain, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
+datetimePrecision 	cardinal_number 	If data_type identifies a date, time, timestamp, or interval type, this column contains the (declared or implicit) fractional seconds precision of the type for this domain, that is, the number of decimal digits maintained following the decimal point in the seconds value. For all other data types, this column is null.
 
-interval_type 	character_data 	Not yet implemented
+intervalType 	character_data 	Not yet implemented
 
 interval_precision 	character_data 	Not yet implemented
 
-domain_default 	character_data 	Default expression of the domain
+domainDefault 	character_data 	Default expression of the domain
 
-udt_catalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
+udtCatalog 	sql_identifier 	Name of the database that the domain data type is defined in (always the current database)
 
-udt_schema 	sql_identifier 	Name of the schema that the domain data type is defined in
+udtSchema 	sql_identifier 	Name of the schema that the domain data type is defined in
 
-udt_name 	sql_identifier 	Name of the domain data type
+udtName 	sql_identifier 	Name of the domain data type
 
-scope_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-scope_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-scope_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+scopeName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-maximum_cardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
+maximumCardinality 	cardinal_number 	Always null, because arrays always have unlimited maximum cardinality in PostgreSQL
 
-dtd_identifier 	sql_identifier 	An identifier of the data type descriptor of the domain, unique among the data type descriptors pertaining to the domain (which is trivial, because a domain only contains one data type descriptor). This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
+dtdIdentifier 	sql_identifier 	An identifier of the data type descriptor of the domain, unique among the data type descriptors pertaining to the domain (which is trivial, because a domain only contains one data type descriptor). This is mainly useful for joining with other instances of such identifiers. (The specific format of the identifier is not defined and not guaranteed to remain the same in future versions.)
 
 # 34.22. element_types
 
-object_catalog 	sql_identifier 	Name of the database that contains the object that uses the array being described (always the current database)
+objectCatalog 	sql_identifier 	Name of the database that contains the object that uses the array being described (always the current database)
 
-object_schema 	sql_identifier 	Name of the schema that contains the object that uses the array being described
+objectSchema 	sql_identifier 	Name of the schema that contains the object that uses the array being described
 
-object_name 	sql_identifier 	Name of the object that uses the array being described
+objectName 	sql_identifier 	Name of the object that uses the array being described
 
-object_type 	character_data 	The type of the object that uses the array being described: one of TABLE (the array is used by a column of that table), DOMAIN (the array is used by that domain), ROUTINE (the array is used by a parameter or the return data type of that function).
+objectType 	character_data 	The type of the object that uses the array being described: one of TABLE (the array is used by a column of that table), DOMAIN (the array is used by that domain), ROUTINE (the array is used by a parameter or the return data type of that function).
 
-collection_type_identifier 	sql_identifier 	The identifier of the data type descriptor of the array being described. Use this to join with the dtd_identifier columns of other information schema views.
+collectionTypeIdentifier 	sql_identifier 	The identifier of the data type descriptor of the array being described. Use this to join with the dtd_identifier columns of other information schema views.
 
-data_type 	character_data 	Data type of the array elements, if it is a built-in type, else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
+dataType 	character_data 	Data type of the array elements, if it is a built-in type, else USER-DEFINED (in that case, the type is identified in udt_name and associated columns).
 
-character_maximum_length 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+characterMaximumLength 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
 
-character_octet_length 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+characterOctetLength 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
 
-character_set_catalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetCatalog 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_schema 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetSchema 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-character_set_name 	sql_identifier 	Applies to a feature not available in PostgreSQL
+characterSetName 	sql_identifier 	Applies to a feature not available in PostgreSQL
 
-collation_catalog 	sql_identifier 	Not yet implemented
+collationCatalog 	sql_identifier 	Not yet implemented
 
-collation_schema 	sql_identifier 	Not yet implemented
+collationSchema 	sql_identifier 	Not yet implemented
 
-collation_name 	sql_identifier 	Not yet implemented
+collationName 	sql_identifier 	Not yet implemented
 
-numeric_precision 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+numericPrecision 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
 
-numeric_precision_radix 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
+numericPrecisionRadix 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
 
 numeric_scale 	cardinal_number 	Always null, since this information is not applied to array element data types in PostgreSQL
 
