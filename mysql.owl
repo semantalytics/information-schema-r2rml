@@ -1,3 +1,664 @@
+# https://dev.mysql.com/doc/refman/8.0/en/information-schema.html
+
+# 25.1 The INFORMATION_SCHEMA CHARACTER_SETS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+
+CHARACTER_SET_NAME	Charset	 
+DEFAULT_COLLATE_NAME	Default collation	 
+DESCRIPTION	Description	MySQL extension
+MAXLEN	Maxlen	MySQL extension
+
+# 25.2 The INFORMATION_SCHEMA COLLATIONS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+COLLATION_NAME	Collation	 
+CHARACTER_SET_NAME	Charset	MySQL extension
+ID	Id	MySQL extension
+IS_DEFAULT	Default	MySQL extension
+IS_COMPILED	Compiled	MySQL extension
+SORTLEN	Sortlen	MySQL extension
+PAD_ATTRIBUTE	 	omit
+
+# 25.3 The INFORMATION_SCHEMA COLLATION_CHARACTER_SET_APPLICABILITY Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+COLLATION_NAME	Collation	 
+CHARACTER_SET_NAME	Charset	 
+
+# 25.4 The INFORMATION_SCHEMA COLUMNS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+COLUMN_NAME	Field	 
+ORDINAL_POSITION	 	see notes
+COLUMN_DEFAULT	Default	 
+IS_NULLABLE	Null	 
+DATA_TYPE	Type	 
+CHARACTER_MAXIMUM_LENGTH	Type	 
+CHARACTER_OCTET_LENGTH	 	 
+NUMERIC_PRECISION	Type	 
+NUMERIC_SCALE	Type	 
+DATETIME_PRECISION	Type	 
+CHARACTER_SET_NAME	 	 
+COLLATION_NAME	Collation	 
+COLUMN_TYPE	Type	MySQL extension
+COLUMN_KEY	Key	MySQL extension
+EXTRA	Extra	MySQL extension
+PRIVILEGES	Privileges	MySQL extension
+COLUMN_COMMENT	Comment	MySQL extension
+GENERATION_EXPRESSION	 	MySQL extension
+SRS_ID	 	MySQL extension
+
+# 25.5 The INFORMATION_SCHEMA COLUMN_PRIVILEGES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+GRANTEE	 	'user_name'@'host_name' value
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+COLUMN_NAME	 	 
+PRIVILEGE_TYPE	 	 
+IS_GRANTABLE	 	 
+
+# 25.6 The INFORMATION_SCHEMA COLUMN_STATISTICS Table
+
+SCHEMA_NAME The names of the schema for which the statistics apply.
+TABLE_NAME The names of the column for which the statistics apply.
+COLUMN_NAME The names of the column for which the statistics apply.
+HISTOGRAM A JSON object describing the column statistics, stored as a histogram. 
+
+# 25.7 The INFORMATION_SCHEMA ENGINES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+ENGINE	Engine	MySQL extension
+SUPPORT	Support	MySQL extension
+COMMENT	Comment	MySQL extension
+TRANSACTIONS	Transactions	MySQL extension
+XA	XA	MySQL extension
+SAVEPOINTS	Savepoints	MySQL extension
+
+# 25.8 The INFORMATION_SCHEMA EVENTS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+EVENT_CATALOG	 	def, MySQL extension
+EVENT_SCHEMA	Db	MySQL extension
+EVENT_NAME	Name	MySQL extension
+DEFINER	Definer	MySQL extension
+TIME_ZONE	Time zone	MySQL extension
+EVENT_BODY	 	MySQL extension
+EVENT_DEFINITION	 	MySQL extension
+EVENT_TYPE	Type	MySQL extension
+EXECUTE_AT	Execute at	MySQL extension
+INTERVAL_VALUE	Interval value	MySQL extension
+INTERVAL_FIELD	Interval field	MySQL extension
+SQL_MODE	 	MySQL extension
+STARTS	Starts	MySQL extension
+ENDS	Ends	MySQL extension
+STATUS	Status	MySQL extension
+ON_COMPLETION	 	MySQL extension
+CREATED	 	MySQL extension
+LAST_ALTERED	 	MySQL extension
+LAST_EXECUTED	 	MySQL extension
+EVENT_COMMENT	 	MySQL extension
+ORIGINATOR	Originator	MySQL extension
+CHARACTER_SET_CLIENT	character_set_client	MySQL extension
+COLLATION_CONNECTION	collation_connection	MySQL extension
+DATABASE_COLLATION	Database Collation	MySQL extension
+
+# 25.9 The INFORMATION_SCHEMA FILES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+FILE_ID	 	MySQL extension
+FILE_NAME	 	MySQL extension
+FILE_TYPE	 	MySQL extension
+TABLESPACE_NAME	 	MySQL extension
+TABLE_CATALOG	 	MySQL extension
+TABLE_SCHEMA	 	MySQL extension
+TABLE_NAME	 	MySQL extension
+LOGFILE_GROUP_NAME	 	MySQL extension
+LOGFILE_GROUP_NUMBER	 	MySQL extension
+ENGINE	 	MySQL extension
+FULLTEXT_KEYS	 	MySQL extension
+DELETED_ROWS	 	MySQL extension
+UPDATE_COUNT	 	MySQL extension
+FREE_EXTENTS	 	MySQL extension
+TOTAL_EXTENTS	 	MySQL extension
+EXTENT_SIZE	 	MySQL extension
+INITIAL_SIZE	 	MySQL extension
+MAXIMUM_SIZE	 	MySQL extension
+AUTOEXTEND_SIZE	 	MySQL extension
+CREATION_TIME	 	MySQL extension
+LAST_UPDATE_TIME	 	MySQL extension
+LAST_ACCESS_TIME	 	MySQL extension
+RECOVER_TIME	 	MySQL extension
+TRANSACTION_COUNTER	 	MySQL extension
+VERSION	 	MySQL extension
+ROW_FORMAT	 	MySQL extension
+TABLE_ROWS	 	MySQL extension
+AVG_ROW_LENGTH	 	MySQL extension
+DATA_LENGTH	 	MySQL extension
+MAX_DATA_LENGTH	 	MySQL extension
+INDEX_LENGTH	 	MySQL extension
+DATA_FREE	 	MySQL extension
+CREATE_TIME	 	MySQL extension
+UPDATE_TIME	 	MySQL extension
+CHECK_TIME	 	MySQL extension
+CHECKSUM	 	MySQL extension
+STATUS	 	MySQL extension
+EXTRA	 	MySQL extension
+
+# 25.10 The INFORMATION_SCHEMA KEY_COLUMN_USAGE Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+CONSTRAINT_CATALOG	 	def
+CONSTRAINT_SCHEMA	 	 
+CONSTRAINT_NAME	 	 
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+COLUMN_NAME	 	 
+ORDINAL_POSITION	 	 
+POSITION_IN_UNIQUE_CONSTRAINT	 	 
+REFERENCED_TABLE_SCHEMA	 	 
+REFERENCED_TABLE_NAME	 	 
+REFERENCED_COLUMN_NAME	 	 
+
+# 25.11 The INFORMATION_SCHEMA OPTIMIZER_TRACE Table
+
+# 25.12 The INFORMATION_SCHEMA PARAMETERS Table
+
+INFORMATION_SCHEMA Name	Remarks
+SPECIFIC_CATALOG	def
+SPECIFIC_SCHEMA	routine database
+SPECIFIC_NAME	routine name
+ORDINAL_POSITION	1, 2, 3, ... for parameters, 0 for function RETURNS clause
+PARAMETER_MODE	IN, OUT, INOUT (NULL for RETURNS)
+PARAMETER_NAME	parameter name (NULL for RETURNS)
+DATA_TYPE	same as for COLUMNS table
+CHARACTER_MAXIMUM_LENGTH	same as for COLUMNS table
+CHARACTER_OCTET_LENGTH	same as for COLUMNS table
+NUMERIC_PRECISION	same as for COLUMNS table
+NUMERIC_SCALE	same as for COLUMNS table
+DATETIME_PRECISION	same as for COLUMNS table
+CHARACTER_SET_NAME	same as for COLUMNS table
+COLLATION_NAME	same as for COLUMNS table
+DTD_IDENTIFIER	same as for COLUMNS table
+ROUTINE_TYPE	same as for ROUTINES table
+
+# 25.13 The INFORMATION_SCHEMA PARTITIONS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TABLE_CATALOG	 	MySQL extension
+TABLE_SCHEMA	 	MySQL extension
+TABLE_NAME	 	MySQL extension
+PARTITION_NAME	 	MySQL extension
+SUBPARTITION_NAME	 	MySQL extension
+PARTITION_ORDINAL_POSITION	 	MySQL extension
+SUBPARTITION_ORDINAL_POSITION	 	MySQL extension
+PARTITION_METHOD	 	MySQL extension
+SUBPARTITION_METHOD	 	MySQL extension
+PARTITION_EXPRESSION	 	MySQL extension
+SUBPARTITION_EXPRESSION	 	MySQL extension
+PARTITION_DESCRIPTION	 	MySQL extension
+TABLE_ROWS	 	MySQL extension
+AVG_ROW_LENGTH	 	MySQL extension
+DATA_LENGTH	 	MySQL extension
+MAX_DATA_LENGTH	 	MySQL extension
+INDEX_LENGTH	 	MySQL extension
+DATA_FREE	 	MySQL extension
+CREATE_TIME	 	MySQL extension
+UPDATE_TIME	 	MySQL extension
+CHECK_TIME	 	MySQL extension
+CHECKSUM	 	MySQL extension
+PARTITION_COMMENT	 	MySQL extension
+NODEGROUP	 	MySQL extension
+TABLESPACE_NAME	 	MySQL extension
+
+# 25.14 The INFORMATION_SCHEMA PLUGINS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+PLUGIN_NAME	Name	MySQL extension
+PLUGIN_VERSION	 	MySQL extension
+PLUGIN_STATUS	Status	MySQL extension
+PLUGIN_TYPE	Type	MySQL extension
+PLUGIN_TYPE_VERSION	 	MySQL extension
+PLUGIN_LIBRARY	Library	MySQL extension
+PLUGIN_LIBRARY_VERSION	 	MySQL extension
+PLUGIN_AUTHOR	 	MySQL extension
+PLUGIN_DESCRIPTION	 	MySQL extension
+PLUGIN_LICENSE	License	MySQL extension
+LOAD_OPTION	 	MySQL extension
+
+# 25.15 The INFORMATION_SCHEMA PROCESSLIST Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+ID	Id	MySQL extension
+USER	User	MySQL extension
+HOST	Host	MySQL extension
+DB	db	MySQL extension
+COMMAND	Command	MySQL extension
+TIME	Time	MySQL extension
+STATE	State	MySQL extension
+INFO	Info	MySQL extension
+
+# 25.16 The INFORMATION_SCHEMA PROFILING Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+QUERY_ID	Query_ID	 
+SEQ		 
+STATE	Status	 
+DURATION	Duration	 
+CPU_USER	CPU_user	 
+CPU_SYSTEM	CPU_system	 
+CONTEXT_VOLUNTARY	Context_voluntary	 
+CONTEXT_INVOLUNTARY	Context_involuntary	 
+BLOCK_OPS_IN	Block_ops_in	 
+BLOCK_OPS_OUT	Block_ops_out	 
+MESSAGES_SENT	Messages_sent	 
+MESSAGES_RECEIVED	Messages_received	 
+PAGE_FAULTS_MAJOR	Page_faults_major	 
+PAGE_FAULTS_MINOR	Page_faults_minor	 
+SWAPS	Swaps	 
+SOURCE_FUNCTION	Source_function	 
+SOURCE_FILE	Source_file	 
+SOURCE_LINE	Source_line	 
+
+# 25.17 The INFORMATION_SCHEMA REFERENTIAL_CONSTRAINTS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+CONSTRAINT_CATALOG	 	def
+CONSTRAINT_SCHEMA	 	 
+CONSTRAINT_NAME	 	 
+UNIQUE_CONSTRAINT_CATALOG	 	def
+UNIQUE_CONSTRAINT_SCHEMA	 	 
+UNIQUE_CONSTRAINT_NAME	 	 
+MATCH_OPTION	 	 
+UPDATE_RULE	 	 
+DELETE_RULE	 	 
+TABLE_NAME	 	 
+REFERENCED_TABLE_NAME	 	 
+
+# 25.18 The INFORMATION_SCHEMA RESOURCE_GROUPS Table
+
+RESOURCE_GROUP_NAME The name of the resource group.
+RESOURCE_GROUP_TYPE The resource group type, either SYSTEM or USER.
+RESOURCE_GROUP_ENABLED Whether the resource group is enabled (1) or disabled (0);
+VCPU_IDS The CPU affinity; that is, the set of virtual CPUs that the resource group can use. The value is a list of comma-separated CPU numbers or ranges.
+THREAD_PRIORITY 
+
+# 25.19 The INFORMATION_SCHEMA ROUTINES Table
+
+INFORMATION_SCHEMA Name	Remarks
+SPECIFIC_NAME	 
+ROUTINE_CATALOG	def
+ROUTINE_SCHEMA	 
+ROUTINE_NAME	 
+ROUTINE_TYPE	{PROCEDURE|FUNCTION}
+DATA_TYPE	same as for COLUMNS table
+CHARACTER_MAXIMUM_LENGTH	same as for COLUMNS table
+CHARACTER_OCTET_LENGTH	same as for COLUMNS table
+NUMERIC_PRECISION	same as for COLUMNS table
+NUMERIC_SCALE	same as for COLUMNS table
+DATETIME_PRECISION	same as for COLUMNS table
+CHARACTER_SET_NAME	same as for COLUMNS table
+COLLATION_NAME	same as for COLUMNS table
+DTD_IDENTIFIER	data type descriptor
+ROUTINE_BODY	SQL
+ROUTINE_DEFINITION	 
+EXTERNAL_NAME	NULL
+EXTERNAL_LANGUAGE	NULL
+PARAMETER_STYLE	SQL
+IS_DETERMINISTIC	 
+SQL_DATA_ACCESS	 
+SQL_PATH	NULL
+SECURITY_TYPE	 
+CREATED	 
+LAST_ALTERED	 
+SQL_MODE	MySQL extension
+ROUTINE_COMMENT	MySQL extension
+DEFINER	MySQL extension
+CHARACTER_SET_CLIENT	MySQL extension
+COLLATION_CONNECTION	MySQL extension
+DATABASE_COLLATION	MySQL extension
+
+# 25.20 The INFORMATION_SCHEMA SCHEMATA Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+CATALOG_NAME	 	def
+SCHEMA_NAME	Database	 
+DEFAULT_CHARACTER_SET_NAME	 	 
+DEFAULT_COLLATION_NAME	 	 
+SQL_PATH	 	NULL
+
+# 25.21 The INFORMATION_SCHEMA SCHEMA_PRIVILEGES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+GRANTEE	 	'user_name'@'host_name' value, MySQL extension
+TABLE_CATALOG	 	def, MySQL extension
+TABLE_SCHEMA	 	MySQL extension
+PRIVILEGE_TYPE	 	MySQL extension
+IS_GRANTABLE	 	MySQL extension
+
+# 25.22 The INFORMATION_SCHEMA STATISTICS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	= Database
+TABLE_NAME	Table	 
+NON_UNIQUE	Non_unique	 
+INDEX_SCHEMA	 	= Database
+INDEX_NAME	Key_name	 
+SEQ_IN_INDEX	Seq_in_index	 
+COLUMN_NAME	Column_name	 
+COLLATION	Collation	 
+CARDINALITY	Cardinality	 
+SUB_PART	Sub_part	MySQL extension
+PACKED	Packed	MySQL extension
+NULLABLE	Null	MySQL extension
+INDEX_TYPE	Index_type	MySQL extension
+COMMENT	Comment	MySQL extension
+INDEX_COMMENT	Index_comment	MySQL extension
+IS_VISIBLE	Visible	MySQL extension
+
+# 25.23 The INFORMATION_SCHEMA ST_GEOMETRY_COLUMNS Table
+
+ ST_GEOMETRY_COLUMNS has these columns:
+
+    TABLE_CATALOG
+
+    The COLUMNS.TABLE_CATALOG value.
+
+    TABLE_SCHEMA
+
+    The COLUMNS.TABLE_SCHEMA value.
+
+    TABLE_NAME
+
+    The COLUMNS.TABLE_NAME value.
+
+    COLUMN_NAME
+
+    The COLUMNS.TABLE_COLUMN_NAME value.
+
+    SRS_NAME
+
+    The spatial reference system (SRS) name.
+
+    SRS_ID
+
+    The spatial reference system ID (SRID).
+
+    GEOMETRY_TYPE_NAME
+
+    The column data type. Permitted values are: geometry, point, linestring, polygon, multipoint, multilinestring, multipolygon, geometrycollection. This column is a MySQL extension to the standard. 
+
+
+
+# 25.24 The INFORMATION_SCHEMA ST_SPATIAL_REFERENCE_SYSTEMS Table
+
+ ST_SPATIAL_REFERENCE_SYSTEMS has these columns:
+
+    SRS_NAME
+
+    The spatial reference system name. This value is unique.
+
+    SRS_ID
+
+    The spatial reference system numeric ID. This value is unique.
+
+    SRS_ID values represent the same kind of values passed as the SRID argument to spatial functions.
+
+    ORGANIZATION
+
+    The name of the organization that defined the coordinate system on which the spatial reference system is based.
+
+    ORGANIZATION_COORDSYS_ID
+
+    The numeric ID given to the spatial reference system by the organization that defined it.
+
+    DEFINITION
+
+    The spatial reference system definition, as a WKT value.
+
+    DESCRIPTION
+
+    The spatial reference system description. 
+
+Notes:
+
+    The SRS_NAME, ORGANIZATION, ORGANIZATION_COORDSYS_ID, and DESCRIPTION columns contain information that may be of interest to users, but they are not used by MySQL. 
+
+
+
+# 25.25 The INFORMATION_SCHEMA TABLES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	Table_...	 
+TABLE_NAME	Table_...	 
+TABLE_TYPE	 	 
+ENGINE	Engine	MySQL extension
+VERSION	Version	The .frm file version. With the removal of .frm files in MySQL 8.0, this field now reports a hardcoded value of 10, which is the last .frm file version used in MySQL 5.7.
+ROW_FORMAT	Row_format	MySQL extension
+TABLE_ROWS	Rows	MySQL extension
+AVG_ROW_LENGTH	Avg_row_length	MySQL extension
+DATA_LENGTH	Data_length	MySQL extension
+MAX_DATA_LENGTH	Max_data_length	MySQL extension
+INDEX_LENGTH	Index_length	MySQL extension
+DATA_FREE	Data_free	MySQL extension
+AUTO_INCREMENT	Auto_increment	MySQL extension
+CREATE_TIME	Create_time	MySQL extension
+UPDATE_TIME	Update_time	MySQL extension
+CHECK_TIME	Check_time	MySQL extension
+TABLE_COLLATION	Collation	MySQL extension
+CHECKSUM	Checksum	MySQL extension
+CREATE_OPTIONS	Create_options	MySQL extension
+TABLE_COMMENT	Comment	MySQL extension
+
+# 25.26 The INFORMATION_SCHEMA TABLESPACES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TABLESPACE_NAME	 	MySQL extension
+ENGINE	 	MySQL extension
+TABLESPACE_TYPE	 	MySQL extension
+LOGFILE_GROUP_NAME	 	MySQL extension
+EXTENT_SIZE	 	MySQL extension
+AUTOEXTEND_SIZE	 	MySQL extension
+MAXIMUM_SIZE	 	MySQL extension
+NODEGROUP_ID	 	MySQL extension
+TABLESPACE_COMMENT	 	MySQL extension
+
+# 25.27 The INFORMATION_SCHEMA TABLE_CONSTRAINTS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+CONSTRAINT_CATALOG	 	def
+CONSTRAINT_SCHEMA	 	 
+CONSTRAINT_NAME	 	 
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+CONSTRAINT_TYPE	 	 
+
+# 25.28 The INFORMATION_SCHEMA TABLE_PRIVILEGES Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+GRANTEE	 	'user_name'@'host_name' value
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+PRIVILEGE_TYPE	 	 
+IS_GRANTABLE	 	 
+
+# 25.29 The INFORMATION_SCHEMA TRIGGERS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TRIGGER_CATALOG	 	def
+TRIGGER_SCHEMA	 	 
+TRIGGER_NAME	Trigger	 
+EVENT_MANIPULATION	Event	 
+EVENT_OBJECT_CATALOG	 	def
+EVENT_OBJECT_SCHEMA	 	 
+EVENT_OBJECT_TABLE	Table	 
+ACTION_ORDER	 	 
+ACTION_CONDITION	 	NULL
+ACTION_STATEMENT	Statement	 
+ACTION_ORIENTATION	 	ROW
+ACTION_TIMING	Timing	 
+ACTION_REFERENCE_OLD_TABLE	 	NULL
+ACTION_REFERENCE_NEW_TABLE	 	NULL
+ACTION_REFERENCE_OLD_ROW	 	OLD
+ACTION_REFERENCE_NEW_ROW	 	NEW
+CREATED	Created	 
+SQL_MODE	sql_mode	MySQL extension
+DEFINER	Definer	MySQL extension
+CHARACTER_SET_CLIENT	character_set_client	MySQL extension
+COLLATION_CONNECTION	collation_connection	MySQL extension
+DATABASE_COLLATION	Database Collation	MySQL extension
+
+# 25.30 The INFORMATION_SCHEMA USER_PRIVILEGES Table
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+GRANTEE	 	'user_name'@'host_name' value, MySQL extension
+TABLE_CATALOG	 	def, MySQL extension
+PRIVILEGE_TYPE	 	MySQL extension
+IS_GRANTABLE	 	MySQL extension
+
+# 25.31 The INFORMATION_SCHEMA VIEWS Table
+
+INFORMATION_SCHEMA Name	SHOW Name	Remarks
+TABLE_CATALOG	 	def
+TABLE_SCHEMA	 	 
+TABLE_NAME	 	 
+VIEW_DEFINITION	 	 
+CHECK_OPTION	 	 
+IS_UPDATABLE	 	 
+DEFINER	 	 
+SECURITY_TYPE	 	 
+CHARACTER_SET_CLIENT	 	MySQL extension
+COLLATION_CONNECTION	 	MySQL extension
+
+# 25.32 InnoDB INFORMATION_SCHEMA Tables     
+
+
+
+# 25.32.1 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE Table
+
+
+
+# 25.32.2 The INFORMATION_SCHEMA INNODB_BUFFER_PAGE_LRU Table
+
+
+
+# 25.32.3 The INFORMATION_SCHEMA INNODB_BUFFER_POOL_STATS Table
+
+
+
+# 25.32.4 The INFORMATION_SCHEMA INNODB_CACHED_INDEXES Table
+
+
+
+# 25.32.5 The INFORMATION_SCHEMA INNODB_CMP and INNODB_CMP_RESET Tables
+
+
+
+# 25.32.6 The INFORMATION_SCHEMA INNODB_CMPMEM and INNODB_CMPMEM_RESET Tables
+
+
+
+# 25.32.7 The INFORMATION_SCHEMA INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET Tables
+
+
+
+# 25.32.8 The INFORMATION_SCHEMA INNODB_FT_BEING_DELETED Table
+
+
+
+# 25.32.9 The INFORMATION_SCHEMA INNODB_FT_CONFIG Table
+
+
+
+# 25.32.10 The INFORMATION_SCHEMA INNODB_FT_DEFAULT_STOPWORD Table
+
+
+
+# 25.32.11 The INFORMATION_SCHEMA INNODB_FT_DELETED Table
+
+
+
+# 25.32.12 The INFORMATION_SCHEMA INNODB_FT_INDEX_CACHE Table
+
+
+
+# 25.32.13 The INFORMATION_SCHEMA INNODB_FT_INDEX_TABLE Table
+
+
+
+# 25.32.14 The INFORMATION_SCHEMA INNODB_LOCKS Table
+
+
+
+# 25.32.15 The INFORMATION_SCHEMA INNODB_LOCK_WAITS Table
+
+
+
+# 25.32.16 The INFORMATION_SCHEMA INNODB_METRICS Table
+
+
+
+# 25.32.17 The INFORMATION_SCHEMA INNODB_COLUMNS Table
+
+
+
+# 25.32.18 The INFORMATION_SCHEMA INNODB_DATAFILES Table
+
+
+
+# 25.32.19 The INFORMATION_SCHEMA INNODB_FIELDS Table
+
+
+
+# 25.32.20 The INFORMATION_SCHEMA INNODB_FOREIGN Table
+
+
+
+# 25.32.21 The INFORMATION_SCHEMA INNODB_FOREIGN_COLS Table
+
+
+
+# 25.32.22 The INFORMATION_SCHEMA INNODB_INDEXES Table
+
+
+
+# 25.32.23 The INFORMATION_SCHEMA INNODB_TABLES Table
+
+
+
+# 25.32.24 The INFORMATION_SCHEMA INNODB_TABLESPACES Table
+
+
+
+# 25.32.25 The INFORMATION_SCHEMA INNODB_TABLESPACES_BRIEF Table
+
+
+
+# 25.32.26 The INFORMATION_SCHEMA INNODB_TABLESTATS View
+
+
+
+# 25.32.27 The INFORMATION_SCHEMA INNODB_VIRTUAL Table
+
+
+
+# 25.32.28 The INFORMATION_SCHEMA INNODB_TEMP_TABLE_INFO Table
+
+
+
+# 25.32.29 The INFORMATION_SCHEMA INNODB_TRX Table
+
+
+
+
 # https://dev.mysql.com/doc/refman/8.0/en/string-functions.html
 
 [
